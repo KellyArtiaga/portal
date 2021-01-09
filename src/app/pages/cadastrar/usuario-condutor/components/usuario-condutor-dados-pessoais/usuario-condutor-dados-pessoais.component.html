@@ -1,0 +1,71 @@
+<form [formGroup]="formDadosPessoais" autocomplete="off">
+  <div class="row p-0 m-0">
+    <div class="col-md-3 col-sm-6">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_CODIGO' | translate}}</mat-label>
+        <input matInput formControlName="codigo" type="text" maxlength="45" autocomplete="off" />
+      </mat-form-field>
+    </div>
+    <div class="col-md-3 col-sm-6 mat-form-field mat-form-field-wrapper">
+      <div><small>{{'PORTAL.USUARIO.LBL_STATUS' | translate}}:</small></div>
+      <mat-label> Inativo <mat-slide-toggle formControlName="status" class="primary" [disabled]="!isEdition()">
+        </mat-slide-toggle>Ativo</mat-label>
+    </div>
+  </div>
+  <div class="row p-0 m-0">
+    <div class="col-md-3 col-sm-6">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_NOME' | translate}}</mat-label>
+        <input matInput formControlName="nome" type="text" maxlength="45" autocomplete="off" required />
+      </mat-form-field>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_DATA_NASCIMENTO' | translate}}</mat-label>
+        <input matInput (change)="applyDataMascara($event.target.value, 'dataNascimento')"
+          (keyup)="regexLetras($event.target.value, 'dataNascimento')" formControlName="dataNascimento"
+          [matDatepicker]="dataNascimentoCond" [max]="maxDate"
+          onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" />
+        <mat-datepicker-toggle matSuffix [for]="dataNascimentoCond">
+        </mat-datepicker-toggle>
+        <mat-datepicker #dataNascimentoCond ngDefaultControl disabled="false">
+        </mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-md-2 col-sm-6">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_RG' | translate}}</mat-label>
+        <input matInput formControlName="rg" type="text" maxlength="15" autocomplete="off" />
+      </mat-form-field>
+    </div>
+    <div class="col-md-2 col-sm-6">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_EMISSOR' | translate}}</mat-label>
+        <input matInput formControlName="orgaoEmissor" type="text" maxlength="8" autocomplete="off" />
+      </mat-form-field>
+    </div>
+    <div class="col-md-2 col-sm-6">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_CPF' | translate}}</mat-label>
+        <input matInput #cpfInput (paste)="onPaste('cpf', $event)"
+          (keyup)="verificarInformacoesUsuario('cpf', $event.target.value)" formControlName="cpf" mask="000.000.000-00"
+          type="text" autocomplete="off" required />
+      </mat-form-field>
+    </div>
+  </div>
+  <hr class="hr-text" data-content="Filiação" />
+  <div class="row m-0 pt-3">
+    <div class="col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_NOME_MAE' | translate}}</mat-label>
+        <input matInput formControlName="nomeMae" type="text" maxlength="45" autocomplete="off" />
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_NOME_PAI' | translate}}</mat-label>
+        <input matInput formControlName="nomePai" type="text" maxlength="45" autocomplete="off" />
+      </mat-form-field>
+    </div>
+  </div>
+</form>

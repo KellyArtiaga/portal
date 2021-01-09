@@ -1,0 +1,56 @@
+<div class="table-responsive mat-elevation-z4 col-md-12 mb-2" *ngIf="hasFornecedores()">
+  <table class="table table-hover m-0">
+    <thead>
+      <tr>
+        <th class="text-header table-header">
+          {{'PORTAL.MANUTENCAO.LIST_FORNECEDOR.HEADER.FORNECEDOR' | translate}}
+        </th>
+        <th class="text-header table-header">
+          {{'PORTAL.MANUTENCAO.LIST_FORNECEDOR.HEADER.SERVICO' | translate}}
+        </th>
+        <th class="text-header table-header">
+          {{'PORTAL.MANUTENCAO.LIST_FORNECEDOR.HEADER.ENDERECO' | translate}}
+        </th>
+        <th class="text-header table-header">
+          {{'PORTAL.MANUTENCAO.LIST_FORNECEDOR.HEADER.TELEFONE' | translate}}
+        </th>
+        <th class="text-header table-header">
+          {{'PORTAL.MANUTENCAO.LIST_FORNECEDOR.HEADER.CIDADE' | translate}}
+        </th>
+        <th class="text-header table-header">
+          {{'PORTAL.MANUTENCAO.LIST_FORNECEDOR.HEADER.UF' | translate}}
+        </th>
+        <th class="text-header table-header text-center">
+          {{'PORTAL.MANUTENCAO.LIST_FORNECEDOR.HEADER.ACOES' | translate}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of fornecedoresSelecionados">
+        <td class="row-text">
+          {{item.fornecedor.nomeFantasia}}
+        </td>
+        <td class="row-text">
+          {{item.fornecedor.listaDescricaoServico}}
+        </td>
+        <td class="row-text">
+          {{item.fornecedor.endereco}}
+        </td>
+        <td class="row-text">
+          {{item.fornecedor.telefone}}
+        </td>
+        <td class="row-text">
+          {{item.fornecedor.municipio}}
+        </td>
+        <td class="row-text">
+          {{item.fornecedor.estado}}
+        </td>
+        <td class="text-center row-text">
+          <mat-icon svgIcon="pfu-delete" (click)="deselectFornecedor(item.fornecedor)"></mat-icon>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <label class="not_found"
+    *ngIf="!hasFornecedores()">{{'PORTAL.MENSAGENS.MSG_REGISTRO_NAO_ENCONTRADO' | translate}}</label>
+</div>

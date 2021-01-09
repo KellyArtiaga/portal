@@ -1,0 +1,23 @@
+<form [formGroup]="formContato" autocomplete="off">
+  <div class="row p-0 m-0">
+    <div class="col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_TELEFONE' | translate}}</mat-label>
+        <input matInput formControlName="telefone" type="text" mask="(00) 0000-0000" autocomplete="off" />
+      </mat-form-field>
+    </div>
+    <div class="col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_CELULAR' | translate}}</mat-label>
+        <input matInput formControlName="celular" type="text" mask="(00) 00000-0000" autocomplete="off" />
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_EMAIL' | translate}}</mat-label>
+        <input matInput formControlName="email" type="text" maxlength="100" (paste)="onPaste($event)"
+          (keyup)="verificarInformacoesUsuario('email', $event.target.value)" autocomplete="off" required />
+      </mat-form-field>
+    </div>
+  </div>
+</form>

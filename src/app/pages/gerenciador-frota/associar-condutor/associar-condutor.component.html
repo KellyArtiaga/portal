@@ -1,0 +1,43 @@
+<div class="mt-5 ml-3 mr-3">
+  <fw-search
+    [options]="{showHeader:false,searchOnLoad:false}"  
+    path="condutorveiculo" 
+    [cols]="cols" 
+    [actions]="actions"
+    (onAction)="onAction($event)"
+    [filtersFn]="preppareParams.bind(this)"
+    idCol="codigoMva"
+    #search>
+    <div class="beteewn-filter-and-items col-md-12 text-right" align="end">
+      <button class="btn-add-new" [routerLink]="'./incluir'" type="button">
+        {{'PORTAL.BUTTONS.BTN_ADD_NEW' | translate}}
+        <mat-icon class="material-icons">add_circle</mat-icon>
+      </button>
+    </div>
+    <app-filtro-agrupadores class="col-12" [form]="form" [habilitarOpcaoNenhum]="false"></app-filtro-agrupadores>
+    <!-- <div class="col-lg-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_PLACA' | translate}}</mat-label>
+        <input matInput type="text" 
+          [(ngModel)]="search.filters.placa"
+          class="uppercase" 
+          maxlength="8">
+      </mat-form-field>
+    </div>  -->
+    <fw-autocomplete class="col-sm-6 col-lg-3"
+      label="Condutor" 
+      path="condutores"  
+      [displayFn]="displayCondutores.bind(this)"
+      [mapperFn]="idDescMapper('codigoCondutor','nome')"
+      mapAs="id"
+      [enableAllOption]="true"
+      [matchesDisplayFn]="displayCondutores.bind(this)"
+      [subscribeTo]="[search]"
+      [zipControls]="{
+          'grupoEconomicoId' :  grupoEconomico
+      }"
+      [(value)]="search.filters.condutorId"
+      hint="{{'PORTAL.LABELS.DIGITE_TRES_CARACTERES' | translate}}">
+    </fw-autocomplete>
+  </fw-search>
+</div>

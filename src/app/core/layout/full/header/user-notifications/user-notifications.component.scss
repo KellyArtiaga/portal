@@ -1,0 +1,33 @@
+.notification-icon {
+  position: absolute;
+  padding: 1px 5px 0px 5px !important;
+  border-radius: 50% !important;
+  right: 68px;
+  top: 23px;
+}
+
+.bell-button {
+  margin-right: 15px !important;
+}
+
+.bell-button {
+  small {
+    position: absolute;
+    top: 20px;
+    left: 8px;
+  }
+}
+
+::ng-deep .mat-menu-content {
+  padding: 0px !important;
+}
+
+.todas-color {
+  justify-content: center;
+  display: flex;
+  font-size: 14px;
+  height: 40px;
+  align-items: center;
+  background-color: #d3d3d373;
+  color: #000;
+}

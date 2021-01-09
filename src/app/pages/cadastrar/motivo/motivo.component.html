@@ -1,0 +1,70 @@
+<div class="container-fluid page-body">
+  <div class="row pt-3 center-vertical" *ngIf="isSearch">
+    <div class="col-md-4">
+      <mat-form-field appearance="outline" matTooltip="Pesquisar por Motivos" matTooltipShowDelay="1000">
+        <mat-label>{{'PORTAL.LABELS.LBL_SEARCH' | translate}}</mat-label>
+        <mat-icon matSuffix>search</mat-icon>
+        <input matInput type="text" [(ngModel)]="descricaoMotivoSolicitacao" maxlength="100" autocomplete="off"
+          [disabled]="!getPermissao().pesquisar" />
+      </mat-form-field>
+    </div>
+    <span class="col-md-8">
+      <button mat-raised-button color="primary" type="button" (click)="pesquisar()"
+        [disabled]="!getPermissao().pesquisar">
+        {{'PORTAL.BUTTONS.BTN_SEARCH' | translate}}
+      </button>
+      <button mat-raised-button class="btn-secondary ml-3" type="button" (click)="clearSearch()"
+        [disabled]="!getPermissao().pesquisar">
+        {{'PORTAL.BUTTONS.BTN_CLEAN' | translate}}
+      </button>
+    </span>
+  </div>
+  <div class="pt-3 center-vertical" *ngIf="!isSearch">
+    <form [formGroup]="formMotivo" (ngSubmit)="isEdition ? editarMotivo() : addMotivo()">
+      <mat-form-field appearance="outline" class="col-md-3">
+        <mat-label>{{'PORTAL.MOTIVO.LABELS.CODIGO' | translate}}</mat-label>
+        <input matInput placeholder="{{'PORTAL.MOTIVO.LABELS.CODIGO' | translate}}" formControlName="codigoMotivo" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-3">
+        <mat-label>{{'PORTAL.MOTIVO.LABELS.NOME' | translate}}</mat-label>
+        <input matInput placeholder="{{'PORTAL.MOTIVO.LABELS.NOME' | translate}}" formControlName="nomeMotivo"
+          maxlength="40" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-3">
+        <mat-label>{{'PORTAL.MOTIVO.LABELS.TIPO_ATENDIMENTO' | translate}}</mat-label>
+        <mat-select (selectionChange)="carregarTipoAtendimentoSolicitacao($event.value)"
+          formControlName="nomeTipoAtendimento">
+          <mat-option *ngFor="let tipo of tiposAtendimento" [value]="tipo.id">
+            {{tipo.nome}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-3">
+        <mat-label>{{'PORTAL.MOTIVO.LABELS.TIPO_ATENDIMENTO_SOLICITACAO' | translate}}</mat-label>
+        <mat-select formControlName="tipoAtendimentoSolicitacao">
+          <mat-option *ngFor="let tipo of tiposAtendimentoSolicitacao" [value]="tipo.id">
+            {{tipo.descricaoSolicitacao}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <span class="btn-group-filter">
+        <button class="btn-secondary" mat-raised-button type="button"
+          (click)="voltar()">{{'PORTAL.BUTTONS.BTN_CANCEL' | translate}}</button>
+        <button mat-raised-button color="primary" class="primary" type="submit">
+          {{isEdition ? ('PORTAL.BUTTONS.BTN_SAVE' | translate) : ('PORTAL.BUTTONS.BTN_INSERT' | translate) }}</button>
+      </span>
+    </form>
+  </div>
+  <hr *ngIf="showTable">
+  <div class="col-md-12" *ngIf="showTable">
+    <div class="text-right" *ngIf="getPermissao().incluir">
+      <button class="btn-add-new" (click)="showInsert()" type="button">
+        {{'PORTAL.BUTTONS.BTN_ADD_NEW' | translate}}
+        <mat-icon class="material-icons">add_circle</mat-icon>
+      </button>
+    </div>
+    <app-generic-table [(inputData)]="motivos" [inputDataSubject]="dataInputSubj" [columns]="getColunasTabela()"
+      [infoMessage]="mensagemInformacao" (nextPage)="getMotivos($event)" [totalRows]="totalRows">
+    </app-generic-table>
+  </div>
+</div>

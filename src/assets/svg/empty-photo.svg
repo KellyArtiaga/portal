@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" viewBox="0 0 200 120">
+  <g id="Grupo_5171" data-name="Grupo 5171" transform="translate(-355 -754)">
+    <g id="Grupo_4484" data-name="Grupo 4484" transform="translate(307 172)">
+      <g id="Retângulo_2259" data-name="Retângulo 2259" transform="translate(48 582)" fill="#e0e0e0" stroke="rgba(112,112,112,0.6)" stroke-width="1">
+        <rect width="200" height="120" stroke="none"/>
+        <rect x="0.5" y="0.5" width="199" height="119" fill="none"/>
+        <text x="100" y="70" font-family="Poppins, sans-serif" font-size="13px" text-anchor="middle" fill="#707070">Sem anexo encontrado</text>
+      </g>
+      <g id="Grupo_4485" data-name="Grupo 4485" opacity="0.1">
+        <circle id="Elipse_287" data-name="Elipse 287" cx="11.023" cy="11.023" r="11.023" transform="translate(137.157 631.312)" stroke="#707070" stroke-width="1"/>
+        <path id="Caminho_1964" data-name="Caminho 1964" d="M26.112,2l-6.3,6.889H8.889A6.909,6.909,0,0,0,2,15.778V57.113A6.909,6.909,0,0,0,8.889,64H64a6.909,6.909,0,0,0,6.889-6.889V15.778A6.909,6.909,0,0,0,64,8.889H53.083L46.779,2ZM36.445,53.668A17.223,17.223,0,1,1,53.668,36.445,17.229,17.229,0,0,1,36.445,53.668Z" transform="translate(111.734 605.889)" stroke="#707070" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

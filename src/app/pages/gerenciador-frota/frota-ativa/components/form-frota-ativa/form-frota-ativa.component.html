@@ -1,0 +1,42 @@
+<form [formGroup]="formGerenciarFrota" (submit)="validarKM()">
+  <div class="row">
+    <div class="col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.GERENCIAR_FROTA.LABELS.PLACA' | translate}}</mat-label>
+        <input matInput formControlName="placa" maxlength="100" disabled />
+      </mat-form-field>
+    </div>
+    <div class="col-md-3" hidden="true">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.GERENCIAR_FROTA.LABELS.RENAVAM' | translate}}</mat-label>
+        <input matInput formControlName="renavam" maxlength="100" disabled />
+      </mat-form-field>
+    </div>
+    <div class="col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.GERENCIAR_FROTA.LABELS.MARCA' | translate}}</mat-label>
+        <input matInput formControlName="marca" maxlength="100" disabled />
+      </mat-form-field>
+    </div>
+    <div class="col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.GERENCIAR_FROTA.LABELS.MODELO' | translate}}</mat-label>
+        <input matInput formControlName="modelo" maxlength="100" disabled />
+      </mat-form-field>
+    </div>
+    <div class="col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.GERENCIAR_FROTA.LABELS.KM' | translate}}</mat-label>
+        <input matInput formControlName="km" maxlength="100"
+          onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+          required />
+      </mat-form-field>
+    </div>
+    <span class="pl-0">
+      <button class="btn-primary ml-3 mr-3" mat-raised-button color="primary"
+        type="submit">{{'PORTAL.BUTTONS.BTN_SAVE' | translate}}</button>
+      <button class="btn-secondary" mat-raised-button type="button"
+        (click)="cancelar()">{{'PORTAL.BUTTONS.BTN_CANCEL' | translate}}</button>
+    </span>
+  </div>
+</form>

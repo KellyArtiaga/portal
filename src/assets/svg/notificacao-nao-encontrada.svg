@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45.121" height="38.824" viewBox="0 0 45.121 38.824">
+  <g id="Group_6030" data-name="Group 6030" transform="translate(23312.141 23915.555)">
+    <g id="Group_6029" data-name="Group 6029">
+      <g id="Icon_material-photo-camera" data-name="Icon material-photo-camera" transform="translate(-23315.141 -23918.555)">
+        <path id="Path_2581" data-name="Path 2581" d="M24.117,18.658A5.458,5.458,0,1,1,18.658,13.2,5.458,5.458,0,0,1,24.117,18.658Z" transform="translate(1.399 1.399)" fill="#005b9e"/>
+        <path id="Path_2582" data-name="Path 2582" d="M14.94,3,11.819,6.411H6.411A3.421,3.421,0,0,0,3,9.823V30.292A3.421,3.421,0,0,0,6.411,33.7H33.7a3.421,3.421,0,0,0,3.411-3.411V9.823A3.421,3.421,0,0,0,33.7,6.411H28.3L25.174,3Zm5.117,25.586a8.529,8.529,0,1,1,8.529-8.529A8.532,8.532,0,0,1,20.057,28.586Z" transform="translate(0 0)" fill="#005b9e"/>
+        <g id="Ellipse_392" data-name="Ellipse 392" transform="translate(26.141 20.555)" fill="#fff" stroke="#fff" stroke-width="1">
+          <circle cx="10.5" cy="10.5" r="10.5" stroke="none"/>
+          <circle cx="10.5" cy="10.5" r="10" fill="none"/>
+        </g>
+        <path id="Icon_ionic-ios-close-circle" data-name="Icon ionic-ios-close-circle" d="M14.436,3.375A11.061,11.061,0,1,0,25.5,14.436,11.059,11.059,0,0,0,14.436,3.375Zm2.8,15.065-2.8-2.8-2.8,2.8a.85.85,0,1,1-1.2-1.2l2.8-2.8-2.8-2.8a.85.85,0,1,1,1.2-1.2l2.8,2.8,2.8-2.8a.85.85,0,0,1,1.2,1.2l-2.8,2.8,2.8,2.8a.854.854,0,0,1,0,1.2A.844.844,0,0,1,17.238,18.44Z" transform="translate(22.625 16.328)" fill="#005b9e"/>
+      </g>
+    </g>
+  </g>
+</svg>

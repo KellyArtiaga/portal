@@ -1,0 +1,67 @@
+.h-72 {
+  height: 72%;
+}
+
+.span-title {
+  font-size: 10px;
+  position: absolute;
+  z-index: 99999;
+  background-color: #fff;
+  margin-top: -6px;
+  margin-left: 15px;
+  width: 36%;
+  text-align: center;
+}
+
+.span-subtitle {
+  font-size: 11px;
+  position: absolute;
+  z-index: 99999;
+  background-color: #fff;
+  margin-top: -23px;
+  margin-left: 15px;
+  width: 21%;
+  padding-left: 11px;
+}
+
+.h-59 {
+  height: 59%;
+  min-height: 100px;
+}
+
+.h-72 {
+  height: 72%;
+  min-height: 100px;
+}
+
+.box-pdf {
+  width: 130px;
+  height: 80px;
+  display: flex;
+  border: 1px solid #b5b5b5;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-image {
+  width: 130px;
+  height: 80px;
+  border: 1px dotted #b5b5b5;
+  border-radius: 4px;
+}
+
+.font-size-arquive {
+  width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  touch-action: auto !important;
+  user-select: all !important;
+  -webkit-user-drag: auto !important;
+  font-size: 14px;
+}
+
+:host ::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 10px !important;
+  margin: 0 !important;
+}

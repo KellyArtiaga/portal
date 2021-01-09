@@ -1,0 +1,24 @@
+.table td,
+.table th {
+  padding: 0px;
+  border-top: 5px solid white;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
+button.btn-legenda {
+  padding: 5px 0;
+  background: none;
+  border: none;
+  color: #005b9e;
+  box-shadow: none;
+
+  & .material-icons {
+    width: 24px;
+    overflow: hidden;
+    vertical-align: middle;
+    font-size: 12px !important;
+  }
+}

@@ -1,0 +1,79 @@
+<div class="p-3 center-vertical">
+  <form [formGroup]="form" class="row" (submit)="pesquisar()">
+    <app-filtro-agrupadores class="col-12" [form]="form"></app-filtro-agrupadores>
+
+    <div class="col-md-3 col-xs-6">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'PORTAL.SOLICITACAO_VEICULO.LABEL.STATUS' | translate }}</mat-label>
+        <mat-select matInput formControlName="status" disableOptionCentering>
+          <mat-option>Selecione</mat-option>
+          <mat-option *ngFor="let item of status" [value]="item.id">
+            {{item.descricao}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-3 col-xs-6">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.CONTRATO' | translate}}</mat-label>
+        <input matInput type="text" mask="00000000" formControlName="contratoMasterId" />
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-3 col-xs-6">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.MOTIVO' | translate}}</mat-label>
+        <mat-select matInput formControlName="motivo" disableOptionCentering>
+          <mat-option>Selecione</mat-option>
+          <mat-option *ngFor="let item of motivos" [value]="item.id">
+            {{ item.descricao }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-3 col-xs-6">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'PORTAL.SOLICITACAO_VEICULO.LABEL.PERIODO' | translate }}</mat-label>
+        <input matInput formControlName="periodo" autocomplete="off" readonly required />
+        <span matSuffix mat-icon-button>
+          <mat-icon class="material-icons pointer" (click)="abrirFiltro()" [matMenuTriggerFor]="dateTimeMenu">
+            calendar_today
+          </mat-icon>
+        </span>
+      </mat-form-field>
+    </div>
+
+    <mat-menu class="date-range-menu" #dateTimeMenu="matMenu">
+      <app-modal-date [params]="modalDateParams"></app-modal-date>
+    </mat-menu>
+    <div class="col-md-3 btn-group-filter">
+      <button mat-raised-button class="btn btn-primary mr-3" type="submit">
+        {{'PORTAL.BUTTONS.BTN_SEARCH' | translate}}
+      </button>
+      <button (click)="clearSearch()" mat-raised-button class="btn btn-secondary" type="button">
+        {{'PORTAL.BUTTONS.BTN_CLEAN' | translate}}
+      </button>
+    </div>
+  </form>
+  <hr />
+  <div class="row">
+    <div class="text-left col-md-6">
+      <div *ngIf="showTable">
+        <button class="row ml-1 btn-export" *ngIf="showExport" (click)="exportExcel()" type="button">
+          <mat-icon svgIcon="pfu-excel-icon" class="material-icons"></mat-icon>
+          <span class="ml-2 mt-1">{{'PORTAL.BUTTONS.BTN_EXPORT' | translate}}</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6 text-right">
+      <app-help-legenda-acessorio [acessorios]="acessorios"></app-help-legenda-acessorio>
+    </div>
+  </div>
+  <div *ngIf="showTable">
+    <app-generic-table #tableEntrega [(inputData)]="solicitacoes" [columns]="getColunasTabela()"
+      (nextPage)="getSolicitacoes($event)" [totalRows]="totalRows">
+    </app-generic-table>
+  </div>
+</div>

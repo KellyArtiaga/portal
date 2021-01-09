@@ -1,0 +1,17 @@
+<app-filtro-indicadores-gerais [clearFunction]="clearFunction" [functionSearch]="functionSearch">
+</app-filtro-indicadores-gerais>
+<div id="div-indicadores-gerais" class="div-indicadores" #graficos>
+  <div class="row" *ngIf="showDashboard">
+    <div class="col-md-12 pt-3 ml-3 mr-3">
+      <h6>Dashboard: {{'PORTAL.MENU.DASHBOARD.DASHBOARD_GERAIS' | translate}}</h6>
+      <hr>
+    </div>
+  </div>
+  <div *ngIf="!showDashboard && notFoundResults">
+    <label style="font-size: 14px;"
+      class="text-center w-100 pt-2">{{'PORTAL.MENSAGENS.MSG_REGISTRO_NAO_ENCONTRADO' | translate}}</label>
+  </div>
+  <app-card-chart *ngIf="showDashboard" [charts]="charts" [functionFiltro]="'filtroIndicadoresGerais'"
+    [formFiltro]="formFiltro" [indicadoresGerais]="true">
+  </app-card-chart>
+</div>

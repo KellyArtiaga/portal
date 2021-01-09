@@ -1,0 +1,55 @@
+.card-content-totalizadores {
+  font-size: 0.9rem;
+  color: #004477;
+  background: transparent
+}
+
+.card-header-totalizadores {
+  display: flex;
+  color: white;
+  font-size: 0.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  background: #004477;
+  justify-content: center;
+  padding: 4px !important;
+  white-space:  !important;
+}
+
+.totalizadores {
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 !important;
+  justify-content: center;
+
+  .mat-card {
+    opacity: 0.9;
+    background: transparent;
+    box-shadow: none;
+    border: 1px solid lightgray;
+    margin-right: 5px !important;
+    margin-left: 5px !important;
+  }
+
+  .mat-card-content {
+    padding: 12px 5px !important;
+
+  }
+}
+
+
+.subtitle {
+  color: gray;
+  font-size: 16px;
+}
+
+.hr-subtitle {
+  color: gray;
+  margin-bottom: 0;
+  margin-top: 0 !important;
+}
+
+.card-totalizadores {
+  width: 150px !important;
+}

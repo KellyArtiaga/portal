@@ -1,0 +1,76 @@
+<form class="container-fluid" [formGroup]="formAtendimento">
+  <div class="row">
+    <div class="col-md-4 p-0">
+      <mat-form-field appearance="outline" class="col col-xs-6 pt-2">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_SITUACAO' | translate}}</mat-label>
+        <input matInput type="text" formControlName="situacaoAtendimento" readonly />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col col-xs-6 pt-2">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_CODIGO_ATENDIMENTO' | translate}}</mat-label>
+        <input matInput type="text" formControlName="codigoAtendimento" readonly />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col col-xs-6 pt-2">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_PLACA' | translate}}</mat-label>
+        <input matInput type="text" formControlName="placa" readonly />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col col-xs-6 pt-2">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_STATUS_PLACA' | translate}}</mat-label>
+        <input matInput type="text" formControlName="statusPlaca" readonly />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-8 col-xs-6 pt-2">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_MUNICIPIO' | translate}}</mat-label>
+        <input matInput type="text" formControlName="municipio" readonly />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-4 col-xs-6 pt-2">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_UF' | translate}}</mat-label>
+        <input matInput type="text" formControlName="uf" readonly />
+      </mat-form-field>
+    </div>
+    <div class="col-md-4 p-0">
+      <mat-form-field appearance="outline" class="col-md-6 col-xs-6 pt-2">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_DATA_INICIO' | translate}}</mat-label>
+        <input matInput type="text" formControlName="dataInicio" [matDatepicker]="dataInicioAtendimento" readonly />
+        <mat-datepicker-toggle matSuffix [for]="dataInicioAtendimento">
+        </mat-datepicker-toggle>
+        <mat-datepicker #dataInicioAtendimento disabled="true">
+        </mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-6 col-xs-6 pt-2">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_DATA_FIM' | translate}}</mat-label>
+        <input matInput type="text" formControlName="dataFim" [matDatepicker]="dataFimAtendimento" readonly />
+        <mat-datepicker-toggle matSuffix [for]="dataFimAtendimento">
+        </mat-datepicker-toggle>
+        <mat-datepicker #dataFimAtendimento disabled="true">
+        </mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col col-xs-6 pt-2">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_MOTORISTA' | translate}}</mat-label>
+        <input matInput type="text" formControlName="motorista" readonly />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col col-xs-6 pt-2">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_TELEFONE' | translate}}</mat-label>
+        <input matInput type="text" formControlName="telefone" readonly />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col col-xs-6 pt-2">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_EMAIL' | translate}}</mat-label>
+        <input matInput type="text" formControlName="email" readonly />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-6 col-xs-6 pt-2">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_KM' | translate}}</mat-label>
+        <input matInput type="text" formControlName="km" readonly />
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-slide-toggle style="pointer-events: none;" formControlName="manutencaoCorretiva" class="primary w-100 mb-3">
+        {{'PORTAL.ATENDIMENTO.LABELS.LBL_CORRETIVA' | translate}}</mat-slide-toggle>
+      <mat-slide-toggle style="pointer-events: none;" formControlName="manutencaoPreventiva" class="primary w-100 mb-3">
+        {{'PORTAL.ATENDIMENTO.LABELS.LBL_PREVENTIVA' | translate}}</mat-slide-toggle>
+      <mat-slide-toggle style="pointer-events: none;" formControlName="sinistro" class="primary w-100 mb-3">
+        {{'PORTAL.ATENDIMENTO.LABELS.LBL_SINISTRO' | translate}}</mat-slide-toggle>
+      <div class="w-100 border rounded border-secondary h-59">
+        <span class="span-title">{{'PORTAL.ATENDIMENTO.TITLES.DESCRICAO_SERVICO' | translate}}</span>
+        <p class="p-3 m-0">{{descricaoServico}}</p>
+      </div>
+    </div>
+  </div>
+</form>

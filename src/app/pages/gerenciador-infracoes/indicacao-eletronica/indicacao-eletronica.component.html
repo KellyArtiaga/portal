@@ -1,0 +1,18 @@
+<div class="container-fluid page-body">
+  <div class="pt-2 center-vertical">
+    <app-filtro-indicacao (filtrarMultas)="setFiltro($event)" (limpar)="limparTable()" [filtro]="filtroFull">
+    </app-filtro-indicacao>
+    <hr />
+    <div *ngIf="showTable">
+      <div class="text-left">
+        <button class="btn-export" *ngIf="showExport" (click)="getAllMultas()" type="button">
+          <mat-icon svgIcon="pfu-excel-icon" class="material-icons"></mat-icon>
+          {{'PORTAL.BUTTONS.BTN_EXPORT' | translate}}
+        </button>
+      </div>
+      <app-generic-table [(inputData)]="multas" [inputDataSubject]="dataInputSubj" [columns]="getColunasTabela()"
+        (nextPage)="getMultas($event)" [totalRows]="totalRows">
+      </app-generic-table>
+    </div>
+  </div>
+</div>

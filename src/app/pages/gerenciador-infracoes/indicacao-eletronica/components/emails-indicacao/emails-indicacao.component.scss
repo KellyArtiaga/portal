@@ -1,0 +1,27 @@
+::ng-deep app-emails-indicacao {
+
+  .mat-expansion-panel-header,
+  .mat-expansion-panel-header:not([aria-disabled=true]),
+  .mat-expansion-panel-header.mat-expanded:hover,
+  .mat-expansion-panel-header.mat-expanded:focus {
+    height: 48px !important;
+    background-color: #F5F5F0;
+    border: 1px solid #BEBEBE;
+  }
+
+  .mat-accordion .mat-expansion-panel {
+    border-radius: unset !important;
+    margin-left: 4px;
+    box-shadow: none;
+    width: 752px;
+  }
+
+  .mat-expansion-panel-spacing {
+    margin: 0px;
+  }
+
+  .mat-expansion-panel-body {
+    border: 1px solid #BEBEBE;
+    margin: 0px;
+  }
+}

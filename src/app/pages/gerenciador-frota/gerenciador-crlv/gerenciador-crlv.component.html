@@ -1,0 +1,16 @@
+<div class="container-fluid page-body">
+  <div class="pt-2 center-vertical">
+    <app-filtro-gerenciador-crlv [functionSearch]="functionSearch" [limparTabela]="cleanTable">
+    </app-filtro-gerenciador-crlv>
+    <hr>
+    <div class="" *ngIf="showTable">
+      <button class="btn-export" *ngIf="showExport" (click)="exportarExcel()" type="button">
+        <mat-icon svgIcon="pfu-excel-icon" class="material-icons"></mat-icon>
+        {{'PORTAL.BUTTONS.BTN_EXPORT' | translate}}
+      </button>
+      <app-generic-table [(inputData)]="crlvs" [inputDataSubject]="dataInputSubj" [columns]="getColunasTabela()"
+        [infoMessage]="mensagemInformacao" (nextPage)="getCrlvs($event)" [totalRows]="totalRows">
+      </app-generic-table>
+    </div>
+  </div>
+</div>

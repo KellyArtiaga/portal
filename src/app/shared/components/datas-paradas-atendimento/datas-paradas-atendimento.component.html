@@ -1,0 +1,54 @@
+<form [formGroup]="formDatas" class="pb-3">
+  <hr class="hr-text" data-content="* Informe até 3 datas de parada de sua preferência" />
+  <div>
+    <mat-form-field appearance="outline" class="col-md-3">
+      <mat-label>{{'PORTAL.MANUTENCAO.LABEL.DATA_PARADA_UM' | translate}}</mat-label>
+      <input matInput formControlName="dataParadaUm" [matDatepicker]="dataParadaUm" [min]="now" [required]="true"
+        (dateChange)="changeDataParada('dataParadaUm')" readonly>
+      <mat-datepicker-toggle matSuffix [for]="dataParadaUm">
+      </mat-datepicker-toggle>
+      <mat-datepicker #dataParadaUm disabled="false">
+      </mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-3">
+      <mat-label>{{'PORTAL.MANUTENCAO.LABEL.HORA_PARADA_UM' | translate}}</mat-label>
+      <input matInput type="text" formControlName="horaParadaUm" mask="00:00"
+        (blur)="changeHoraParada($event, 'horaParadaUm')" (keyup)="changeHoraParada($event, 'horaParadaUm')"
+        [required]="true" />
+    </mat-form-field>
+    <div class="col-6"></div>
+
+    <mat-form-field appearance="outline" class="col-3">
+      <mat-label>{{'PORTAL.MANUTENCAO.LABEL.DATA_PARADA_DOIS' | translate}}</mat-label>
+      <input matInput formControlName="dataParadaDois" [matDatepicker]="dataParadaDois" [min]="now" [required]="true"
+        (dateChange)="changeDataParada('dataParadaDois')" readonly>
+      <mat-datepicker-toggle matSuffix [for]="dataParadaDois">
+      </mat-datepicker-toggle>
+      <mat-datepicker #dataParadaDois disabled="false">
+      </mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-3">
+      <mat-label>{{'PORTAL.MANUTENCAO.LABEL.HORA_PARADA_DOIS' | translate}}</mat-label>
+      <input matInput type="text" formControlName="horaParadaDois" mask="00:00"
+        (blur)="changeHoraParada($event, 'horaParadaDois')" (keyup)="changeHoraParada($event, 'horaParadaDois')"
+        [required]="true" />
+    </mat-form-field>
+    <div class="col-6"></div>
+
+    <mat-form-field appearance="outline" class="col-3">
+      <mat-label>{{'PORTAL.MANUTENCAO.LABEL.DATA_PARADA_TRES' | translate}}</mat-label>
+      <input matInput formControlName="dataParadaTres" [matDatepicker]="dataParadaTres" [min]="now" [required]="true"
+        (dateChange)="changeDataParada('dataParadaTres')" readonly>
+      <mat-datepicker-toggle matSuffix [for]="dataParadaTres">
+      </mat-datepicker-toggle>
+      <mat-datepicker #dataParadaTres disabled="false">
+      </mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-3">
+      <mat-label>{{'PORTAL.MANUTENCAO.LABEL.HORA_PARADA_TRES' | translate}}</mat-label>
+      <input matInput type="text" formControlName="horaParadaTres" mask="00:00"
+        (blur)="changeHoraParada($event, 'horaParadaTres')" (keyup)="changeHoraParada($event, 'horaParadaTres')"
+        [required]="true" />
+    </mat-form-field>
+  </div>
+</form>

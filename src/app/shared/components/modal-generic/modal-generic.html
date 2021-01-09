@@ -1,0 +1,12 @@
+<div *ngIf="modalTitulo" class="modal-header" [ngClass]="{'modal-message' : modalMensagem}">
+  <h4 *ngIf="!tamanhoTitulo" [ngClass]="{'centralizar' : !alinharTituloEsquerda}" class="modal-title">
+    {{modalTitulo}}</h4>
+  <h5 *ngIf="tamanhoTitulo === 'h5'" [ngClass]="{'centralizar' : !alinharTituloEsquerda}" class="modal-title">
+    {{modalTitulo | translate}}</h5>
+  <h6 *ngIf="tamanhoTitulo === 'h6'" [ngClass]="{'centralizar' : !alinharTituloEsquerda}" class="modal-title">
+    {{modalTitulo | translate}}</h6>
+  <mat-icon *ngIf="!modalMensagem" class="close-button pointer" svgIcon="pfu-close" (click)="close()"></mat-icon>
+</div>
+<div class="modal-content">
+  <ng-content></ng-content>
+</div>

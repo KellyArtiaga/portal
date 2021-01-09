@@ -1,0 +1,98 @@
+.user-logged-title {
+  text-align: center;
+}
+
+.user-logged-title>h5 {
+  font-weight: bold;
+  margin-bottom: -10px;
+  font-size: 1em;
+}
+
+.mat-toolbar-row {
+  height: 86px;
+}
+
+.menu-button,
+.header-button {
+  margin: 0;
+}
+
+.header-button .mat-icon.material-icons {
+  font-size: 40px !important;
+}
+
+.menu-button {
+  margin-left: -10px;
+}
+
+.header-button .mat-icon.material-icons {
+  font-size: 35px;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.toolbar {
+  z-index: 10;
+}
+
+.unidas-logo {
+  width: 100%;
+  min-width: 100px;
+  max-width: 150px;
+}
+
+.unidas-logo-rac {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-nav-button {
+  border-bottom: solid;
+  border-color: #ededed;
+}
+
+.icon-language {
+  margin: 0;
+  padding: 0;
+}
+
+.user {
+  height: 45px;
+}
+
+.flags {
+  height: auto;
+  width: 30px;
+  margin: 2px;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.line {
+  border-left: 1px solid white;
+  height: 85px;
+}
+
+.user-logo {
+  margin: auto 0;
+}
+
+.title-size {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 16px;
+  position: relative;
+  color: #005B9E;
+  height: inherit;
+  font-size: 14px;
+}

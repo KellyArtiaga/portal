@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="col-md-12  align-arrows">
+    <div class="previous btn-arrow">
+      <mat-icon class="previous-arrow" (click)="scroll('left')">navigate_next</mat-icon>
+    </div>
+    <div class="next btn-arrow ">
+      <mat-icon class="next-arrow" (click)="scroll('right')">navigate_next</mat-icon>
+    </div>
+  </div>
+  <div #processPanel class="container-process mr-5 ml-5 mb-4">
+    <div class="row text-center m-0 pt-3 pb-3 pr-1 processBox">
+      <div class="col-1">
+        <div class="texto_azul bold mb-4">{{lineOneTitle}}</div>
+        <div class="texto_azul bold">{{lineTwoTitle}}</div>
+      </div>
+      <div class="col-11 d-inline-flex">
+        <div class="col no-margin no-padding max-width">
+          <mat-icon [svgIcon]="iconeEtapa.svg" class="icone_formatado icone_azul">
+          </mat-icon>
+        </div>
+        <ng-container *ngFor="let etapa of validarEtapaProcesso(); let i = index">
+          <div class="col no-margin no-padding line-align-center">
+            <div *ngIf="!(i === (processos.length))" [ngClass]="getTextColor(etapa, i)">{{etapa.infoLinha1}}</div>
+            <div *ngIf="!(i === (processos.length))" class="row mat-stepper-horizontal-line"
+              [ngClass]="getLineColor(etapa, i)">
+            </div>
+            <div *ngIf="!(i === (processos.length))" [ngClass]="ehUltimaLinha(i)">
+            </div>
+            <div *ngIf="!(i === (processos.length))" [ngClass]="ehUltimoTexto(i)">{{etapa.infoLinha2}}
+            </div>
+          </div>
+          <div class="col no-margin no-padding max-width">
+            <mat-icon [svgIcon]="iconeEtapa.svg" class="icone_formatado" [ngClass]="getIconColor(etapa, i)">
+            </mat-icon>
+            <label class="num_process" [ngClass]="getNumProcessColor(etapa, i)">{{i+1}}</label>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

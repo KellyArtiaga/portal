@@ -1,0 +1,32 @@
+::ng-deep .modal-lg {
+  max-width: 1000px !important;
+}
+
+.align-right-bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.color-blue {
+  color: #005B9E
+}
+
+.vertical-align-center {
+  display: grid;
+  align-items: center;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+.mh200 {
+  overflow-y: scroll;
+  max-height: 200px;
+}
+
+.labelResume {
+ color: #707070;
+ font-weight: bold;
+}

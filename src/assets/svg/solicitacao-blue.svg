@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19.619" height="17.254" viewBox="0 0 19.619 17.254">
+  <g id="Grupo_5932" data-name="Grupo 5932" transform="translate(-19 -339.68)">
+    <g id="Grupo_5856" data-name="Grupo 5856" transform="translate(19 344.358)">
+      <g id="Grupo_5857" data-name="Grupo 5857">
+        <path id="Caminho_1720" data-name="Caminho 1720" d="M17.667,9.6a.457.457,0,0,0-.353-.168H15.585A5.9,5.9,0,0,0,13.97,6.786c-2.186-1.438-7.985-1.438-10.171,0A5.924,5.924,0,0,0,2.184,9.431H.455a.455.455,0,0,0-.445.547l.256,1.241a.455.455,0,0,0,.445.363h.512A3.072,3.072,0,0,0,.486,13.59a3.008,3.008,0,0,0,.95,2.258l.02.016V17.6a.683.683,0,0,0,.682.682h1.6A.683.683,0,0,0,4.42,17.6v-.7h8.936v.7a.683.683,0,0,0,.682.682h1.6a.684.684,0,0,0,.682-.682V15.9a3.121,3.121,0,0,0,.2-4.317h.546a.453.453,0,0,0,.445-.363l.257-1.241a.459.459,0,0,0-.1-.379ZM4.549,7.926c1.743-1.147,6.929-1.147,8.67,0a5.626,5.626,0,0,1,1.173,2.219H3.377A5.627,5.627,0,0,1,4.549,7.926ZM2.508,13.761A1.343,1.343,0,1,1,3.85,15.1a1.343,1.343,0,0,1-1.342-1.339ZM13.936,15.1a1.342,1.342,0,1,1,1.343-1.343A1.342,1.342,0,0,1,13.936,15.1Z" transform="translate(0 -5.707)" fill="#005b9e"/>
+        <g id="Elipse_381" data-name="Elipse 381" transform="translate(9.619 -4.679)" fill="#005b9e" stroke="#047" stroke-width="1">
+          <circle cx="5" cy="5" r="5" stroke="none"/>
+          <circle cx="5" cy="5" r="4.5" fill="none"/>
+        </g>
+        <line id="Linha_468" data-name="Linha 468" x2="4.75" transform="translate(12.369 0.196)" fill="none" stroke="#047" stroke-width="1"/>
+        <line id="Linha_469" data-name="Linha 469" y2="4.75" transform="translate(14.744 -2.179)" fill="none" stroke="#047" stroke-width="1"/>
+      </g>
+    </g>
+    <g id="Retângulo_2654" data-name="Retângulo 2654" transform="translate(34.324 341.5) rotate(90)" fill="#fff" stroke="#fff" stroke-width="1">
+      <rect width="5.821" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="4.821" fill="none"/>
+    </g>
+    <g id="Retângulo_2655" data-name="Retângulo 2655" transform="translate(31 344)" fill="#fff" stroke="#fff" stroke-width="1">
+      <rect width="6" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="5" fill="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,97 @@
+<div class="container-fluid page-body p-0">
+  <div class="pt-2 center-vertical">
+    <form [formGroup]="formReclamacao" class="pl-2 pr-2" (submit)="postReclamacao()">
+      <hr class="hr-text" data-content="Informações do Atendimento" />
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.RECLAMACOES.LABELS.LBL_NOME' | translate}}</mat-label>
+            <input matInput type="text" formControlName="nomeContato" required />
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.RECLAMACOES.LABELS.LBL_CNPJ' | translate}}</mat-label>
+            <mat-select matInput type="text" formControlName="cnpj" (selectionChange)="callGetVeiculos($event)"
+              required>
+              <mat-option *ngFor="let cnpj of cnpjs" [value]="cnpj">
+                {{cnpj.nomeFantasia}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.RECLAMACOES.LABELS.LBL_VEICULO' | translate}}</mat-label>
+            <mat-select matInput type="text" formControlName="veiculo" required>
+              <mat-option *ngFor="let veiculo of veiculos" [value]="veiculo.modelo">
+                {{formataPlaca(veiculo.placa)}} - {{veiculo.modelo}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.RECLAMACOES.LABELS.LBL_TELEFONE_GESTOR' | translate}}</mat-label>
+            <input matInput type="text" mask="(00) 0000-0000" formControlName="telefoneGestor" required />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.RECLAMACOES.LABELS.LBL_EMAIL_GESTOR' | translate}}</mat-label>
+            <input matInput type="text" formControlName="emailGestor" required />
+          </mat-form-field>
+        </div>
+      </div>
+      <hr class="hr-text" data-content="Informação Adicionais" />
+      <div class="row mt-4">
+        <div class="col-md-4" hidden="true">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.RECLAMACOES.LABELS.LBL_TIPO' | translate}}</mat-label>
+            <mat-select matInput formControlName="tipo" disableOptionCentering>
+              <mat-option *ngFor="let tipo of tipos" [value]="tipo.descricaoSolicitacao">
+                {{ tipo.descricaoSolicitacao }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.RECLAMACOES.LABELS.LBL_MOTIVO' | translate}}</mat-label>
+            <mat-select matInput formControlName="motivo" disableOptionCentering required>
+              <mat-option *ngFor="let motivo of motivos" [value]="motivo.descricaoMotivoSolicitacao">
+                {{ motivo.descricaoMotivoSolicitacao }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <hr class="hr-text mt-1" data-content="Informações do Cliente" />
+      <div class="row mt-4">
+        <div class="col-12">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.RECLAMACOES.LABELS.LBL_OBSERVACOES' | translate}}</mat-label>
+            <textarea matInput rows="4" cols="30" formControlName="observacoes" style="resize: none;"
+              required></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <hr>
+      <div class="d-inline-flex w-100 mb-4">
+        <span class="col-6 text-left p-0">
+          <button mat-raised-button class="btn btn-secondary" type="button" (click)="voltar()">
+            {{'PORTAL.BUTTONS.BTN_CANCEL' | translate}}
+          </button>
+        </span>
+        <span class="col-6 text-right p-0">
+          <button color="primary" mat-raised-button type="submit">
+            {{'PORTAL.BUTTONS.BTN_SEND' | translate}}
+            <mat-icon>check</mat-icon>
+          </button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>

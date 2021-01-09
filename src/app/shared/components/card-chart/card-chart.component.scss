@@ -1,0 +1,116 @@
+.trow-gray {
+  background-color: #EBEFF2;
+  color: #787878;
+  border: none;
+}
+
+.blue-text-weight {
+  font-weight: 400;
+}
+
+.align-center-cell {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.charts-car {
+  position: absolute;
+  z-index: 1000;
+  margin-top: 15px;
+  width: max-content;
+  margin-left: 15px;
+}
+
+.charts-car-img {
+  display: flex !important;
+  align-items: center;
+  justify-content: center
+}
+
+.background {
+  opacity: 0.6;
+}
+
+.left-col {
+  max-width: 17%;
+  text-align: center;
+  margin: 0 !important;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 10px;
+  float: left;
+  font-size: 10px !important;
+}
+
+.right-col {
+  float: right;
+  margin: 0 !important;
+  max-width: 83%;
+}
+
+.container {
+  max-width: 100%;
+  display: flex;
+  border: 1px solid #ccc;
+}
+
+.item {
+  // flex: 1;
+  // margin: 5px !important;
+  text-align: center;
+}
+
+.card-maps {
+  max-width: 47%;
+  width: fit-content!important;
+  min-height: 250px;
+}
+
+.mat-card-content{
+height: 250px;
+display: inline-flex;
+  align-items: center;
+  justify-content: center
+
+}
+
+@media screen and (max-width: 971px) {
+  .card-maps {
+    max-width: 47%;
+    min-height: fit-content;
+  }
+
+  .card-maps {
+    max-width: 100%;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  rect {
+    width: auto;
+  }
+}
+
+.card-content-size {
+  width: max-content !important;
+  display: table-cell;
+}
+
+.underline-text {
+  text-decoration: none;
+  cursor: default;
+}
+
+.underline-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -1,0 +1,98 @@
+<form class="row pr-0 pl-0" [formGroup]="formFiltro" autocomplete="off" (ngSubmit)="filtrar()">
+
+  <!-- <app-filtro-agrupadores class="col-9" [form]="formFiltro"></app-filtro-agrupadores> -->
+
+
+  <div class="col-lg-3 col-xs-6 pt-2">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'PORTAL.MULTAS.LABELS.CNPJ' | translate }}</mat-label>
+      <mat-select matInput formControlName="clientes" multiple required (openedChange)="getVeiculos($event)"
+        [compareWith]="compare">
+        <mat-select-trigger>
+          {{formFiltro.get('clientes').value && formFiltro.get('clientes').value.length > 0 ? formFiltro.get('clientes').value[0].nomeFantasia : ''}}
+          <span *ngIf="formFiltro.get('clientes').value?.length > 1">
+            (+{{formFiltro.get('clientes').value.length - 1}}
+            {{formFiltro.get('clientes').value?.length === 2 ? 'outro' : 'outros'}})
+          </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let cnpj of cnpjs" [value]="cnpj" (click)="markAll(cnpj, 'clientes', cnpjs)"
+          (onSelectionChange)="verificarClientesPlacas($event, cnpj)">
+          {{cnpj.nomeFantasia}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- <mat-form-field appearance="outline">
+      <mat-select matInput formControlName="clientes" [compareWith]="compare" (selectionChange)="getVeiculos()"
+        required>
+        <mat-option *ngFor="let cnpj of cnpjs" [value]="cnpj">
+          {{cnpj.nomeFantasia}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  -->
+
+  </div>
+
+
+
+
+
+  <div class="col-lg-3 col-xs-6 pt-2">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'PORTAL.MULTAS.LABELS.PLACA' | translate }}</mat-label>
+      <input matInput type="text" formControlName="placas" class="uppercase" [matAutocomplete]="auto"
+        (keyup)="filtrarPlaca()" maxlength="8" />
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="display">
+        <ng-container>
+          <mat-option *ngFor="let item of placas.filteredData" [value]="item">
+            {{item.placa}} - {{item.modelo}}
+          </mat-option>
+        </ng-container>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+  <div class="col-lg-3 col-xs-6 pt-2">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'PORTAL.MULTAS.LABELS.TIPO' | translate }}</mat-label>
+      <mat-select matInput formControlName="tipo">
+        <mat-option>Selecione</mat-option>
+        <mat-option *ngFor="let tipo of tipos" [value]="tipo.id">
+          {{tipo.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-lg-3 col-xs-6 pt-2">
+    <mat-form-field appearance="outline">
+      <mat-label>Período</mat-label>
+      <input matInput formControlName="periodo" autocomplete="off" readonly required />
+      <span matSuffix mat-icon-button>
+        <mat-icon class="material-icons pointer" (click)="abrirFiltro()" [matMenuTriggerFor]="dateTimeMenu">
+          calendar_today
+        </mat-icon>
+      </span>
+    </mat-form-field>
+  </div>
+  <div class="col-lg-3 col-xs-6 pt-2">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'PORTAL.LABELS.STATUS' | translate }}</mat-label>
+      <mat-select matInput formControlName="status">
+        <mat-option>Selecione</mat-option>
+        <mat-option *ngFor="let status of statusNotificacao" [value]="status.idStatusIndicacaoNotificacao">
+          {{status.descricao}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <mat-menu class="date-range-menu" #dateTimeMenu="matMenu">
+    <app-modal-date [params]="modalDateParams"></app-modal-date>
+  </mat-menu>
+  <div class="col-lg-3  pt-2 btn-group-filter">
+    <button mat-raised-button color="primary" class="btn btn-primary" type="submit">
+      {{ 'PORTAL.BUTTONS.BTN_SEARCH' | translate }}
+    </button>
+    <button mat-raised-button class="btn btn-secondary" type="button" (click)="limparForm()">
+      {{ 'PORTAL.BUTTONS.BTN_CLEAN' | translate }}
+    </button>
+  </div>
+</form>

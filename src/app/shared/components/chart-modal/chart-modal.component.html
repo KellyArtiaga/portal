@@ -1,0 +1,68 @@
+<app-modal-generic>
+  <header class="header">
+    <span class="textWhiteHeader">{{modalChartTitle | translate}}</span>
+    <a class="circle-close" (click)="closeModal()">
+      <mat-icon class="pointer">close</mat-icon>
+    </a>
+  </header>
+  <section class="p-3 modal-charts">
+    <div class="item left-col" *ngIf="cards && cards.length > 0">
+      <app-informacoes-adicionais-indicadores-gerais-component [cards]="cards">
+      </app-informacoes-adicionais-indicadores-gerais-component>
+    </div>
+    <div class="item right-col" *ngIf="chartType === 'mapChart'">
+      {{chartData.title}}
+      <app-map-chart [chartData]="chartData" [functionFiltro]="filterFunction" [size]="size"></app-map-chart>
+    </div>
+    <div class="item right-col" *ngIf="chartType === 'areaChart'">
+      {{chartData.title}}
+      <app-area-chart [chartData]="chartData" [functionFiltro]="filterFunction" [size]="size"></app-area-chart>
+    </div>
+    <div class="item right-col" *ngIf="chartType === 'steppedAreaChart'">
+      {{chartData.title}}
+      <app-stepped-area-chart [chartData]="chartData" [functionFiltro]="filterFunction" [size]="size">
+      </app-stepped-area-chart>
+    </div>
+    <div class="item right-col" *ngIf="chartType === 'treeMapChart'">
+      {{chartData.title}}
+      <app-tree-map-chart [chartData]="chartData" [functionFiltro]="filterFunction" [size]="size">
+      </app-tree-map-chart>
+    </div>
+    <div class="item right-col charts-car-img row justify-content-center" *ngIf="chartType === 'barChart'">
+      {{chartData.title}}
+      <app-bar-chart class="charts-car-background" [chartData]="chartData" [functionFiltro]="filterFunction"
+        [size]="size"></app-bar-chart>
+      <img *ngIf="chartData.showCar" src=" assets\images\car.png" class="charts-car" alt="charts" />
+    </div>
+    <div class="item right-col" *ngIf="chartType === 'columnChart'">
+      {{chartData.title}}
+      <app-column-chart [chartData]="chartData" [functionFiltro]="filterFunction" [size]="size"></app-column-chart>
+    </div>
+    <div class="item right-col" *ngIf="chartType === 'pieChart'">
+      {{chartData.title}}
+      <app-pie-chart [chartData]="chartData" [functionFiltro]="filterFunction" [size]="size"></app-pie-chart>
+    </div>
+    <div class="item right-col" *ngIf="chartType === 'lineChart'">
+      {{chartData.title}}
+      <app-line-chart [chartData]="chartData" [functionFiltro]="filterFunction" [size]="size"></app-line-chart>
+    </div>
+    <div class="item right-col" *ngIf="chartType === 'tableDetails'" class="w-100">
+      <table class="table table-borderless">
+        <thead class="blue-text">
+          <tr>
+            <th class="align-center" scope="col" *ngFor="let header of chartData.colHeader">
+              <mat-icon [svgIcon]="header.icon"></mat-icon>
+              <span>{{header.text}}</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of chartData.data"
+            [ngClass]="{'trow-gray': item.subtitle, 'blue-text blue-text-weight': !item.subtitle}">
+            <td *ngFor="let value of item.values" class="align-center">{{value.text}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</app-modal-generic>

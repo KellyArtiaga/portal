@@ -1,0 +1,298 @@
+<div class="row container pt-3 ml-4 mr-4 mb-4">
+  <fieldset class="col-xs-12 col-sm-12 col-md-6 box-class mb-2 mr-4 mat-elevation-z4 pb-3">
+    <div class="row box-header pt-3 pr-3">
+      <div class="col-12">
+        <span class="title-fieldset">{{'PORTAL.MULTAS.LABELS.TITLE_INDICACAO' | translate}}</span>
+        <div>
+          <span class="font-weight-bold">{{'PORTAL.MULTAS.LABELS.CODIGO_ATENDIMENTO' | translate}}:</span>
+          <span>{{atendimentoId}}</span>
+        </div>
+      </div>
+      <div class="col-12 mt-4">
+        <div>
+          <span class="font-weight-bold"> {{'PORTAL.MULTAS.LABELS.EMPRESA' | translate}}: </span>
+          <span>{{condutor.nomeCliente}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold"> {{'PORTAL.MULTAS.LABELS.PLACA_VEICULO' | translate}}: </span>
+          <span>{{dadosMulta ? dadosMulta.placa : ''}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold"> {{'PORTAL.MULTAS.LABELS.DATA_INFRACAO' | translate}}: </span>
+          <span>{{dadosMulta ?dadosMulta.dataEmissao : ''}}</span>
+        </div>
+        <div>
+          <span class="font-weight-bold"> {{'PORTAL.MULTAS.LABELS.DATA_LIMITE' | translate}}: </span>
+          <span>{{dtFinal}}</span>
+        </div>
+      </div>
+    </div>
+    <hr class="hr-text" data-content="Dados do condutor" />
+    <div class="mt-4">
+      <div *ngIf="!isForaPrazo" class="col-12 background-beige text-right pt-2 pb-2">
+        <div *ngIf="showActions">
+          <span style="color: #005B9E;" class="mr-3">
+            <span class="pointer"
+              (click)="alterarCondutor()">{{'PORTAL.MULTAS.LABELS.ALTERAR_CONDUTOR' | translate}}</span>
+          </span>
+          <span style="color: red;">
+            <span class="pointer"
+              (click)="recusarIndicacao()">{{'PORTAL.MULTAS.LABELS.RECUSAR_NOTIFICACAO' | translate}}</span>
+          </span>
+        </div>
+        <div *ngIf="!showActions" class="row container">
+          <div class="col-11 p-0">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'PORTAL.MULTAS.LABELS.ENCONTRAR_CONDUTOR' | translate}}</mat-label>
+              <input matInput [formControl]="condutorSelecionado" [matAutocomplete]="auto" type="text" />
+              <mat-autocomplete #auto="matAutocomplete" [displayWith]="display">
+                <ng-container>
+                  <mat-option *ngFor="let item of condutores" [value]="item" style="font-size: 14px;"
+                    (click)="criaForm(item)">
+                    <span>{{item.nomeCondutor}} - {{formataDocumento(item.cpf)}}</span>
+                  </mat-option>
+                  <mat-option style="background-color: #707070; color: #fff; font-size: 14px;"
+                    (click)="redirectTo('/cadastrar/usuario')">
+                    <span>Cadastrar novo condutor</span>
+                  </mat-option>
+                </ng-container>
+              </mat-autocomplete>
+            </mat-form-field>
+          </div>
+          <div class="col-1">
+            <mat-icon class="pointer" (click)="cancelarAlteracao()" svgIcon="pfu-delete"></mat-icon>
+          </div>
+        </div>
+      </div>
+      <form [formGroup]="formCondutor" autocomplete="off" class="mt-2">
+        <div class="row">
+          <div class="col-4 pr-0">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'PORTAL.MULTAS.LABELS.CPF' | translate}}</mat-label>
+              <input id="cpf" matInput formControlName="cpf" type="text" mask="000.000.000-00" />
+            </mat-form-field>
+          </div>
+          <div class="col-8">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'PORTAL.MULTAS.LABELS.NOME_COMPLETO' | translate}}</mat-label>
+              <input id="nome" matInput type="text" formControlName="nome" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 pr-0">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'PORTAL.MULTAS.LABELS.NASCIMENTO' | translate}}</mat-label>
+              <input id="dataNascimento" matInput type="text" formControlName="dataNascimento" [textMask]="maskData"
+                (input)="validarData()">
+            </mat-form-field>
+          </div>
+          <div class="col-4 pr-0">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'PORTAL.MULTAS.LABELS.EMAIL' | translate}}</mat-label>
+              <input id="email" matInput type="text" formControlName="email" />
+            </mat-form-field>
+          </div>
+          <div class="col-4">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'PORTAL.MULTAS.LABELS.RG' | translate}}</mat-label>
+              <input id="rg" matInput type="text" formControlName="rg" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 pr-0">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'PORTAL.MULTAS.LABELS.EMISSOR' | translate}}</mat-label>
+              <input id="emissor" matInput type="text" formControlName="emissor" />
+            </mat-form-field>
+          </div>
+          <div class="col-4 pr-0">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'PORTAL.MULTAS.LABELS.NUMERO_REGISTRO' | translate}}</mat-label>
+              <input id="numeroRegistro" matInput type="text" formControlName="numeroRegistro" />
+            </mat-form-field>
+          </div>
+          <div class="col-4">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'PORTAL.MULTAS.LABELS.PRIMEIRA_HABILITACAO' | translate}}</mat-label>
+              <input id="primeiraHabilitacao" matInput type="text" formControlName="primeiraHabilitacao"
+                [textMask]="maskData" (input)="validarData()">
+            </mat-form-field>
+          </div>
+        </div>
+        <div *ngIf="habilitarCadastroEndereco">
+          <div class="row">
+            <div class="col-md-4 pr-0">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.USUARIO.LBL_CEP' | translate}}</mat-label>
+                <input id="cep" matInput autocomplete="off" formControlName="cep" mask="00000-000"
+                  (paste)="onPaste($event)" (keyup)="validarCEP($event.target.value)" type="text" required />
+              </mat-form-field>
+            </div>
+            <div class="col-md-8 pr-0">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.LABELS.LOGRADOURO' | translate}}</mat-label>
+                <input id="logradouro" matInput type="text" formControlName="logradouro" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 pr-0">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.LABELS.NUMERO' | translate}}</mat-label>
+                <input id="logradouro_numero" matInput type="text" formControlName="logradouro_numero" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-4 pr-0">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.LABELS.COMPLEMENTO' | translate}}</mat-label>
+                <input id="logradouro_complemento" matInput type="text" formControlName="logradouro_complemento" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-5">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.LABELS.BAIRRO' | translate}}</mat-label>
+                <input id="bairro" matInput type="text" formControlName="bairro" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field appearance="outline">
+                <mat-label>{{ 'PORTAL.LABELS.UF' | translate }}</mat-label>
+                <mat-select id="uf" matInput formControlName="uf" (selectionChange)="getMunicipios()">
+                  <mat-option *ngFor="let uf of ufs" [value]="uf">
+                    {{uf.uf}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-8 pr-0">
+              <mat-form-field appearance="outline">
+                <mat-label>{{ 'PORTAL.LABELS.MUNICIPIO' | translate }}</mat-label>
+                <input id="municipio" matInput formControlName="municipio" [formControl]="municipioControl"
+                  [matAutocomplete]="idComponente" type="text" (ngModelChange)="getMunicipios($event)" />
+                <mat-autocomplete #idComponente="matAutocomplete" [displayWith]="displayMunicipio">
+                  <ng-container>
+                    <mat-option *ngFor="let municipio of municipios" [value]="municipio">
+                      {{municipio.municipio}}
+                    </mat-option>
+                  </ng-container>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-md-6 mb-2 mt-2">
+          <button [disabled]="isForaPrazo" mat-raised-button color="primary" (click)="gerarTermoResponsabilidade()"
+            type="button">{{'PORTAL.MULTAS.LABELS.GERAR_TERMO' | translate}}</button>
+        </div>
+        <div class="col-md-6 mb-2 mt-2">
+          <button [disabled]="isForaPrazo" id="botaoIndicarCondutor" mat-raised-button color="primary"
+            (click)="gerenciarCondutorResponsavel()"
+            type="button">{{(!condutorSemCadastro ? 'PORTAL.MULTAS.LABELS.BTN_INFORMAR_NOVO_CONDUTOR' : 'PORTAL.MULTAS.LABELS.BTN_EDITAR_CONDUTOR') | translate}}</button>
+        </div>
+      </div>
+    </div>
+    <hr class="hr-text" data-content="Documentos necessários" />
+    <div class="row mt-4">
+      <div class="col-5">
+        <input style="display: none;" type="file" name="files" accept="image/*"
+          (change)="preview($event, 'NOTIFICACAO', 'CNH')" #cnhInput />
+        <span class="subtitle-bold">1º - CNH Digitalizada</span>
+        <a [href]="cnh && cnh.url ? cnh.url : ''" target="_blank"
+          [ngStyle]="{'pointer-events': cnh && cnh.url ? 'all' : 'none'}">
+          <img class="box-img border-green"
+            [src]="cnh && cnh.url ? cnh.url : '../../../../../../assets/svg/empty-photo.svg'"
+            alt="Anexo não encontrado" />
+        </a>
+        <span class="icon-plus-position" (click)="cnhInput.click()" *ngIf="!cnh && !isForaPrazo">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="40"
+            viewBox="0 0 58.342 58.341" id="svg_resize">
+            <defs>
+              <filter id="Caminho_14" x="0" y="0" width="58.342" height="58.341" filterUnits="userSpaceOnUse">
+                <feOffset dy="8" input="SourceAlpha"></feOffset>
+                <feGaussianBlur stdDeviation="6" result="blur"></feGaussianBlur>
+                <feFlood flood-opacity="0.2"></feFlood>
+                <feComposite operator="in" in2="blur"></feComposite>
+                <feComposite in="SourceGraphic"></feComposite>
+              </filter>
+            </defs>
+            <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Caminho_14)">
+              <path id="Caminho_14-2" data-name="Caminho 14"
+                d="M14.263,0A14.263,14.263,0,1,0,28.525,14.263,14.263,14.263,0,0,0,14.263,0Zm6.253,19.608a.646.646,0,0,1-.913.913l-5.34-5.346L8.917,20.521A.646.646,0,0,1,8,19.608l5.346-5.346L8,8.917A.646.646,0,0,1,8.917,8l5.346,5.346L19.608,8a.646.646,0,0,1,.913.913l-5.346,5.346Z"
+                transform="translate(29.17 6) rotate(45)" fill="#009e00"></path>
+            </g>
+          </svg>
+        </span>
+        <span class="icon-delete" (click)="removerArquivo(true)" *ngIf="(cnh) && !isForaPrazo">
+          <mat-icon svgIcon="pfu-delete"></mat-icon>
+        </span>
+      </div>
+      <div class="col-7">
+        <input style="display: none;" type="file" name="files" accept="application/pdf"
+          (change)="preview($event, 'TERMO_RESPONSABILIDADE_MULTA')" #termoInput />
+        <span class="subtitle-bold">2º - Termo de compromisso assinado</span>
+        <a [href]="termo && termo.url ? termo.url : ''" target="_blank"
+          [ngStyle]="{'pointer-events': termo && termo.url ? 'all' : 'none'}">
+          <img class="box-img border-green"
+            [src]="termo && termo.url ? '../../../../../../assets/svg/pdf-anexado.svg' : '../../../../../../assets/svg/empty-doc.svg'"
+            alt="Anexo não encontrado" />
+        </a>
+        <span class="icon-plus-position" (click)="termoInput.click()" *ngIf="!termo && !isForaPrazo">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="40"
+            viewBox="0 0 58.342 58.341" id="svg_resize">
+            <defs>
+              <filter id="Caminho_14" x="0" y="0" width="58.342" height="58.341" filterUnits="userSpaceOnUse">
+                <feOffset dy="8" input="SourceAlpha"></feOffset>
+                <feGaussianBlur stdDeviation="6" result="blur"></feGaussianBlur>
+                <feFlood flood-opacity="0.2"></feFlood>
+                <feComposite operator="in" in2="blur"></feComposite>
+                <feComposite in="SourceGraphic"></feComposite>
+              </filter>
+            </defs>
+            <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Caminho_14)">
+              <path id="Caminho_14-2" data-name="Caminho 14"
+                d="M14.263,0A14.263,14.263,0,1,0,28.525,14.263,14.263,14.263,0,0,0,14.263,0Zm6.253,19.608a.646.646,0,0,1-.913.913l-5.34-5.346L8.917,20.521A.646.646,0,0,1,8,19.608l5.346-5.346L8,8.917A.646.646,0,0,1,8.917,8l5.346,5.346L19.608,8a.646.646,0,0,1,.913.913l-5.346,5.346Z"
+                transform="translate(29.17 6) rotate(45)" fill="#009e00"></path>
+            </g>
+          </svg>
+        </span>
+        <span class="icon-delete" (click)="removerArquivo(false)" *ngIf="(termo) && !isForaPrazo">
+          <mat-icon svgIcon="pfu-delete"></mat-icon>
+        </span>
+      </div>
+    </div>
+    <hr class="m-0 mb-3">
+    <div class="container-fluid text-right p-0">
+      <button mat-raised-button class="btn-secondary mr-3"
+        (click)="cancelarIndicacao()">{{'PORTAL.BUTTONS.BTN_CANCEL' | translate}}</button>
+      <button [disabled]="isForaPrazo || !termo" mat-raised-button color="primary"
+        (click)="enviarIndicacao()">{{'PORTAL.BUTTONS.BTN_SEND' | translate}}</button>
+    </div>
+  </fieldset>
+  <fieldset class="col-xs-12 col-sm-12 col-md-5 box-class mat-elevation-z4">
+    <hr class="hr-text" data-content="Infração" />
+    <div class="container text-center p-0">
+      <!-- <a *ngIf="notificacao && notificacao.url" [href]="notificacao.url" target="_blank">
+        <img class="mt-2 mb-3 w-100" [src]="notificacao.url" alt="Imagem da Infração" />
+      </a> -->
+      <!-- <object *ngIf="notificacao && notificacao.url" [data]="notificacao.url" [title]="notificacao.descricao"
+        type="application/pdf" (click)="openDocument(notificacao.url)" width="130" height="130">
+        <p class="pt-5 pl-3 text-center">Seu navegador não suporta PDFs.</p>
+      </object> -->
+      <div *ngIf="notificacao && notificacao.url">
+        <span>{{notificacao.descricao}}</span>
+        <mat-icon style="margin-left: 10px" (click)="openDocument(notificacao)" svgIcon="pfu-detalhe-multa"></mat-icon>
+      </div>
+
+      <a *ngIf="!notificacao || !notificacao.url" [href]="''" target="_blank">
+        <img class="mt-2 mb-3 w-50" [src]="'../../../../../../assets/svg/notificacao-nao-encontrada.svg'"
+          alt="Imagem da Infração" />
+      </a>
+    </div>
+  </fieldset>
+</div>

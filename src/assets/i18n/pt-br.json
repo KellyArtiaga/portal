@@ -1,0 +1,1587 @@
+{
+  "PORTAL": {
+    "MENU": {
+      "HOME": "Home",
+      "CADASTRO": {
+        "TITLE": "Cadastrar",
+        "USUARIO": "Usuário",
+        "PERFIL": "Perfil",
+        "AGRUPADORES": "Agrupadores",
+        "TIPO_DE_ATENDIMENTO": "Tipo de Atendimento",
+        "MOTIVO": "Motivo",
+        "PERMISSAO_ACESSO": "Permissão de Acesso",
+        "ERRO_PERMISSAO": "Ative o item para ter acesso as operações."
+      },
+      "FROTA": {
+        "TITLE": "Gerenciador de Frota",
+        "GERENCIAR_FROTA": "Frota Ativa",
+        "ASSOCIAR_CONDUTOR": "Associar Condutor ao Veículo",
+        "ASSOCIAR_CONDUTOR_AO_VEICULO": "Associações ao Veículo",
+        "SOLICITACAO_DE_VEICULO": "Solicitação de Veículo",
+        "ACOMPANHAR_ENTREGA_DE_VEICULO": "Acompanhamento de Entrega de Veículos",
+        "ACOMPANHAR_ENTREGA_DEVOLUCAO": "Acompanhar Entrega ou Devolução",
+        "AGENDAR_ENTREGA_DEVOLUCAO": "Agendar Entrega ou Devolução",
+        "GERENCIADOR_CRLV": "Gerenciador CRLV"
+      },
+      "GERENCIADOR_360": {
+        "TITLE": "Gerenciador 360"
+      },
+      "ATENDIMENTO": {
+        "TITLE": "Gerenciador de Atendimento",
+        "ADMINISTRAR_ATENDIMENTO": "Administrar Atendimento",
+        "ABRIR_ATENDIMENTO": "Abrir Atendimento",
+        "ACOMPANHAR_SOLICITACAO_DE_VEICULO_RESERVA": "Acompanhar Solicitação de Veículo Reserva",
+        "SOLICITAR_VEICULO_RESERVA": "Solicitar Veículo Reserva",
+        "CHAT_AVARIAS": "Chat Gerenciador de Avarias",
+        "AVARIAS": "Gerenciador de Avarias",
+        "MANUTENCOES_REALIZADAS": "Manutenções Realizadas",
+        "CONTROLE_DE_PREVENTIVA": "Controle de Preventiva",
+        "APROVAR_AVARIAS": "Aprovar Avarias",
+        "MANUTENCAO_SINISTRO": "Manutenção/Sinistro",
+        "GESTAO_CONTRATO": "Gestão de Contrato"
+      },
+      "INFRACOES": {
+        "TITLE": "Gerenciador de Infrações",
+        "INDICACAO_ELETRONICA": "Indicações Eletrônicas",
+        "RECURSO": "Recurso"
+      },
+      "FINANCEIRO": {
+        "TITLE": "Financeiro",
+        "FATURAMENTO": "Faturamento"
+      },
+      "UNIDAS_360": {
+        "TITLE": "Unidas 360"
+      },
+      "EQUIPE_RELACIONAMENTO": {
+        "TITLE": "Equipe de relacionamento",
+        "TITLE2": "Atuação da área de relacionamento",
+        "TITLE3": "Relacionamento"
+      },
+      "AJUDA": {
+        "TITLE": "Ajuda",
+        "MANUAL_CONDUTOR": "Manual do Condutor",
+        "MANUAL_PORTAL": "Tutoriais do Portal",
+        "RECLAMACOES_SUGESTOES": "Reclamação e Sugestão",
+        "PERGUNTAS_RESPOSTAS": "Perguntas e Respostas"
+      },
+      "USUARIO": {
+        "TITLE": "Menu Usuário",
+        "ATUALIZAR_DADOS": "Atualizar Dados",
+        "ALTERAR_SENHA": "Alterar Senha"
+      },
+      "DASHBOARD": {
+        "TITLE": "Dashboard",
+        "DASHBOARD_GERAIS": "Indicadores Gerais",
+        "DASHBOARD_FROTAS": "Indicadores de Frotas",
+        "DASHBOARD_FINANCEIRO": "Indicadores Financeiros",
+        "DASHBOARD_INFRACOES": "Indicadores de Infrações",
+        "DASHBOARD_SINISTROS": "Indicadores de Sinistros",
+        "DASHBOARD_AVARIAS": "Indicadores de Avarias",
+        "DASHBOARD_POOL_PNEUS": "Indicadores de Pool de Pneus",
+        "DASHBOARD_POOL_RESERVA": "Indicadores de Pool de R. de Veículos",
+        "DASHBOARD_ATENDIMENTOS": "Indicadores de Atendimentos"
+      },
+      "CRLV": {
+        "GERENCIADOR_CRLV": "Gerenciador CRLV"
+      }
+    },
+    "LABELS": {
+      "LBL_SEARCH": "Pesquisar",
+      "LBL_PLACA": "Placa",
+      "LBL_MODELO": "Modelo",
+      "LBL_SITUACAO": "Situação",
+      "LBL_CNPJ": "Cliente",
+      "LBL_REVISAO": "Revisão",
+      "LBL_ALERT": "Alerta!",
+      "LBL_CLIENTES": "Clientes",
+      "LBL_REGIONAIS": "Regionais",
+      "LBL_CENTROS_CUSTO": "Centros de Custo",
+      "LBL_TODOS": "Todos(as)",
+      "LBL_NENHUM": "Nenhum(a)",
+      "EXCLUIR_ARQUIVO": "Excluir arquivo",
+      "DIGITE_DOIS_CARACTERES": "Digite pelo menos 2 caracteres",
+      "DIGITE_TRES_CARACTERES": "Digite pelo menos 3 caracteres",
+      "CANCELAR_CRIACAO_SINISTRO": "Cancelar abertura de sinistro",
+      "VEICULO": "Veículo",
+      "ACOES_TABELA": "Ações",
+      "CANCELAR": "Cancelar",
+      "EDITAR": "Editar",
+      "PERMISSOES": "Permissões",
+      "GRUPOS_ECONOMICOS": "Grupos Econômicos",
+      "EXCLUIR": "Excluir",
+      "INSERIR": "Inserir",
+      "ACOES": "Ações",
+      "DETALHES_VEICULO": "Detalhes do Veículo",
+      "DETALHES_FORNECEDOR": "Detalhes do Fornecedor",
+      "APROVACAO_SERVICOS": "Aprovação Serviços",
+      "EDITAR_AGENDAMENTO": "Editar Agendamento",
+      "DETALHES_SOLICITACAO": "Detalhes Solicitação",
+      "DETALHES_ATENDIMENTO": " Detalhes",
+      "ARQUIVOS": "Arquivos",
+      "SALVAR": "Salvar",
+      "IMAGENS_VIDEOS": "Adicionar Imagens / Documentos",
+      "LBL_STATUS": "Status",
+      "APROVADO": "Aprovado",
+      "REPROVADO": "Reprovado",
+      "APROVAR": "Aprovar",
+      "REPROVAR": "Reprovar",
+      "SOLICITAR_VEICULO_RESERVA": "Solicitar Reserva",
+      "EM_ANALISE": "Em Análise",
+      "SELECIONE": "Selecione",
+      "PORTUGUES": "Português",
+      "INGLES": "Inglês",
+      "ESPANHOL": "Espanhol",
+      "PERIODO": "Período",
+      "CEP": "CEP",
+      "LOGRADOURO": "Logradouro",
+      "NUMERO": "Número",
+      "COMPLEMENTO": "Complemento",
+      "BAIRRO": "Bairro",
+      "MUNICIPIO": "Município",
+      "UF": "UF",
+      "DATA_INVALIDA": "Data informada inválida",
+      "DATA_NASCIMENTO_INVALIDA": "Data de nascimento inválida",
+      "DATA_PRIMEIRA_HABILITACAO_INVALIDA": "Data da primeira habilitação inválida",
+      "CONDUTOR_RETIRADA_VEICULO": "Condutor para retirado do veículo",
+      "STATUS": "Status",
+      "DATA_HORA_INFRACAO": "Data/Hora da infração",
+      "DATA_VENCIMENTO": "Data de vencimento",
+      "DATA_LIMITE_INDICACAO": "Data limite para indicação",
+      "DATA_STATUS": "Data do status",
+      "LBL_CONDUTOR": "Condutor",
+      "DETALHES_ACOMPANHAR_ENTREGA": "Detalhes",
+      "AGENDAR_ENTREGA": "Agendar Entrega",
+      "MAPA": "Mapa",
+      "DESCRICAO": "Descrição",
+      "TIPO": "Tipo",
+      "DATA_EMAIL": "Data do Email",
+      "DATA_ANEXO": "Data do anexo",
+      "NUM_AIT": "Número AIT"
+    },
+    "BUTTONS": {
+      "BTN_SAVE": "Salvar",
+      "BTN_OK": "OK",
+      "BTN_SUBMIT": "Salvar",
+      "BTN_INSERT": "Inserir",
+      "BTN_CANCEL": "Cancelar",
+      "BTN_EXPORT": "Exportar",
+      "BTN_BACK": "Voltar",
+      "BTN_NEXT": "Avançar",
+      "BTN_ADD": "Adicionar",
+      "BTN_ADD_NEW": "Adicionar Novo",
+      "BTN_CLEAN": "Limpar",
+      "BTN_SEARCH": "Pesquisar",
+      "BTN_ADD_CONDUTOR": "Adicionar",
+      "BTN_SEARCH_PROVIDER": "Pesquisar Oficina",
+      "BTN_SEARCH_PLACA_FORNECEDOR": "Pesquisar Placa/Fornecedor",
+      "BTN_YES": "Sim",
+      "BTN_NO": "Não",
+      "BTN_DISAPPROVE": "Reprovar",
+      "BTN_APPROVE": "Aprovar",
+      "BTN_LIMPAR": "Limpar",
+      "BTN_SEND": "Enviar",
+      "BTN_CONFIRM": "Confirmar"
+    },
+    "EFETUAR_LOGIN": {
+      "LABELS": {
+        "DESCRICAO_GENERICA": "CNPJ, Cliente ou Nome do Usuário"
+      },
+      "MESSAGE": {
+        "SELECIONE_UM_USUARIO": "Selecione ou pesquise um usuário para efetuar o login."
+      }
+    },
+    "MODAL_FORNECEDOR_AGENDAR": {
+      "LABELS": {
+        "VEICULOS": "Veículos",
+        "FORNECEDOR": "Fornecedor",
+        "DATA": "Data",
+        "ENDERECO": "Endereço",
+        "LOGRADOURO": "Logradouro",
+        "TELEFONE": "Telefone",
+        "VAGAS_DISPONIVEIS": "Vagas Disponíveis"
+      }
+    },
+    "HOME": {
+      "CARDS": {
+        "TITLE": {
+          "ABRIR_ATENDIMENTO": "Abrir Atendimento",
+          "ADM_ATENDIMENTO": "Administrar Atendimento",
+          "INDICACOES_ELETRONICAS": "Indicações Eletrônicas",
+          "FATURAMENTO": "Faturamento",
+          "INDICADORES_GERAIS": "Indicadores Gerais",
+          "TUTORIAL_PORTAL": "Tutoriais do Portal"
+        },
+        "DESCRIPTION": {
+          "ABRIR_ATENDIMENTO": "Informação sobre a manutenção a ser feita no veículo do cliente.",
+          "ADM_ATENDIMENTO": "Administração e acompanhamento de atendimentos criados.",
+          "INDICACOES_ELETRONICAS": "Área de indicação e administração de indicações.",
+          "FATURAMENTO": "Informação e acompanhamento de faturamento.",
+          "INDICADORES_GERAIS": "Área destinada a gestão e acompanhamento geral do sistema.",
+          "TUTORIAL_PORTAL": "Tutoriais informativos sobre o funcionamento do sistema."
+        }
+      }
+    },
+    "MULTAS": {
+      "LABELS": {
+        "TITLE_INDICACAO": "Notificação de Infração de Trânsito",
+        "CODIGO_ATENDIMENTO": "Código do Atendimento",
+        "RECUSAR_NOTIFICACAO": "Recusar notificação",
+        "ALTERAR_CONDUTOR": "Alterar condutor",
+        "ENCONTRAR_CONDUTOR": "Encontrar condutor cadastrado...",
+        "CPF": "CPF",
+        "NOME_COMPLETO": "Nome Completo",
+        "NASCIMENTO": "Data Nascimento",
+        "EMAIL": "E-mail",
+        "RG": "RG",
+        "UF_CNH": "UF (CNH)",
+        "EMISSOR": "Emissor",
+        "NUMERO_REGISTRO": "Número Registro",
+        "PRIMEIRA_HABILITACAO": "1º Habilitação",
+        "GERAR_TERMO": "Gerar Termo de Responsibilidade",
+        "HINT_ADD_TERMO": "Adicione o Termo assinado, digitalizado, no campo abaixo.",
+        "ACESSAR_DETRAN": "Acessar Sistema do Detran",
+        "CNPJ": "Cliente",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "TIPO": "Tipo",
+        "PLACA": "Placa",
+        "EMPRESA": "Empresa",
+        "PLACA_VEICULO": "Placa do veículo",
+        "DATA_INFRACAO": "Data da infração",
+        "DATA_LIMITE": "Data limite",
+        "BTN_ASSOCIAR_CONDUTOR": "Associar a um condutor cadastrado",
+        "BTN_CADASTRAR_CONDUTOR": "Cadastrar condutor",
+        "BTN_INFORMAR_NOVO_CONDUTOR": "Indicar condutor não associado",
+        "BTN_EDITAR_CONDUTOR": "Editar dados do condutor"
+      }
+    },
+    "AVARIAS": {
+      "LABEL": {
+        "TITLE01": "Resumo",
+        "LBL_CAUSAS": "Possíveis causas do problema:",
+        "LBL_IMPACTO": "Impacto da não execução/troca de peça: ",
+        "LBL_APROVADO": "Aprovado por:",
+        "LBL_OBSERVACAO": "Observações:",
+        "CLIENTE": "Cliente",
+        "PLACA": "Placa",
+        "MODELO": "Modelo",
+        "CODIGO_ATENDIMENTO": "Código Atendimento",
+        "DATA_ATENDIMENTO": "Data Atendimento",
+        "DATA_FECHAMENTO": "Data Fechamento",
+        "DATA_ENVIO_COBRANCA": "Data Envio Cobrança",
+        "DATA_RESPOSTA": "Data Resposta",
+        "STATUS": "Status",
+        "TOTAL": "Total:",
+        "TOTAL_APROVADOS": "Total Aprovados:",
+        "TOTAL_REPROVADOS": "Total Reprovados:",
+        "OS": "Ordem de Serviço",
+        "DATA_E": "Data de Encerramento",
+        "APROVAR_TODOS": "Aprovar Todos",
+        "REPROVAR_TODOS": "Reprovar Todos",
+        "ACAO_MASSA": "Ação em Massa",
+        "CHAT": "Chat"
+      },
+      "APROVAR": {
+        "SERVICO": "Serviço(s)/Peça(s)",
+        "QUANTIDADE": "Quantidade",
+        "REEMBOLSO": "Valor do Reembolso"
+      },
+      "RESUMO": {
+        "NOME": "Nome:",
+        "EVENTO": "Evento:",
+        "OS": "Ordem de Serviço:",
+        "DATA": "Data:",
+        "PLACA": "Placa:",
+        "MODELO": "Modelo:",
+        "KM": "Km:"
+      }
+    },
+    "MANUTENCOES": {
+      "LABEL": {
+        "CLIENTE": "Cliente",
+        "STATUS": "Status",
+        "PLACA": "Placa",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "RESPONSAVEL": "Responsável"
+      },
+      "TABLE": {
+        "HEADER": {
+          "DATA_OS": "Data OS",
+          "CLIENTE": "Cliente",
+          "PLACA": "Placa",
+          "CODIGO_ATENDIMENTO": "Código Atendimento",
+          "CODIGO_OS": "Código OS",
+          "MATERIAL": "Material",
+          "QUANTIDADE": "Quantidade",
+          "KM": "KM",
+          "RESPONSAVEL": "Responsável",
+          "STATUS": "Status"
+        }
+      }
+    },
+    "GERENCIAR_FROTA": {
+      "LABELS": {
+        "KM": "KM",
+        "RENAVAM": "Renavam",
+        "PLACA_ATUAL": "Placa Atual",
+        "PLACA": "Placa",
+        "MODELO": "Modelo",
+        "MARCA": "Marca",
+        "CONTRATO": "Contrato",
+        "CONTRATO_MASTER": "Contrato Master",
+        "CHASSI": "Chassi",
+        "GRUPO_ECONOMICO": "Grupo Econômico",
+        "CATEGORIA": "Categoria",
+        "CLIENTE": "Cliente",
+        "CNPJ": "CNPJ",
+        "PERIODO": "Loc. Período",
+        "DATA_VENCIMENTO": "Data Vencimento",
+        "MESES_DECORRIDOS": "Meses Decorridos",
+        "TARIFA": "Tarifa",
+        "DATA_PRIMEIRA_LOCACAO": "Data Primeira Locação",
+        "REGIONAL": "Regional",
+        "CENTRO_CUSTO": "Centro de Custo"
+      },
+      "MENSAGENS": {
+        "KM_ATUALIZADO": "KM do veículo atualizado com sucesso!",
+        "KM_MENOR_ATUAL": "KM informado é menor que o atual.",
+        "KM_VINTE_POR_CENTO": "O km ultrapassa 20% do km atual. Tem certeza que gostaria de atualizar o km do carro {{1}} de {{2}} para {{3}}?"
+      },
+      "TITLES": {
+        "KM_ULTRAPASSOU_VINTE_POR_CENTO": "Km ultrapassou 20%",
+        "DETALHES": "Detalhes"
+      }
+    },
+    "CALENDARIO": {
+      "TITLES": {
+        "DISPONIBILIDADE": "Disponibilidade da Oficina:",
+        "SELECIONE_FORNECEDOR": "Selecione um fornecedor:"
+      },
+      "MESSAGES": {
+        "HORARIO_INVALIDO": "Prezado Cliente, a oficina selecionada atingiu sua capacidade máxima de produção, por isso orientamos que seja selecionada uma nova opção de oficina. Caso seja necessário permanecer nesta data, alertamos que possivelmente o seu veículo poderá sofrer algum atraso na entrega tendo em vista a capacidade operacional do prestador.",
+        "DATA_RETROATIVA": "A data de parada do veículo não pode ser retroativa.",
+        "INFO_METODO_TRABALHO": "Método de trabalho: Sistema de vagas por ordem de chegada"
+      },
+      "LABELS": {
+        "DATA": "Data",
+        "DATA_PREVISAO_PARADA": "Data Previsão Parada",
+        "HORARIO_PREVISAO_PARADA": "Horário Previsão Parada",
+        "HORARIO": "Horário de Preferência"
+      }
+    },
+    "PERFIL": {
+      "TITLE": "Perfil",
+      "LABELS": {
+        "CODIGO": "Código",
+        "NOME_PERFIL": "Nome do Perfil",
+        "TIPO_PERFIL": "Tipo de Perfil",
+        "EXCLUIR_PERFIL": "Excluir perfil"
+      },
+      "MENSAGENS": {
+        "MSG_CONFIRM_DESABILITAR_PERMISSAO": "Deseja realmente desabilitar a permissão de acesso?",
+        "MSG_CONFIRM_HABILITAR_PERMISSAO": "Deseja realmente habilitar a permissão de acesso?",
+        "MSG_REGISTRO_NAO_ENCONTRADO": "Não existe registro que atenda esta pesquisa.",
+        "MSG_EXLUIR_PERFIL": "Deseja excluir o perfil cadastrado?",
+        "MSG_PERFIL_ADICIONADO": "Perfil cadastrado com sucesso!",
+        "MSG_PERFIL_REMOVIDO": "Perfil excluído com sucesso!",
+        "MSG_PERFIL_ALTERADO": "Perfil alterado com sucesso!",
+        "MSG_PERFIL_JA_EXISTENTE": "Perfil já existente.",
+        "MSG_PERFIL_JA_VINCULADO": "Perfil de usuário já vinculado a um condutor.",
+        "MSG_PERFIL_JA_VINCULADO_EXCLUSAO": "Não é possível excluir este perfil, pois ele está associado a um usuário.",
+        "MSG_GRUPOS_ECONOMICOS_SALVOS": "Grupos econômicos vinculados com sucesso ao perfil!"
+      },
+      "TOOLTIP": {
+        "PESQUISAR": "Pesquisar por Perfil"
+      }
+    },
+    "GRUPO_ECONOMICO": {
+      "LABELS": {
+        "NOME_GRUPO_ECONOMICO": "Nome do Grupo Econômico",
+        "TOTAL_GE_ASSOCIADOS": "Total de Grupos Associados"
+      },
+      "BUTTONS": {
+        "BTN_SALVAR": "Salvar Grupos Selecionados"
+      }
+    },
+    "ALTERAR_PERMISSAO": {
+      "TITLE": "Alterar",
+      "SUBTITLE": "Ações:",
+      "TIPS": {
+        "TITLE": "*Alterar",
+        "TEXT": "Nesta tela é possível alterar a permissão de todas as ações em cada página."
+      },
+      "ICON": "Editar Permissão"
+    },
+    "TIPO_ATENDIMENTO": {
+      "TITLE": "Tipo de Atendimento",
+      "LABELS": {
+        "CODIGO": "Código",
+        "NOME": "Nome do Tipo de Atendimento",
+        "DESCRICAO": "Descrição",
+        "EMAIL": "E-mail",
+        "SEARCH_TOOLTIP": "Pesquisar por Código, Nome do Tipo de Atendimento ou E-mail",
+        "MODAL_EXCLUIR": "Excluir Tipo de Atendimento"
+      },
+      "MESSAGES": {
+        "DESEJA_EXCLUIR": "Deseja excluir o Tipo de Atendimento cadastrado?",
+        "MSG_TIPO_ATENDIMENTO_JA_EXISTE": "Já existe um tipo de atendimento cadastrado com esse nome.",
+        "MSG_REGISTRO_SUCESSO": "Registro alterado com sucesso.",
+        "MSG_ERRO_TIPO_ATENDIMENTO_USUARIO_CADASTRADO": "TIPO_ATENDIMENTO_CADASTRADO"
+      },
+      "TOOLTIP": {
+        "PESQUISAR": "Pesquisar por Tipo de Atendimento"
+      }
+    },
+    "MENSAGENS": {
+      "MSG_CONFIRM_DESABILITAR_PERMISSAO": "Deseja realmente desabilitar a permissão de acesso?",
+      "MSG_CONFIRM_HABILITAR_PERMISSAO": "Deseja realmente habilitar a permissão de acesso?",
+      "MSG_REGISTRO_NAO_ENCONTRADO": "Não existe registro neste período.",
+      "EXCLUIR_ARQUIVO": "Deseja excluir o arquivo?",
+      "EXTENSAO_INVALIDA": "Erro ao carregar o arquivo. O formato do arquivo deve ser: jpg, jpeg, gif, png, bmp, ou pdf.",
+      "TAMANHO_INVALIDO": "Imagem ou documento maior que o permitido, máximo 3mb.",
+      "TAMANHO_INVALIDO_VIDEO": "Vídeo maior que o permitido, máximo 10mb.",
+      "CANCELAR_CRIACAO_SINISTRO": "Tem certeza que deseja cancelar a abertura de atendimento?"
+    },
+    "TITLES": {
+      "DESABILITAR_PERMISSAO": "Desabilitar permissão",
+      "HABILITAR_PERMISSAO": "Habilitar permissão"
+    },
+    "FILTROS": {
+      "LABELS": {
+        "FILTRO_MOTIVO": "Pesquisar por Código ou Nome do Motivo",
+        "FILTRO_PERFIL": "Pesquisar por Código ou Nome do Perfil"
+      }
+    },
+    "ATENDIMENTO": {
+      "TITLES": {
+        "ATENDIMENTO": "Atendimento",
+        "DETALHES_SINISTRO": "Detalhes do Sinistro",
+        "FORNECEDORES": "Oficinas",
+        "ORDEM_SERVICO": "Ordem dos Serviços Realizados",
+        "DESCRICAO_SERVICO": "Descrição do Serviço",
+        "SOLUCAO_ENCAMINHAMENTO": "Solução / Encaminhamento"
+      },
+      "MESSAGES": {
+        "MSG_ATENDIMENTO_SUCESSO": "Atendimento enviado com sucesso!",
+        "FORNECEDOR_NAO_SELECIONADO": "Selecione um fornecedor.",
+        "EXISTE_REQUISICAO_COMPRA": "Este fornecedor não pode ser removido pois já existe uma requisição de compra.",
+        "ATENDIMENTO_CANCELADO": "Atendimento cancelado com sucesso!"
+      },
+      "LABELS": {
+        "UM_ARQUIVO_ADICIONADO": "<1 arquivo selecionado>",
+        "LBL_CODIGO_ATENDIMENTO": "Código Atendimento",
+        "LBL_ATENDIMENTO": "Atendimento",
+        "LBL_CNPJ": "Cliente",
+        "LBL_MODELO": "Modelo",
+        "LBL_PLACA": "Placa",
+        "LBL_DATA_INICIO": "Data Início",
+        "LBL_DATA_FIM": "Data Fim",
+        "LBL_SITUACAO": "Situação",
+        "LBL_STATUS_PLACA": "Status/Placa Veículo Reserva",
+        "LBL_MUNICIPIO": "Município",
+        "LBL_UF": "UF",
+        "LBL_M_PREVENTIVA": "Preventiva",
+        "LBL_M_CORRETIVA": "Corretiva",
+        "LBL_MOTORISTA": "Motorista",
+        "LBL_TELEFONE": "Telefone",
+        "LBL_EMAIL": "E-mail",
+        "LBL_KM": "Km",
+        "LBL_CIDADE": "Cidade",
+        "LBL_DATA_FECHAMENTO": "Data Fechamento",
+        "LBL_DATA_ATENDIMENTO": "Data Atendimento",
+        "LBL_PREVENTIVA": "Manutenção Preventiva",
+        "LBL_CORRETIVA": "Manutenção Corretiva",
+        "LBL_VITIMA": "Houve vítima",
+        "LBL_VITIMA_FATAL": "Houve vítima fatal",
+        "LBL_MOTIVO_SINISTRO": "Motivo do Sinistro",
+        "LBL_LOGRADOURO_SINISTRO": "Logradouro do Sinistro",
+        "LBL_CIDADE_SINISTRO": "Cidade do Sinistro",
+        "LBL_ESTADO_SINISTRO": "Estado do Sinistro",
+        "LBL_CEP_SINISTRO": "CEP do Sinistro",
+        "LBL_BOLETIM_OCORRENCIA": "Boletim de Ocorrência",
+        "LBL_DATA_SINISTRO": "Data do Sinistro",
+        "LBL_SINISTRO": "Sinistro",
+        "LBL_DATA_PREV_FECHAMENTO": "Data Previsão para Fechamento",
+        "LBL_DATA_PREV_PARADA": "Data Previsão para Parada",
+        "LBL_DATA_PARADA": "Data Parada",
+        "LBL_ENDERECO_FORNECEDOR": "Endereço Oficina",
+        "LBL_FORNECEDOR": "Oficina",
+        "LBL_DESCRICAO": "Nome do Arquivo",
+        "LBL_TIPO": "Tipo de Atendimento",
+        "LBL_TIPO_DOCUMENTO": "Tipo de Documento",
+        "LBL_TIPO_ARQUIVO": "Tipo de Arquivo",
+        "OFICINA_NOT_FOUND": "Não há oficinas nesse atendimento."
+      },
+      "TOOLTIP": {
+        "BTN_ANEXO": "Extensões : jfif, jpg, jpeg, gif, png, bmp, pdf Tamanhos :  Imagem = 3mb, Video = 10mb"
+      }
+    },
+    "MOTIVO": {
+      "LABELS": {
+        "CODIGO": "Código",
+        "NOME": "Nome Motivo",
+        "TIPO_ATENDIMENTO": "Nome Tipo de Atendimento",
+        "TIPO_ATENDIMENTO_SOLICITACAO": "Tipo de Atendimento Solicitação",
+        "EXCLUIR_MOTIVO": "Excluir Motivo"
+      },
+      "MENSAGENS": {
+        "MSG_EXLUIR_MOTIVO": "Deseja excluir o motivo cadastrado?",
+        "MSG_MOTIVO_EXCLUIDO": "Motivo excluído com sucesso!",
+        "MSG_MOTIVO_ASSOCIADO_ATENDIMENTO": "Não é possível excluir este motivo pois está associado a um atendimento.",
+        "MSG_ERRO_ATENDIMENTO_MOTIVO_ASSOCIADO": "ATENDIMENTO_MOTIVO_ASSOCIADO",
+        "MSG_ERRO_ATENDIMENTO_MOTIVO_SOLICITACAO_CADASTRADO": "ATENDIMENTO_MOTIVO_SOLICITACAO_CADASTRADO",
+        "MSG_ERRO_ATENDIMENTO_MOTIVO_SOLICITACAO_ASSOCIADO": "ATENDIMENTO_MOTIVO_SOLICITACAO_ASSOCIADO",
+        "MSG_ERRO_MOTIVO_ATENDIMENTO_CADASTRADO": "MOTIVO_ATENDIMENTO_CADASTRADO",
+        "MSG_MOTIVO_SUCESSO": "Motivo cadastrado com sucesso!",
+        "MSG_MOTIVO_ALTERADO": "Motivo alterado com sucesso!",
+        "MSG_MOTIVO_ASSOCIADO_ATENDIMENTO_EDIT": "Não é possível editar este motivo pois está associado a um atendimento.",
+        "MSG_MOTIVO_JA_EXISTE": "Já existe um motivo cadastrado com esse nome."
+      },
+      "TABLES": {
+        "COL_CODIGO": "Código",
+        "COL_NOME_MOTIVO": "Nome do Motivo",
+        "COL_NOME_ATENDIMENTO": "Nome do Tipo de Atendimento"
+      },
+      "TOOLTIP": {
+        "PESQUISAR": "Pesquisar por Motivo"
+      }
+    },
+    "USUARIO": {
+      "TITLES": {
+        "DADOS_PESSOAIS": "Dados pessoais",
+        "DADOS_RESIDENCIAIS": "Dados residenciais",
+        "HABILITACAO": "Habilitação",
+        "ENDERECO": "Endereço",
+        "DADOS_ADICIONAIS": "Dados adicionais",
+        "CONTATO": "Contato",
+        "ENDERECO_CRLV": "Endereço CRLV"
+      },
+      "SUBTITLES": {
+        "FILIACAO": "Filiação"
+      },
+      "MENSAGENS": {
+        "USUARIO_DIFERENTE_CLIENTE": "Usuário não pertence ao cliente logado."
+      },
+      "LBL_TIPO_PERFIL": "Tipo de Perfil",
+      "LBL_GRUPO_ECONOMICO": "Grupo Econômico",
+      "LBL_CLIENTES": "Clientes",
+      "LBL_REGIONAIS": "Regionais",
+      "LBL_CENTROS_CUSTO": "Centros de Custo",
+      "LBL_ATIVIDADES": "Atividades",
+      "LBL_PRODUTOS": "Produtos",
+      "LBL_EMAIL": "E-mail",
+      "LBL_TELEFONE": "Telefone",
+      "LBL_CELULAR": "Celular",
+      "LBL_FORMA_CONTATO": "Forma de contato",
+      "LBL_ASSINA_MULTA": "Assina multa?",
+      "LBL_PERFIL_USUARIO": "Perfil do usuário",
+      "LBL_NUMERO_REGISTRO": "Número registro",
+      "LBL_PRIM_HABILITACAO": "1º Habilitação",
+      "LBL_OBSERVACOES_HAB": "Observações impressas na CNH",
+      "LBL_DATA_EMISSAO": "Data emissão",
+      "LBL_CIDADE_EMISSOR": "Cidade emissor",
+      "LBL_UF_EMISSOR": "UF emissor",
+      "LBL_VALIDADE": "Validade",
+      "LBL_CODIGO": "Código do Usuário",
+      "LBL_STATUS": "Status",
+      "LBL_DATA_NASCIMENTO": "Data de nascimento",
+      "LBL_RG": "RG",
+      "LBL_NOME_MAE": "Nome da mãe",
+      "LBL_NOME_PAI": "Nome do pai",
+      "LBL_EMISSOR": "Emissor",
+      "LBL_CLIENTE": "Cliente",
+      "LBL_REGIONAL": "Regional",
+      "LBL_CENTRO_CUSTO": "Centro de Custo",
+      "LBL_CATEGORIA": "Categoria",
+      "LBL_BAIRRO": "Bairro",
+      "LBL_CIDADE": "Cidade",
+      "LBL_UF": "UF",
+      "LBL_COMPLEMENTO": "Complemento",
+      "LBL_CEP": "CEP",
+      "LBL_LOGRADOURO": "Logradouro",
+      "LBL_NUMERO": "Número",
+      "LBL_CPF": "CPF",
+      "LBL_NOME": "Nome",
+      "LBL_APROVACAO_NIVEL_1": "Nível 1",
+      "LBL_APROVACAO_NIVEL_2": "Nível 2",
+      "LBL_NIVEIS_APROVACAO": "Níveis de aprovação",
+      "LBL_TIPO_VISUALIZACAO": "Tipo de visualização"
+    },
+    "PERMISSAO": {
+      "MENSAGENS": {
+        "MSG_SUBMENU_OPERACAO_ATIVA": "Você não pode desabilitar submenu com operações habilitadas.",
+        "MSG_MENU_SUBMENU_ATIVO": "Você não pode desabilitar menu com submenus habilitados.",
+        "MSG_MENU_SUBMENU_ATIVAR": "Ative o Item para alterar permissões.",
+        "MSG_PERMISSAO_ADICIONADA": "Permissão adicionada com sucesso!",
+        "MSG_PERMISSAO_RETIRADA": "Permissão retirada com sucesso!"
+      },
+      "LABELS": {
+        "CODIGO": "Código",
+        "NOME_PERFIL": "Nome do Perfil",
+        "MENU_SUBMENU": "Menus > Submenus"
+      },
+      "TOOLTIP": {
+        "PESQUISAR": "Pesquisar por Condutores"
+      }
+    },
+    "SENHA": {
+      "FORM": {
+        "LBL_SENHA_ATUAL": "Senha Atual",
+        "LBL_NOVA_SENHA": "Nova Senha",
+        "LBL_CONFIRMAR_NOVA_SENHA": "Confirmar Nova Senha",
+        "LBL_MOSTRAR_SENHA": "Mostrar senha",
+        "LBL_OCULTAR_SENHA": "Ocultar senha"
+      },
+      "MENSAGENS": {
+        "NOVA_SENHA_NAO_CONFERE": "Campos Nova Senha e Confirmar Nova Senha devem conter o mesmo valor.",
+        "SENHA_NAO_ATENDE_CRITERIOS": "A senha informada deverá ter no mínimo 8 caracteres e com pelo menos um caractere alfabético.",
+        "SENHA_ATUAL_NAO_CONFERE": "A senha inserida não corresponde com a senha atual.",
+        "SENHA_ALTERADA": "Senha alterada com sucesso!",
+        "USUARIO_NAO_CADASTRADO": "Usuário não cadastrado."
+      }
+    },
+    "ABRIR_ATENDIMENTO": {
+      "TITLE": "Serviços a executar",
+      "SUBTITLE": "*Selecione aqui os serviços desejados",
+      "CARD": {
+        "TITLE": {
+          "MANUTENCAO": "Manutenção/Sinistro",
+          "SINISTRO": "Sinistro",
+          "NOTIFICACOES_MULTAS": "Notificações e Multas",
+          "DOCUMENTACAO_CHAVES": "Documentação e Chaves",
+          "GESTAO_CONTRATO": "Gestão de Contrato",
+          "RECLAMACAO_SUGESTAO": "Reclamação e Sugestão"
+        },
+        "TEXT": {
+          "MANUTENCAO": "Informação sobre a manutenção a ser feita no veículo do cliente",
+          "SINISTRO": "Informação sobre o sinistro a ser feito no veículo do cliente",
+          "NOTIFICACOES_MULTAS": "Informação sobre notificações e multas",
+          "DOCUMENTACAO_CHAVES": "Informação sobre documentação e chaves",
+          "GESTAO_CONTRATO": "Informações de Gestão de Contrato",
+          "RECLAMACAO_SUGESTAO": "Para gerar uma reclamação e sugestão"
+        },
+        "BUTTON": "Abrir Atendimento",
+        "BUTTON_HOME": "Acessar",
+        "BUTTON_2": "Gestão de Contratos"
+      }
+    },
+    "RECLAMACOES": {
+      "LABELS": {
+        "LBL_NOME": "Nome",
+        "LBL_CNPJ": "Cliente",
+        "LBL_VEICULO": "Veículo",
+        "LBL_TELEFONE_GESTOR": "Telefone Gestor",
+        "LBL_EMAIL_GESTOR": "E-mail Gestor",
+        "LBL_OBSERVACOES": "Observações",
+        "LBL_TIPO": "Tipo",
+        "LBL_MOTIVO": "Motivo"
+      }
+    },
+    "NOTIFICACAO_MULTA": {
+      "TITLE": "Notificações e Multas",
+      "FORM": {
+        "SUBITEM_1": "Informações Sobre o Atendimento",
+        "SUBITEM_2": "Detalhes",
+        "SUBITEM_3": "Informações Adicionais",
+        "SUBITEM_4": "Informações Complementares",
+        "LABEL": {
+          "NOME_CONTATO": "Nome Contato",
+          "CNPJ": "Cliente",
+          "VEICULO": "Veículo",
+          "TELEFONE_USUARIO": "Telefone Usuário",
+          "EMAIL_USUARIO": "E-mail Usuário",
+          "NUMERO_AIT": "Número AIT",
+          "CNH": "CNH",
+          "DATA_VENCIMENTO_CNH": "Data de Vencimento CNH",
+          "CODIGO_INFRACAO": "Código Infração",
+          "TIPO": "Tipo de Avaria",
+          "MOTIVO": "Motivo",
+          "OBSERVACAO": "Observação"
+        },
+        "MESSAGE": {
+          "SUCESSO_ENVIO": "Atendimento enviado com sucesso!",
+          "ERRO_ENVIO": "Erro ao enviar Atendimento!"
+        }
+      },
+      "LABELS": {
+        "RECUSAR_INDICACAO": "Recusar Indicação",
+        "VISUALIZAR_EMAILS": "Visualizar e-mails",
+        "PLACA": "Placa",
+        "INFRACAO": "Infração",
+        "VALOR_COBRADO": "Valor Cobrado",
+        "DATA_EMISSAO": "Data Emissão",
+        "DATA_VENCIMENTO": "Data Vencimento",
+        "NOME_INDICADO": "Nome do Indicado",
+        "STATUS": "Status",
+        "ACOES": "Ações",
+        "NUMERO_AIT": "Número AIT"
+      },
+      "MESSAGES": {
+        "RECUSAR_INDICACAO": "Você confirma a recusa à indicação da Multa? Ao confirmar O Gestor será notificado para dar continuidade ao processo.",
+        "INDICACAO_REALIZADA": "Indicação realizada com sucesso!",
+        "RECUSA_REALIZADA": "Notificação recusada com sucesso!"
+      }
+    },
+    "GESTAO_CONTRATO": {
+      "TITLE": "Gestão de Contrato",
+      "FORM": {
+        "SUBITEM_1": "Informações do Atendimento",
+        "SUBITEM_2": "Informações Adicionais",
+        "SUBITEM_3": "Informações do Cliente",
+        "LABEL": {
+          "NOME_CONTATO": "Nome Contato",
+          "TELEFONE_GESTOR": "Telefone Gestor",
+          "EMAIL_GESTOR": "E-mail Gestor",
+          "TIPO": "Tipo",
+          "MOTIVO": "Motivo",
+          "DESCRICAO_DOCUMENTO": "Descrição do Documento"
+        },
+        "MESSAGE": {
+          "SUCESSO_ENVIO": "Atendimento enviado com sucesso!",
+          "ERRO_ENVIO": "Erro ao enviar Atendimento!"
+        }
+      }
+    },
+    "ASSOCIAR_CONDUTOR": {
+      "LABELS": {
+        "LBL_PLACA": "Placa",
+        "LBL_GRUPO_ECONOMICO": "Grupo Econômico",
+        "LBL_CLIENTE": "Cliente",
+        "LBL_CLIENTE_ASSOC": "Cliente Assoc.",
+        "LBL_REGIONAL": "Regional",
+        "LBL_CENTRO_CUSTO": "Centro de Custo",
+        "LBL_CLIENTES": "Clientes",
+        "LBL_REGIONAIS": "Regionais",
+        "LBL_CENTROS_CUSTO": "Centros de Custo",
+        "LBL_MUNICIPIO": "Município",
+        "LBL_INFORMACOES_ADICIONAIS": "Informações Adicionais",
+        "LBL_CONDUTOR": "Condutor",
+        "LBL_CNPJ": "Cliente",
+        "LBL_STATUS": "Vínculo ao Condutor",
+        "LBL_SITUACAO_CONDUTOR": "Vínculo ao Condutor",
+        "LBL_ATIVO": "Ativo",
+        "LBL_INATIVO": "Inativo",
+        "LBL_MANTER_ALOCACAO": "Manter Alocação Atual",
+        "LBL_TRANSFERIR_ALOCACAO": "Transferir Alocação",
+        "LBL_MANTER_CONDUTOR": "Manter Condutor",
+        "LBL_MANTER_CONDUTOR_ATUAL": "Manter Condutor Atual",
+        "LBL_DESVINCULAR_CONDUTOR": "Desvincular Condutor",
+        "LBL_VINCULAR_OUTRO_CONDUTOR": "Vicular a outro condutor",
+        "LBL_SEM_CONDUTOR_ASSOCIADO": "Sem condutor associado"
+      },
+      "MENSAGENS": {
+        "MSG_ASSOCIACAO_SALVA": "Associação(ões) realizada(s) com sucesso!",
+        "ASSOCIACAO_ATUALIZADA": "Status da associação do condutor ao veículo atualizado com sucesso!",
+        "CANCELAR_ASSOCIACOES": "Há associação(ões) inserida(s)! Tem certeza que deseja cancelar?",
+        "EXCLUIR_ASSOCIACAO": "Tem certeza que deseja excluir a associação?",
+        "ASSOCIACAO_EXCLUIDA": "Associação excluída com sucesso!",
+        "MAXIMO_INSERCOES": "Somente será possível inserir até 15 associações na lista",
+        "CONDUTOR_VEICULO_CADASTRADO": "Veículo(s) de placa(s) {{1}} já está(ão) associado(s) a um condutor",
+        "REATIVAR_ASSOCIACAO": "Esta associação já existe mas está desativada. Deseja reativá-la?",
+        "VEICULO_JA_ASSOCIADO": "Já existe uma associação para estes dados.",
+        "MSG_VEICULO_INCLUSO_LISTAGEM": "O veículo selecionado já foi incluso na listagem abaixo.",
+        "MSG_CONDUTOR_JA_INCLUSO_LISTAGEM": "O condutor selecionado já foi incluso na listagem abaixo.",
+        "MSG_CONDUTOR_JA_ASSOCIADO": "O condutor destacado está vinculado a outro veículo.",
+        "MSG_VEICULO_JA_ASSOCIADO": "O veículo destacado está vinculado a outro condutor.",
+        "MSG_DEFINA_CLIENTE_REGIONAL_OU_CENTRO_CUSTO": "Defina pelo menos um agrupador: Cliente, Regional ou Centro de Custo.",
+        "MSG_VEICULO_INAPTO": "O veículo não está disponível.",
+        "MSG_CANCELAR_INCLUSAO": "Tem certeza que deseja cancelar a associação?",
+        "MSG_ASSOCIACAO_CANCELADA": "Associação cancelada com sucesso!",
+        "MSG_CANCELAR_TODAS_INCLUSOES": "Há associação(ões) inseridas! Tem certeza que deseja cancelar?"
+      },
+      "TITLES": {
+        "CARD_AGRUPADORES": "Agrupadores",
+        "CANCELAR_ASSOCIACOES": "Cancelar Associações",
+        "EXCLUIR_ASSOCIACAO": "Excluir Associação",
+        "REATIVAR_ASSOCIACAO": "Reativar Associação"
+      },
+      "BUTTONS": {
+        "BTN_SAVE": "Salvar",
+        "BTN_OK": "OK",
+        "BTN_INSERIR": "Inserir",
+        "BTN_CANCELAR": "Cancelar",
+        "BTN_VOLTAR": "Voltar"
+      }
+    },
+    "DOCUMENTOS": {
+      "LABELS": {
+        "LBL_CPF": "CPF do Usuário",
+        "LBL_NOME": "Nome do Usuário",
+        "LBL_CELULAR": "Celular do Usuário",
+        "LBL_TELEFONE": "Telefone do Usuário",
+        "LBL_CNPJ": "Cliente",
+        "LBL_EMAIL": "E-mail do Usuário",
+        "LBL_VEICULO": "Veículo",
+        "LBL_KM": "KM",
+        "LBL_CIDADE": "Cidade",
+        "LBL_OBSERVACOES": "Observação",
+        "LBL_UF": "UF",
+        "LBL_CORRETIVAS": "Corretivas"
+      }
+    },
+    "AGENDAMENTO": {
+      "TITLE": {
+        "REMOVER": "Excluir o Agendamento",
+        "SELECIONE_UMA_OFICINA": "Selecione uma oficina para o(s) serviço(s):",
+        "LIMITE_OFICINAS_ATINGIDO": "Limite de fornecedores atingido. Você já selecionou três fornecedores!",
+        "TODOS_OS_FORNECEDORES_SELECIONADOS": "Todos os fornecedores necessários já foram selecionados!"
+      },
+      "MESSAGE": {
+        "MSG_CONFIRMAR_REMOVER": "Tem certeza que deseja excluir o agendamento desta oficina?"
+      }
+    },
+    "MANUTENCAO": {
+      "TITLE": "Manutenção/Sinistro",
+      "SUB_TITLE": "Dados do Serviço",
+      "LABEL": {
+        "CNPJ": "Cliente",
+        "PLACA": "Placa",
+        "LOJA": "Loja",
+        "CPF": "CPF",
+        "NOME_USUARIO": "Nome Usuário",
+        "TELEFONE_USUARIO": "Telefone Usuário",
+        "CELULAR_USUARIO": "Celular Usuário",
+        "EMAIL_USUARIO": "E-mail Usuário",
+        "MELHOR_FORMA_CONTATO": "Melhor Forma Contato",
+        "PREVENTIVA": "Preventiva",
+        "CORRETIVA": "Corretiva",
+        "SINISTRO": "Sinistros",
+        "ACESSORIO": "Acessórios",
+        "EXECUCAO": "Execução Sinistro",
+        "INFORMACOES": "Informações",
+        "COMPLEMENTO_SERVICOS": "Complementos dos Serviços a Executar",
+        "LOGRADOURO_SINISTRO": "Logradouro do Sinistro",
+        "CEP_SINISTRO": "CEP",
+        "BAIRRO_SINISTRO": "Bairro Sinistro",
+        "UF_SINISTRO": "UF Sinistro",
+        "CIDADE_SINISTRO": "Cidade Sinistro",
+        "NOME_TERCEIRO": "Nome Terceiro",
+        "CELULAR_TERCEIRO": "Celular Terceiro",
+        "RELATO_OCORRIDO": "Relato Ocorrido",
+        "TIPO_SINISTRO": "Tipo Sinistro",
+        "DATA_SINISTRO": "Data Sinistro",
+        "HORA_SINISTRO": "Hora Sinistro",
+        "NUMERO_BO": "Número BO",
+        "VITIMA": "Vítima",
+        "VITIMA_FATAL": "Vítima Fatal",
+        "ENVOLVIMENTO_TERCEIROS": "Envolvimento de Terceiros",
+        "ACAO": "Ação",
+        "DESCRICAO_ARQUIVO": "Descrição do Arquivo",
+        "TIPO_USO": "Tipo Uso",
+        "MODELO": "Modelo",
+        "KM": "KM",
+        "ULTIMO_PLANO_EXECUTADO": "Último Plano Executado",
+        "PLANO_MANUTENCAO_EXECUTAR": "Plano de Manutenção a Executar",
+        "CEP": "CEP",
+        "ENDERECO": "Endereço (Rua ou Bairro)",
+        "UF": "UF",
+        "CIDADE": "Cidade",
+        "DATA_PARADA_UM": "Data Parada 1",
+        "DATA_PARADA_DOIS": "Data Parada 2",
+        "DATA_PARADA_TRES": "Data Parada 3",
+        "HORA_PARADA_UM": "Hora Parada 1",
+        "HORA_PARADA_DOIS": "Hora Parada 2",
+        "HORA_PARADA_TRES": "Hora Parada 3"
+      },
+      "COLUMNS_SINISTRO_ANTERIOR_VINCULADO": {
+        "SELECIONE": "Selecione",
+        "SINISTRO": "Sinistro",
+        "ATENDIMENTO_INICIAL": "Atendimento Inicial",
+        "TIPO_SERVICO": "Tipo de Serviço",
+        "DATA_SERVICO": "Data/hora do serviço"
+      },
+      "LIST_FORNECEDOR": {
+        "HEADER": {
+          "FORNECEDOR": "Oficina",
+          "SERVICO": "Serviço",
+          "ENDERECO": "Endereço",
+          "TELEFONE": "Telefone",
+          "CIDADE": "Cidade",
+          "UF": "UF",
+          "ACOES": "Ações"
+        }
+      },
+      "MESSAGE": {
+        "SUCESSO_ENVIO": "Atendimento enviado com sucesso!",
+        "ERRO_ENVIO": "Erro ao enviar Atendimento!",
+        "VEICULO_NAO_LOCALIZADO": "Veículo não localizado na base de dados.",
+        "VEICULO_SUBLOCADO": "Não é possível abrir um atendimento para um veículo sublocado.",
+        "VEICULO_VENDIDO": "Veículo na situação 'Vendido' não permite abertura de atendimento.",
+        "VEICULO_MANUTENCAO": "Veículo na situação 'Em Manutenção' não permite abertura de atendimento.",
+        "VEICULO_EM_TRANSITO": "Veículo na situação 'Em Trânsito' não permite abertura de atendimento.",
+        "VEICULO_CANCELADO": "Veículo na situação 'Cancelado' não permite abertura de atendimento.",
+        "VEICULO_EM_VENDA": "Veículo na situação 'Em Venda' não permite abertura de atendimento.",
+        "PLACA_NAO_PERTENCE_CNPJ": "Esta placa não pertence ao CNPJ informado.",
+        "PLACA_NAO_EXISTE": "Placa não cadastrada na base de dados.",
+        "ATENDIMENTO_ABERTO": "Solicitação já em aberto.",
+        "SERVICO_OBRIGATORIO": "Marque pelo menos uma: Preventiva, Corretiva/Acessórios ou Sinistro!",
+        "SERVICO_OBRIGATORIO_SINISTRO": "Marque pelo menos um: Sinistro!",
+        "AMBOS_PARAMETROS_INVALIDOS": "Placa inválida!",
+        "CANCELAR_ATENDIMENTO": "Deseja realmente cancelar o atendimento?",
+        "CANCELAR_ABERTURA_ATENDIMENTO": "Tem certeza que deseja cancelar a abertura de Atendimento?",
+        "HORARIO_ATENDIMENTO": "O horário está restrito entre às 08:00 e 18:00.",
+        "HORARIO_ATENDIMENTO_LEVA_TRAZ": "O horário está restrito entre às 10:00 e 17:00.",
+        "DIA_UTIL": "A data {0} não é um dia útil.",
+        "ANTECEDENCIA_72_HORAS": "O agendamento de 'Revisão' precisa ser feito com 72h de antecedência, para garantirmos que se sua manutenção esteja aprovada na data agendada.",
+        "ANTECEDENCIA_DOIS_DIAS": "A data precisa ser superior a dois dias e não pode ser fim de semana.",
+        "INFORMAR_DATAS_DISTINTAS": "Informe três datas distintas.",
+        "SINISTRO_ANTERIOR_OBRIGATORIO": "É obrigatório selecionar a manutenção de um Sinistro registrado anteriormente!",
+        "CONTATO_OBRIGATORIO": "Telefone Usuário ou Celular Usuário é obrigatório."
+      },
+      "TOOLTIP": {
+        "CORRETIVA": "Falhas de funcionamento; Panes; Acionamentos de vidros e eventuais ocorrências, como: Quebra e danos de peças e acessórios.",
+        "PREVENTIVA": "Itens obrigatórios previstos no Manual do fabricante, respeitando datas e km para execução. Itens de desgaste natural como: Freios; Discos e Suspensão.",
+        "SINISTRO": "Evento em que o bem segurado sofre um dano material. Sinistro é representado por acidente ou colisão ocorridos com ou sem envolvimento com terceiro, sendo ou não em vias públicas, além de roubos, furtos, arrombamentos, incêndios, atropelamento e capotamento.",
+        "TELA_SINISTRO": "Sinistro é representado por acidente ou colisão ocorridos com ou sem envolvimento com terceiro, sendo ou não em vias públicas, além de roubos, furtos, arrombamentos, incêndios, atropelamento e capotamento."
+      }
+    },
+    "SINISTRO": {
+      "TITLE": "Sinistro",
+      "SUB_TITLE": "Dados do Serviço",
+      "LABEL": {
+        "CNPJ": "Cliente",
+        "PLACA": "Placa",
+        "CPF": "CPF",
+        "NOME_USUARIO": "Nome do Usuário",
+        "TELEFONE_USUARIO": "Telefone do Usuário",
+        "CELULAR_USUARIO": "Celular do Usuário",
+        "EMAIL_USUARIO": "E-mail Usuário",
+        "MELHOR_FORMA_CONTATO": "Melhor Forma Contato",
+        "PREVENTIVA": "Preventiva",
+        "CORRETIVA": "Corretiva",
+        "SINISTRO": "Sinistro",
+        "EXECUCAO": "Execução Sinistro",
+        "COMPLEMENTO_SERVICOS": "Complementos dos Serviços a Executar",
+        "LOGRADOURO_SINISTRO": "Logradouro do Sinistro",
+        "CEP_SINISTRO": "CEP",
+        "BAIRRO_SINISTRO": "Bairro do Sinistro",
+        "UF_SINISTRO": "UF do Sinistro",
+        "CIDADE_SINISTRO": "Cidade do Sinistro",
+        "NOME_TERCEIRO": "Nome do Terceiro Envolvido",
+        "CELULAR_TERCEIRO": "Celular do Terceiro Envolvido",
+        "RELATO_OCORRIDO": "Relato do Ocorrido",
+        "TIPO_SINISTRO": "Tipo do Sinistro",
+        "DATA_SINISTRO": "Data do Sinistro",
+        "HORA_SINISTRO": "Hora do Sinistro",
+        "NUMERO_BO": "Número do BO",
+        "VITIMA": "Vítima",
+        "VITIMA_FATAL": "Vítima Fatal",
+        "ENVOLVIMENTO_TERCEIROS": "Envolvimento de Terceiros",
+        "TIPO_USO": "Tipo Uso",
+        "MODELO": "Modelo",
+        "KM": "KM",
+        "ULTIMO_PLANO_EXECUTADO": "Último Plano Executado",
+        "PLANO_MANUTENCAO_EXECUTAR": "Plano de Manutenção a Executar",
+        "CEP": "CEP",
+        "ENDERECO": "Endereço (Rua ou Bairro)",
+        "UF": "UF",
+        "CIDADE": "Cidade"
+      },
+      "LIST_FORNECEDOR": {
+        "HEADER": {
+          "FORNECEDOR": "Oficina",
+          "SERVICO": "Serviço",
+          "CORRETIVA": "Corretiva",
+          "TELEFONE": "Telefone",
+          "CIDADE": "Cidade",
+          "UF": "UF",
+          "ACOES": "Ações"
+        }
+      },
+      "MESSAGE": {
+        "SUCESSO_ENVIO": "Atendimento enviado com sucesso!",
+        "ERRO_ENVIO": "Erro ao enviar Atendimento!",
+        "PLACA_NAO_EXISTE": "Placa não cadastrada na base de dados.",
+        "PLACA_NAO_PERTENCE_CNPJ": "Esta placa não pertence ao CNPJ informado.",
+        "ATENDIMENTO_ABERTO": "Solicitação já em aberto.",
+        "CANCELAR_ATENDIMENTO": "Tem certeza que deseja cancelar a abertura de Atendimento?",
+        "VEICULO_SUBLOCADO": "Não é possível abrir um atendimento para um veículo sublocado.",
+        "HORARIO_ATENDIMENTO": "O horário está restrito entre às 08:00 e 18:00.",
+        "HORARIO_ATENDIMENTO_LEVA_TRAZ": "O horário está restrito entre às 10:00 e 17:00.",
+        "DIA_UTIL": "A data {0} não é um dia útil.",
+        "ANTECEDENCIA_72_HORAS": "O agendamento de 'Revisão' precisa ser feito com 72h de antecedência, para garantirmos que se sua manutenção esteja aprovada na data agendada."
+      }
+    },
+    "CONTROLE_PREVENTIVAS": {
+      "LBL_DETALHE_TITLE": "Detalhe das Revisões",
+      "LBL_DETALHE_MANUTENCOES": "Detalhe Manutenções Realizadas",
+      "LBL_REAL": "Real",
+      "LBL_IDEAL": "Ideal",
+      "LBL_ULTIMA_REVISAO": "Última Revisão",
+      "LBL_DATA_ULTIMA_REVISAO": "Data Última Revisão",
+      "LBL_KM_ULTIMA_REVISAO": "KM Última Revisão",
+      "LBL_KM_REVISAO": "KM Revisão",
+      "LBL_TIPO_UTILIZACAO": "Tipo Utilização",
+      "LBL_DATA_REVISAO": "Data Revisão",
+      "LBL_DETALHE_REVISOES": "Detalhes",
+      "LBL_ATENDIMENTO_MANUTENCAO": "Abrir atendimento"
+    },
+    "VEICULO_RESERVA": {
+      "LABELS": {
+        "NUM_RESERVA": "Número da Reserva",
+        "PLACA": "Placa",
+        "STATUS": "Status",
+        "PLACA_RESERVA": "Placa do Veículo Reserva",
+        "LOCAL_RETIRADA": "Local Retirada",
+        "DATA_HORA": "Data/Hora",
+        "CLIENTE": "Cliente",
+        "UF_SOLICITACAO": "UF Solicitação Reserva",
+        "CIDADE_SOLICITACAO": "Cidade Solicitação Reserva",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Final",
+        "CODIGO_ATENDIMENTO": "Código Atendimento",
+        "DATA_PARADA": "Data de Parada",
+        "POOL_RESERVA": "Pool Reserva",
+        "SLA_LIBERACAO": "SLA Liberação Reserva",
+        "STATUS_ITENS": {
+          "AGUARDANDO_PARADA": "Aguardando parada",
+          "DISPENSADO_CLIENTE": "Dispensado pelo cliente",
+          "SEM_DIREITO_RESERVA": "Sem direito a reserva",
+          "PENDENTE_RESERVA": "Pendente de reserva",
+          "DENTRO_PERIODO_MANUTENCAO": "Dentro período manutenção",
+          "SUBSTITUICAO_TEMPORARIA": "Substituição temporária",
+          "PENDENTE_DESTROCA": "Pendente de destroca",
+          "DESTROCADO": "Destrocado",
+          "SUBSTITUICAO_DEFINITVA": "Substituição Definitiva",
+          "VEICULO_ENTREGUE": "Veículo entregue"
+        }
+      }
+    },
+    "SOLICITAR_VEICULO_RESERVA": {
+      "BUTTON": {
+        "SOLICITAR": "Solicitar Reserva"
+      },
+      "LABEL": {
+        "CODIGO_ATENDIMENTO": "Código Atendimento",
+        "PLACA": "Placa",
+        "DATA_PARADA": "Data de Parada",
+        "POOL_RESERVA": "Pool Reserva",
+        "SLA_LIBERACAO": "SLA Liberação Reserva",
+        "NOME": "Nome",
+        "CPF": "CPF",
+        "CELULAR": "Celular",
+        "EMAIL": "E-mail",
+        "BAIRRO": "Bairro",
+        "CIDADE": "Cidade",
+        "UF": "UF"
+      },
+      "MESSAGE": {
+        "SUCESS": "Veículo reserva solicitado com sucesso!"
+      }
+    },
+    "SOLICITACAO_VEICULO": {
+      "LABEL": {
+        "CANCELAR_SOLICITACAO": "Cancelar Solicitação",
+        "CLIENTE": "Cliente",
+        "CODIGO": "Código",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "CONDUTOR": "Condutor",
+        "MOTIVO": "Motivo",
+        "SOLICITANTE": "Solicitante",
+        "STATUS": "Status",
+        "PLACA": "Placa",
+        "PEDIDO": "Número Pedido",
+        "CONTRATO": "Número Contrato Master",
+        "DATA_INICIO": "Data Início",
+        "COMBUSTIVEL": "Combustível",
+        "FINAL_PLACA": "Final da Placa ",
+        "QUANTIDADE": "Quantidade",
+        "VALOR_LOCACAO": "Valor da Locação",
+        "ACESSORIOS": "Acessórios",
+        "OBSERVACAO": "Observação *",
+        "COR": "Cor",
+        "SITUACAO": "Situação",
+        "EMAIL_RESPONSAVEL": "E-mail Responsável",
+        "UF": "UF de Entrega",
+        "CIDADE": "Cidade de Entrega",
+        "EMAIL_SOLICITANTE": "E-mail Solicitante",
+        "VEICULO_SUBSTITUIDO": "Veículo Substituto",
+        "MOTIVO_SUBSTITUICAO": "Motivo da Substituição",
+        "CIA": "CIA",
+        "GRUPO_CLIENTE": "Grupo do Cliente",
+        "DATA_EMISSAO": "Data Emissão",
+        "DATA_EMISSAO_INICIO": "Data Emissão Início",
+        "DATA_EMISSAO_FIM": "Data Emissão Fim",
+        "MODELO": "Modelo",
+        "RESUMO": "Resumo",
+        "REGIONAL": "Regional",
+        "DATA_FIM": "Data Final",
+        "CODIGO_DEVOLUCAO": "Código Devolução",
+        "ENDERECO_ENTREGA": "Endereço de Entrega",
+        "PERIODO": "Período"
+      },
+      "OPTIONS": {
+        "STATUS": {
+          "VALIDACAO_PEDIDO": "Validação de Pedidos",
+          "AGUARDANDO_FATURAMENTO": "Aguardando Faturamento",
+          "EM_LICENCIAMENTO": "Em Licenciamento",
+          "ACESSORIZACAO": "Acessorização",
+          "EXPEDICAO_TRANSPORTE": "Expedição Transporte",
+          "VEICULO_DISPONIVEL": "Veículo Disponível",
+          "ENTREGUE": "Entregue"
+        }
+      },
+      "COLUMN": {
+        "CLIENTE": "Cliente",
+        "REGIONAL": "Regional",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "CODIGO_IMPLANTACAO": "Código de Implantação",
+        "CONDUTOR": "Condutor",
+        "PLACA": "Placa",
+        "CHASSI": "Chassi",
+        "RENAVAM": "Renavam",
+        "MODELO": "Modelo",
+        "COR": "Cor",
+        "MODELO_COR": "Modelo/Cor",
+        "TONALIDADE": "Tonalidade",
+        "ANO_MODELO": "Ano/Modelo",
+        "ACESSORIOS": "Acessórios",
+        "MOTIVO": "Motivo",
+        "CONTRATO_TSV": "Contrato/TSV",
+        "RAZAO_SOCIAL_RESPONSAVEL": "Razão Social/Responsável",
+        "CONTATO": "Contato",
+        "CNPJ_CPF": "CNPJ/CPF",
+        "TELEFONE": "Telefone",
+        "CELULAR": "Celular",
+        "CEP": "CEP",
+        "LOGRADOURO": "Logradouro",
+        "NUMERO": "Número",
+        "COMPLEMENTO": "Complemento",
+        "BAIRRO": "Bairro",
+        "CIDADE": "Cidade",
+        "UF": "UF",
+        "PREVISAO_ENTREGA": "Previsão de Entrega",
+        "VEICULO_DISPONIVEL": "Veículo Disponível",
+        "AVISO_DISPONIBILIDADE": "Aviso Disponibilidade",
+        "CARRO_ENTREGUE": "Carro Entregue",
+        "AGUARDANDO_FATURAMENTO": "Aguardando Faturamento",
+        "FATURAMENTO_ACESSORIZACAO": "Faturamento/Acessorização",
+        "EM_LICENCIAMENTO": "Em Licenciamento",
+        "EXPEDICAO_TRANSPORTE": "Expedição/Transporte",
+        "DATA_EMISSAO": "Data de Emissão",
+        "SITUACAO": "Situação",
+        "ENDERECO_ENTREGA": "Endereço de Entrega",
+        "STATUS": "Status",
+        "SEMANA_ENTREGA": "Semana de Entrega",
+        "AGENDAMENTO_RETIRADA": "Agendamento Retirada"
+      },
+      "BUTTONS": {
+        "LEGENDA": "Legenda dos Acessórios"
+      },
+      "MESSAGES": {
+        "REPROVACAO": "* Em caso de reprovação",
+        "SUCESSO_ENVIO": "Solicitação enviada com sucesso!"
+      }
+    },
+    "INDICADORES": {
+      "DASHBOARD": "Dashboard:",
+      "TITLE": "Evolução de Despesas",
+      "LABEL": {
+        "PERIODO": "Período",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "CLIENTE": "Cliente",
+        "REGIONAL": "Regional",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "PLACA": "Placa"
+      }
+    },
+    "INDICADORES_FINANCEIRO": {
+      "LABEL": {
+        "PERIODO": "Período",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "CLIENTE": "Cliente",
+        "REGIONAL": "Regional",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "PLACA": "Placa",
+        "CHART_CONTRATO": "Contrato",
+        "CHART_DETALHAMENTO": "Detalhamento do Tipo de Serviço",
+        "CHART_EVOLUCAO_MENSAL": "Evolução Mensal",
+        "CHART_DESPESAS": "Despesas Principais Placas",
+        "CHART_TIPO_SERVICO": "Tipo de Serviço",
+        "STATUS_FATURA": "Status da Fatura",
+        "EXERICIO": "Exercício",
+        "STATUS_VEICULO": "Status do Veículo",
+        "SITUACAO_ENVIO": "Situação do Envio"
+      }
+    },
+    "CRLV": {
+      "LABEL": {
+        "PERIODO": "Período",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "CLIENTE": "Cliente",
+        "REGIONAL": "Regional",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "CHART_CONTRATO": "Contrato",
+        "CHART_DETALHAMENTO": "Detalhamento do Tipo de Serviço",
+        "CHART_EVOLUCAO_MENSAL": "Evolução Mensal",
+        "CHART_DESPESAS": "Despesas Principais Placas",
+        "CHART_TIPO_SERVICO": "Tipo de Serviço",
+        "STATUS_VEICULO": "Status do Veículo",
+        "STATUS_FATURA": "Status da Fatura",
+        "EXERICIO": "Exercício",
+        "VIA_DOCUMENTO": "Via do Documento",
+        "PLACA": "Placa",
+        "NUMERO_OBJETO": "Número Objeto",
+        "SITUACAO_ENVIO": "Situação do Envio",
+        "RESPONSAVEL": "Responsável",
+        "ENDERECO_ENVIO": "Endereço do Envio",
+        "INICIO_COBRANCA_CRLV": "Início Cobrança Novo CRLV",
+        "RECEBEU_CRLV": "Recebeu CRLV"
+      },
+      "MESSAGES": {
+        "RECEBEU_CRLV": "Confirmar o recebimento do CRLV?",
+        "NAO_RECEBEU_CRLV": "Confirmar o não recebimento do CRLV?",
+        "CRLV_RECEBIDO": "CRLV recebido com sucesso!",
+        "CRLV_NAO_RECEBIDO": "CRLV não recebido. Gentileza entrar em contato com a equipe de Relacionamento."
+      }
+    },
+    "INDICADORES_INFRACOES": {
+      "LABEL": {
+        "PERIODO": "Período",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "CLIENTE": "Cliente",
+        "REGIONAL": "Regional",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "PLACA": "Placa",
+        "CHART_INFRACOES_PERIODO_MES": "Infrações no Período (Mês da Infração)",
+        "CHART_INFRACOES_PERIODO_DIA": "Infrações nos Dias de Semana (Dia da Infração)",
+        "CHART_INFRACOES_HORARIOS": "Infrações entre Horários (Horário da Infração)",
+        "CHART_PRINCIPAIS_PLACAS": "Principais Placas Infratoras (R$/Qtd)",
+        "CHART_PRINCIPAIS_MOTIVOS": "Principais Motivos das Infrações (R$/Qtd)",
+        "CHART_DESPESA_MULTAS": "Despesa de Multas - Horário Comercial",
+        "CHART_INFRACOES_NIC": "Infrações (NIC) recebidas no mês",
+        "CHART_PRAZO_IDENTIFICACAO": "Prazo para Identificação das Notificações (R$/Qtd)",
+        "CHART_DESPESAS_MULTAS": "Despesas de Infrações – Centro de Custo",
+        "STATUS_FATURA": "Status da Fatura",
+        "STATUS_VEICULO": "Status do Veículo"
+      }
+    },
+    "INDICADORES_SINISTRO": {
+      "LABEL": {
+        "PERIODO": "Período",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "CLIENTE": "Cliente",
+        "REGIONAL": "Regional",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "PLACA": "Placa",
+        "CHART_SINISTRO_PERIODO": "Sinistros no Período (Data do Sinistro)",
+        "CHART_SINISTRO_DIAS": "Sinistro nos Dias da Semana (Dia do Sinistro)",
+        "CHART_SINISTRO_ENTRE_HORARIOS": "Sinistros entre Horários (Horário do Sinistro)",
+        "CHART_SINISTRO_HORARIO_COMERCIAL": "Sinistros - Horário Comercial",
+        "CHART_TIPO_SINISTRO": "Tipos de Sinistros",
+        "CHART_PRINCIPAL_PLACA_SINISTRO": "Principais Placas com Sinistros",
+        "CHART_DECLARACA_CULPA": "Declaração de Culpa",
+        "STATUS_FATURA": "Status da Fatura",
+        "STATUS_VEICULO": "Status do Veículo"
+      }
+    },
+    "INDICADORES_AVARIAS": {
+      "LABEL": {
+        "PERIODO": "Período",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "CLIENTE": "Cliente",
+        "REGIONAL": "Regional",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "PLACA": "Placa",
+        "CHART_PRINCIPAIS_ITENS": "Principais Itens de Avarias (R$ / QTD)",
+        "CHART_PRINCIPAIS_PLACAS": "Principais Placas com Avarias",
+        "CHART_AVARIAS_CATEGORIA": "Avarias por Categoria (R$ / QTD)",
+        "CHART_VALOR_DESPESAS": "Valor de Despesas por Finalidade",
+        "CHART_AVARIAS_PERIODO": "Avarias no Período (Data do Serviço)",
+        "STATUS_FATURA": "Status da Fatura",
+        "STATUS_VEICULO": "Status do Veículo"
+      }
+    },
+    "INDICADORES_POOL_PNEUS": {
+      "LABEL": {
+        "PERIODO": "Período",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "CLIENTE": "Cliente",
+        "REGIONAL": "Regional",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "PLACA": "Placa",
+        "CHART_CONSUMO_POOL": "Consumo por Pool",
+        "CHART_CONSUMO_TOP_10": "Consumo - Top 10 Placas",
+        "CHART_MODELOS": "Modelos",
+        "STATUS_FATURA": "Status da Fatura",
+        "STATUS_VEICULO": "Status do Veículo"
+      }
+    },
+    "INDICADORES_ATENDIMENTOS": {
+      "LABEL": {
+        "PERIODO": "Período",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "CLIENTE": "Cliente",
+        "REGIONAL": "Regional",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "PLACA": "Placa",
+        "CHART_EVOLUCAO_MENSAL": "Evolução Mensal - QTD Chamados",
+        "CHART_ATENDIMENTOS_DIAS": "Atendimentos nos Dias da Semana (Data da Abertura)",
+        "CHART_PRINCIPAIS_PLACAS": "Principais Placas com Atendimentos",
+        "CHART_TIPO_ATENDIMENTO": "Tipos de Atendimentos",
+        "CHART_TMA_MENSAL": "TMA Mensal",
+        "CHART_TMA_CANAL": "TMA por Canal",
+        "CHART_CHAMADOS_CANAL": "Chamados por Canal",
+        "CARD_QUANTIDADE_ATENDIMENTOS": {
+          "TITLE": "Quantidade de Atendimento",
+          "PREVENTIVA": "Preventiva",
+          "SINISTRO": "Sinistro",
+          "CORRETIVA": "Corretiva",
+          "ENTRE_0_4_HRS": "Entre 0 e 4 hrs",
+          "ENTRE_0_3_DIAS": "Entre 0 e 3 dias",
+          "ENTRE_0_15_DIAS": "Entre 0 e 15 dias",
+          "ENTRE_4_24_HRS": "Entre 4 e 24 hrs",
+          "ENTRE_3_5_DIAS": "Entre 3 e 5 dias",
+          "ENTRE_15_18_DIAS": "Entre 15 e 18 dias",
+          "ENTRE_1_3_DIAS": "Entre 1 e 3 dias",
+          "ENTRE_5_7_DIAS": "Entre 5 e 7 dias",
+          "ENTRE_18_25_DIAS": "Entre 18 e 25 dias",
+          "MAIOR_3_DIAS": "Maior que 3 dias",
+          "MAIOR_7_DIAS": "Maior que 7 dias",
+          "MAIOR_25_DIAS": "Maior que 25 dias"
+        },
+        "STATUS_FATURA": "Status da Fatura",
+        "STATUS_VEICULO": "Status do Veículo"
+      }
+    },
+    "INDICADORES_GERAIS": {
+      "LABEL": {
+        "PERIODO": "Período",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "CLIENTE": "Cliente",
+        "REGIONAL": "Regional",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "PLACA": "Placa",
+        "CHART_SINISTROS": "Sinistros",
+        "CHART_FROTA_ATIVA": "Frota Ativa",
+        "CHART_FINANCEIRO": "Financeiro",
+        "CHART_ATENDIMENTO": "Atendimento",
+        "CHART_AVARIAS": "Avarias",
+        "CHART_INFRACOES": "Infrações",
+        "POOL": "Pool de Pneus",
+        "POOL_RESERVA": "Pool de Reserva de Veículos"
+      }
+    },
+    "INDICADORES_FROTAS": {
+      "LABEL": {
+        "PERIODO": "Período",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "CLIENTE": "Cliente",
+        "REGIONAL": "Regional",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "PLACA": "Placa",
+        "CHART_DISTRIBUICAO_FROTA": "Distribuição da Frota",
+        "CHART_ALUGADA_POR_GRUPO": "Frota Alugada por Grupo",
+        "CHART_ALUGADA_POR_MODELO": "Frota Alugada por Modelo",
+        "CHART_KM_MEDIO": "KM Médio",
+        "CHART_KM_MEDIO_POR_UF": "KM Médio por UF",
+        "CHART_KM_MEDIO_POR_CIDADE": "KM Médio por Cidade",
+        "CHART_VENCIMENTARIO": "Vencimentário",
+        "CHART_ALUGADA_POR_FAIXA_IDADE_MEDIA": "Frota Alugada por Faixa - Idade Média",
+        "CHART_DESVIO_KM_NUMERO_CARROS": "Desvio de KM - Número de Carros",
+        "CHART_KM_MEDIO_ULTIMA_REVISAO": "KM Médio - Última Revisão/Serviço",
+        "CHART_FROTA_ALUGADA_TEMPO": "Frota Alugada no Tempo"
+      }
+    },
+    "ACOMPANHAR_SOLICITACAO_VEICULO": {
+      "COLUMN": {
+        "CODIGO": "Código",
+        "CLIENTE": "Cliente",
+        "DATA_EMISSAO": "Data de Emissão",
+        "MOTIVO": "Motivo",
+        "SOLICITANTE": "Solicitante",
+        "SITUACAO": "Situação",
+        "ACAO": "Ação"
+      }
+    },
+    "AGRUPADORES": {
+      "LABELS": {
+        "CODIGO": "Código",
+        "CAMPO": "Campo",
+        "DESCRICAO": "Descrição",
+        "SITUACAO": "Situação"
+      },
+      "MENSAGENS": {
+        "SUCESSO_CADASTRO_SUCESSO": "Agrupador(es) cadastrado(s) com sucesso!",
+        "ALTERADO_CADASTRO_SUCESSO": "Agrupador(es) alterado(s) com sucesso!",
+        "CADASTRO_AGRUPADOR_REPETIDO": "Já existe um agrupador cadastrado com esse nome.",
+        "CANCELAR_CADASTRO": "Há agrupador(es) inserido(s) para cadastro! Tem certeza que deseja cancelar?",
+        "REMOVER_CADASTRO_AGRUPADOR": "Tem certeza que deseja excluir a associação?",
+        "REMOVER_AGRUPADOR": "Tem certeza que deseja excluir o agrupador?",
+        "REMOVIDO_CADASTRO_SUCESSO": "Agrupador removido com sucesso!",
+        "AGRUPADOR_JA_CADASTRADO": "Já existe um agrupador cadastrado com esse nome: ${1}.",
+        "MAXIMO_AGRUPADORES_INSERIDOS": "Somente será possível inserir até 15 agrupadores na lista.",
+        "SITUACAO_NAO_SELECIONADA": "Situação deve ser selecionada."
+      }
+    },
+    "AGENDAR_ENTREGA_DEVOLUCAO": {
+      "TITLE": "Agendar Entrega ou Devolução",
+      "LABEL": {
+        "CODIGO": "Código",
+        "CLIENTE": "Cliente",
+        "DATA_INICIO": "Data Início",
+        "DATA_FIM": "Data Fim",
+        "DETALHES_FORNECEDOR": "Detalhes do Fornecedor",
+        "NOME_FANTASIA": "Nome Fantasia",
+        "PLACA": "Placa",
+        "DATA_AVISO": "Data Aviso Disponibilidade",
+        "FORNECEDOR": "Fornecedor",
+        "SITUACAO": "Situação",
+        "TIPO": "Tipo",
+        "MOTIVO": "Motivo",
+        "SOLICITANTE": "Solicitante",
+        "CENTRO_CUSTO": "Centro de Custo",
+        "TELEFONE": "Telefone",
+        "CONDUTOR": "Nome do Condutor",
+        "REGIONAL": "Regional",
+        "GRUPO_CLIENTE": "Grupo do Cliente",
+        "EMAIL_SOLICITANTE": "E-mail Solicitante",
+        "CEP": "CEP",
+        "ENDERECO": "Endereço",
+        "UF": "UF",
+        "MUNICIPIO": "Município",
+        "BTN_AGENDAR": "Agendar",
+        "VEICULO_DISPONIVEL": "*Veículos Agendados"
+      },
+      "COLUMN": {
+        "CLIENTE": "Cliente",
+        "PLACA": "Placa",
+        "FORNECEDOR": "Fornecedor",
+        "CONDUTOR": "Nome do Condutor",
+        "SOLICITANTE": "Solicitante",
+        "MOTIVO": "Motivo",
+        "DATA_AGENDAMENTO": "Data Agendamento",
+        "SITUACAO": "Situação",
+        "SERVICOS": "Serviços",
+        "TELEFONE": "Telefone",
+        "ENDERECO": "Endereço",
+        "DATA_PREVISAO_PARADA": "Previsão de Parada",
+        "MENSAGEM": "Mensagem de Validação",
+        "ACOES": "Ações"
+      },
+      "MESSAGES": {
+        "INDISPONIBILIDADE_FORNECEDOR": "Prezado Cliente, a oficina selecionada atingiu sua capacidade máxima de produção, por isso orientamos que seja selecionada uma nova opção de Oficina. Caso seja necessário permanecer nesta data, alertamos que possivelmente seu veículo não poderá ser recebido tendo em vista a capacidade operacional do prestador.",
+        "CONTRATO_PENDENTE_VENCIMENTO_CONFIRM": "O tempo de locação do veículo selecionado é menor que o prazo mínimo contratado. Passível a cobrança de multa rescisória. Deseja continuar?",
+        "CONTRATO_PENDENTE_VENCIMENTO_TABLE": "O tempo de locação do veículo selecionado é menor que o prazo mínimo contratado. Passível a cobrança de multa rescisória.",
+        "AVISO_PRAZO_RETIRADA_TABLE": "Prezado Cliente, o prazo para retirada desse veículo é até o dia ${dataAviso} após essa data será cobrado a diária de pátio e o contrato do veículo será aberto.",
+        "AVISO_PRAZO_RETIRADA_CONFIRM": "Prezado Cliente, a data selecionada está além do prazo para retirada desse veículo. Após essa data do prazo de retirada será cobrado a diária de pátio e o contrato do veículo será aberto. Deseja continuar?",
+        "MSG_CONFIRMAR_REMOVER": "Tem certeza que deseja excluir o agendamento desta oficina?",
+        "TITLE_CONFIRMAR_REMOCAO": "Excluir agendamento?",
+        "SUCESSO_AO_SALVAR": "Agendamento realizado com sucesso!",
+        "ERRO_AO_SALVAR": "Falha ao solicitar agendamento!",
+        "CONDUTOR_RETIRADA_VEICULO": "Condutor para retirada de veículo",
+        "DEFINIR_CONDUTOR_RETIRADA": "Favor definir condutor para retirado do(s) veiculo(s)"
+      }
+    },
+    "MODAL_DETALHES_ACOMPANHAR_ENTREGA_VEICULOS": {
+      "TITLE": "Detalhes Acompanhamento Entrega Veículos",
+      "ACESSORIOS": "Acessórios",
+      "ANO_FABRICACAO_MODELO": "Ano Fabricação/Modelo",
+      "CHASSI": "Chassi",
+      "CLIENTE": "Cliente",
+      "CNPJ": "CNPJ",
+      "CONTRATO_MASTER": "Contrato Master",
+      "COR": "Cor",
+      "DATA_AVISO_DISPONIBILIDADE": "Aviso Disponibilidade",
+      "DATA_INICIO_LOCACAO": "Início Locação",
+      "DATA_PREVISAO_ENTREGA": "Previsão Entrega",
+      "ENDERECO_ENTREGA": "Endereço de Entrega",
+      "MODELO": "Modelo",
+      "MOTIVO": "Motivo",
+      "PLACA": "Placa",
+      "TONALIDADE": "Tonalidade",
+      "VEICULO_DISPONIVEL": "Veículo Disponível",
+      "REGIONAL": "Regional",
+      "CENTRO_CUSTO": "Centro de Custo",
+      "CODIGO_IMPLANTACAO": "Código de Impltantação",
+      "RENAVAM": "Renavam",
+      "STATUS": "Status",
+      "CONDUTOR": "Nome do Condutor",
+      "SEMANA_ENTREGA": "Semana de Entrega",
+      "AVISO_DISPONIBILIDADE": "Aviso Disponibilidade",
+      "LOCAL_ENTREGA": "Local de Entrega",
+      "AGENDAMENTO_RETIRADA": "Agendamento Retirada",
+      "ENTREGUE": "Carro Entregue"
+    },
+    "INDICACOES_ELETRONICAS": {
+      "DETALHES_INFRACAO": "Detalhes da infração",
+      "DETALHES_NOTIFICACAO": "Detalhes da notificação",
+      "HISTORICO_STATUS_INDICACAO": "Histórico do status da indicação",
+      "INDICAR_MULTA": "Indicar multa",
+      "INFORMACAOES_RECURSO": "Informações de recurso",
+      "HISTORICO_EMAIL": "Histórico de e-mail",
+      "HISTORICO_ANEXO": "Histórico de anexos",
+      "EMAIL_DEFAULT": "Email de Notificação de Multa",
+      "EMAIL": "Visualizar e-mail",
+      "ANEXO": "Visualizar anexo"
+    },
+    "BTN_SIM": "Sim",
+    "BTN_NAO": "Não",
+    "BTN_PESQUISAR": "Pesquisar",
+    "BTN_CANCELAR": "Cancelar",
+    "BTN_SALVAR": "Salvar",
+    "BTN_INSERIR": "Inserir",
+    "MSG_IMAGENS_PERMITIDAS": "Somente imagens são permitidas.",
+    "MSG_DADOS_ALTERADOS": "Dados alterados com sucesso!",
+    "MSG_CAMPO_OBRIGATORIO_MUNICIPIO": "Por favor, pesquise e selecione um município.",
+    "MSG_CAMPO_OBRIGATORIO": "Campo obrigatório não preenchido.",
+    "MSG_ANEXO_OBRIGATORIO": "É necessário anexar ao menos um arquivo.",
+    "MSG_EMAIL_INVALIDO": "E-mail inválido.",
+    "MSG_TELEFONE_INVALIDO": "Telefone inválido.",
+    "MSG_CPF_INVALIDO": "CPF inválido.",
+    "MSG_FORNECEDOR_NOT_FOUND": "Nenhuma oficina encontrada no endereço informado, tente novamente com outro endereço.",
+    "MSG_FORNECEDOR_ANTERIOR_NOT_FOUND": "Não identificamos nenhum atendimento realizado anteriormente no histórico do veículo. Selecione outra opção no formulário para indicarmos um fornecedor e prosseguir com o registro.",
+    "MSG_CNPJ_INVALIDO": "CNPJ inválido.",
+    "MSG_TAMANHO_ARQUIVO_INVALIDO": "Tamanho do arquivo inválido.",
+    "MSG_ERRO_COMUNICACAO": "Falha na comunicação com o servidor.",
+    "MSG_ERRO_INESPERADO": "Ocorreu um erro inesperado.",
+    "MSG_ERRO_PERMISSAO": "Você precisa habilitar o campo para alterar a permissão.",
+    "MSG_ERRO_SEM_PERMISSAO": "Usuário sem permissão de acesso.",
+    "MSG_CIDADE_NOT_FOUND": "Cidade não encontrada.",
+    "MSG_CEP_INVALIDO": "CEP inválido.",
+    "MSG_CEP_NOT_FOUND": "CEP não encontrado.",
+    "MSG_CLIENTE_NOT_FOUND": "Cliente não encontrado.",
+    "MSG_CONDUTOR_NOT_FOUND": "Condutor não encontrado.",
+    "MSG_CONDUTOR_JA_CADASTRADO": "Condutor já cadastrado.",
+    "MSG_SELECIONAR_ARQUIVO": "Por favor, selecione um arquivo.",
+    "MSG_NOME_TIPO_OBRIGATORIO": "Por favor, informe o tipo do arquivo.",
+    "MSG_ARQUIVO_REMOVIDO_SUCESSO": "Arquivo removido com sucesso!",
+    "MSG_ARQUIVO_REMOVIDO_ERROR": "Não foi possível remover o arquivo!",
+    "MSG_HORA_INVALIDA": "Hora inválida.",
+    "MSG_DATA_INVALIDA": "Data inválida.",
+    "MSG_HORA_MENOR_QUE_ATUAL": "Horário escolhido anterior ao atual.",
+    "MSG_NAO_EXISTE_USUARIO_PESQUISA": "Não existe usuário que atenda a pesquisa.",
+    "DATA_HORA_MAIOR_ATUAL": "Data/hora maior que a data atual.",
+    "MSG_USUARIO_JA_CADASTRADO": "Já existe um usuário cadastrado com esse dado.",
+    "DATA_INICIO_MAIOR_FIM": "A Data Início não pode ser que maior que a Data Fim.",
+    "DATA_INICIO_INFERIOR_QUE": "A Data Início não pode ser que inferior que a {1}.",
+    "ERROR_DATA_1_HABILITACAO": "Data do campo <1º Habilitação> deverá ser menor que as datas dos campos <Data Emissão> ou <Validade>.",
+    "ERROR_DATA_EMISSAO": "Data do campo <Data Emissão> deverá ser maior que a data do campo <1º Habilitação>.",
+    "ERROR_DATA_VALIDADE": "Data do campo <Validade> deverá ser maior que as datas dos campos <1º Habilitação> e <Data Emissão>.",
+    "MSG_DESEJA_CANCELAR": "Deseja realmente cancelar?",
+    "NAO_HA_DADOS": "Não existe registro que atenda a pesquisa.",
+    "MSG_NAO_ALTEROU_SENHA": "Você somente poderá navegar no sistema após realizar a alteração da sua senha.",
+    "MSG_REGISTRO_NAO_ENCONTRADO": "Não existe registro que atenda esta pesquisa.",
+    "MSG_QUANTIDADE_MODELOS_MOTIVO_SUBSTITUICAO": "Quantidade de modelos solicitada indisponível.",
+    "MSG_USUARIO_ATUALIZADO_SUCESSO": "Dados do usuário atualizado.",
+    "MSG_CAMPO_CONDUTOR_OBRIGATORIO": "Selecione um condutor.",
+    "MSG_CAMPO_PLACA_OBRIGATORIO": "Selecione uma placa.",
+    "DIGITE_PLACA": "Digite a placa",
+    "MSG_ANEXO_DOCUMENTO_OBRIGATORIO": "Favor anexar todos os documentos obrigatórios.",
+    "MSG_ERRO_MAPA": "Não foi possivel localizar o endereço",
+    "MSG_NO_FILES_FOUND": "Não foram encontrados arquivos para esse atendimento.",
+    "MSG_PADRAO_TAMANHO_SENHA": "A senha deverá conter no mínimo 8 caracteres.",
+    "MSG_PADRAO_SENHA": "A senha deverá conter pelo menos um caracter alfabético."
+  }
+}

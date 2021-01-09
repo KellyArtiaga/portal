@@ -1,0 +1,42 @@
+#svg-map path {
+  fill: #93BAF7;
+}
+
+#svg-map text {
+  fill: #000000;
+  font: 12px Arial-BoldMT, sans-serif;
+  cursor: pointer
+}
+
+#svg-map a {
+  text-decoration: none
+}
+
+#svg-map a:hover {
+  cursor: pointer;
+  text-decoration: none
+}
+
+#svg-map a:hover path {
+  fill: #024F95 !important
+}
+
+#svg-map .circle {
+  fill: #024F95
+}
+
+#svg-map a:hover .circle {
+  fill: #024F95 !important;
+  cursor: pointer
+}
+
+.uf-name-style {
+  justify-content: center;
+  font-size: 12px;
+  height: 15px;
+  font-weight: 500;
+}
+
+.teste{
+  height: fit-content;
+}

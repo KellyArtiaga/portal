@@ -1,0 +1,62 @@
+<form class="col-12 pt-3" [formGroup]="form" autocomplete="off" (submit)="pesquisar()">
+  <div class="row">
+    <div class="col-md-2">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.MANUTENCAO.LABEL.LOJA' | translate}}</mat-label>
+        <input matInput type="text" formControlName="loja" />
+      </mat-form-field>
+    </div>
+    <div class="col-md-2">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.MANUTENCAO.LABEL.CEP' | translate}}</mat-label>
+        <input matInput type="text" mask="00000-000" formControlName="cep" (keyup)="changeCEP($event)" />
+      </mat-form-field>
+    </div>
+    <div class="col-md-5">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.MANUTENCAO.LABEL.ENDERECO' | translate}}</mat-label>
+        <input matInput type="text" formControlName="endereco" required />
+      </mat-form-field>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-2">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.MANUTENCAO.LABEL.UF' | translate}}</mat-label>
+        <mat-select matInput formControlName="uf" (selectionChange)="enableInputCidade()" disableOptionCentering
+          required>
+          <mat-option *ngFor="let uf of ufs" [value]="uf">
+            {{uf.estado}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-2">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.MANUTENCAO.LABEL.CIDADE' | translate}}</mat-label>
+        <input name="cidade" type="search" autocomplete="off" style="display: none" />
+        <input matInput name="cidade" type="search" formControlName="cidade" [matAutocomplete]="autoCompleteCidade"
+          (change)="preencherBairro()" autocomplete="off" required />
+        <mat-autocomplete #autoCompleteCidade="matAutocomplete" [displayWith]="displayCidade">
+          <ng-container>
+            <mat-option *ngFor="let item of cidades.filteredData" [value]="item">
+              {{item.municipio}}
+            </mat-option>
+          </ng-container>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="d-inline-flex col-12 pt-1 pb-3 pl-0 pr-0" *ngIf='!habilitaSalvar'>
+    <span class="col-12 pl-0 pr-0 text-right">
+      <button [disabled]="disablePesquisa" color="primary" mat-raised-button type="submit">
+        {{'PORTAL.BUTTONS.BTN_SEARCH_PROVIDER' | translate}}
+      </button>
+    </span>
+  </div>
+  <div class="d-inline-flex col-12 pt-1 pb-3 pl-0 pr-0" *ngIf='habilitaSalvar'>
+    <span class="col-12 pl-0 pr-0 text-right">
+      <button [disabled]="disablePesquisa" color="primary" mat-raised-button (click)="salvarSemFornecedor()">
+        Salvar
+      </button>
+    </span>
+  </div>
+</form>

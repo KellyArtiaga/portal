@@ -1,0 +1,14 @@
+<div class="row m-0 p-3">
+  <div class="row col-md-12 totalizadores">
+    <ng-container *ngFor="let totalizador of totalizadores">
+      <mat-card class="card-totalizadores" *ngIf="totalizador.show">
+        <mat-card-header class="card-header-totalizadores p-2">
+          <span>{{totalizador.nome}}</span>
+        </mat-card-header>
+        <mat-card-content class="text-center card-content-totalizadores">
+          {{totalizador.valor}}
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>

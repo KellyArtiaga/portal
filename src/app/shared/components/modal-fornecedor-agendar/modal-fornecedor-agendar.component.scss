@@ -1,0 +1,42 @@
+.textWhiteHeader {
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #005b9e;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  padding-left: 30px;
+  justify-content: space-between;
+  border-radius: 2px;
+}
+
+.closeButton {
+  float: right;
+  float: 2px;
+  width: 10%;
+  cursor: pointer;
+}
+
+.blue-subtitle-modal {
+  font-size: 17px;
+  color: #095b9d;
+  font-weight: 600;
+}
+
+.circle-close {
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87) !important;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  float: right;
+}

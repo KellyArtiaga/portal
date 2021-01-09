@@ -1,0 +1,18 @@
+<div>
+  <app-full-calendar (onDayClick)="dadosDia($event)" (onEventClick)="dadosEvento($event)" [eventos]="getCalendario()"
+    *ngIf="showCalendario && !isRac()"></app-full-calendar>
+  <form [formGroup]="formDataMarcacao" class="row" [ngClass]="{'mt-4': !isRac()}" (ngSubmit)="confirmarAgendamento()">
+    <div class="col-md-4 col-xs-4" *ngIf="!isRac()">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.CALENDARIO.LABELS.DATA' | translate}}</mat-label>
+        <input matInput type="text" formControlName="dataEvento" readonly />
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-2 col-xs-4  pt-1">
+      <button mat-raised-button color="primary" type="submit">
+        {{'PORTAL.BUTTONS.BTN_SAVE' | translate}}
+      </button>
+    </div>
+  </form>
+</div>

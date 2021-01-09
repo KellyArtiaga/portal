@@ -1,0 +1,126 @@
+<div class="container-fluid pl-3">
+  <span>
+    <mat-icon svgIcon="pfu-pdf-file" style="color: #000; cursor: pointer;" (click)="baixarPDF()"></mat-icon>
+  </span>
+  <span class="ml-2" *ngIf="!indicadoresGerais">
+    <mat-icon svgIcon="pfu-excel-icon" style="font-size: 0;" class="material-icons pointer" (click)="downloadExcel()">
+    </mat-icon>
+  </span>
+</div>
+
+<div class="row d-flex justify-content-center" #graficos>
+  <ng-container *ngFor="let chart of charts">
+    <mat-card class="col-md-6 col-sm-12 col-xs-12 card-maps p-1 m-2 text-center" *ngIf="chart.show"
+      [ngClass]="getMockClass(chart)">
+      <mat-card-header class="pl-3 pr-2 card-indicadores-header">
+        <mat-card-title class="mt-1 card-indicadores-title" [ngClass]="{'underline-text': !!chart.redirect}"
+          (click)="!!chart.redirect ? goTo(chart.redirect) : ''">{{chart.label | translate}}</mat-card-title>
+        <button class="btn btn-primary button-search mt-2" (click)="expandirChart(chart)">
+          <mat-icon [svgIcon]="!!chart.hasAdicionais ? 'pfu-lupa' : 'pfu-expand'"></mat-icon>
+        </button>
+      </mat-card-header>
+      <hr class="mb-0 mt-1">
+      <mat-card-content [ngClass]="!!chart.hasAdicionais ? 'card-content-size' : ''" class="row align-items-center">
+        <div *ngIf="chart.mapChart" class="pl-5 ml-5 w-100">
+          <app-map-chart [chartData]="chart.mapChart" [functionFiltro]="functionFiltro"
+            [style]="{ 'width': '100%', 'height': 'auto' }" style="width: -webkit-fill-available!important;">
+          </app-map-chart>
+        </div>
+        <div *ngIf="chart.lineChart" class="row d-flex justify-content-center">
+          <div *ngIf="!!chart.hasAdicionais" class="item left-col m-0 p-0">
+            <app-informacoes-adicionais-indicadores-gerais-component [cards]="chart.cards">
+            </app-informacoes-adicionais-indicadores-gerais-component>
+          </div>
+          <div [ngClass]="!!chart.hasAdicionais ? 'item right-col' : ''">
+            <small>{{chart.title}}</small>
+            <app-line-chart [chartData]="chart.lineChart" [functionFiltro]="functionFiltro"
+              [style]="{ 'width': '100%', 'height': 'auto' }" style="width: -webkit-fill-available!important;">
+            </app-line-chart>
+          </div>
+        </div>
+        <div *ngIf="chart.areaChart" class="row align-items-center">
+          <small>{{chart.title}}</small>
+          <app-area-chart [chartData]="chart.areaChart" [functionFiltro]="functionFiltro"
+            [style]="{ 'width': '100%', 'height': 'auto' }" style="width: -webkit-fill-available!important;">
+          </app-area-chart>
+        </div>
+        <div *ngIf="chart.steppedAreaChart" class="row align-items-center">
+          <div *ngIf="!!chart.hasAdicionais" class="item left-col m-0 p-0">
+            <app-informacoes-adicionais-indicadores-gerais-component [cards]="chart.cards">
+            </app-informacoes-adicionais-indicadores-gerais-component>
+          </div>
+          <div [ngClass]="!!chart.hasAdicionais ? 'item right-col' : ''">
+            <small>{{chart.title}}</small>
+            <app-stepped-area-chart [chartData]="chart.steppedAreaChart" [functionFiltro]="functionFiltro"
+              [style]="{ 'width': '100%', 'height': 'auto' }" style="width: -webkit-fill-available!important;">
+            </app-stepped-area-chart>
+          </div>
+        </div>
+        <div *ngIf="chart.treeMapChart" class="row d-flex justify-content-center">
+          <small>{{chart.title}}</small>
+          <app-tree-map-chart [chartData]="chart.treeMapChart" [functionFiltro]="functionFiltro"
+            [style]="{ 'width': '100%', 'height': 'auto' }" style="width:-webkit-fill-available!important;">
+          </app-tree-map-chart>
+        </div>
+        <div *ngIf="chart.barChart" class="charts row d-flex justify-content-center">
+          <div *ngIf="!!chart.hasAdicionais" class="item left-col m-0 p-0">
+            <app-informacoes-adicionais-indicadores-gerais-component [cards]="chart.cards">
+            </app-informacoes-adicionais-indicadores-gerais-component>
+          </div>
+          <div [ngClass]="!!chart.hasAdicionais ? 'item right-col' : ''"
+            class="charts-car-img row justify-content-center">
+            <div class="row justify-content-center"><small>{{chart.title}}</small></div>
+            <img *ngIf="chart.showCar && (chart.barChart.data && chart.barChart.data.data.length > 0)"
+              src="assets\images\car.png" class="charts-car" alt="charts" />
+            <app-bar-chart class="charts-car-background" [chartData]="chart.barChart" [functionFiltro]="functionFiltro"
+              [style]="{ 'width': '100%', 'height': 'auto' }"
+              style="background:0.7; width: -webkit-fill-available!important;">
+            </app-bar-chart>
+          </div>
+        </div>
+        <div *ngIf="chart.columnChart" class="row d-flex justify-content-center">
+          <div *ngIf="!!chart.hasAdicionais" class="item left-col m-0 p-0">
+            <app-informacoes-adicionais-indicadores-gerais-component [cards]="chart.cards">
+            </app-informacoes-adicionais-indicadores-gerais-component>
+          </div>
+          <div [ngClass]="!!chart.hasAdicionais ? 'item right-col' : ''">
+            <small>{{chart.title}}</small>
+            <app-column-chart [chartData]="chart.columnChart" [functionFiltro]="functionFiltro"
+              [style]="{ 'width': '100%', 'height': 'auto' }" style="width: -webkit-fill-available!important;">
+            </app-column-chart>
+          </div>
+        </div>
+        <div *ngIf="chart.pieChart" class="row d-flex justify-content-center">
+          <div *ngIf="!!chart.hasAdicionais" class="item left-col m-0 p-0">
+            <app-informacoes-adicionais-indicadores-gerais-component [cards]="chart.cards">
+            </app-informacoes-adicionais-indicadores-gerais-component>
+          </div>
+          <div [ngClass]="!!chart.hasAdicionais ? 'item right-col' : ''">
+            <small>{{chart.title}}</small>
+            <app-pie-chart [chartData]="chart.pieChart" [functionFiltro]="functionFiltro"
+              [style]="{ 'width': '100%', 'height': 'auto' }">
+            </app-pie-chart>
+          </div>
+        </div>
+        <div *ngIf="chart.tableDetails" class="d-flex justify-content-center">
+          <table class="table table-borderless">
+            <thead class="blue-text">
+              <tr>
+                <th class="align-center-cell" scope="col" *ngFor="let header of chart.tableDetails.colHeader">
+                  <mat-icon [svgIcon]="header.icon"></mat-icon>
+                  <span>{{header.text}}</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of chart.tableDetails.data"
+                [ngClass]="{'trow-gray': item.subtitle, 'blue-text blue-text-weight': !item.subtitle}">
+                <td *ngFor="let value of item.values" class="align-center-cell">{{value.text}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>

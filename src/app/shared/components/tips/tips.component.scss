@@ -1,0 +1,21 @@
+.card-tips {
+  max-width: 250px;
+  float: right;
+  opacity: 1;
+  animation: FadeIn 3s ease;
+
+  mat-icon {
+    display: inline-block;
+    height: auto;
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: -10px;
+  }
+}
+
+.card-header,
+.card-body,
+card-tips {
+  background-color: whitesmoke;
+}

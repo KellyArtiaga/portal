@@ -1,0 +1,11 @@
+::ng-deep app-acompanhar-veiculo-reserva {
+  .cdk-overlay-pane {
+    min-width: 250px;
+  }
+}
+
+button.btn-export .material-icons {
+  font-size: 0px;
+  margin-top: -8px;
+  height: 35px;
+}

@@ -1,0 +1,135 @@
+<form [formGroup]="form" autocomplete="off" class="row container-fluid pt-3" (ngSubmit)="pesquisar()">
+  <app-filtro-agrupadores class="col-9" [form]="form"></app-filtro-agrupadores>
+  <!-- <div class="col-md-3">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.CLIENTE' | translate }}</mat-label>
+      <mat-select matInput formControlName="clientes" multiple required (openedChange)="getVeiculos($event)">
+        <mat-select-trigger>
+          {{form.get('clientes').value && form.get('clientes').value.length > 0 ? form.get('clientes').value[0].nomeFantasia : ''}}
+          <span *ngIf="form.get('clientes').value?.length > 1">
+            (+{{form.get('clientes').value.length - 1}}
+            {{form.get('clientes').value?.length === 2 ? 'outro' : 'outros'}})
+          </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let cliente of clientes" [value]="cliente"
+          (onSelectionChange)="verificarClientesPlacas($event, cliente)"
+          (click)="markAll(cliente, 'clientes', clientes)">
+          {{cliente.nomeFantasia}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-md-3">
+    <mat-form-field appearance="outline">
+      <mat-label>{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.REGIONAL' | translate}}</mat-label>
+      <mat-select matInput formControlName="regionais" multiple>
+        <mat-select-trigger>
+          {{form.get('regionais').value && form.get('regionais').value.length > 0 ? form.get('regionais').value[0].descricao : ''}}
+          <span *ngIf="form.get('regionais').value?.length > 1">
+            (+{{form.get('regionais').value.length - 1}}
+            {{form.get('regionais').value?.length === 2 ? 'outro' : 'outros'}})
+          </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let item of regionais" [value]="item" (click)="markAll(item, 'regionais', regionais)">
+          {{item.descricao}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-md-3">
+    <mat-form-field appearance="outline">
+      <mat-label>{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.CENTRO_CUSTO' | translate}}</mat-label>
+      <mat-select matInput formControlName="centrosCustos" multiple>
+        <mat-select-trigger>
+          {{form.get('centrosCustos').value && form.get('centrosCustos').value.length > 0 ? form.get('centrosCustos').value[0].descricao : ''}}
+          <span *ngIf="form.get('centrosCustos').value?.length > 1">
+            (+{{form.get('centrosCustos').value.length - 1}}
+            {{form.get('centrosCustos').value?.length === 2 ? 'outro' : 'outros'}})
+          </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let item of centrosCustos" [value]="item"
+          (click)="markAll(item, 'centrosCustos', centrosCustos)">
+          {{item.descricao}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div> -->
+  <!-- <div class="col-md-3 col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>{{'PORTAL.VEICULO_RESERVA.LABELS.PLACA' | translate}}</mat-label>
+      <input matInput type="text" formControlName="placa" class="uppercase" [matAutocomplete]="autocompletePlaca"
+        (keyup)="getVeiculos($event)" maxlength="8" />
+      <mat-autocomplete #autocompletePlaca="matAutocomplete" [displayWith]="displayPlaca" style="min-width: 250px;">
+        <ng-container>
+          <mat-option *ngFor="let item of veiculos.filteredData" [value]="item">
+            {{item.placa}} - {{item.modelo}}
+          </mat-option>
+        </ng-container>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div> -->
+  <div class="col-md-3 col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>Período Agendamento</mat-label>
+      <input matInput formControlName="periodo" autocomplete="off" readonly />
+      <span matSuffix mat-icon-button>
+        <mat-icon class="material-icons pointer" (click)="abrirFiltro()" [matMenuTriggerFor]="dateTimeMenu">
+          calendar_today
+        </mat-icon>
+      </span>
+    </mat-form-field>
+  </div>
+  <mat-menu class="date-range-menu" #dateTimeMenu="matMenu">
+    <app-modal-date [params]="modalDateParams"></app-modal-date>
+  </mat-menu>
+  <div class="col-md-3">
+    <mat-form-field appearance="outline">
+      <mat-label>{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.MOTIVO' | translate}}</mat-label>
+      <mat-select matInput formControlName="tipo" disableOptionCentering>
+        <mat-option>Selecione</mat-option>
+        <mat-option *ngFor="let item of motivos" [value]="item.id">
+          {{ item.descricao }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <!-- <div class="col-md-3">
+    <mat-form-field appearance="outline">
+      <mat-label>{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.SITUACAO' | translate}}</mat-label>
+      <mat-select matInput formControlName="situacao" disableOptionCentering>
+        <mat-option *ngFor="let item of situacoes" [value]="item.id">
+          {{ item.descricao }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div> -->
+  <div class="col-lg-3 col-xs-12">
+    <button mat-raised-button class="btn btn-primary mr-3" type="submit">
+      {{'PORTAL.BUTTONS.BTN_SEARCH' | translate}}
+    </button>
+    <button *ngIf="!isEdition" mat-raised-button class="btn btn-secondary" type="button" (click)="limparCampos()">
+      {{'PORTAL.BUTTONS.BTN_CLEAN' | translate}}
+    </button>
+  </div>
+</form>
+<hr class="mt-3">
+<div class="d-inline-flex w-100">
+
+  <span class="col-6 text-left pr-2 pt-2 text-color">
+    <div *ngIf="showTable">
+      {{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.VEICULO_DISPONIVEL' | translate}}
+    </div>
+  </span>
+  <span class="col-6 text-right pl-2" *ngIf="getPermissao().incluir">
+    <button class="btn-add-new" (click)="goToNew()" type="button">
+      {{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.BTN_AGENDAR' | translate}}
+      <mat-icon class="material-icons">add_circle</mat-icon>
+    </button>
+  </span>
+
+</div>
+<div class="col-md-12">
+  <app-generic-table *ngIf="showTable" [(inputData)]="dadosTabela" [columns]="getColunasTabela()"
+    (nextPage)="pesquisar($event)" [totalRows]="totalRows">
+  </app-generic-table>
+</div>

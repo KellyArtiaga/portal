@@ -1,0 +1,64 @@
+<div class="container-fluid page-body">
+  <div class="row pt-3 center-vertical" *ngIf="isSearch">
+    <div class="col-md-4">
+      <mat-form-field appearance="outline" matTooltip="Pesquisar por Tipos de Atendimentos" matTooltipShowDelay="1000">
+        <mat-label>{{'PORTAL.LABELS.LBL_SEARCH' | translate}}</mat-label>
+        <mat-icon matSuffix>search</mat-icon>
+        <input matInput type="text" [(ngModel)]="nomeTipo" maxlength="100" autocomplete="off"
+          [disabled]="!getPermissao().pesquisar" />
+      </mat-form-field>
+    </div>
+    <span class="col-md-8">
+      <button mat-raised-button color="primary" type="button" (click)="pesquisar()"
+        [disabled]="!getPermissao().pesquisar">
+        {{'PORTAL.BUTTONS.BTN_SEARCH' | translate}}
+      </button>
+      <button mat-raised-button class="btn-secondary ml-3" type="button" (click)="clearSearch()"
+        [disabled]="!getPermissao().pesquisar">
+        {{'PORTAL.BUTTONS.BTN_CLEAN' | translate}}
+      </button>
+    </span>
+  </div>
+  <div class="pt-3 center-vertical" *ngIf="!isSearch">
+    <form [formGroup]="form" (ngSubmit)="isEdition ? editar() : add()">
+      <mat-form-field appearance="outline" class="col-md-3">
+        <mat-label>{{'PORTAL.TIPO_ATENDIMENTO.LABELS.CODIGO' | translate}}</mat-label>
+        <input matInput placeholder="{{'PORTAL.TIPO_ATENDIMENTO.LABELS.CODIGO' | translate}}" formControlName="codigo"
+          maxlength="8" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-3">
+        <mat-label>{{'PORTAL.TIPO_ATENDIMENTO.LABELS.NOME' | translate}}</mat-label>
+        <input matInput placeholder="{{'PORTAL.TIPO_ATENDIMENTO.LABELS.NOME' | translate}}" formControlName="nome"
+          maxlength="40" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-3">
+        <mat-label>{{'PORTAL.TIPO_ATENDIMENTO.LABELS.DESCRICAO' | translate}}</mat-label>
+        <input matInput placeholder="{{'PORTAL.TIPO_ATENDIMENTO.LABELS.DESCRICAO' | translate}}"
+          formControlName="descricao" maxlength="75" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-md-3">
+        <mat-label>{{'PORTAL.TIPO_ATENDIMENTO.LABELS.EMAIL' | translate}}</mat-label>
+        <input matInput placeholder="{{'PORTAL.TIPO_ATENDIMENTO.LABELS.EMAIL' | translate}}" formControlName="email"
+          maxlength="75" />
+      </mat-form-field>
+      <span class="btn-group-filter">
+        <button class="btn-secondary" mat-raised-button type="button"
+          (click)="cancelar()">{{'PORTAL.BUTTONS.BTN_CANCEL' | translate}}</button>
+        <button mat-raised-button color="primary" class="primary"
+          type="submit">{{isEdition ? 'Salvar' : 'Inserir'}}</button>
+      </span>
+    </form>
+  </div>
+  <hr *ngIf="showTable">
+  <div class="col-md-12" *ngIf="showTable">
+    <div class="text-right" *ngIf="getPermissao().incluir">
+      <button class="btn-add-new" (click)="showInsert()" type="button">{{'PORTAL.BUTTONS.BTN_ADD_NEW' | translate}}
+        <mat-icon class="material-icons">add_circle</mat-icon>
+      </button>
+    </div>
+    <app-generic-table [(inputData)]="tiposAtendimento" [inputDataSubject]="dataInputSubj"
+      [columns]="getColunasTabela()" [infoMessage]="mensagemInformacao" (nextPage)="getTiposAtendimento($event)"
+      [totalRows]="totalRows">
+    </app-generic-table>
+  </div>
+</div>

@@ -1,0 +1,121 @@
+<app-modal-generic>
+  <header class="header">
+    <span class="textWhiteHeader">{{'PORTAL.CALENDARIO.TITLES.SELECIONE_FORNECEDOR' | translate}}</span>
+    <a class="circle-close mr-2" (click)="closeModal()">
+      <mat-icon class="pointer" style="color: black !important; font-size: 24px;">close</mat-icon>
+    </a>
+  </header>
+  <div class="p-3">
+    <form [formGroup]="filtroFornecedor" class="row mt-2" (submit)="pesquisar()" ngbAutofocus [hidden]="isZeroKM">
+      <div class="col-md-3">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.LABELS.LBL_PLACA' | translate}}</mat-label>
+          <input matInput type="text" formControlName="placa" [matAutocomplete]="autocompletePlaca"
+            (keyup)="filtrarPlaca()" maxlength="8" />
+          <mat-autocomplete #autocompletePlaca="matAutocomplete" [displayWith]="displayPlaca" style="min-width: 250px;">
+            <ng-container>
+              <mat-option *ngFor="let veiculo of veiculosFiltro.filteredData" [value]="veiculo">
+                {{veiculo.placa}}
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3" [hidden]="tipo !== 'A'">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.SITUACAO' | translate}}</mat-label>
+          <mat-select matInput formControlName="tipo">
+            <mat-option *ngFor="let tipo of situacoes" [value]="tipo.id">
+              {{tipo.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.LABELS.LBL_MODELO' | translate}}</mat-label>
+          <mat-select matInput formControlName="modelo">
+            <mat-option *ngFor="let modelo of veiculosModelos" [value]="modelo.id">
+              {{modelo.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3 pt-1">
+        <button class="mr-3" mat-raised-button color="primary" type="submit">
+          {{ 'PORTAL.BUTTONS.BTN_SEARCH' | translate }}
+        </button>
+        <button mat-raised-button class="btn-secondary" type="reset" (click)="limparPesquisa()">
+          {{ 'PORTAL.BUTTONS.BTN_LIMPAR' | translate }}
+        </button>
+      </div>
+    </form>
+
+    <form [formGroup]="filtroCondutor" class="row mt-2" ngbAutofocus *ngIf="isZeroKM">
+      <div class="col-md-3">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.LABELS.LBL_CONDUTOR' | translate}}</mat-label>
+          <input matInput type="text" formControlName="condutor" />
+        </mat-form-field>
+      </div>
+      <div class="col-md-3 pt-1">
+        <button class="mr-3" mat-raised-button color="primary" (click)="adicionarCondutor()">
+          {{ 'PORTAL.BUTTONS.BTN_ADD_CONDUTOR' | translate }}
+        </button>
+      </div>
+    </form>
+
+    <hr />
+    <div class="row">
+      <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+        <span class="blue-subtitle-modal">{{'PORTAL.MODAL_FORNECEDOR_AGENDAR.LABELS.VEICULOS' | translate}}</span>
+        <app-generic-table #veiculosTable *ngIf="showVeiculos" [(inputData)]="veiculos"
+          [inputDataSubject]="inputDataSubject" [columns]="getColunasTabelaVeiculo()" (nextPage)="getVeiculos($event)"
+          [totalRows]="totalRowsVeiculos">
+        </app-generic-table>
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+        <span class="blue-subtitle-modal"
+          *ngIf="showFornecedores && tipo === 'D'">{{'PORTAL.MODAL_FORNECEDOR_AGENDAR.LABELS.FORNECEDOR' | translate}}</span>
+        <div>
+          <app-generic-table #fornecedoresTable *ngIf="showFornecedores && tipo === 'D'" [(inputData)]="fornecedores"
+            [columns]="getColunasTabelaFornecedor()" [hidePaginator]="true" [totalRows]="totalRowsFornecedores">
+          </app-generic-table>
+        </div>
+        <div [ngClass]="{'pl-2 pr-2 pt-2': isDevolucao}">
+          <app-full-calendar *ngIf="showCalendar" (onDayClick)="dadosDia($event)" (onEventClick)="dadosEvento($event)"
+            [eventos]="getCalendario()">
+          </app-full-calendar>
+          <div class="row text-center mt-2 mb-3" [hidden]="!showCalendar">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.CALENDARIO.LABELS.DATA_PREVISAO_PARADA' | translate}}</mat-label>
+                <input matInput type="text" [formControl]="dataEvento" readonly />
+              </mat-form-field>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.CALENDARIO.LABELS.HORARIO_PREVISAO_PARADA' | translate}}</mat-label>
+                <input matInput type="text" [formControl]="horario" (keyup)="changeHora($event)"
+                  (change)="changeHora($event)" mask="00:00" />
+              </mat-form-field>
+            </div>
+            <div class="col-3 mt-1">
+              <button mat-raised-button color="primary" type="button" (click)="validarCamposSelecionados()">
+                {{'PORTAL.BUTTONS.BTN_CONFIRM' | translate}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row container-fluid" style="justify-content: flex-end;">
+        <button mat-raised-button class="mr-3 btn-secondary" type="button" (click)="cancelar()">
+          {{ 'PORTAL.BUTTONS.BTN_CANCEL' | translate }}
+        </button>
+        <button mat-raised-button color="primary" type="button" (click)="salvarFornecedorSelecionado()">
+          {{ 'PORTAL.BUTTONS.BTN_SAVE' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</app-modal-generic>

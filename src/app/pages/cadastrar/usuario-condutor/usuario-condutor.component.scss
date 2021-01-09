@@ -1,0 +1,38 @@
+.bottom-bar {
+  color: #0f0f0f;
+  background-color: transparent;
+  opacity: 0.6;
+  height: 64px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0;
+  width: 55%;
+  position: relative;
+  bottom: 0;
+  border: 2px solid #808080;
+}
+
+.verde {
+  color: #7ed321;
+}
+
+::ng-deep .mat-tab-header {
+  background: white;
+}
+
+::ng-deep .mat-slide-toggle-thumb {
+  background-color:#eb1d23;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: green!important;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color:#d6d0d0!important;
+}
+
+::ng-deep .mat-slide-toggle-bar {
+  background-color: #d6d0d0!important;
+}

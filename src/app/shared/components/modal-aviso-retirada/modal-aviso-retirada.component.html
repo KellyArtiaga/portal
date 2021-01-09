@@ -1,0 +1,16 @@
+<app-modal-generic>
+  <div>
+    <div class="body p-3" *ngIf="!!mensagem">
+      {{mensagem}}
+    </div>
+    <div class="p-3">
+      <app-generic-table *ngIf="showTable" [(inputData)]="veiculos" [columns]="getColunasTabela()"
+        [hidePaginator]="true">
+      </app-generic-table>
+    </div>
+    <div class="modal-footer">
+      <button (click)="close()" mat-raised-button class="button secundary-button">{{botaoSecundario}}</button>
+      <button (click)="confirm()" mat-raised-button color="primary" class="button">{{botaoPrimario}}</button>
+    </div>
+  </div>
+</app-modal-generic>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.146" height="24.32" viewBox="0 0 32.146 24.32">
+  <g id="Grupo_5140" data-name="Grupo 5140" transform="translate(-123 -237)">
+    <g id="Grupo_5139" data-name="Grupo 5139" transform="translate(101 4.109)">
+      <g id="Grupo_4705" data-name="Grupo 4705">
+        <g id="Grupo_4704" data-name="Grupo 4704">
+          <g id="_67994" data-name="67994" transform="translate(26.221 237.445)">
+            <g id="Grupo_3159" data-name="Grupo 3159">
+              <path id="Caminho_1720" data-name="Caminho 1720" d="M27.769,11.823a.718.718,0,0,0-.554-.264H24.5c-.671-1.769-1.545-3.5-2.538-4.157-3.436-2.26-12.55-2.26-15.986,0-.994.655-1.864,2.391-2.539,4.157H.715a.716.716,0,0,0-.7.86l.4,1.951a.715.715,0,0,0,.7.57H1.92A4.829,4.829,0,0,0,.764,18.1a4.727,4.727,0,0,0,1.494,3.55l.031.025V24.4a1.074,1.074,0,0,0,1.073,1.073H5.869A1.074,1.074,0,0,0,6.942,24.4V23.3H20.987v1.1a1.074,1.074,0,0,0,1.073,1.073h2.507A1.074,1.074,0,0,0,25.64,24.4V21.725a4.906,4.906,0,0,0,.313-6.786h.859a.712.712,0,0,0,.7-.571l.4-1.95a.721.721,0,0,0-.143-.6ZM7.15,9.194c2.739-1.8,10.891-1.8,13.628,0,.532.349,1.216,1.76,1.844,3.488H5.308C5.933,10.955,6.618,9.544,7.15,9.194ZM3.942,18.365a2.11,2.11,0,1,1,2.11,2.11,2.11,2.11,0,0,1-2.11-2.11ZM21.9,20.476a2.11,2.11,0,1,1,2.11-2.11,2.11,2.11,0,0,1-2.11,2.11Z" transform="translate(0 -5.707)" fill="#000"/>
+            </g>
+          </g>
+          <g id="Elipse_299" data-name="Elipse 299" transform="translate(22 233.445)" fill="#fff" stroke="#047" stroke-width="1">
+            <circle cx="8" cy="8" r="8" stroke="none"/>
+            <circle cx="8" cy="8" r="7.5" fill="none"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <text id="_" data-name="!" transform="translate(129 250)" fill="#047" font-size="12" font-family="Poppins-SemiBold, Poppins" font-weight="600"><tspan x="0" y="0">!</tspan></text>
+  </g>
+</svg>

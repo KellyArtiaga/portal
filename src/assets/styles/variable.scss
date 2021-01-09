@@ -1,0 +1,163 @@
+/*
+Template Name: Material Pro Admin
+Author: Themedesigner
+E-mail: niravjoshi87@gmail.com
+File: scss
+*/
+// Variables
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+
+$bodyfont:'Effra Regular',
+'Poppins',
+sans-serif;
+$headingfont:'Effra Regular',
+'Poppins',
+sans-serif;
+
+@import '~@angular/material/theming';
+
+/* For use in src/lib/core/theming/_palette.scss */
+$clientes-theme: (50 : #e0ebf3,
+  100 : #b3cee2,
+  200 : #80adcf,
+  300 : #4d8cbb,
+  400 : #2674ad,
+  500 : #005b9e,
+  600 : #005396,
+  700 : #00498c,
+  800 : #004082,
+  900 : #002f70,
+  A100 : #9fbfff,
+  A200 : #6c9cff,
+  A400 : #397aff,
+  A700 : #1f69ff,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  ));
+
+$colors: (primary: #FF9800,
+  second: #FFCC00,
+  danger: #ffe926,
+  light: #fff099,
+  dark: #ffda00,
+  force: #ffe926,
+  text-title: #FFFFFF,
+  iconHome: #153170,
+  validation-field: rgb(248, 8, 8),
+  titleContent: #000000,
+  primary-timeline: rgb(165, 98, 4),
+  second-timeline: #c57703,
+  primaryAux: #FFED00);
+
+/*Material Theme Colors*/
+
+
+$primary: mat-palette($clientes-theme, 500);
+$accent: mat-palette($mat-indigo, 500);
+$warn: mat-palette($mat-pink, 500);
+$theme: mat-light-theme($primary, $accent, $warn);
+$background: map-get($theme, background);
+$foreground: map-get($theme, foreground);
+
+// $danger: mat-palette($default-theme, danger);
+// $success: mat-palette($default-theme, success);
+// $warning: mat-palette($default-theme, warning);
+
+@include mat-core();
+
+$custom-typography: mat-typography-config($font-family: 'Poppins, sans-serif'
+);
+
+
+// Override the typography in the core CSS.
+@include mat-core($custom-typography);
+
+// Default Theme
+@include angular-material-theme($theme);
+
+// Dark Theme
+
+/*Theme Colors*/
+
+$topbar: #2196f3;
+$sidebar: #fff;
+$sidebar-white: #e5edef;
+$sidebar-alt:#f2f6f8;
+$bodycolor: white !important;
+$headingtext: #242525;
+$bodytext: #67757c;
+$sidebar-text: #FFF;
+$sidebar-icons: #FFF;
+
+$font-16: 16px;
+
+$light-text: #a6b7bf;
+$themecolor: #005B9E;
+$themecolor-dark: #028ee1;
+
+/** Sidenav  **/
+$bg-side-itemselected: #005b9e;
+
+/*bootstrap Color*/
+$danger: #721c24;
+$success: #155724;
+$warning: #ffb22b;
+$primary: #005b9e;
+$info: #1e88e5;
+$inverse: #fff;
+$muted: #99abb4;
+$dark: #263238;
+$light: #f2f4f8;
+$extra-light: #ebf3f5;
+$secondary: #727b84;
+
+/*Light colors*/
+$light-danger: #f9e7eb;
+$light-success: #e8fdf8;
+$light-warning: #fff8ec;
+$light-primary: #f1effd;
+$light-info: #e3f3fd;
+$light-inverse: #f6f6f6;
+$light-megna: #e0f2f4;
+
+
+
+$danger-dark: #e6294b;
+$success-dark: #1eacbe;
+$warning-dark: #e9ab2e;
+$primary-dark: #6352ce;
+$info-dark: #028ee1;
+$red-dark: #d61f1f;
+$inverse-dark: #232a37;
+$dark-transparent:rgba(0, 0, 0, 0.05);
+
+/*Normal Color*/
+$white: #ffffff;
+$red: #fb3a3a;
+$yellow: #a0aec4;
+$purple: #7460ee;
+$blue: #02bec9;
+$megna: #00897b;
+
+/*Extra Variable*/
+$rgt: right;
+$lft: left;
+$border: rgba(120, 130, 140, 0.13);
+$table-border:#f3f1f1;
+$card-brd:#d7dfe3;
+$dark-text: #848a96;
+$radius: 4px;
+$form-brd: #d9d9d9;

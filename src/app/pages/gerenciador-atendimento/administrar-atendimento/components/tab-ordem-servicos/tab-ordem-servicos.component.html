@@ -1,0 +1,5 @@
+<div class="container-fluid">
+  <app-generic-table *ngIf="showTable" [(inputData)]="ordemServicos" [inputDataSubject]="inputDataSubject"
+    [columns]="getColunasTabela()" [hidePaginator]="true">
+  </app-generic-table>
+</div>

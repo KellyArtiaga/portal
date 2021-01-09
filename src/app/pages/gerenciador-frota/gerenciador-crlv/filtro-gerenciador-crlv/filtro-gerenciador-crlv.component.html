@@ -1,0 +1,103 @@
+<div class="container-fluid p-0">
+  <div class="form-size transform pt-2">
+    <form [formGroup]="formFiltro" class="row">
+      <app-filtro-agrupadores class="col-12" [form]="formFiltro"></app-filtro-agrupadores>
+      <!-- <div class="col-md-3 col-sm-9 col-xs-9">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.CLIENTE' | translate }}</mat-label>
+          <mat-select matInput formControlName="clientes" multiple required (openedChange)="getVeiculos($event)">
+            <mat-select-trigger>
+              {{formFiltro.get('clientes').value && formFiltro.get('clientes').value.length > 0 ? formFiltro.get('clientes').value[0].nomeFantasia : ''}}
+              <span *ngIf="formFiltro.get('clientes').value?.length > 1">
+                (+{{formFiltro.get('clientes').value.length - 1}}
+                {{formFiltro.get('clientes').value?.length === 2 ? 'outro' : 'outros'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let cliente of clientes" [value]="cliente"
+              (onSelectionChange)="verificarClientesPlacas($event, cliente)"
+              (click)="markAll(cliente, 'clientes', clientes)">
+              {{cliente.nomeFantasia}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.CRLV.LABEL.REGIONAL' | translate}}</mat-label>
+          <mat-select matInput formControlName="regionaisId" multiple>
+            <mat-select-trigger>
+              {{formFiltro.get('regionaisId').value && formFiltro.get('regionaisId').value.length > 0 ? formFiltro.get('regionaisId').value[0].descricao : ''}}
+              <span *ngIf="formFiltro.get('regionaisId').value?.length > 1">
+                (+{{formFiltro.get('regionaisId').value.length - 1}}
+                {{formFiltro.get('regionaisId').value?.length === 2 ? 'outro' : 'outros'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let item of regionais" [value]="item" (click)="markAll(item, 'regionaisId', regionais)">
+              {{item.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.CRLV.LABEL.CENTRO_CUSTO' | translate}}</mat-label>
+          <mat-select matInput formControlName="centrosCustosId" multiple>
+            <mat-select-trigger>
+              {{formFiltro.get('centrosCustosId').value && formFiltro.get('centrosCustosId').value.length > 0 ? formFiltro.get('centrosCustosId').value[0].descricao : ''}}
+              <span *ngIf="formFiltro.get('centrosCustosId').value?.length > 1">
+                (+{{formFiltro.get('centrosCustosId').value.length - 1}}
+                {{formFiltro.get('centrosCustosId').value?.length === 2 ? 'outro' : 'outros'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let centroCusto of centrosCustos" [value]="centroCusto"
+              (click)="markAll(centroCusto, 'centrosCustosId', centrosCustos)">
+              {{centroCusto.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div> -->
+      <!-- <div class="col-md-3 col-sm-9 col-xs-9">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.CRLV.LABEL.PLACA' | translate}}</mat-label>
+          <input matInput formControlName="placa" [matAutocomplete]="auto" (keyup)="getVeiculos($event)"
+            maxlength="8" />
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="display">
+            <ng-container>
+              <mat-option *ngFor="let veiculo of placas.filteredData" [value]="veiculo">
+                {{formataPlaca(veiculo.placa)}} - {{veiculo.modelo}}
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div> -->
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.CRLV.LABEL.EXERICIO' | translate}}</mat-label>
+          <mat-select matInput formControlName="exercicio" disableOptionCentering>
+            <mat-option *ngFor="let exercicio of exercicios" [value]="exercicio">
+              {{exercicio}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.CRLV.LABEL.SITUACAO_ENVIO' | translate}}</mat-label>
+          <mat-select matInput formControlName="situacaoEnvio" disableOptionCentering>
+            <mat-option *ngFor="let situacaoEnvio of situacoesEnvio" [value]="situacaoEnvio.id">
+              {{situacaoEnvio.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-12">
+        <button class="mr-3" mat-raised-button color="primary" type="button" (click)="pesquisar()">
+          {{ 'PORTAL.BUTTONS.BTN_SEARCH' | translate }}
+        </button>
+        <button mat-raised-button class="btn-secondary" type="button" (click)="limparFiltros()">
+          {{ 'PORTAL.BUTTONS.BTN_LIMPAR' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

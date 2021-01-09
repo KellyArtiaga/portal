@@ -1,0 +1,53 @@
+.card-box {
+  border: 1px #BABABA solid;
+}
+
+.header-card {
+  z-index: 99999;
+  position: absolute;
+  top: -9px;
+  left: 15px;
+  width: 85px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.button-red {
+  background-color: #f00;
+  color: #fff;
+  width: 12%;
+}
+
+.button-green {
+  background-color: #008000;
+  color: #fff;
+  width: 12%;
+}
+
+.header-menu {
+  color: #575050;
+  z-index: 99999;
+  width: 100px;
+  background-color: #fff;
+  margin-left: 20px;
+  position: absolute;
+  margin-top: -16px;
+  height: 20px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.mat-menu-panel.menu-acessorios {
+  min-width: 750px !important;
+  max-width: 750px !important;
+  max-height: calc(100vh - 200px);
+  min-height: calc(100vh - 200px);
+  border: 1px #BABABA solid;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0px;
+}

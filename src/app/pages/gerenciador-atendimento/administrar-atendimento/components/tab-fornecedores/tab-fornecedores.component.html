@@ -1,0 +1,45 @@
+<div class="container-fluid" [formGroup]="formFornecedor">
+  <div class="row" style="justify-content: center;" *ngIf="showMessage">
+    <span>{{'PORTAL.ATENDIMENTO.LABELS.OFICINA_NOT_FOUND' | translate}}</span>
+  </div>
+  <div class="row" style="justify-content: center;" *ngIf="!showMessage">
+    <div *ngFor="let item of fornecedores; let i = index"
+      [ngClass]="{'col-md-6': fornecedores.length === 1 || fornecedores.length === 2, 'col-md-3': fornecedores.length === 3}">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_FORNECEDOR' | translate}} {{i+1}}</mat-label>
+        <input matInput type="text" formControlName="fornecedor{{i + 1}}" readonly />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_ENDERECO_FORNECEDOR' | translate}}</mat-label>
+        <textarea matInput rows="4" cols="30" formControlName="enderecoFornecedor{{i + 1}}" style="resize: none;"
+          readonly></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="pl-0">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_DATA_PARADA' | translate}}</mat-label>
+        <input matInput type="text" formControlName="dataParada{{i + 1}}" [matDatepicker]="dataParada" readonly />
+        <mat-datepicker-toggle matSuffix [for]="dataParada">
+        </mat-datepicker-toggle>
+        <mat-datepicker #dataParada disabled>
+        </mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="pl-0">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_DATA_PREV_PARADA' | translate}}</mat-label>
+        <input matInput type="text" formControlName="dataPrevisaoParada{{i + 1}}" [matDatepicker]="dataPrevisaoParada"
+          readonly />
+        <mat-datepicker-toggle matSuffix [for]="dataPrevisaoParada">
+        </mat-datepicker-toggle>
+        <mat-datepicker #dataPrevisaoParada disabled="true">
+        </mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="pl-0">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_DATA_PREV_FECHAMENTO' | translate}}</mat-label>
+        <input matInput type="text" formControlName="dataPrevisaoFechamento{{i + 1}}"
+          [matDatepicker]="dataPrevisaoFechamento" readonly />
+        <mat-datepicker-toggle matSuffix [for]="dataPrevisaoFechamento">
+        </mat-datepicker-toggle>
+        <mat-datepicker #dataPrevisaoFechamento disabled="true">
+        </mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

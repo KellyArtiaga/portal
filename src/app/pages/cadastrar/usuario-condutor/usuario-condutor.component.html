@@ -1,0 +1,125 @@
+<div class="container-fluid page-body">
+  <div class="row p-0 center-vertical pt-2" *ngIf="isSearch">
+    <div class="col-md-3 col-xs-6 pt-2">
+      <mat-form-field appearance="outline" matTooltip="Pesquisar por Condutores" matTooltipShowDelay="1000">
+        <mat-label>{{'PORTAL.LABELS.LBL_SEARCH' | translate}}</mat-label>
+        <input matInput type="text" [(ngModel)]="descricaoGenerica" maxlength="100" autocomplete="off"
+          [disabled]="!getPermissao().pesquisar" />
+      </mat-form-field>
+    </div>
+    <app-filtro-agrupadores class="col-9" [form]="formUsuario"></app-filtro-agrupadores>
+    <!-- <div class="col-lg-3 col-xs-6 pt-2">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.REGIONAL' | translate}}</mat-label>
+        <mat-select matInput [formControl]="regionaisForm" multiple>
+          <mat-select-trigger>
+            {{regionaisForm.value && regionaisForm.value.length > 0 ? regionaisForm.value[0].descricao : ''}}
+            <span *ngIf="regionaisForm.value?.length > 1">
+              (+{{regionaisForm.value.length - 1}}
+              {{regionaisForm.value?.length === 2 ? 'outro' : 'outros'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let item of regionais" [value]="item" (click)="markAllRegionais(item, regionais)">
+            {{item.descricao}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-lg-3 col-xs-6 pt-2">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.CENTRO_CUSTO' | translate}}</mat-label>
+        <mat-select matInput [formControl]="centrosCustosForm" multiple>
+          <mat-select-trigger>
+            {{centrosCustosForm.value && centrosCustosForm.value.length > 0 ? centrosCustosForm.value[0].descricao : ''}}
+            <span *ngIf="centrosCustosForm.value?.length > 1">
+              (+{{centrosCustosForm.value.length - 1}}
+              {{centrosCustosForm.value?.length === 2 ? 'outro' : 'outros'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let item of centrosCustos" [value]="item"
+            (click)="markAllcentrosCustos(item, centrosCustos)">
+            {{item.descricao}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div> -->
+    <span class="col-md-3 pt-2 pb-3 btn-group-filter">
+      <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="pesquisar()"
+        [disabled]="!getPermissao().pesquisar">
+        {{'PORTAL.BUTTONS.BTN_SEARCH' | translate}}
+      </button>
+      <button mat-raised-button class="btn btn-secondary" type="button" (click)="clearSearch()"
+        [disabled]="!getPermissao().pesquisar">
+        {{'PORTAL.BUTTONS.BTN_CLEAN' | translate}}
+      </button>
+    </span>
+  </div>
+  <div *ngIf="!isSearch">
+    <mat-tab-group mat-stretch-tabs [selectedIndex]="getNavegacao().aba" (selectedTabChange)="select($event)">
+      <mat-tab [disabled]="!getNavegacao().habilitar.dadosPessoais">
+        <ng-template mat-tab-label>
+          <div>{{'PORTAL.USUARIO.TITLES.DADOS_PESSOAIS' | translate}}</div>
+          <mat-icon class="verde" *ngIf="getNavegacao().validar.dadosPessoais">check</mat-icon>
+        </ng-template>
+        <div class="mt-3" *ngIf="validation('dadosPessoais')">
+          <app-usuario-condutor-dados-pessoais [formValue]="getNavegacao().dadosUsuario">
+          </app-usuario-condutor-dados-pessoais>
+        </div>
+      </mat-tab>
+      <mat-tab [disabled]="!getNavegacao().habilitar.contato">
+        <ng-template mat-tab-label>
+          <div>{{'PORTAL.USUARIO.TITLES.CONTATO' | translate}}</div>
+          <mat-icon class="verde" *ngIf="getNavegacao().validar.contato">check</mat-icon>
+        </ng-template>
+        <div class="mt-3" *ngIf="validation('contato')">
+          <app-usuario-condutor-contato [formValue]="getNavegacao().dadosUsuario"></app-usuario-condutor-contato>
+        </div>
+      </mat-tab>
+      <mat-tab [disabled]="!getNavegacao().habilitar.dadosResidenciais">
+        <ng-template mat-tab-label>
+          <span>{{'PORTAL.USUARIO.TITLES.ENDERECO' | translate}}</span>
+          <mat-icon class="verde" *ngIf="getNavegacao().validar.dadosResidenciais">check
+          </mat-icon>
+        </ng-template>
+        <div class="mt-3" *ngIf="validation('endereco')">
+          <app-usuario-condutor-dados-residenciais [formValue]="getNavegacao().dadosUsuario">
+          </app-usuario-condutor-dados-residenciais>
+        </div>
+      </mat-tab>
+      <mat-tab [disabled]="!getNavegacao().habilitar.habilitacao">
+        <ng-template mat-tab-label>
+          <span>{{'PORTAL.USUARIO.TITLES.HABILITACAO' | translate}}</span>
+          <mat-icon class="verde" *ngIf="getNavegacao().validar.habilitacao">check</mat-icon>
+        </ng-template>
+        <div class="mt-3" *ngIf="validation('habilitacao')">
+          <app-usuario-condutor-habilitacao [formValue]="getNavegacao().dadosUsuario">
+          </app-usuario-condutor-habilitacao>
+        </div>
+      </mat-tab>
+      <mat-tab [disabled]="!getNavegacao().habilitar.dadosAdicionais">
+        <ng-template mat-tab-label>
+          <span>{{'PORTAL.USUARIO.TITLES.DADOS_ADICIONAIS' | translate}}</span>
+          <mat-icon class="verde" *ngIf="getNavegacao().validar.dadosAdicionais">check</mat-icon>
+        </ng-template>
+        <div class="mt-3" *ngIf="validation('dadosAdicionais')">
+          <app-usuario-condutor-dados-adicionais [formValue]="getNavegacao().dadosUsuario">
+          </app-usuario-condutor-dados-adicionais>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+    <hr>
+    <div>
+      <app-barra-navegacao (cancelar)="cancelar()"></app-barra-navegacao>
+    </div>
+  </div>
+  <hr *ngIf="showTable">
+  <div class="col-md-12 p-0" *ngIf="showTable">
+    <div class="text-right" *ngIf="getPermissao().incluir">
+      <button class="btn-add-new" (click)="showInsert()" type="button">{{'PORTAL.BUTTONS.BTN_ADD_NEW' | translate}}
+        <mat-icon class="material-icons">add_circle</mat-icon>
+      </button>
+    </div>
+    <app-generic-table [(inputData)]="condutores" [inputDataSubject]="dataInputSubj" [columns]="getColunasTabela()"
+      [infoMessage]="mensagemInformacao" (nextPage)="getCondutor($event)" [totalRows]="totalRows"></app-generic-table>
+  </div>
+</div>

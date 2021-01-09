@@ -1,0 +1,34 @@
+<div class="container-fluid page-body p-0">
+  <div class="center-vertical">
+    <mat-tab-group mat-stretch-tabs [selectedIndex]="getStorage().abaSelecionada"
+      (selectedTabChange)="selecionarAba($event)">
+      <mat-tab>
+        <app-manutencao-aba-zero #abaZero></app-manutencao-aba-zero>
+      </mat-tab>
+      <mat-tab>
+        <app-manutencao-aba-um #abaUm></app-manutencao-aba-um>
+      </mat-tab>
+      <mat-tab>
+        <app-manutencao-aba-dois #abaDois></app-manutencao-aba-dois>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  <hr class="hidden-xs">
+  <div class="button-align">
+    <div>
+      <button mat-raised-button class="btn btn-primary" type="button" style="cursor: pointer;" (click)="anterior()"
+        [hidden]="getStorage().abaSelecionada === 0 || (getStorage().abaSelecionada === 1 && getStorage().agendamento)">
+        <mat-icon>arrow_back</mat-icon> {{ 'PORTAL.BUTTONS.BTN_BACK' | translate }}
+      </button>
+      <button mat-raised-button class="btn btn-secondary ml-2" type="button" (click)="cancelar()">
+        {{ 'PORTAL.BUTTONS.BTN_CANCEL' | translate }}
+      </button>
+    </div>
+    <div class="float-right">
+      <button mat-raised-button class="btn btn-primary" type="button" (click)="proxima()"
+        *ngIf="getStorage().abaSelecionada < 2">
+        {{ 'PORTAL.BUTTONS.BTN_NEXT' | translate }} <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

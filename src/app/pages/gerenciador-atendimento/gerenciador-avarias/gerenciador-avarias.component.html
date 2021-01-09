@@ -1,0 +1,17 @@
+<div class="container-fluid page-body">
+  <div class="pt-2 center-vertical">
+    <app-filtro-avarias (filtrar)="filtrarAvarias($event)" (limparFiltro)="limparTabela()">
+    </app-filtro-avarias>
+    <hr class="mt-3">
+    <div *ngIf="showTable">
+      <button class="row ml-1 btn-export" *ngIf="showExport" (click)="exportExcel()" type="button">
+        <mat-icon svgIcon="pfu-excel-icon" class="material-icons"></mat-icon>
+        <span class="ml-2">{{'PORTAL.BUTTONS.BTN_EXPORT' | translate}}</span>
+      </button>
+      <app-generic-table [(inputData)]="historicoAvarias" [inputDataSubject]="dataInputSubj"
+        [columns]="getColunasTabela()" [infoMessage]="mensagemInformacao" (nextPage)="getHistoricoAvarias($event)"
+        [totalRows]="totalRows">
+      </app-generic-table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="23.999" viewBox="0 0 24 23.999">
+  <g id="icon_expandir" transform="translate(-799.5 -542.843)">
+    <g id="Grupo_5695" data-name="Grupo 5695" transform="translate(809.843 542.843)">
+      <line id="Linha_457" data-name="Linha 457" y1="7" x2="7" transform="translate(0 6.657)" fill="none" stroke="#fff" stroke-width="3"/>
+      <g id="Polígono_108" data-name="Polígono 108" transform="translate(7.293) rotate(45)">
+        <path id="Caminho_1" data-name="Caminho 1" d="M7.168,5.575H0L3.584,0Z" transform="translate(0.916 0.925)" fill="#fff"/>
+        <path id="Caminho_2" data-name="Caminho 2" d="M4.5,1.849,1.832,6H7.168L4.5,1.849M4.5,0,9,7H0Z" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Grupo_5696" data-name="Grupo 5696" transform="translate(799.5 553.186)">
+      <line id="Linha_457-2" data-name="Linha 457" x1="7" y2="7" transform="translate(6.657)" fill="none" stroke="#fff" stroke-width="3"/>
+      <g id="Polígono_108-2" data-name="Polígono 108" transform="translate(6.364 13.656) rotate(-135)">
+        <path id="Caminho_3" data-name="Caminho 3" d="M7.168,5.575H0L3.584,0Z" transform="translate(0.916 0.925)" fill="#fff"/>
+        <path id="Caminho_4" data-name="Caminho 4" d="M4.5,1.849,1.832,6H7.168L4.5,1.849M4.5,0,9,7H0Z" transform="translate(0 0)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

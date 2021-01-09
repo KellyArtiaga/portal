@@ -1,0 +1,50 @@
+<mat-toolbar [hidden]="!hiddenHeader" color="primary" class="mat-elevation-z6" class="toolbar"
+  style="width: 100% !important; position: fixed; top: 0px;">
+  <div class="unidas-logo-rac">
+    <a>
+      <img src="assets/svg/Logo_Clientes.svg" alt="Logo Unidas" />
+    </a>
+  </div>
+</mat-toolbar>
+
+<mat-toolbar [hidden]="hiddenHeader" color="primary" class="mat-elevation-z6" class="toolbar"
+  style="width: 100% !important; position: fixed; top: 0px;">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="expandedClick()" class="menu-button" value="sidebarclosed">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a routerLink="/home">
+      <img src="assets/svg/Logo_Clientes.svg" class="unidas-logo" alt="Logo Unidas" />
+    </a>
+    <span class="flex-auto hidden-xs"></span>
+    <mat-menu #bandeiras="matMenu" yPosition="below" class="menu-language">
+      <mat-nav-list appAccordion>
+        <mat-list-item appAccordionLink (click)="mudarLinguagem('pt-br')"> <img src="assets/svg/brasil.svg"
+            class="flags pointer" alt="Bandeira Brasil" />
+          <span>{{'PORTAL.LABELS.PORTUGUES' | translate}}</span>
+        </mat-list-item>
+        <mat-list-item appAccordionLink (click)="mudarLinguagem('en')"><img src="assets/svg/estados-unidos.svg"
+            class="flags pointer" alt="Bandeira EUA" /> <span>{{'PORTAL.LABELS.INGLES' | translate}}</span>
+        </mat-list-item>
+        <mat-list-item appAccordionLink (click)="mudarLinguagem('es')"><img src="assets/svg/espanha.svg"
+            class="flags pointer" alt="Bandeira Espanha" /><span>{{'PORTAL.LABELS.ESPANHOL' | translate}}
+          </span></mat-list-item>
+      </mat-nav-list>
+    </mat-menu>
+
+    <!-- <div class="">
+      <button mat-icon-button class="bell-button" [matMenuTriggerFor]="bandeiras">
+        <mat-icon class="icon-language" aria-label="icon-button">language
+        </mat-icon>
+      </button>
+    </div> -->
+    <!--
+    <div class="d-inline-flex">
+      <app-user-notifications></app-user-notifications>
+    </div>
+    -->
+    <div class="d-inline-flex">
+      <app-user-menu [efetuarLoginFunction]="modalFunction"></app-user-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

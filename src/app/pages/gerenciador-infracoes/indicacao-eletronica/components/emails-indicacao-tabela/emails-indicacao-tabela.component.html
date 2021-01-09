@@ -1,0 +1,15 @@
+<div class="row container pt-3 mb-2 ml-5">
+  <fieldset class="col-xs-10 col-sm-10 box-class mb-2 mr-4 mat-elevation-z4 pb-3">
+    <hr id="tituloHistoricoEmail" class="hr-text" />
+    <div class="mt-4">
+      <app-generic-table *ngIf="showTableEmail" [(inputData)]="emails" [columns]="getColunasTabelaEmail()">
+      </app-generic-table>
+    </div>
+  </fieldset>
+</div>
+
+<div class="text-center p-3">
+  <button mat-raised-button class="btn btn-secondary mr-5" type="button" (click)="voltar()">
+    {{ 'PORTAL.BUTTONS.BTN_BACK' | translate }}
+  </button>
+</div>

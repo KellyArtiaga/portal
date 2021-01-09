@@ -1,0 +1,107 @@
+<app-modal-generic>
+  <div class="pb-4">
+    <header class="header">
+      <span class="textWhiteHeader">{{'PORTAL.LABELS.IMAGENS_VIDEOS' | translate}}</span>
+      <a class="circle-close mr-3" (click)="closeModal()">
+        <mat-icon class="pointer">close</mat-icon>
+      </a>
+    </header>
+    <section>
+      <div class="col-md-12" *ngIf="showIncludes()">
+        <div>
+          <hr class="hr-text" data-content="Adicionar Imagens / Documentos" />
+        </div>
+        <form [formGroup]="formArquivos">
+          <div class="row center mt-4">
+            <div class="col-md-8">
+              <div class="row pl-0">
+                <div class="col-10">
+                  <mat-form-field ngbAutofocus appearance="outline">
+                    <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_TIPO' | translate}}</mat-label>
+                    <mat-select formControlName="tipoArquivo" required>
+                      <mat-option *ngFor="let tipoArquivo of tipoArquivos" [value]="tipoArquivo">
+                        {{tipoArquivo.descricao}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <input style="display: none;" type="file" name="files[]" accept="application/pdf, image/*, video/*"
+                  (change)="onFileChange($event)" #fileInput multiple>
+                <button class="btn-form col-1" type="button" mat-raised-button (click)="fileInput.click()"
+                  [disabled]="!formArquivos.valid" [matTooltip]="btnToolTip">
+                  <mat-icon svgIcon="pfu-upload" class="icone-upload"></mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-12 text-center mt-4"
+        *ngIf="!showForm && (totalImages === 0 && totalVideos === 0 && totalDocs === 0)">
+        <h6 class="m-0">{{ 'PORTAL.MSG_NO_FILES_FOUND' | translate }}</h6>
+      </div>
+      <!-- Imagens -->
+      <div class="col-12" *ngIf="totalImages > 0">
+        <hr class="hr-text" data-content="Imagens" />
+        <div class="red-circle-totals red-circle-image">
+          {{totalImages}}
+        </div>
+        <div class="d-inline-flex mt-3 w-100 div-scroll pl-2" style="max-width: 1250px;">
+          <span *ngFor="let item of docs; let i = index;">
+            <a [href]="item.safeURL" target="_blank">
+              <img class="box-image mr-4" [src]="item.safeURL" *ngIf="item.isImage" [alt]="item.descricao" />
+            </a>
+            <mat-icon svgIcon="pfu-delete" class="icon-remove remove-image" (click)="deletarArquivo(item)"
+              *ngIf="item.isImage">
+            </mat-icon>
+            <div class="font-size-arquive" *ngIf="item.isImage" [matTooltip]="item.descricao">
+              {{item.descricao}}
+            </div>
+          </span>
+        </div>
+      </div>
+      <!-- Videos -->
+      <div class="col-12" *ngIf="totalVideos > 0">
+        <hr class="hr-text" data-content="Vídeos" />
+        <div class="red-circle-totals red-circle-video">
+          {{totalVideos}}
+        </div>
+        <div class="d-inline-flex mt-3 w-100 div-scroll pl-2" style="max-width: 1250px;">
+          <span *ngFor="let item of docs; let i = index;" [ngClass]="{'mr-3': item.isVideo}">
+            <a [href]="item.safeURL" target="_blank">
+              <video *ngIf="item.isVideo" height="130" width="200" controls>
+                <source [src]="item.safeURL" type="{{item.descricao + '/' + item.extensao}}">
+                <track label="Português Brasileiro" kind="captions" srclang="pt-br" [src]="item.safeURL" default>
+              </video>
+            </a>
+            <mat-icon svgIcon="pfu-delete" class="icon-remove remove-video" (click)="deletarArquivo(item)"
+              *ngIf="item.isVideo">
+            </mat-icon>
+            <div class="font-size-arquive" *ngIf="item.isVideo" [matTooltip]="item.descricao">
+              {{item.descricao}}
+            </div>
+          </span>
+        </div>
+      </div>
+      <!-- Documentos -->
+      <div class="col-12" *ngIf="totalDocs > 0">
+        <hr class="hr-text" data-content="Documentos" />
+        <div class="red-circle-totals red-circle-document">
+          {{totalDocs}}
+        </div>
+        <div class="d-inline-flex mt-3 w-100 div-scroll pl-2" style="max-width: 1250px;">
+          <span *ngFor="let item of docs; let i = index;">
+            <div class="rounded mr-4" *ngIf="item.isDoc">
+              <a [href]="item.safeURL" target="_blank">
+                <img class="box-img border-green" [src]="'../../../assets/svg/pdf-doc.svg'" [alt]="item.descricao" />
+              </a>
+              <mat-icon svgIcon="pfu-delete" *ngIf="item.isDoc" class="remove-doc" (click)="deletarArquivo(item)">
+              </mat-icon>
+            </div>
+            <div *ngIf="item.isDoc" class="font-size-arquive" [matTooltip]="item.descricao">{{item.descricao}}</div>
+          </span>
+        </div>
+      </div>
+    </section>
+  </div>
+</app-modal-generic>

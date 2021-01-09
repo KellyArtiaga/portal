@@ -1,0 +1,76 @@
+<form [formGroup]="form" class="p-2" (ngSubmit)="enviar()" autocomplete="off">
+  <div class="container-fluid page-body p-0">
+    <hr class="hr-text" data-content="Informações do Atendimento" />
+    <div class="pt-2 center-vertical">
+      <div class="row">
+        <div class="col-md-4">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'PORTAL.GESTAO_CONTRATO.FORM.LABEL.NOME_CONTATO' | translate }}</mat-label>
+            <input matInput formControlName="nomeContato" type="text" maxlength="50" required />
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'PORTAL.GESTAO_CONTRATO.FORM.LABEL.TELEFONE_GESTOR' | translate }}</mat-label>
+            <input matInput formControlName="telefoneGestor" type="text" maxlength="15" mask="(00) 00000-0000"
+              required />
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'PORTAL.GESTAO_CONTRATO.FORM.LABEL.EMAIL_GESTOR' | translate }}</mat-label>
+            <input matInput formControlName="emailGestor" type="email" maxlength="75" (blur)="validarEmail()"
+              required />
+          </mat-form-field>
+        </div>
+      </div>
+      <hr class="hr-text" data-content="Informações Adicionais" />
+      <div class="row mt-4">
+        <div class="col-md-3" hidden="true">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'PORTAL.GESTAO_CONTRATO.FORM.LABEL.TIPO' | translate }}</mat-label>
+            <mat-select matInput formControlName="tipo" disableOptionCentering>
+              <mat-option *ngFor="let tipo of tipos" [value]="tipo.descricaoSolicitacao">
+                {{ tipo.descricaoSolicitacao }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'PORTAL.GESTAO_CONTRATO.FORM.LABEL.MOTIVO' | translate }}</mat-label>
+            <mat-select matInput formControlName="motivo" disableOptionCentering required>
+              <mat-option *ngFor="let motivo of motivos" [value]="motivo.descricaoMotivoSolicitacao">
+                {{ motivo.descricaoMotivoSolicitacao }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <hr class="hr-text" data-content="Informações do Cliente" />
+      <div class="row mt-4">
+        <div class="col-12">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'PORTAL.GESTAO_CONTRATO.FORM.LABEL.DESCRICAO_DOCUMENTO' | translate }}</mat-label>
+            <textarea matInput rows="4" cols="30" formControlName="descricaoDocumento" maxlength="75"
+              style="resize: none;" required></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <hr>
+      <div class="d-inline-flex w-100 mt-2 mb-4">
+        <span class="col-6 text-left p-0">
+          <button mat-raised-button class="btn btn-secondary" type="button" (click)="voltar()">
+            {{'PORTAL.BUTTONS.BTN_CANCEL' | translate}}
+          </button>
+        </span>
+        <span class="col-6 text-right p-0">
+          <button mat-raised-button color="primary" type="submit">
+            {{'PORTAL.BUTTONS.BTN_SEND' | translate}}
+            <mat-icon>check</mat-icon>
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+</form>

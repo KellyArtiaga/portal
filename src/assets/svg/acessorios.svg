@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49" height="49" viewBox="0 0 49 49">
+  <defs>
+    <filter id="Retângulo_2452" x="0" y="0" width="49" height="49" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_5601" data-name="Grupo 5601" transform="translate(-573 -1113.594)">
+    <g transform="matrix(1, 0, 0, 1, 573, 1113.59)" filter="url(#Retângulo_2452)">
+      <rect id="Retângulo_2452-2" data-name="Retângulo 2452" width="31" height="31" rx="6" transform="translate(9 6)" fill="#005b9e"/>
+    </g>
+    <path id="precaucao" d="M0,2.16a.6.6,0,0,1,.495-.554S9.142,0,10.517,0,20.569,1.607,20.569,1.607a.6.6,0,0,1,.483.551v8.382a11.463,11.463,0,0,1-4.979,8.706s-4.1,2.808-5.495,2.808-5.589-2.834-5.589-2.834A11.457,11.457,0,0,1,0,10.541Zm1.17,8.381a10.263,10.263,0,0,0,4.454,7.65l.172.114q1.343.886,2.747,1.662a7.285,7.285,0,0,0,2.035.862,6.954,6.954,0,0,0,1.978-.841c.232-.124.474-.262.722-.408q1.01-.593,1.987-1.246l.213-.143a10.247,10.247,0,0,0,4.4-7.65V2.725q-2.307-.421-4.618-.815c-2.5-.425-4.284-.685-4.746-.685s-2.237.259-4.731.684l-.605.1q-2.007.345-4.01.713v7.816Z" transform="translate(587.08 1124.714)" fill="#fff"/>
+    <g id="Grupo_5323" data-name="Grupo 5323" transform="translate(591.852 1127.496)">
+      <g id="Grupo_4739" data-name="Grupo 4739" transform="translate(0 5.451)">
+        <g id="Grupo_4704" data-name="Grupo 4704" transform="translate(0 0)">
+          <g id="_67994" data-name="67994" transform="translate(0 0)">
+            <g id="Grupo_3159" data-name="Grupo 3159">
+              <path id="Caminho_1720" data-name="Caminho 1720" d="M11.109,2.483a.278.278,0,0,0-.221-.109L9.8,2.383A3.827,3.827,0,0,0,8.8.651C7.427-.283,3.777-.254,2.393.7a4.008,4.008,0,0,0-1.03,1.748L.274,2.46a.286.286,0,0,0-.223.112.311.311,0,0,0-.06.25l.155.815a.284.284,0,0,0,.279.236l.323,0A2.106,2.106,0,0,0,.272,5.2,1.991,1.991,0,0,0,.859,6.677l.013.01L.862,7.83a.432.432,0,0,0,.426.445l1-.008a.449.449,0,0,0,.433-.452l0-.459L8.356,7.31l0,.459a.432.432,0,0,0,.426.445l1-.008a.449.449,0,0,0,.433-.452l.009-1.12a2.076,2.076,0,0,0,.623-1.483,2.04,2.04,0,0,0-.475-1.358l.344,0A.3.3,0,0,0,11,3.549l.168-.817A.309.309,0,0,0,11.109,2.483ZM2.859,1.449A6.866,6.866,0,0,1,8.318,1.4a3.68,3.68,0,0,1,.727,1.454L2.11,2.915A3.826,3.826,0,0,1,2.859,1.449ZM1.544,5.3a.882.882,0,0,1,.852-.89.848.848,0,0,1,.838.876.881.881,0,0,1-.852.89A.849.849,0,0,1,1.544,5.3Zm7.188.825a.849.849,0,0,1-.838-.876.882.882,0,0,1,.852-.89.848.848,0,0,1,.838.876A.882.882,0,0,1,8.732,6.123Z" transform="translate(0.015 0.032)" fill="#fff"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Grupo_4779" data-name="Grupo 4779" transform="translate(3.065 0)">
+        <line id="Linha_362" data-name="Linha 362" x2="4.853" transform="translate(0 2.427)" fill="none" stroke="#fff" stroke-width="1"/>
+        <line id="Linha_363" data-name="Linha 363" y2="4.854" transform="translate(2.426)" fill="none" stroke="#fff" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

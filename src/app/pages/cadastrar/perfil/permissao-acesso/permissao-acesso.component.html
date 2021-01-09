@@ -1,0 +1,80 @@
+<div class="container-fluid page-body font-permissao-acesso">
+  <div class="row pt-3 text-left pl-1" style="font-size: 14px;">
+    <div class="col-md-12">
+      <strong>{{'PORTAL.PERMISSAO.LABELS.CODIGO' | translate}}:</strong>
+      <span> {{idPerfil}}</span>
+    </div>
+    <div class="col-md-12">
+      <strong>{{'PORTAL.PERMISSAO.LABELS.NOME_PERFIL' | translate}}:</strong>
+      <span> {{nomePerfil}}</span>
+    </div>
+  </div>
+  <hr>
+  <div class="row pl-0">
+    <div class="container pt-1 ml-1">{{'PORTAL.PERMISSAO.LABELS.MENU_SUBMENU' | translate}}:</div>
+    <div class="col-md-9">
+      <div class="row pl-0">
+        <mat-nav-list appAccordion class="col-md-5 grid-permissao-body" id="menu-permission">
+          <mat-accordion routerLinkActive="selected" multi="false">
+            <mat-expansion-panel #expansion="matExpansionPanel" *ngFor="let menu of menus | keyvalue"
+              (opened)="carregarSubmenus(menu.value.id)" (closed)="clearDataFunc(menu)">
+              <mat-expansion-panel-header class="item-permissao">
+                <mat-icon [svgIcon]="menu.value.icone"></mat-icon>
+                <span class="mt-1 ml-2">{{menu.value.descricaoFuncionalidade}}</span>
+              </mat-expansion-panel-header>
+              <ng-template matExpansionPanelContent>
+                <a mat-list-item class="item-permissao"
+                  (click)="carregarOperacoes(submenu.value.id, $event); $event.stopPropagation()"
+                  [autoClose]="'outside'" [placement]="getPlacement()"
+                  ngbPopover="{{'PORTAL.MENU.CADASTRO.ERRO_PERMISSAO' | translate }}"
+                  popoverTitle="{{'PORTAL.ALTERAR_PERMISSAO.SUBTITLE' | translate}}"
+                  [disablePopover]="submenu.value.possuiPermissao" *ngFor="let submenu of submenus | keyvalue">
+                  <mat-slide-toggle class="primary" (change)="configurarPermissaoSubmenu(submenu.value.id, $event)"
+                    [checked]="submenu.value.possuiPermissao" (click)="$event.stopPropagation()">
+                  </mat-slide-toggle>
+                  <mat-icon style="width: 25px; height: 30px;" [svgIcon]="submenu.value.icone"></mat-icon>
+                  <span class="mt-1 ml-2">{{submenu.value.descricaoFuncionalidade}}</span>
+                </a>
+              </ng-template>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-nav-list>
+        <div class="col-md-6" *ngIf="showOperacoes">
+          <div class="mat-elevation-z1 mt-1">
+            <div class="card-header">
+              <div class="row">
+                <mat-icon title="{{'PORTAL.ALTERAR_PERMISSAO.ICON' | translate}}"
+                  class="col-1 material-icons displayNone pt-1 pl-2">
+                  keyboard_arrow_left
+                </mat-icon>
+                <div class="col-10 p-0 mt-1 ml-3">
+                  <span style="font-size: 14px;">{{'PORTAL.ALTERAR_PERMISSAO.TITLE' | translate}}</span>
+                </div>
+              </div>
+            </div>
+            <div id="operacoes" class="card-body">
+              <div class="card-text mb-3"> {{'PORTAL.ALTERAR_PERMISSAO.SUBTITLE' | translate}} </div>
+              <div *ngFor="let operacao of operacoes | keyvalue" class="mb-2">
+                <a mat-list-item class="pt-2">
+                  <mat-slide-toggle (change)="configurarPermissaoOperacao(operacao.value.id, $event)"
+                    [checked]="operacao.value.possuiPermissao">{{operacao.value.descricaoOperacao}}</mat-slide-toggle>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 float-right mt-1">
+      <app-tips [title]="'PORTAL.ALTERAR_PERMISSAO.TIPS.TITLE'" [textContent]="'PORTAL.ALTERAR_PERMISSAO.TIPS.TEXT'">
+      </app-tips>
+    </div>
+  </div>
+  <hr>
+  <div class="col-md-12 pt-2">
+    <div class="float-right">
+      <button class="salvar-configuracao-button mb-2" routerLink="/cadastrar/perfil" color="primary" mat-raised-button>
+        {{ 'PORTAL.BUTTONS.BTN_BACK' | translate }}</button>
+    </div>
+  </div>
+</div>

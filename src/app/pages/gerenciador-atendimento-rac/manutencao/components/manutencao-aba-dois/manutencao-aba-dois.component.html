@@ -1,0 +1,12 @@
+<form [formGroup]="form" autocomplete="off" class="col-12 pl-3 pr-3 pb-3">
+  <hr class="hr-text" data-content="Registro de Sinistro" *ngIf="isSemAgendamentoParada" />
+
+  <div>
+    <hr class="hr-text" data-content="Indique o endereço onde deseja ser atendido" />
+    <app-filtro-fornecedores #filtroFornecedores [callPesquisar]="callPesquisar" [habilitaSalvar]='hideAgendamento'>
+    </app-filtro-fornecedores>
+  </div>
+</form>
+<div class="col-12 pl-3 pr-3" [hidden]="!exibirFornecedores && !isSemAgendamentoParada">
+  <app-manutencao-list-fornecedor #fornecedorList></app-manutencao-list-fornecedor>
+</div>

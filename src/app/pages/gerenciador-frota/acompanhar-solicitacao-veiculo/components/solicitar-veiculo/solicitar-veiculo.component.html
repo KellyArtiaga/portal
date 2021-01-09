@@ -1,0 +1,274 @@
+<div class="container-fluid page-body">
+  <div class="pt-1 center-vertical">
+    <form [formGroup]="form" (submit)="salvar()" novalidate autocomplete="off">
+      <hr class="hr-text" data-content="Dados" />
+      <div class="row pr-3 pl-3 pt-2">
+        <div [ngClass]="{'col-md-12': !(!!codigoEdicao), 'col-md-8': !!codigoEdicao}">
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.CLIENTE' | translate}}</mat-label>
+                <mat-select matInput formControlName="cliente" (selectionChange)="enableMotivoSolicitacao()"
+                  disableOptionCentering required>
+                  <mat-option *ngFor="let cliente of clientes" [value]="cliente">
+                    {{cliente.nomeFantasia}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.EMAIL_RESPONSAVEL' | translate}}</mat-label>
+                <input matInput formControlName="emailResponsavel" maxlength="100" required />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.UF' | translate}}</mat-label>
+                <mat-select matInput formControlName="uf" (selectionChange)="enableCidade()" disableOptionCentering
+                  required>
+                  <mat-option *ngFor="let uf of ufs" [value]="uf.uf">
+                    {{uf.estado}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.CIDADE' | translate}}</mat-label>
+                <input name="cidade" type="search" autocomplete="off" style="display: none" />
+                <input #cidadeAutoField matInput name="cidade" type="search" formControlName="cidade"
+                  [matAutocomplete]="autoCidade" autocomplete="off" required />
+                <mat-autocomplete #autoCidade="matAutocomplete" [displayWith]="displayCidade"
+                  autoActiveFirstOption="false">
+                  <ng-container>
+                    <mat-option *ngFor="let item of cidades.filteredData" [value]="item">
+                      {{item.municipio}}
+                    </mat-option>
+                  </ng-container>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.SOLICITANTE' | translate}}</mat-label>
+                <input matInput formControlName="solicitante" maxlength="50" required />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.EMAIL_SOLICITANTE' | translate}}</mat-label>
+                <input matInput formControlName="emailSolicitante" maxlength="100" required />
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.MOTIVO' | translate}}</mat-label>
+                <mat-select matInput formControlName="motivoSolicitacao" (selectionChange)="changeMotivo()"
+                  disableOptionCentering required [disabled]="isEdition">
+                  <mat-option *ngFor="let item of motivoSolicitacao" [value]="item.id">
+                    {{item.description}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.VEICULO_SUBSTITUIDO' | translate}}</mat-label>
+                <input matInput type="text" formControlName="veiculoSubstituido" class="uppercase"
+                  [matAutocomplete]="autoVeiculo" (keyup)="filtrarPlaca()" maxlength="8"
+                  [required]="form.get('motivoSolicitacao').value === 'S'" />
+                <mat-autocomplete #autoVeiculo="matAutocomplete" [displayWith]="displayVeiculo">
+                  <ng-container>
+                    <mat-option *ngFor="let veiculo of veiculosSubstituidos.filteredData" [value]="veiculo">
+                      {{veiculo.placa}} - {{veiculo.modelo}}
+                    </mat-option>
+                  </ng-container>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.MOTIVO_SUBSTITUICAO' | translate}}</mat-label>
+                <mat-select matInput formControlName="motivoSubstituicao" disableOptionCentering
+                  [required]="form.get('motivoSolicitacao').value === 'S'">
+                  <mat-option *ngFor="let item of motivoSubstituicao" [value]="item.id">
+                    {{item.description}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row" [hidden]="!hasPerfilClaro()">
+            <div class="col-md-4">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.CIA' | translate}}</mat-label>
+                <input name="cia" type="search" autocomplete="off" style="display: none" />
+                <input matInput name="cia" type="search" formControlName="cia" [matAutocomplete]="autoCia"
+                  autocomplete="off" [required]="hasPerfilClaro()" />
+                <mat-autocomplete #autoCia="matAutocomplete" [displayWith]="displayCia" autoActiveFirstOption="false">
+                  <ng-container>
+                    <mat-option *ngFor="let cia of cias" [value]="cia">
+                      {{cia.descricao}}
+                    </mat-option>
+                  </ng-container>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.GRUPO_CLIENTE' | translate}}</mat-label>
+                <mat-select matInput formControlName="grupoCliente" disableOptionCentering>
+                  <mat-option *ngFor="let item of gruposClientes" [value]="item.id">{{item.descricao}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div [ngClass]="{'col-md-4': !!codigoEdicao}" *ngIf="!!codigoEdicao">
+          <app-card-details [title]="'PORTAL.SOLICITACAO_VEICULO.LABEL.RESUMO'" [options]="cardResumoOptions"
+            [values]="resumeValues">
+          </app-card-details>
+        </div>
+      </div>
+      <hr class="hr-text mt-2 mb-4" data-content="Dados do veículo da compra" />
+      <div class="container-fluid">
+        <div class="text-right">
+          <button *ngIf="form.get('motivoSolicitacao').value !== 'S'" class="btn-add-new" type="button"
+            (click)="adicionarCardModelo()"
+            [ngClass]="{'disable-action': !form.get('motivoSolicitacao').value || cardVeiculos.length === 2}">
+            {{'PORTAL.BUTTONS.BTN_ADD_NEW' | translate}}
+            <mat-icon class="material-icons">add_circle</mat-icon>
+          </button>
+        </div>
+        <div class="row">
+          <mat-card class="col-md-4 card-box mat-card mat-elevation-z0"
+            *ngFor="let veiculo of cardVeiculos; let i = index;">
+            <div class="header-card">
+              <mat-icon style="font-size: 0px;" class="material-icons" svgIcon="pfu-carro-modelo"></mat-icon>
+              <span class="pl-1 font-weight-bold">{{'PORTAL.SOLICITACAO_VEICULO.LABEL.MODELO' | translate}}</span>
+            </div>
+            <div class="text-right mr-2 mt-2" style="height: 25px;">
+              <mat-icon class="pointer" *ngIf="!this.isEdition && cardVeiculos.length > 1" (click)="deleteCard(i)"
+                matTooltip="Remover modelo" svgIcon="pfu-delete"></mat-icon>
+            </div>
+            <div class="row container-fluid body-card mt-2 m-0 p-0">
+              <div class="col-md-12">
+                <mat-form-field appearance="outline">
+                  <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.MODELO' | translate}}</mat-label>
+                  <mat-select matInput [(ngModel)]="veiculo.codigoModeloVeiculoSolicitado"
+                    [ngModelOptions]="{standalone: true}" (selectionChange)="changeModelo($event, veiculo)">
+                    <mat-option *ngFor="let item of modelos" [value]="item.id">{{item.descricao}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-12" *ngIf="hasPerfilClaro()">
+                <mat-form-field appearance="outline">
+                  <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.VALOR_LOCACAO' | translate}}</mat-label>
+                  <input matInput [(ngModel)]="veiculo.valorLocacao" currencyMask
+                    [options]="{ align: 'left', allowNegative: false, allowZero: true, decimal: ',', precision: 2, prefix: 'R$ ', suffix: '', thousands: '.' }"
+                    required maxLength="13" [ngModelOptions]="{standalone: true}" readonly />
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.QUANTIDADE' | translate}}</mat-label>
+                  <input matInput [(ngModel)]="veiculo.quantidadeVeiculoSolicitado"
+                    [ngModelOptions]="{standalone: true}" mask="000" required />
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.FINAL_PLACA' | translate}}</mat-label>
+                  <input matInput [(ngModel)]="veiculo.finalPlacaVeiculoSubstituido"
+                    [ngModelOptions]="{standalone: true}" maxlength="1" mask="0" />
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.COR' | translate}}</mat-label>
+                  <mat-select matInput [(ngModel)]="veiculo.codigoCor" [ngModelOptions]="{standalone: true}"
+                    disableOptionCentering required>
+                    <mat-option *ngFor="let cor of cores" [value]="cor.id">{{cor.descricao}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.COMBUSTIVEL' | translate}}</mat-label>
+                  <mat-select matInput [(ngModel)]="veiculo.codigoCombustivel" [ngModelOptions]="{standalone: true}"
+                    disableOptionCentering required>
+                    <mat-option *ngFor="let item of combustiveis" [value]="item.id">{{item.descricao}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="container text-right footer-card font-weight-bold mb-2">
+              <span class="pointer" style="color: #005b9e;" [matMenuTriggerFor]="acessorios"
+                (menuOpened)="menuAcessorios(false, i)"
+                (menuClosed)="menuAcessorios(true, i)">{{'PORTAL.SOLICITACAO_VEICULO.LABEL.ACESSORIOS' | translate}}</span>
+              <mat-icon class="pointer" svgIcon="pfu-acessorios" [matMenuTriggerFor]="acessorios"
+                (menuOpened)="menuAcessorios(false, i)" (menuClosed)="menuAcessorios(true, i)"></mat-icon>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+      <hr>
+      <div class="row container-fluid">
+        <div class="col-12">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.OBSERVACAO' | translate}}</mat-label>
+            <textarea matInput #observacaoField [formControl]="observacoes" rows="4" cols="30" style="resize: none;"
+              maxlength="1000"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="col-12 text-right">
+          <button mat-raised-button class="button-red mr-2" type="button" (click)="reprovarCancelarSolicitacao('R')"
+            *ngIf="exibirAprovarReprovar()">{{ 'PORTAL.BUTTONS.BTN_DISAPPROVE' | translate }}</button>
+          <button mat-raised-button class="button-green" type="button" (click)="aprovar()"
+            *ngIf="exibirAprovarReprovar()">{{ 'PORTAL.BUTTONS.BTN_APPROVE' | translate }}</button>
+        </div>
+      </div>
+      <hr>
+      <div class="row container-fluid mb-3">
+        <div class="col-6 text-left">
+          <button mat-raised-button (click)="voltar()" type="button" class="btn btn-secondary col-3">
+            {{ 'PORTAL.BUTTONS.BTN_BACK' | translate }}</button>
+        </div>
+        <div class="col-6 text-right">
+          <button mat-raised-button color="primary" type="submit" class="col-3" *ngIf="canUpdate()">
+            {{ 'PORTAL.BTN_SALVAR' | translate }}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<mat-menu #acessorios="matMenu" class="mat-menu-panel menu-acessorios" hasBackdrop="false" panelClass="menu-acessorios"
+  yPosition="above" xPosition="after">
+  <ng-template matMenuContent>
+    <div (click)="$event.stopPropagation();">
+      <div class="header-menu" (click)="$event.stopPropagation();">
+        <mat-icon style="font-size: 0px;" class="material-icons" svgIcon="pfu-acessorios"></mat-icon>
+        <span class="pl-1 font-weight-bold">{{'PORTAL.SOLICITACAO_VEICULO.LABEL.ACESSORIOS' | translate}}</span>
+      </div>
+      <div class="text-right pt-1 pr-2">
+        <mat-icon (click)="closeMenu()" class="pointer">highlight_off</mat-icon>
+      </div>
+      <div class="row container-fluid">
+        <div class="col-4" *ngFor="let equipamento of acessoriosModelo; let i = index;">
+          <mat-checkbox (click)="$event.stopPropagation()" (change)="onCheck($event, i);"
+            [checked]="equipamento.checked">
+            <span>{{equipamento.descricao}}</span>
+          </mat-checkbox>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</mat-menu>

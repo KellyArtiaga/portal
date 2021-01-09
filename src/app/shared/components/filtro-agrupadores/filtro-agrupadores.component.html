@@ -1,0 +1,105 @@
+<div class="row" *ngIf="isExibirAgrupadores()">
+  <div class="col-md-3 col-sm-6 col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'PORTAL.LABELS.LBL_CLIENTES' | translate }}</mat-label>
+      <mat-select matInput [formControl]="clientes" multiple>
+        <mat-select-trigger>
+          {{getDescription('cliente')}}
+          <span *ngIf="totalSelections.cliente > 1">
+            (+{{totalSelections.cliente - 1}}
+            {{totalSelections.cliente === 2 ? 'outro' : 'outros'}})
+          </span>
+        </mat-select-trigger>
+        <mat-option *ngIf="enableAllOption('cliente')" (click)="toggleAllSelection('cliente')" [value]="opcaoTodos">
+          {{opcaoTodos.descricao}}</mat-option>
+        <mat-option *ngIf="enableNoneOption('cliente')" (click)="toggleNoneSelection('cliente')" [value]="opcaoNenhum">
+          {{opcaoNenhum.descricao}}</mat-option>
+        <hr *ngIf="enableAllOption('cliente')">
+        <mat-option *ngFor="let cliente of clientesDisponiveis" [value]="cliente"
+          (onSelectionChange)="onAnyValuedSelection($event,'cliente')">
+          {{cliente.descricao}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>{{'PORTAL.LABELS.LBL_REGIONAIS' | translate}}</mat-label>
+      <mat-select matInput [formControl]="regionais" multiple>
+        <mat-select-trigger>
+          {{getDescription('regional')}}
+          <span *ngIf="totalSelections.regional > 1">
+            (+{{totalSelections.regional - 1}}
+            {{totalSelections.regional === 2 ? 'outro' : 'outros'}})
+          </span>
+        </mat-select-trigger>
+        <mat-option *ngIf="enableAllOption('regional')" (click)="toggleAllSelection('regional')" [value]="opcaoTodos">
+          {{opcaoTodos.descricao}}</mat-option>
+        <mat-option *ngIf="enableNoneOption('regional')" (click)="toggleNoneSelection('regional')"
+          [value]="opcaoNenhum">{{opcaoNenhum.descricao}}</mat-option>
+        <hr *ngIf="enableAllOption('regional')">
+        <mat-option *ngFor="let regional of regionaisDisponiveis" [value]="regional"
+          (onSelectionChange)="onAnyValuedSelection($event,'regional')">
+          {{regional.descricao}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>{{'PORTAL.LABELS.LBL_CENTROS_CUSTO' | translate}}</mat-label>
+      <mat-select matInput [formControl]="centrosCusto" multiple>
+        <mat-select-trigger>
+          {{getDescription('centroCusto')}}
+          <span *ngIf="totalSelections.centroCusto > 1">
+            (+{{totalSelections.centroCusto - 1}}
+            {{totalSelections.centroCusto === 2 ? 'outro' : 'outros'}})
+          </span>
+        </mat-select-trigger>
+        <mat-option *ngIf="enableAllOption('centroCusto')" (click)="toggleAllSelection('centroCusto')"
+          [value]="opcaoTodos">{{opcaoTodos.descricao}}</mat-option>
+        <mat-option *ngIf="enableNoneOption('centroCusto')" (click)="toggleNoneSelection('centroCusto')"
+          [value]="opcaoNenhum">{{opcaoNenhum.descricao}}</mat-option>
+        <hr *ngIf="enableAllOption('centroCusto')">
+        <mat-option *ngFor="let centroCusto of centrosCustoDisponiveis" [value]="centroCusto"
+          (onSelectionChange)="onAnyValuedSelection($event,'centroCusto')">
+          {{centroCusto.descricao}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-6" *ngIf="showPlaca">
+    <div *ngIf="logadoPlaca">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'PORTAL.MANUTENCOES.LABEL.PLACA' | translate }}</mat-label>
+        <input matInput type="text" [formControl]="placa" class="uppercase" disabled />
+      </mat-form-field>
+    </div>
+    <div *ngIf="!logadoPlaca">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'PORTAL.MANUTENCOES.LABEL.PLACA' | translate }}</mat-label>
+        <input matInput type="text" [formControl]="placa" class="uppercase" [matAutocomplete]="placaAutoComplete"
+          (keyup)="filtrarPlaca()" maxlength="8" />
+        <mat-autocomplete #placaAutoComplete="matAutocomplete" [displayWith]="displayPlaca">
+          <ng-container>
+            <mat-option *ngFor="let item of placas.filteredData" [value]="item">
+              {{item.placa}} - {{item.modelo}}
+            </mat-option>
+          </ng-container>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="debug">
+  <div class="col-md-4 col-sm-9 col-xs-9">
+    {{ clientesId.value | json }}
+  </div>
+  <div class="col-md-4 col-sm-9 col-xs-9">
+    {{ regionaisId.value | json }}
+  </div>
+  <div class="col-md-4 col-sm-9 col-xs-9">
+    {{ centrosCustoId.value | json }}
+  </div>
+</div>

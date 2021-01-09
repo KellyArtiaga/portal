@@ -1,0 +1,25 @@
+.span-title {
+  font-size: 10px;
+  position: absolute;
+  z-index: 99999;
+  background-color: #fff;
+  margin-top: -6px;
+  margin-left: 15px;
+  width: 35%;
+  text-align: center;
+}
+
+.h-59 {
+  height: 59%;
+  overflow-y: scroll;
+}
+
+p,
+.modal-content {
+  font-size: 10px;
+}
+
+.mat-slide-toggle-content {
+  font-size: 10px;
+  margin: 10px;
+}

@@ -1,0 +1,18 @@
+<app-modal-generic>
+  <div class="modal-padding">
+    <header class="header">
+      <span class="textWhiteHeader">{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.DETALHES_FORNECEDOR' | translate}}</span>
+      <a class="circle-close mr-3" (click)="closeModal()">
+        <mat-icon class="pointer">close</mat-icon>
+      </a>
+    </header>
+    <div class="container mt-3 mb-3">
+      <div class="ml-4 text-gray">
+        <div *ngFor="let column of getTitulos()" style="line-height: 2;">
+          <span class="text-bold mr-1">{{column.columnDef}}: </span>
+          <span style="font-size: 15px;">{{showValue(dadosFornecedor[column.description], column)}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-modal-generic>

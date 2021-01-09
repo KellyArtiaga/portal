@@ -1,0 +1,52 @@
+<div class="container-fluid p-0">
+  <div class="pb-4 button-align">
+    <div class="float-right">
+      <mat-icon class="show-filter pb-2 pt-2" [ngClass]="{'mat-elevation-z4': !showFilter}" (click)="expandir()"
+        svgIcon="pfu-filtro"></mat-icon>
+    </div>
+  </div>
+  <div class="form-size transform pl-3 pb-3">
+    <form [formGroup]="formSinistro" class="row" [hidden]="!showFilter">
+
+      <app-filtro-agrupadores #agrupadores class="col-12" [form]="formSinistro"></app-filtro-agrupadores>
+
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.INDICADORES_SINISTRO.LABEL.PERIODO' | translate}}</mat-label>
+          <mat-select matInput formControlName="periodo" disableOptionCentering required>
+            <mat-option *ngFor="let item of periodos" [value]="item.periodo">
+              {{item.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- <div class="col-md-3 col-sm-6 col-xs-6">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.INDICADORES_SINISTRO.LABEL.STATUS_VEICULO' | translate}}</mat-label>
+          <mat-select matInput formControlName="statusVeiculo" disableOptionCentering>
+            <mat-option *ngFor="let status of sttVeiculo" [value]="status.id">
+              {{status.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div> -->
+      <div class="col-md-12 mb-3">
+        <mat-chip-list #chipList>
+          <mat-chip *ngFor="let filtro of filtroIndicadores.filtroIndicadoresGerais; let i = index;">
+            {{ filtro.grafico }}: {{filtro.title}}
+            <mat-icon matChipRemove (click)="removerFiltro(i, 'indicadoresGerais')">cancel</mat-icon>
+          </mat-chip>
+        </mat-chip-list>
+      </div>
+      <div class="col-md-12">
+        <button class="mr-3" mat-raised-button color="primary" type="button" (click)="pesquisar()">
+          {{ 'PORTAL.BUTTONS.BTN_SEARCH' | translate }}
+        </button>
+        <button mat-raised-button class="btn-secondary" type="button" (click)="limparFiltros()">
+          {{ 'PORTAL.BUTTONS.BTN_LIMPAR' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<form [formGroup]="form" autocomplete="off">
+  <div class="row p-0 m-0">
+    <div class="col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_CEP' | translate}}</mat-label>
+        <input matInput autocomplete="off" formControlName="cep" mask="00000-000"
+        (paste)="onPaste($event)" (keyup)="validarCEP($event.target.value)" type="text" required />
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_LOGRADOURO' | translate}}</mat-label>
+        <input matInput autocomplete="off" formControlName="logradouro" type="text" maxlength="50" required />
+      </mat-form-field>
+    </div>
+    <div class="col-md-2">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_NUMERO' | translate}}</mat-label>
+        <input matInput autocomplete="off"
+          onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+          formControlName="numero" type="text" maxlength="6" mask="000000" required />
+      </mat-form-field>
+    </div>
+    <div class="col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_COMPLEMENTO' | translate}}</mat-label>
+        <input matInput autocomplete="off" formControlName="complemento" maxlength="15" type="text" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row p-0 m-0">
+    <div class="col-md-5">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_BAIRRO' | translate}}</mat-label>
+        <input matInput autocomplete="off" formControlName="bairro" type="text" maxlength="30" required />
+      </mat-form-field>
+    </div>
+    <div class="col-md-2">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_UF' | translate}}</mat-label>
+        <input matInput autocomplete="off" formControlName="uf" type="text" required />
+      </mat-form-field>
+    </div>
+    <div class="col-md-5">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_CIDADE' | translate}}</mat-label>
+        <input matInput autocomplete="off" formControlName="cidade" type="text" required />
+      </mat-form-field>
+    </div>
+  </div>
+</form>

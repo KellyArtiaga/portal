@@ -1,0 +1,9 @@
+.body-size {
+  min-height: -webkit-fill-available;
+  min-height: 100vh;
+}
+
+.mat-sidenav-container{
+  position: relative;
+  z-index:1;
+}

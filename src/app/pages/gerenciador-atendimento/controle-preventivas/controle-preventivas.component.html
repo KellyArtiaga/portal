@@ -1,0 +1,107 @@
+<div class="container-fluid page-body">
+  <div class="pt-2 center-vertical">
+    <form [formGroup]="filtroPreventivas" (submit)="pesquisar()" class="row pr-0 pl-0">
+      <app-filtro-agrupadores class="col-12" [form]="filtroPreventivas"></app-filtro-agrupadores>
+      <!-- <div class="col-lg-3 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.LABELS.LBL_CNPJ' | translate}}</mat-label>
+          <mat-select matInput formControlName="clientes" multiple required (openedChange)="getVeiculos($event)">
+            <mat-select-trigger>
+              {{filtroPreventivas.get('clientes').value && filtroPreventivas.get('clientes').value.length > 0 ? filtroPreventivas.get('clientes').value[0].nomeFantasia : ''}}
+              <span *ngIf="filtroPreventivas.get('clientes').value?.length > 1">
+                (+{{filtroPreventivas.get('clientes').value.length - 1}}
+                {{filtroPreventivas.get('clientes').value?.length === 2 ? 'outro' : 'outros'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let cliente of clientes" [value]="cliente"
+              (click)="markAll(cliente, 'clientes', clientes)">
+              {{cliente.nomeFantasia}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div> -->
+      <!-- <div class="col-lg-3 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.LABELS.LBL_PLACA' | translate}}</mat-label>
+          <input matInput formControlName="placa" [matAutocomplete]="autoPlaca" type="text" maxlength="8"
+            (keyup)="filtrarPlaca()" />
+          <mat-autocomplete #autoPlaca="matAutocomplete" [displayWith]="displayPlaca">
+            <ng-container>
+              <mat-option *ngFor="let veiculo of veiculosFiltrados" [value]="veiculo">
+                {{veiculo.placa}}
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div> -->
+      <div *ngIf="false">
+        <div class="col-lg-3 col-xs-6 pt-2">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.LABELS.LBL_REVISAO' | translate}}</mat-label>
+            <mat-select matInput formControlName="revisao">
+              <mat-option *ngFor="let revisao of revisoes" [value]="revisao">
+                {{revisao.descricao}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- <div class="col-lg-3 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.REGIONAL' | translate}}</mat-label>
+          <mat-select matInput formControlName="regionais" multiple>
+            <mat-select-trigger>
+              {{filtroPreventivas.get('regionais').value && filtroPreventivas.get('regionais').value.length > 0 ? filtroPreventivas.get('regionais').value[0].descricao : ''}}
+              <span *ngIf="filtroPreventivas.get('regionais').value?.length > 1">
+                (+{{filtroPreventivas.get('regionais').value.length - 1}}
+                {{filtroPreventivas.get('regionais').value?.length === 2 ? 'outro' : 'outros'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let item of regionais" [value]="item" (click)="markAll(item, 'regionais', regionais)">
+              {{item.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-3 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.CENTRO_CUSTO' | translate}}</mat-label>
+          <mat-select matInput formControlName="centrosCustos" multiple>
+            <mat-select-trigger>
+              {{filtroPreventivas.get('centrosCustos').value && filtroPreventivas.get('centrosCustos').value.length > 0 ? filtroPreventivas.get('centrosCustos').value[0].descricao : ''}}
+              <span *ngIf="filtroPreventivas.get('centrosCustos').value?.length > 1">
+                (+{{filtroPreventivas.get('centrosCustos').value.length - 1}}
+                {{filtroPreventivas.get('centrosCustos').value?.length === 2 ? 'outro' : 'outros'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let item of centrosCustos" [value]="item"
+              (click)="markAll(item, 'centrosCustos', centrosCustos)">
+              {{item.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div> -->
+      <div class="col-lg-3 pt-2 btn-group-filter">
+        <button mat-raised-button class="btn btn-primary" type="submit">
+          {{ 'PORTAL.BUTTONS.BTN_SEARCH' | translate }}
+        </button>
+        <button mat-raised-button class="btn btn-secondary" type="button" (click)="limparPesquisa()">
+          {{ 'PORTAL.BUTTONS.BTN_LIMPAR' | translate }}
+        </button>
+      </div>
+      <div class="col-lg-3 col-xs-6 pt-2" *ngIf="false">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.LABELS.LBL_REVISAO' | translate}}</mat-label>
+          <mat-select matInput formControlName="revisao">
+            <mat-option *ngFor="let revisao of revisoes" [value]="revisao">
+              {{revisao.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+    <hr class="mt-3">
+    <app-generic-table *ngIf="showTable" [(inputData)]="preventivas" [inputDataSubject]="inputDataSubject"
+      [columns]="getColunasTabela()" (nextPage)="pesquisar($event)" [totalRows]="totalRows"></app-generic-table>
+  </div>
+</div>

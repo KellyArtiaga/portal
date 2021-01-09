@@ -1,0 +1,195 @@
+<div>
+  <div>
+    <hr class="hr-text" data-content="Dados Pessoais" />
+    <div class="mt-4">
+      <p class="mb-2 pl-4">
+        <strong>{{'PORTAL.USUARIO.LBL_NOME' | translate}}:</strong> {{getNomeUsuario()}}
+      </p>
+      <p class="pl-4">
+        <strong>{{'PORTAL.USUARIO.LBL_CPF' | translate}}:</strong> {{getDocumento()}}
+      </p>
+    </div>
+  </div>
+  <div *ngIf="showForm">
+    <form [formGroup]="formAtualizarDados" class="mt-3">
+      <hr class="hr-text" data-content="Endereço" />
+      <div class="row container pr-0 mt-4">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_CEP' | translate}}</mat-label>
+            <input matInput formControlName="cep" mask="00000-000" (keyup)="buscarCep($event.target.value)" type="text" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_LOGRADOURO' | translate}}</mat-label>
+            <input matInput formControlName="logradouro" type="text" maxlength="40" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_NUMERO' | translate}}</mat-label>
+            <input matInput
+              onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+              formControlName="numero" type="text" maxlength="6" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_COMPLEMENTO' | translate}}</mat-label>
+            <input matInput formControlName="complemento" maxlength="15" type="text" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-5 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_BAIRRO' | translate}}</mat-label>
+            <input matInput formControlName="bairro" type="text" maxlength="30" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_UF' | translate}}</mat-label>
+            <input matInput formControlName="uf" type="text" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-5 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_CIDADE' | translate}}</mat-label>
+            <input matInput formControlName="cidade" maxlength="100" type="text" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <hr class="hr-text" data-content="Contato" />
+      <div class="row container pr-0 mt-4">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_TELEFONE' | translate}}</mat-label>
+            <input matInput formControlName="telefone" type="text" [mask]="phoneMask" [required]="!formAtualizarDados.get('telefone').value && !formAtualizarDados.get('celular').value" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_CELULAR' | translate}}</mat-label>
+            <input matInput formControlName="celular" type="text" [mask]="cellPhoneMask" [required]="!formAtualizarDados.get('telefone').value && !formAtualizarDados.get('celular').value" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <hr class="hr-text mt-1" data-content="Habilitação" />
+      <div class="row container pr-0 mt-4">
+        <div class="col-md-2 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_NUMERO_REGISTRO' | translate}}</mat-label>
+            <input matInput formControlName="numeroRegistro"
+              onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+              type="text" maxlength="11" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_CATEGORIA' | translate}}</mat-label>
+            <mat-select matInput formControlName="categoriaId" disableOptionCentering >
+              <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
+                {{categoria.categoria}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_PRIM_HABILITACAO' | translate}}</mat-label>
+            <input matInput (change)="applyDataMascara($event.target.value, 'dataPrimeiraHabilitacao')"
+              formControlName="dataPrimeiraHabilitacao" [max]="getDataMaxHabilitacao()" type="text"
+              [matDatepicker]="dataPrimeiraHabilitacao" autocomplete="off" maxlength="10"
+              onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" />
+            <mat-datepicker-toggle matSuffix [for]="dataPrimeiraHabilitacao">
+            </mat-datepicker-toggle>
+            <mat-datepicker #dataPrimeiraHabilitacao disabled="false">
+            </mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_DATA_EMISSAO' | translate}}</mat-label>
+            <input matInput (change)="applyDataMascara($event.target.value, 'dataEmissao')"
+              formControlName="dataEmissao" [max]="getDataMaxEmissao()" [min]="getDataMinEmissao()" type="text"
+              [matDatepicker]="dataEmissao" autocomplete="off" maxlength="10"
+              onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" />
+            <mat-datepicker-toggle matSuffix [for]="dataEmissao">
+            </mat-datepicker-toggle>
+            <mat-datepicker #dataEmissao disabled="false">
+            </mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_VALIDADE' | translate}}</mat-label>
+            <input matInput (change)="applyDataMascara($event.target.value, 'dataValidade')"
+              formControlName="dataValidade" [min]="getDataMinValidade()" type="text" [matDatepicker]="dataValidade"
+              autocomplete="off" maxlength="10"
+              onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" />
+            <mat-datepicker-toggle matSuffix [for]="dataValidade">
+            </mat-datepicker-toggle>
+            <mat-datepicker #dataValidade disabled="false">
+            </mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_UF_EMISSOR' | translate}}</mat-label>
+            <mat-select matInput formControlName="ufEmissorId" (selectionChange)="enableFieldCidade()"
+              disableOptionCentering>
+              <mat-option *ngFor="let item of ufs" [value]="item.id">
+                {{item.uf}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_CIDADE_EMISSOR' | translate}}</mat-label>
+            <input name="cidadeEmissorHab" type="search" autocomplete="off" style="display: none" />
+            <input matInput name="cidadeEmissorHab" type="text" formControlName="municipioEmissor"
+              [matAutocomplete]="auto" />
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="display">
+              <ng-container>
+                <mat-option *ngFor="let item of municipios.filteredData" [value]="item">
+                  {{item.municipio}}
+                </mat-option>
+              </ng-container>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+      </div>
+      <hr class="hr-text mt-1" data-content="Documento" />
+      <div class="row container-fluid mt-4">
+        <div class="col-md-4 col-sm-6 col-xs-6 d-inline-flex">
+          <input style="display: none;" type="file" name="files" accept="image/*" (change)="onFileChange($event)"
+            #fileInput>
+          <a [href]="imgURL" target="_blank" [ngStyle]="{'pointer-events': imgURL ? 'all' : 'none'}">
+            <img class="box-img border-green"
+              [src]="cnhCondutor || imgURL ? imgURL : '../../../../../../assets/svg/empty-photo.svg'"
+              alt="Anexo não encontrado" />
+          </a>
+          <mat-icon class="icon-pointer" [svgIcon]="imgURL ? 'pfu-delete' : 'pfu-plus-green'"
+            (click)="imgURL ? removeImage() : fileInput.click()">
+          </mat-icon>
+        </div>
+        <div class="col-md-8 col-sm-6 col-xs-6 mt-4">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.USUARIO.LBL_OBSERVACOES_HAB' | translate}}</mat-label>
+            <textarea matInput maxlength="75" rows="4" cols="30" formControlName="observacoes" style="resize: none;"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <hr>
+      <div class="text-right pr-3 pb-3">
+        <button class="btn btn-secondary" mat-raised-button type="button" (click)="cancelar()">
+          {{'PORTAL.BUTTONS.BTN_CANCEL' | translate}}</button>
+        <button class="ml-3" color="primary" mat-raised-button type="button" (click)="save()">
+          {{'PORTAL.BUTTONS.BTN_SAVE' | translate}}</button>
+      </div>
+    </form>
+  </div>
+</div>

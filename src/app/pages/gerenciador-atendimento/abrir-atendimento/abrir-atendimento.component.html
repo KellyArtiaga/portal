@@ -1,0 +1,109 @@
+<div class="container-fluid page-body pb-3">
+  <div class="pt-3 center-vertical">
+    <h6 class="bold">
+      {{ 'PORTAL.ABRIR_ATENDIMENTO.TITLE' | translate }}
+    </h6>
+    <p class="subtitle">
+      {{ 'PORTAL.ABRIR_ATENDIMENTO.SUBTITLE' | translate }}
+    </p>
+    <hr>
+    <div class="row cards p-2">
+      <mat-card class="card col-md-2 col-xs-6 manutencao" (click)="goToPage('gerenciador-atendimento/manutencao')">
+        <div class="overlay "></div>
+        <mat-card-header class=" justify-content-center">
+          <img mat-card-image src="assets\images\manutencao_icon.svg"
+            alt="{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.RECLAMACAO_SUGESTAO' | translate }}">
+        </mat-card-header>
+        <mat-card-content>
+          <h6 class="text-center card-content-title">
+            {{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.MANUTENCAO' | translate }}
+          </h6>
+          <p class="text-left card-content-body">
+            {{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TEXT.MANUTENCAO' | translate }}
+          </p>
+        </mat-card-content>
+        <button class="btn btn-atendimento">{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.BUTTON' | translate }}</button>
+      </mat-card>
+
+      <!-- <mat-card class="card col-md sinistro" (click)="goToPage('sinistro')">
+            <div class="overlay"></div>
+            <mat-card-header  class=" justify-content-center" >
+                <img mat-card-image src="assets\images\sinistro_icon.svg" class="card-img-top" alt="{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.NOTIFICACOES_MULTAS' | translate }}">
+            </mat-card-header>
+            <mat-card-content>
+              <h6 class="text-center card-content-title">
+                {{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.SINISTRO' | translate }}
+              </h6>
+              <p class="text-left card-content-body">
+                {{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TEXT.SINISTRO' | translate }}
+              </p>
+            </mat-card-content>
+            <button class="btn btn-atendimento">{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.BUTTON' | translate }}</button>
+          </mat-card>
+          <mat-card class="card col-md multas" (click)="goToPage('criar-notificacao-multa')" >
+            <div class="overlay"></div>
+            <mat-card-header  class=" justify-content-center" >
+                <img mat-card-image src="assets\images\multa_icon.svg" alt="{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.RECLAMACAO_SUGESTAO' | translate }}">
+              </mat-card-header>
+            <mat-card-content>
+              <h6 class="text-center card-content-title">
+                {{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.NOTIFICACOES_MULTAS' | translate }}
+              </h6>
+              <p class="text-left card-content-body">
+                {{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TEXT.NOTIFICACOES_MULTAS' | translate }}
+              </p>
+            </mat-card-content>
+            <button class="btn btn-atendimento">{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.BUTTON' | translate }}</button>
+          </mat-card>
+          <mat-card class="card col-md chaves" (click)="goToPage('documentos-chaves')">
+            <mat-card-header  class=" justify-content-center ">
+              <div class="overlay"></div>
+
+              <img mat-card-image src="assets\images\chaves_icon.svg"
+              alt="{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.DOCUMENTACAO_CHAVES' | translate }}">
+            </mat-card-header>
+            <mat-card-content>
+              <h6 class="text-center card-content-title">
+                {{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.DOCUMENTACAO_CHAVES' | translate }}
+              </h6>
+              <p class="text-left card-content-body">
+                {{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TEXT.DOCUMENTACAO_CHAVES' | translate }}
+              </p>
+            </mat-card-content>
+            <button class="btn btn-atendimento">{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.BUTTON' | translate }}</button>
+          </mat-card> -->
+      <mat-card class="card col-md-2 col-xs-6 contrato" (click)="goToPage('gerenciador-atendimento/gestao-contrato')">
+        <div class="overlay"></div>
+        <mat-card-header class=" justify-content-center">
+          <img mat-card-image src="assets\images\contrato_icon.svg"
+            alt="{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.GESTAO_CONTRATO' | translate }}">
+        </mat-card-header>
+        <mat-card-content>
+          <h6 class="text-center card-content-title">
+            {{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.GESTAO_CONTRATO' | translate }}
+          </h6>
+          <p class="text-left card-content-body">
+            {{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TEXT.GESTAO_CONTRATO' | translate }}
+          </p>
+        </mat-card-content>
+        <button
+          class="btn btn-atendimento">{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.GESTAO_CONTRATO' | translate }}</button>
+      </mat-card>
+      <!-- <mat-card class="card col-md reclamacao" (click)="goToPage('reclamacao-sugestao')"  >
+            <div class="overlay"></div>
+            <mat-card-header  class=" justify-content-center" >
+              <img mat-card-image src="assets\images\reclamacao_icon.svg" alt="{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.SINISTRO' | translate }}">
+            </mat-card-header>
+            <mat-card-content>
+              <h6 class="text-center card-content-title">
+                {{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TITLE.RECLAMACAO_SUGESTAO' | translate }}
+              </h6>
+              <p class="text-left card-content-body">
+                {{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.TEXT.RECLAMACAO_SUGESTAO' | translate }}
+              </p>
+            </mat-card-content>
+            <button class="btn btn-atendimento">{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.BUTTON' | translate }}</button>
+          </mat-card> -->
+    </div>
+  </div>
+</div>

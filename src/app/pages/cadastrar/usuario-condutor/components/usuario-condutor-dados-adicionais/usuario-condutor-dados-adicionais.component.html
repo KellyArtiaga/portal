@@ -1,0 +1,104 @@
+<form [formGroup]="formDadosAdicionais" autocomplete="off">
+  <div class="row p-0 m-0">
+    <div class="col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_PERFIL_USUARIO' | translate}}</mat-label>
+        <mat-select matInput formControlName="perfil" disableOptionCentering required>
+          <mat-option *ngFor="let perfil of perfis" [value]="perfil">
+            {{perfil.descricaoPerfilUsuario}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <fw-autocomplete class="col-sm-6 col-md-3" [hidden]="!isExibirGrupoEconomico()"
+      [readonly]="!isPossivelSelecionarGrupoEconomico()" label="{{'PORTAL.USUARIO.LBL_GRUPO_ECONOMICO' | translate}}"
+      path="gruposeconomicos" [nameProperty]="'nome'" [subscribeTo]="[subject]"
+      [control]="formDadosAdicionais.controls.grupoEconomico"
+      hint="{{isPossivelSelecionarGrupoEconomico() ?  ('PORTAL.LABELS.DIGITE_TRES_CARACTERES' | translate) : ''}}"
+      #grupoEcon>
+    </fw-autocomplete>
+    <div class="col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.USUARIO.LBL_FORMA_CONTATO' | translate}}</mat-label>
+        <mat-select matInput formControlName="formaContato" disableOptionCentering>
+          <mat-option *ngFor="let formaContato of formaContatos" [value]="formaContato.id">
+            {{formaContato.nome}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <fw-select class="col-sm-6 col-md-3" *ngIf="isPossivelSelecionarAtividadesGrupos()"
+      label="{{'PORTAL.USUARIO.LBL_ATIVIDADES' | translate}}" path="condutores/atividades" [multiple]="true"
+      [subscribeTo]="[subject]" (onLoad)="onLoadAtividades($event)" [control]="formDadosAdicionais.controls.atividades">
+    </fw-select>
+    <fw-select class="col-sm-6 col-md-3" *ngIf="isPossivelSelecionarAtividadesGrupos() && isExibirProdutos()"
+      label="{{'PORTAL.USUARIO.LBL_PRODUTOS' | translate}}" path="condutores/produtos" [multiple]="true"
+      [subscribeTo]="[subject]" [control]="formDadosAdicionais.controls.produtos">
+    </fw-select>
+    <div class="col-md-3" *ngIf="isPossivelSelecionarAgrupadores()">
+      <p class="mb-0" [ngClass]="{'red': formDadosAdicionais.controls.tipoRestricao.hasError('required')}">
+        <strong>{{'PORTAL.USUARIO.LBL_TIPO_VISUALIZACAO' | translate}}</strong>
+      </p>
+      <mat-radio-group #radio formControlName="tipoRestricao" [required]="isPossivelSelecionarAgrupadores()"
+        (change)="changeTipoRestricao($event)">
+        <mat-radio-button value="C" class="pr-1" name="tipoRestricao" color="primary"
+          [checked]="formDadosAdicionais.controls.tipoRestricao.value === 'C'">
+          {{'PORTAL.USUARIO.LBL_CLIENTE' | translate}}
+        </mat-radio-button>
+        <mat-radio-button value="R" class="pr-1" name="tipoRestricao" color="primary"
+          [checked]="formDadosAdicionais.controls.tipoRestricao.value === 'R'">
+          {{'PORTAL.USUARIO.LBL_REGIONAL' | translate}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div *ngIf="formDadosAdicionais.controls.tipoRestricao.hasError('required')" class="red f-size-11">
+        {{'PORTAL.MSG_CAMPO_OBRIGATORIO' | translate}}
+      </div>
+    </div>
+    <fw-select class="col-sm-6 col-md-3"
+      *ngIf="isPossivelSelecionarAgrupadores() && formDadosAdicionais.controls.tipoRestricao.value === 'C'"
+      label="{{'PORTAL.USUARIO.LBL_CLIENTES' | translate}}" path="clientes" [multiple]="true"
+      [readonly]="formDadosAdicionais['controls'].grupoEconomico.value === null"
+      [subscribeTo]="[subject,grupoEcon.onOptionSelect]" [nameProperty]="'nomeFantasia'" [zipControls]="{
+            'grupoEconomicoId': formDadosAdicionais.controls.grupoEconomico
+        }" [control]="formDadosAdicionais.controls.clientes">
+    </fw-select>
+    <fw-select class="col-sm-6 col-md-3"
+      *ngIf="isPossivelSelecionarAgrupadores() && formDadosAdicionais.controls.tipoRestricao.value === 'R'"
+      label="{{'PORTAL.USUARIO.LBL_REGIONAIS' | translate}}" path="regionais" [multiple]="true"
+      [readonly]="formDadosAdicionais['controls'].grupoEconomico.value === null"
+      [subscribeTo]="[subject,grupoEcon.onOptionSelect]" [zipControls]="{
+            'grupoEconomicoId': formDadosAdicionais.controls.grupoEconomico
+        }" [control]="formDadosAdicionais.controls.regionais">
+    </fw-select>
+    <fw-select class="col-sm-6 col-md-3"
+      *ngIf="isPossivelSelecionarAgrupadores() && formDadosAdicionais.controls.tipoRestricao.value === 'U'"
+      label="{{'PORTAL.USUARIO.LBL_CENTROS_CUSTO' | translate}}" path="centroscusto" [multiple]="true"
+      [readonly]="formDadosAdicionais['controls'].grupoEconomico.value === null"
+      [subscribeTo]="[subject,grupoEcon.onOptionSelect]" [zipControls]="{
+            'grupoEconomicoId': formDadosAdicionais.controls.grupoEconomico
+        }" [control]="formDadosAdicionais.controls.centrosCusto">
+    </fw-select>
+    <div class="col-md-3 text-center" *ngIf="isExibirNiveis()">
+      <p class="mb-0"
+        [ngClass]="{'red': formDadosAdicionais.controls.aprovacaoNivel1.hasError('required') || formDadosAdicionais.controls.aprovacaoNivel2.hasError('required')}">
+        <strong>{{'PORTAL.USUARIO.LBL_NIVEIS_APROVACAO' | translate}}</strong>
+      </p>
+      <mat-checkbox class="mt-3" formControlName="aprovacaoNivel1" [required]="isRequiredNivel()">
+        {{'PORTAL.USUARIO.LBL_APROVACAO_NIVEL_1' | translate}}</mat-checkbox>
+      <mat-checkbox class="ml-4 mt-3" formControlName="aprovacaoNivel2" [required]="isRequiredNivel()">
+        {{'PORTAL.USUARIO.LBL_APROVACAO_NIVEL_2' | translate}}</mat-checkbox>
+      <div
+        *ngIf="formDadosAdicionais.controls.aprovacaoNivel1.hasError('required') || formDadosAdicionais.controls.aprovacaoNivel2.hasError('required')"
+        class="red f-size-11">
+        {{'PORTAL.MSG_CAMPO_OBRIGATORIO' | translate}}
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isExibirEnderecoCrlv()">
+    <hr class="hr-text" data-content="Endereço CRLV" />
+    <div class="pt-3">
+      <app-cep-endereco [form]="formDadosAdicionais.controls.enderecoCrlv"></app-cep-endereco>
+    </div>
+  </div>
+
+</form>

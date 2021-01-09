@@ -1,0 +1,263 @@
+<fw-edit style="margin-top: 30px !important;" 
+  [options]="options" 
+  path="condutorveiculo" 
+  [routeOneSave]="false"
+  [form]="form" 
+  [validateFn]="validateForm.bind(this)" 
+  (onSave)="onSave($event)"
+  (onSaveException)="onSaveException($event)" 
+  [showMessageOnSaveError]="false" 
+  [displayCancel]="false"
+  [disableSave]="!(form.get('itens')?.length > 0)"
+  #edit>
+  <div class="pl-4 mt-4 pr-4" *ngIf="!!formItem">
+    <div class="row" [formGroup]="formItem">
+      <div class="col-5">
+        <div class="row">
+          <div class="col-12">
+            <span class="title-fieldset">Veículo</span>
+          </div>
+          <fw-autocomplete class="col-12" #veiculoAC label="{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_PLACA' | translate}}"
+            [omniSearchProperty]="'placa'" path="veiculosrestritos" [displayFn]="displayPlaca.bind(this)"
+            [matchesDisplayFn]="displayPlaca.bind(this)" [subscribeTo]="[edit]"
+            [mapperFn]="idDescMapper('codigoMva','modelo')" 
+            [zipControls]="{
+              'grupoEconomicoId' : grupoEconomico
+            }" 
+            hint="{{'PORTAL.LABELS.DIGITE_TRES_CARACTERES' | translate}}"
+            [control]="formItem.controls.veiculo">
+          </fw-autocomplete>
+          <div *ngIf="isVeiculoSelecionado() && !isVeiculoAssociadoAgrupadores()" class="col-12">
+            <mat-icon class="mr-3">close</mat-icon> Veiculo não está associado a <b>Agrupadores</b>
+          </div>
+          <div *ngIf="isVeiculoSelecionado() && isVeiculoAssociadoAgrupadores()" class="col-12">
+            <mat-icon class="mr-3">check</mat-icon> Veiculo está associado a <b>Agrupadores</b>
+          </div>
+          <div *ngIf="isVeiculoSelecionado() && isVeiculoLivre()" class="col-12">
+            <mat-icon class="mr-3">close</mat-icon> Veiculo não está associado a nenhum <b>Condutor</b>
+          </div>
+          <div *ngIf="isVeiculoSelecionado() && !isVeiculoLivre()" class="col-12">
+            <mat-icon class="mr-3" svgIcon="pfu-associar-condutor-black"></mat-icon> Veiculo está associado a um
+            <b>Condutor</b>
+          </div>
+        </div>
+      </div>
+      <div class="col-7" *ngIf="isVeiculoSelecionado()">
+        <fieldset class="box-class p-3">
+          <div class="row">
+            <div class="col-12">
+              <span class="title-fieldset" *ngIf="!isVeiculoAssociadoAgrupadores()">Alocar em: </span>
+              <span class="title-fieldset" *ngIf="isVeiculoAssociadoAgrupadores()">
+                <mat-radio-group #radio formControlName="desalocar">
+                  <mat-radio-button [value]="false" class="pr-2" name="desalocar" color="primary">
+                    {{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_MANTER_ALOCACAO' | translate}}
+                  </mat-radio-button>
+                  <mat-radio-button [value]="true" class="pr-2" name="desalocar" color="primary">
+                    {{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_TRANSFERIR_ALOCACAO' | translate}}
+                  </mat-radio-button>
+                </mat-radio-group>
+              </span>
+            </div>
+          </div>
+          <div class="row" *ngIf="formItem.controls.desalocar?.value === false && isVeiculoAssociadoAgrupadores()">
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_GRUPO_ECONOMICO' | translate}}</mat-label>
+                <input type="text" matInput [value]="formItem.controls.veiculo.value?.grupoEconomico?.descricao"
+                  readonly>
+              </mat-form-field>
+            </div>
+            <div class="col-12">
+              <mat-form-field>
+                <mat-label>{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_CLIENTE' | translate}}</mat-label>
+                <input type="text" matInput [value]="formItem.controls.veiculo.value?.cliente?.descricao" readonly>
+              </mat-form-field>
+            </div>
+            <div class="col-6">
+              <mat-form-field>
+                <mat-label>{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_REGIONAL' | translate}}</mat-label>
+                <input type="text" matInput [value]="formItem.controls.veiculo.value?.regional?.descricao" readonly>
+              </mat-form-field>
+            </div>
+            <div class="col-6">
+              <mat-form-field>
+                <mat-label>{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_CENTRO_CUSTO' | translate}}</mat-label>
+                <input type="text" matInput [value]="formItem.controls.veiculo.value?.centroCusto?.descricao" readonly>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row" *ngIf="formItem.controls.desalocar?.value === true || !isVeiculoAssociadoAgrupadores()">
+            <div  class="col-sm-6 col-lg-6">
+              <mat-form-field appearance="outline"> 
+                <input matInput readonly [value]="formItem.controls.cliente?.value?.descricao">
+              </mat-form-field>
+            </div>
+            <fw-select 
+              class="col-sm-6 col-lg-6" 
+              label="{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_REGIONAL' | translate}}"
+              path="regionais" 
+              [subscribeTo]="[edit]" 
+              [zipControls]="{
+                'grupoEconomicoId' :  grupoEconomico
+              }" 
+              [control]="formItem.controls.regional">
+            </fw-select>
+            <fw-select 
+              class="col-sm-6 col-lg-6"
+              label="{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_CENTRO_CUSTO' | translate}}" 
+              path="centroscusto"
+              [subscribeTo]="[edit]" 
+              [zipControls]="{
+                'grupoEconomicoId' :  grupoEconomico
+              }" 
+              [control]="formItem.controls.centroCusto">
+            </fw-select>
+            <fw-autocomplete 
+              class="col-sm-6 col-lg-6"
+              label="{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_MUNICIPIO' | translate}}" 
+              [apiEndpoint]="cepEndpoint"
+              [omniSearchProperty]="'municipio'" 
+              path="municipios" 
+              [displayFn]="displayMunicipios.bind(this)"
+              [matchesDisplayFn]="displayMunicipios.bind(this)" 
+              [subscribeTo]="[edit]"
+              hint="{{'PORTAL.LABELS.DIGITE_TRES_CARACTERES' | translate}}" 
+              [control]="formItem.controls.municipio">
+            </fw-autocomplete>
+            <div class="col-12">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_INFORMACOES_ADICIONAIS' | translate}}</mat-label>
+                <input matInput type="text" formControlName="descricao" maxlength="100" autocomplete="off">
+              </mat-form-field>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="col-7 offset-5 mt-3" *ngIf="isVeiculoSelecionado()">
+        <fieldset class="box-class p-3">
+          <div class="row" *ngIf="isVeiculoLivre()">
+            <div class="col-12">
+              <span class="title-fieldset">Vincular ao condutor</span>
+            </div>
+            <fw-autocomplete class="col-sm-12 col-lg-12" 
+              label="Condutor" 
+              path="condutores"
+              [displayFn]="displayCondutores.bind(this)" 
+              [mapperFn]="idDescMapper('codigoCondutor','nome')"
+              [matchesDisplayFn]="displayCondutores.bind(this)" 
+              [subscribeTo]="[edit]" 
+              [zipControls]="{
+                'grupoEconomicoId' :  grupoEconomico
+              }" 
+              [control]="formItem.controls.condutor">
+            </fw-autocomplete>
+          </div>
+          <div class="row" *ngIf="!isVeiculoLivre()">
+            <div class="col-6">
+              <div class="col-12 title-fieldset">
+                <mat-radio-group #radio formControlName="desvincular">
+                  <mat-radio-button [value]="false" class="pr-2" name="desvincular" color="primary">
+                    {{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_MANTER_CONDUTOR' | translate}}
+                  </mat-radio-button>
+                  <mat-radio-button [value]="true" class="pr-2" name="desvincular" color="primary">
+                    {{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_DESVINCULAR_CONDUTOR' | translate}}
+                  </mat-radio-button>
+                </mat-radio-group>
+              </div>
+              <div class="col-12">
+                <mat-label></mat-label>
+                <mat-form-field appearance="outline">
+                  <input type="text" matInput [value]="formItem.controls.veiculo.value?.condutorAlocado?.descricao"
+                    formGroumName="condutorAnterior" readonly>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-6" *ngIf="formItem.controls.desvincular.value === true">
+              <div class="col-12">
+                <span
+                  class="title-fieldset">{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_VINCULAR_OUTRO_CONDUTOR' | translate}}
+                </span>
+              </div>
+              <fw-autocomplete 
+                class="col-12" 
+                label="{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_CONDUTOR' | translate}}"
+                path="condutores" [displayFn]="displayCondutores.bind(this)"
+                [mapperFn]="idDescMapper('codigoCondutor','nome')" 
+                [matchesDisplayFn]="displayCondutores.bind(this)"
+                [subscribeTo]="[edit]" 
+                [zipControls]="{
+                  'grupoEconomicoId' :  grupoEconomico
+                }" 
+                hint="{{'PORTAL.LABELS.DIGITE_TRES_CARACTERES' | translate}}"
+                [control]="formItem.controls.condutor">
+              </fw-autocomplete>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  <div class="text-right mr-4">
+    <button mat-raised-button [disabled]="!formItem.dirty"
+      (click)="addItem()">{{'PORTAL.ASSOCIAR_CONDUTOR.BUTTONS.BTN_INSERIR' | translate}}</button>
+  </div>
+  <div class="container-fluid" *ngIf="form.get('itens')?.length > 0">
+    <hr>
+    <div class="row mb-5">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 p-2"
+        *ngFor="let item of form.get('itens').value ; let i = index">
+        <mat-card class=" mat-elevation-z3" [ngClass]="{'card-item-duplicado': item.destacarDuplicado }">
+
+          <mat-card-content style="font-size: 14px;height: 100%;">
+            <div class="card-icon-delete col-12 text-right pt-0">
+              <span matTooltip="Excluir" class="pointer" (click)="confirmarRemocaoItem(i)">
+                <mat-icon svgIcon="pfu-delete"></mat-icon>
+              </span>
+            </div>
+            <div>
+              <span>{{formatarPlaca(item?.veiculo?.placa)}} - {{item?.veiculo?.modelo}}</span>
+            </div>
+            <div>
+              <p>
+                <strong>{{'PORTAL.ASSOCIAR_CONDUTOR.TITLES.CARD_AGRUPADORES' | translate}}:</strong>
+                <span *ngIf="item?.cliente?.id" [matTooltip]="item?.cliente?.descricao || item?.cliente?.nomeFantasia"
+                  class="ml-2">
+                  {{item?.cliente?.descricao || item?.cliente?.nomeFantasia}}
+                  <span *ngIf="item?.regional?.id || item?.centroCusto?.id">,</span>
+                </span>
+
+                <span *ngIf="item?.regional?.id" [matTooltip]="item?.regional?.descricao" class="ml-2">
+                  {{item?.regional?.descricao}}
+                  <span *ngIf="item?.centroCusto?.id">,</span>
+                </span>
+                <span *ngIf="item?.centroCusto?.id" [matTooltip]="item?.centroCusto?.descricao" class="ml-2">
+                  {{item?.centroCusto?.descricao}}
+                </span>
+              </p>
+             
+              <p class="mt-1">
+                <span *ngIf="item.desvincular" class="mr-2">
+                  <mat-icon class="mr-3 ">arrow_downward</mat-icon>
+                  <span>{{item?.condutorAnterior?.descricao}}</span>
+                </span>
+                <span *ngIf="item.condutor">
+                  <mat-icon class="mr-3 ">arrow_upward</mat-icon>
+                  <span>{{item?.condutor?.nomeCondutor}}</span>
+                </span>
+                <span *ngIf="item.desvincular === false && item.condutorAnterior" class="mr-2">
+                  <i>{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_MANTER_CONDUTOR'| translate}}:</i><span class="ml-2">{{item?.condutorAnterior?.descricao}}</span>
+                </span>
+                <span *ngIf="!item.condutor && !item.condutorAnterior">
+                  <i>{{'PORTAL.ASSOCIAR_CONDUTOR.LABELS.LBL_SEM_CONDUTOR_ASSOCIADO'| translate}}</i>
+                </span>
+              </p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <div class="left-buttons">
+    <button mat-raised-button color="secondary" class="btn-secondary" (click)="cancel()">{{getCancelLabel()}}</button>
+  </div>
+</fw-edit>

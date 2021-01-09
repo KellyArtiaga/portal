@@ -1,0 +1,31 @@
+.menu-user {
+  color: #005B9E;
+}
+
+.mat-menu-panel {
+  border: 1px solid #005B9E;
+}
+
+::ng-deep app-user-menu {
+  .mat-list-base .mat-list-item {
+    color: #005B9E;
+    font-size: 14px;
+  }
+}
+
+.mat-list-base {
+  padding-top: 0;
+}
+.mat-menu-panel{
+  max-width: 100%!important;
+  .column{
+    margin: 10px;
+  }
+}
+.mat-menu-header {
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(0, 92, 158, 0.1);
+  min-width: 230px;
+}

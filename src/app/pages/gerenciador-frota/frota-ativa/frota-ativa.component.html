@@ -1,0 +1,46 @@
+<div class="container-fluid page-body">
+  <div class="pt-2 center-vertical" *ngIf="isSearch">
+    <form class="row pr-0 pl-0" [formGroup]="formPesquisarFrota" (submit)="search()" *ngIf="isSearch">
+
+      <app-filtro-agrupadores #agrupadores class="col-12" [form]="formPesquisarFrota"></app-filtro-agrupadores>
+
+      <!-- <div class="col-lg-3 col-xs-6">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.LABELS.LBL_PLACA' | translate}}</mat-label>
+          <input matInput formControlName="placa" [matAutocomplete]="auto" (keyup)="getVeiculos($event)"
+            maxlength="8" />
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="display">
+            <ng-container>
+              <mat-option *ngFor="let veiculo of veiculosFiltered" [value]="veiculo">
+                {{formataPlaca(veiculo.placa)}} - {{veiculo.modelo}}
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div> -->
+      <div class="col-lg-3 btn-group-filter">
+        <button mat-raised-button class="btn btn-primary" type="submit">
+          {{'PORTAL.BUTTONS.BTN_SEARCH' | translate}}
+        </button>
+        <button mat-raised-button class="btn btn-secondary" type="button" (click)="limparTabela()">
+          {{'PORTAL.BUTTONS.BTN_CLEAN' | translate}}
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="pt-3 center-vertical" *ngIf="!isSearch">
+    <app-form-frota-ativa (return)="showSearch($event)" [dadosVeiculo]="veiculo"></app-form-frota-ativa>
+  </div>
+  <hr>
+  <div class="col-md-12 p-0" *ngIf="showTable">
+    <div class="text-left">
+      <button class="row ml-1 btn-export" *ngIf="showExport" (click)="getAllFrotas()" type="button">
+        <mat-icon svgIcon="pfu-excel-icon" class="material-icons"></mat-icon>
+        <span class="ml-2">{{'PORTAL.BUTTONS.BTN_EXPORT' | translate}}</span>
+      </button>
+    </div>
+    <app-generic-table [(inputData)]="frotas" [inputDataSubject]="dataInputSubj" [columns]="getColunasTabela()"
+      [infoMessage]="mensagemInformacao" (nextPage)="getFrotas($event)" [totalRows]="totalRows">
+    </app-generic-table>
+  </div>
+</div>

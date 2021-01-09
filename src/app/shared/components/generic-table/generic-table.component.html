@@ -1,0 +1,74 @@
+<div class="table-responsive mat-elavation-z1 ">
+  <mat-table [(dataSource)]="inputData" #genericTable *ngIf="showTable">
+    <ng-container *ngFor="let col of columns; let i = index;" [matColumnDef]="col.columnDef">
+      <mat-header-cell *matHeaderCellDef class="text-header p-0"
+        [ngStyle]="{'min-width.px': col.style && col.style.minWidth ? col.style.minWidth : '', 'max-width.px': col.style && col.style.maxWidth ? col.style.maxWidth : ''}">
+        <span [matTooltip]="col.description" class="text-header-table">{{ col.description }}</span>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="text-center row-text p-0" [ngClass]="{'status': !!col.etapas}"
+        [ngStyle]="{'min-width.px': col.style && col.style.minWidth ? col.style.minWidth : '', 'max-width.px': col.style && col.style.maxWidth ? col.style.maxWidth : ''}">
+        <span *ngIf="commonColumn(col)"
+          [matTooltip]="col.tooltip ? (element.tooltip ? element.tooltip : '') : ''">{{element[col.columnDef] || '-'}}</span>
+        <span *ngIf="col.documento">{{formataDocumento(element[col.columnDef])}}</span>
+        <span *ngIf="col.currency">{{(element[col.columnDef] || 0) | currency: 'R$'}}</span>
+        <span *ngIf="col.boolean">{{getYesNo(element[col.columnDef])}}</span>
+        <span
+          *ngIf="col.date">{{formataData(element[col.columnDef], col.dateFormat ? col.dateFormat : 'DD/MM/YYYY')}}</span>
+        <span *ngIf="col.datetime">{{formataData(element[col.columnDef], 'DD/MM/YYYY HH:MM:SS')}}</span>
+        <span *ngIf="col.placa">{{formataPlaca(element[col.columnDef])}}</span>
+        <span *ngIf="col.telefone">{{formataTelefone(element[col.columnDef])}}</span>
+        <span *ngIf="col.time">{{element[col.columnDef] | mask: '00:00'}}</span>
+        <span *ngIf="col.toggle">
+          <span *ngIf="!element.toggle">{{element[col.columnDef] || '-'}}</span>
+          <span *ngIf="element.toggle">
+            {{col.toggleConfig?.leftLabel}}
+            <mat-slide-toggle (change)="col.toggleConfig?.function(element)" class="primary" [checked]="element.isAtivo"
+              [disabled]="element.toggle && element.toggleReadOnly">
+            </mat-slide-toggle>
+            {{col.toggleConfig?.rightLabel}}
+          </span>
+        </span>
+        <span *ngIf="col.checkbox">
+          <span [hidden]="!element.checkbox">
+            <mat-checkbox (click)="$event.stopPropagation()"
+              (change)="col.checkConfig && col.checkConfig.function ? col.checkConfig.function(element) : ''"
+              [checked]="element.selected" [disabled]="element.checkbox && element.checkReadOnly">
+            </mat-checkbox>
+          </span>
+        </span>
+        <span *ngIf="col.etapas" class="center">
+          <p class="icone-lupa text-center row-text pt-3">{{element.status}}</p>
+          <div class="etapas">
+            <app-status-steps [data]="element" [iconesEtapas]="col.icones">
+            </app-status-steps>
+          </div>
+        </span>
+        <span *ngIf="col.action && element.action">
+          <span *ngFor="let icone of element.icones" class="icon-default">
+            <span style="z-index: 99999;" class="pointer icon-default mr-1" [ngClass]="icone.cssClass"
+              (click)="!icone.info && icone.show ? icone.function(element) : ''" matTooltip="{{getLabel(icone)}}"
+              (mouseover)="icone.info ? icone.function(element) : ''">
+              <mat-icon [ngClass]="{'disable-action': !icone.show}" [svgIcon]="icone.svg"></mat-icon>
+            </span>
+          </span>
+        </span>
+        <span *ngIf="col.action">
+          <span *ngFor="let icone of col.icones" style="z-index: 99999;" class="pointer icon-default mr-1"
+            [ngClass]="icone.cssClass" (click)="!icone.info ? icone.function(element) : ''"
+            matTooltip="{{getLabel(icone)}}" (mouseover)="icone.info ? icone.function(element) : ''">
+            <mat-icon [ngStyle]="icone.style" [svgIcon]="icone.svg"></mat-icon>
+          </span>
+        </span>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true" class="w-100 text-center">
+    </mat-header-row>
+    <mat-row *matRowDef="let element; let ind = dataIndex; columns: columnsToDisplay;" class="element-row greyRow">
+    </mat-row>
+  </mat-table>
+  <p class="text-center pt-3 pb-3 m-0 font-size-14" *ngIf="!hasValues">
+    {{'PORTAL.MSG_REGISTRO_NAO_ENCONTRADO' | translate}}</p>
+</div>
+<mat-paginator [hidden]="hidePaginator || !hasValues" [showFirstLastButtons]="true" [length]="totalRows"
+  [pageSize]="totalRowsPage" (page)="pageEvent = loadMoreData($event)" [pageIndex]="pageIndex">
+</mat-paginator>

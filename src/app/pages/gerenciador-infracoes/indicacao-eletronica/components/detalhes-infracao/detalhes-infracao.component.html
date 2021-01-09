@@ -1,0 +1,82 @@
+<div class="row container pt-3 mb-2 ml-5">
+  <fieldset class="col-xs-10 col-sm-10 box-class mb-2 mr-4 mat-elevation-z4 pb-3">
+    <hr id="tituloDetalhes" class="hr-text" />
+    <div class="row mt-4">
+      <div class="col-md-3">
+        <label class="label_column">{{'PORTAL.LABELS.LBL_CNPJ' | translate}}</label>
+      </div>
+      <div class="col-md-2">
+        <label class="label_column">{{'PORTAL.LABELS.LBL_PLACA' | translate}}</label>
+      </div>
+      <div class="col-md-2">
+        <label class="label_column">{{'PORTAL.LABELS.NUM_AIT' | translate}}</label>
+      </div>
+      <div class="col-md-2">
+        <label class="label_column">{{'PORTAL.LABELS.DATA_HORA_INFRACAO' | translate}}</label>
+      </div>
+      <div class="col-md-2">
+        <label
+          class="label_column">{{(!isNotificacao ? 'PORTAL.LABELS.DATA_VENCIMENTO' : 'PORTAL.LABELS.DATA_LIMITE_INDICACAO') | translate}}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>{{condutor.nomeCliente}}</label>
+      </div>
+      <div class="col-md-2">
+        <label>{{showValue.placa}}</label>
+      </div>
+      <div class="col-md-2">
+        <label>{{showValue.numeroAit}}</label>
+      </div>
+      <div class="col-md-2">
+        <label>{{showValue.dataHora}}</label>
+      </div>
+      <div class="col-md-2">
+        <label>{{showValue.dataVencimento}}</label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div *ngIf="isNotificacao" class="row container pt-3 mb-2 ml-5">
+  <fieldset class="col-xs-10 col-sm-10 box-class mb-2 mr-4 mat-elevation-z4 pb-3">
+    <hr id="tituloHistoricoStatusIndicacao" class="hr-text" />
+    <div class="mt-4">
+      <app-generic-table *ngIf="showTable" [(inputData)]="statusIndicacao" [columns]="getColunasTabela()"
+        [hidePaginator]="true">
+      </app-generic-table>
+    </div>
+  </fieldset>
+</div>
+
+<div class="row container pt-3 mb-2 ml-5">
+  <fieldset class="col-xs-10 col-sm-10 box-class mb-2 mr-4 mat-elevation-z4 pb-3">
+    <hr id="tituloHistoricoEmail" class="hr-text" />
+    <div class="mt-4">
+      <app-generic-table *ngIf="showTableEmail" [(inputData)]="emailInfracao" [columns]="getColunasTabelaEmail()"
+        [hidePaginator]="true">
+      </app-generic-table>
+    </div>
+  </fieldset>
+</div>
+
+<div class="row container pt-3 mb-2 ml-5">
+  <fieldset class="col-xs-10 col-sm-10 box-class mb-2 mr-4 mat-elevation-z4 pb-3">
+    <hr id="tituloHistoricoAnexo" class="hr-text" />
+    <div class="mt-4">
+      <app-generic-table *ngIf="showTableAnexo" [(inputData)]="listaAnexos" [columns]="getColunasTabelaAnexos()"
+        [hidePaginator]="true">
+      </app-generic-table>
+    </div>
+  </fieldset>
+</div>
+
+<div class="text-center p-3">
+  <button mat-raised-button class="btn btn-secondary mr-5" type="button" (click)="voltar()">
+    {{ 'PORTAL.BUTTONS.BTN_BACK' | translate }}
+  </button>
+  <button mat-raised-button color="primary" class="btn btn-primary" (click)="openModalInfoRecursos()">
+    {{ 'PORTAL.INDICACOES_ELETRONICAS.INFORMACAOES_RECURSO' | translate }}
+  </button>
+</div>

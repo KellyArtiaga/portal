@@ -1,0 +1,57 @@
+button .btn-export .material-icons {
+  font-size: 0px;
+  margin-top: -8px;
+  height: 35px;
+}
+
+
+td.lead-situacao-td:hover >mat-icon {
+  opacity: 0;
+  transition: 250ms ease-in-out;
+}
+
+td.lead-situacao-td >mat-icon {
+  opacity: 1;
+  transition:1000ms ease-in-out;
+}
+
+td.lead-situacao-td> div {
+  width: 0;
+  transition: 330ms ease-in-out;
+  opacity: 0;
+}
+
+td.lead-situacao-td:hover > div {
+  width: 230px;
+  transition: 330ms ease-in-out;
+  opacity: 1;
+}
+
+.lead-situacao-itens {
+  width: 155px;
+}
+
+
+td.lead-situacao-td:first-child {
+  border-top: 0px white;
+}
+
+.lead-situacao-itens {
+  position: absolute;
+  background: red;
+  right: 76px;
+  border: 2px solid red;
+  height: 42px;
+  width: 185px;
+  padding-left: 25px;
+  padding-top: 11px;
+  border-radius: 20px;
+}
+
+.bt-0{
+  border-top: 0
+}
+
+.lead-item{
+  cursor: pointer;
+}

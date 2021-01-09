@@ -1,0 +1,131 @@
+<div class="container-fluid page-body">
+  <div class="pt-2 center-vertical">
+    <form class="row pr-0 pl-0" [formGroup]="formFiltro" autocomplete="off" (ngSubmit)="pesquisar()">
+      <app-filtro-agrupadores class="col-12" [form]="formFiltro"></app-filtro-agrupadores>
+      <!-- <div class="col-lg-3 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.CLIENTE' | translate }}</mat-label>
+          <mat-select matInput formControlName="clientes" multiple required (openedChange)="getVeiculos($event)">
+            <mat-select-trigger>
+              {{formFiltro.get('clientes').value && formFiltro.get('clientes').value.length > 0 ? formFiltro.get('clientes').value[0].nomeFantasia : ''}}
+              <span *ngIf="formFiltro.get('clientes').value?.length > 1">
+                (+{{formFiltro.get('clientes').value.length - 1}}
+                {{formFiltro.get('clientes').value?.length === 2 ? 'outro' : 'outros'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let cliente of clientes" [value]="cliente"
+              (onSelectionChange)="verificarClientesPlacas($event, cliente)"
+              (click)="markAll(cliente, 'clientes', clientes)">
+              {{cliente.nomeFantasia}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-3 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.REGIONAL' | translate}}</mat-label>
+          <mat-select matInput formControlName="regionais" multiple>
+            <mat-select-trigger>
+              {{formFiltro.get('regionais').value && formFiltro.get('regionais').value.length > 0 ? formFiltro.get('regionais').value[0].descricao : ''}}
+              <span *ngIf="formFiltro.get('regionais').value?.length > 1">
+                (+{{formFiltro.get('regionais').value.length - 1}}
+                {{formFiltro.get('regionais').value?.length === 2 ? 'outro' : 'outros'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let item of regionais" [value]="item" (click)="markAll(item, 'regionais', regionais)">
+              {{item.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-3 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.AGENDAR_ENTREGA_DEVOLUCAO.LABEL.CENTRO_CUSTO' | translate}}</mat-label>
+          <mat-select matInput formControlName="centrosCustos" multiple>
+            <mat-select-trigger>
+              {{formFiltro.get('centrosCustos').value && formFiltro.get('centrosCustos').value.length > 0 ? formFiltro.get('centrosCustos').value[0].descricao : ''}}
+              <span *ngIf="formFiltro.get('centrosCustos').value?.length > 1">
+                (+{{formFiltro.get('centrosCustos').value.length - 1}}
+                {{formFiltro.get('centrosCustos').value?.length === 2 ? 'outro' : 'outros'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let item of centrosCustos" [value]="item"
+              (click)="markAll(item, 'centrosCustos', centrosCustos)">
+              {{item.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div> -->
+      <!-- <div class="col-lg-3 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'PORTAL.MANUTENCOES.LABEL.PLACA' | translate }}</mat-label>
+          <input matInput type="text" formControlName="placa" class="uppercase" [matAutocomplete]="auto"
+            (keyup)="filtrarPlaca()" maxlength="8" />
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="display">
+            <ng-container>
+              <mat-option *ngFor="let item of placas.filteredData" [value]="item">
+                {{item.placa}} - {{item.modelo}}
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div> -->
+      <div class="col-lg-3 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'PORTAL.MANUTENCOES.LABEL.STATUS' | translate }}</mat-label>
+          <mat-select matInput formControlName="status">
+            <mat-option *ngFor="let status of listStatus" [value]="status.id">
+              {{status.description}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-3 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Período</mat-label>
+          <input matInput formControlName="periodo" autocomplete="off" readonly />
+          <span matSuffix mat-icon-button>
+            <mat-icon class="material-icons pointer" (click)="abrirFiltro()" [matMenuTriggerFor]="dateTimeMenu">
+              calendar_today
+            </mat-icon>
+          </span>
+        </mat-form-field>
+      </div>
+      <mat-menu class="date-range-menu" #dateTimeMenu="matMenu">
+        <app-modal-date [params]="modalDateParams"></app-modal-date>
+      </mat-menu>
+      <div class="col-lg-2 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'PORTAL.MANUTENCOES.LABEL.RESPONSAVEL' | translate }}</mat-label>
+          <mat-select matInput formControlName="responsavel">
+            <mat-option *ngFor="let responsavel of responsaveis" [value]="responsavel.id">
+              {{responsavel.description}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-3 pt-2 btn-group-filter">
+        <button mat-raised-button class="btn btn-primary" color="primary" type="submit"
+          [disabled]="!getPermissao().pesquisar">
+          {{ 'PORTAL.BUTTONS.BTN_SEARCH' | translate }}
+        </button>
+        <button mat-raised-button class="btn btn-secondary" type="button" (click)="limparFiltro()"
+          [disabled]="!getPermissao().pesquisar">
+          {{ 'PORTAL.BUTTONS.BTN_CLEAN' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+  <hr />
+  <div *ngIf="showTable">
+    <div class="text-left">
+      <button class="row ml-1 btn-export" *ngIf="showExport" (click)="getAllManutencoes()" type="button">
+        <mat-icon svgIcon="pfu-excel-icon" class="material-icons"></mat-icon>
+        <span class="ml-2 mt-2">{{'PORTAL.BUTTONS.BTN_EXPORT' | translate}}</span>
+      </button>
+    </div>
+    <app-generic-table [(inputData)]="manutencoes" [columns]="getColunasTabela()" (nextPage)="getManutencoes($event)"
+      [totalRows]="totalRows">
+    </app-generic-table>
+  </div>
+</div>

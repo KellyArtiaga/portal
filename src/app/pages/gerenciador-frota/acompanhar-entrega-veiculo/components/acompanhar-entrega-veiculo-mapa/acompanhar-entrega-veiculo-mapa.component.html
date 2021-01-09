@@ -1,0 +1,18 @@
+<header class="header">
+  <span class="textWhiteHeader">{{'PORTAL.SOLICITACAO_VEICULO.LABEL.ENDERECO_ENTREGA' | translate}}</span>
+  <a class="circle-close mr-3" (click)="closeModal()">
+    <mat-icon class="pointer">close</mat-icon>
+  </a>
+</header>
+<agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng" [mapTypeControl]="true" [fullscreenControl]="true">
+  <agm-marker [latitude]="lat" [longitude]="lng" (mouseOver)="onMouseOver(infoWindow, $event)"
+    (mouseOut)="onMouseOut(infoWindow, $event)">
+    <agm-info-window #infoWindow>
+      <strong>{{address}}</strong>
+    </agm-info-window>
+  </agm-marker>
+
+  <agm-circle [latitude]="lat" [longitude]="lng" [radius]="30" [fillColor]="'blue'" [circleDraggable]="false"
+    [editable]="false">
+  </agm-circle>
+</agm-map>

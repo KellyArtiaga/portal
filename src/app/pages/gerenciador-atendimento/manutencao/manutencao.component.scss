@@ -1,0 +1,23 @@
+::ng-deep app-manutencao {
+  .button-align {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .mat-tab-header {
+    display: none!important;
+  }
+
+  @media(max-width: 768px) { 
+    .manutencao-body{
+      min-height: calc(100vh - 200px) ;
+    }
+  }
+
+  @media(min-width: 768px) { 
+    .manutencao-body{
+      min-height: calc(100vh - 270px) ;
+    }
+  }
+}

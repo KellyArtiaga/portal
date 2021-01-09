@@ -1,0 +1,17 @@
+.middle {
+    margin: auto;
+    justify-content: center;
+}
+
+.force-bottom {
+    position: fixed;
+    top: 85% !important;
+    max-width: 400px;
+}
+
+::ng-deep app-modal-escolher-tipo-atendimento {
+    .modal-content {
+        color: white !important;
+        background: #323232 !important;
+    }
+}

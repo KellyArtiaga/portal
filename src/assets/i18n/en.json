@@ -1,0 +1,1401 @@
+{
+    "PORTAL": {
+        "MENU": {
+            "HOME": "Home",
+            "CADASTRO": {
+                "TITLE": "Sign up",
+                "USUARIO": "User",
+                "PERFIL": "Profile",
+                "AGRUPADORES": "Groupers",
+                "TIPO_DE_ATENDIMENTO": "Kind of customer Service",
+                "MOTIVO": "Reason",
+                "ERRO_PERMISSAO": "To enable the intem to gain access to these operations.",
+                "PERMISSAO_ACESSO": "Access Permission"
+            },
+            "FROTA": {
+                "TITLE": "Manager of the Fleet",
+                "GERENCIAR_FROTA": "Fleet-Active",
+                "ASSOCIAR_CONDUTOR_AO_VEICULO": "Associations of the Vehicle",
+                "SOLICITACAO_DE_VEICULO": "Request for a Vehicle",
+                "ACOMPANHAR_ENTREGA_DE_VEICULO": "Monitoring of the Delivery of the Vehicle",
+                "AGENDAR_ENTREGA_DEVOLUCAO": "Schedule a Delivery or a Return",
+                "ASSOCIAR_CONDUTOR": "Associate Driver with Vehicle",
+                "ACOMPANHAR_ENTREGA_DEVOLUCAO": "Track Delivery or Return"
+            },
+            "ATENDIMENTO": {
+                "SOLICITAR_VEICULO_RESERVA": "Request Vehicle Reservation",
+                "CHAT_AVARIAS": "Chat Breakdown Manager",
+                "APROVAR_AVARIAS": "Approve Malfunctions",
+                "MANUTENCAO_SINISTRO": "Maintenance/Claim",
+                "GESTAO_CONTRATO": "Contract Management",
+                "TITLE": "Manager, customer Service",
+                "ADMINISTRAR_ATENDIMENTO": "Manage Customer Service",
+                "ABRIR_ATENDIMENTO": "Open The Service",
+                "ACOMPANHAR_SOLICITACAO_DE_VEICULO_RESERVA": "Follow up Request for the Vehicle Booking",
+                "AVARIAS": "Manager of the Damage",
+                "MANUTENCOES_REALIZADAS": "Maintenance That Is Carried Out",
+                "CONTROLE_DE_PREVENTIVA": "Control of Preventive"
+            },
+            "INFRACOES": {
+                "TITLE": "Manager of the Violations",
+                "INDICACAO_ELETRONICA": "Signs, Electronic",
+                "RECURSO": "Feature"
+            },
+            "FINANCEIRO": {
+                "TITLE": "Financial",
+                "FATURAMENTO": "Billing"
+            },
+            "UNIDAS_360": {
+                "TITLE": "Merged the 360"
+            },
+            "EQUIPE_RELACIONAMENTO": {
+                "TITLE": "Relationship Area Performance",
+                "TITLE2": "Relationship Area Performance",
+                "TITLE3": "Relationship"
+            },
+            "AJUDA": {
+                "TITLE": "Help",
+                "MANUAL_CONDUTOR": "Owner's Manual",
+                "MANUAL_PORTAL": "Manual for the Portal",
+                "RECLAMACOES_SUGESTOES": "Complaints and Suggestions",
+                "PERGUNTAS_RESPOSTAS": "Questions and Answers"
+            },
+            "USUARIO": {
+                "TITLE": "User Menu",
+                "ATUALIZAR_DADOS": "Update Data",
+                "ALTERAR_SENHA": "Change Password"
+            },
+            "DASHBOARD": {
+                "TITLE": "Dashboard",
+                "DASHBOARD_GERAIS": "Indicators In The General",
+                "DASHBOARD_FROTAS": "Indicators of the Fleet",
+                "DASHBOARD_FINANCEIRO": "Key Financial Indicators",
+                "DASHBOARD_INFRACOES": "Indicators of Violations of",
+                "DASHBOARD_SINISTROS": "Indicators of the Claims",
+                "DASHBOARD_AVARIAS": "Indicators of Failures",
+                "DASHBOARD_POOL_PNEUS": "Indicators from the Pool to the Rear",
+                "DASHBOARD_POOL_RESERVA": "Indicators in the Pool of time the Vehicle",
+                "DASHBOARD_ATENDIMENTOS": "Indicators of Care"
+            }
+        },
+        "LABELS": {
+            "LBL_SEARCH": "Search",
+            "LBL_PLACA": "Board",
+            "LBL_MODELO": "Model",
+            "LBL_SITUACAO": "Situation",
+            "LBL_CNPJ": "Client",
+            "LBL_REVISAO": "Review",
+            "LBL_ALERT": "Warning!",
+            "EXCLUIR_ARQUIVO": "Delete the file",
+            "DIGITE_DOIS_CARACTERES": "Please enter at least 2 characters long",
+            "DIGITE_TRES_CARACTERES": "Please enter at least 3 characters long",
+            "CANCELAR_CRIACAO_SINISTRO": "To cancel the opening of a claim",
+            "VEICULO": "Vehicle",
+            "ACOES_TABELA": "Stock",
+            "CANCELAR": "Cancel",
+            "EDITAR": "Edit",
+            "INSERIR": "Insert",
+            "PERMISSOES": "Permissions",
+            "EXCLUIR": "Delete",
+            "ACOES": "Stock",
+            "DETALHES_VEICULO": "Details of the Vehicle",
+            "APROVACAO_SERVICOS": "Adoption Services",
+            "DETALHES_SOLICITACAO": "Details Of The Request",
+            "DETALHES_ATENDIMENTO": "Details",
+            "ARQUIVOS": "Files",
+            "SALVAR": "Save",
+            "IMAGENS_VIDEOS": "Add Pictures / Documents",
+            "LBL_STATUS": "Status",
+            "APROVADO": "Approved",
+            "REPROVADO": "Fail",
+            "APROVAR": "Approve",
+            "REPROVAR": "Fail",
+            "SOLICITAR_VEICULO_RESERVA": "Request A Reservation",
+            "EM_ANALISE": "In The Analysis Of",
+            "SELECIONE": "Select",
+            "PORTUGUES": "Portuguese",
+            "INGLES": "English",
+            "ESPANHOL": "Spanish",
+            "PERIODO": "The period",
+            "CEP": "ZIP code",
+            "LOGRADOURO": "Place",
+            "NUMERO": "Number",
+            "COMPLEMENTO": "Add",
+            "BAIRRO": "Neighbourhood",
+            "MUNICIPIO": "City",
+            "UF": "STATE",
+            "DATA_INVALIDA": "Data informada inválida",
+            "DATA_NASCIMENTO_INVALIDA": "Data de nascimento inválida",
+            "DATA_PRIMEIRA_HABILITACAO_INVALIDA": "Data da primeira habilitação inválida",
+            "CONDUTOR_RETIRADA_VEICULO": "Condutor para retirado do veículo",
+            "LBL_CONDUTOR": "Condutor",
+            "DETALHES_ACOMPANHAR_ENTREGA": "Detalhes",
+            "AGENDAR_ENTREGA": "Agendar Entrega",
+            "MAPA": "Mapa"
+        },
+        "BUTTONS": {
+            "BTN_SAVE": "Save",
+            "BTN_OK": "OK",
+            "BTN_SUBMIT": "Save",
+            "BTN_INSERT": "Insert",
+            "BTN_CANCEL": "Cancel",
+            "BTN_EXPORT": "Export",
+            "BTN_BACK": "Again",
+            "BTN_NEXT": "Next",
+            "BTN_ADD": "Add",
+            "BTN_ADD_NEW": "Add A New",
+            "BTN_CLEAN": "Clean",
+            "BTN_ADD_CONDUTOR": "Adicionar",
+            "BTN_SEARCH": "Search",
+            "BTN_SEARCH_PROVIDER": "Search For A Workshop",
+            "BTN_SEARCH_PLACA_FORNECEDOR": "Search For The Card Workshop",
+            "BTN_YES": "Yes",
+            "BTN_NO": "Don't",
+            "BTN_DISAPPROVE": "Fail",
+            "BTN_APPROVE": "Approve",
+            "BTN_LIMPAR": "Clean",
+            "BTN_SEND": "Send",
+            "BTN_CONFIRM": "Confirm"
+        },
+        "EFETUAR_LOGIN": {
+            "LABELS": {
+                "DESCRICAO_GENERICA": "ID, the Customer or the user Name of the User"
+            },
+            "MESSAGE": {
+                "SELECIONE_UM_USUARIO": "Select or search for a user to log in."
+            }
+        },
+        "MODAL_FORNECEDOR_AGENDAR": {
+            "LABELS": {
+                "VEICULOS": "Condition",
+                "FORNECEDOR": "Supplier",
+                "DATA": "Date",
+                "ENDERECO": "Address",
+                "LOGRADOURO": "Place",
+                "TELEFONE": "Phone",
+                "VAGAS_DISPONIVEIS": "Positions Available"
+            }
+        },
+        "MULTAS": {
+            "LABELS": {
+                "TITLE_INDICACAO": "Notification of Traffic Violation",
+                "CODIGO_ATENDIMENTO": "Service Code",
+                "RECUSAR_NOTIFICACAO": "Refuse to notice",
+                "ALTERAR_CONDUTOR": "Change the driver",
+                "ENCONTRAR_CONDUTOR": "Find the driver registered to the...",
+                "CPF": "Social security number",
+                "NOME_COMPLETO": "Full Name",
+                "NASCIMENTO": "Date Of Birth",
+                "EMAIL": "E-mail address",
+                "RG": "ID",
+                "UF_CNH": "STATE (DRIVER'S LICENSE)",
+                "EMISSOR": "The issuer",
+                "NUMERO_REGISTRO": "Record Number",
+                "PRIMEIRA_HABILITACAO": "1 License",
+                "GERAR_TERMO": "Generate End-of-Responsibility",
+                "HINT_ADD_TERMO": "Add the signed, scanned it in the field below.",
+                "ACESSAR_DETRAN": "To access the System from the Dmv",
+                "CNPJ": "The client",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "Date Of Order",
+                "TIPO": "Type",
+                "PLACA": "Board",
+                "EMPRESA": "The company",
+                "PLACA_VEICULO": "The vehicle's license plate",
+                "DATA_INFRACAO": "The date of the violation",
+                "DATA_LIMITE": "Date",
+                "BTN_ASSOCIAR_CONDUTOR": "To associate a driver to the registered",
+                "BTN_CADASTRAR_CONDUTOR": "To register the driver",
+                "BTN_INFORMAR_NOVO_CONDUTOR": "Indicate that the driver is not associated with",
+                "BTN_EDITAR_CONDUTOR": "To edit the data in the driver"
+            }
+        },
+        "AVARIAS": {
+            "LABEL": {
+                "TITLE01": "Summary",
+                "LBL_CAUSAS": "The possible causes of the problem are:",
+                "LBL_IMPACTO": "The impact of not carrying out an exchange of the piece: ",
+                "LBL_APROVADO": "Approved by:",
+                "LBL_OBSERVACAO": "Comments:",
+                "CLIENTE": "Client",
+                "PLACA": "Board",
+                "MODELO": "The model",
+                "CODIGO_ATENDIMENTO": "Code, Customer Service",
+                "DATA_ATENDIMENTO": "Date Of Service",
+                "DATA_FECHAMENTO": "Date Of The Closing",
+                "DATA_ENVIO_COBRANCA": "Date Shipping Charge",
+                "DATA_RESPOSTA": "Date The Answer",
+                "STATUS": "Status",
+                "TOTAL": "A Total of:",
+                "TOTAL_APROVADOS": "Total Approved:",
+                "TOTAL_REPROVADOS": "Total Fail:",
+                "OS": "The order of Service",
+                "DATA_E": "The date of the Closing",
+                "APROVAR_TODOS": "Approve, For All",
+                "REPROVAR_TODOS": "Fail Them All",
+                "ACAO_MASSA": "The action of Mass",
+                "CHAT": "Chat,"
+            },
+            "APROVAR": {
+                "SERVICO": "The service(s)/Part(s)of the",
+                "QUANTIDADE": "The amount",
+                "REEMBOLSO": "The value of the Refund"
+            },
+            "RESUMO": {
+                "NOME": "Name:",
+                "OS": "Order of Service:",
+                "DATA": "Date:",
+                "PLACA": "Board:",
+                "MODELO": "Model:",
+                "KM": "Km:"
+            }
+        },
+        "MANUTENCOES": {
+            "LABEL": {
+                "CLIENTE": "Client",
+                "STATUS": "Status",
+                "PLACA": "Board",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "Date Of Order",
+                "RESPONSAVEL": "Responsible for"
+            },
+            "TABLE": {
+                "HEADER": {
+                    "DATA_OS": "The date of THE",
+                    "CLIENTE": "Client",
+                    "PLACA": "Board",
+                    "CODIGO_ATENDIMENTO": "Code, Customer Service",
+                    "CODIGO_OS": "The code of THE",
+                    "MATERIAL": "The Material",
+                    "QUANTIDADE": "The amount",
+                    "KM": "MILES",
+                    "RESPONSAVEL": "Responsible for",
+                    "STATUS": "Status"
+                }
+            }
+        },
+        "GERENCIAR_FROTA": {
+            "LABELS": {
+                "KM": "MILES",
+                "RENAVAM": "Renavam",
+                "PLACA_ATUAL": "Board's Current",
+                "PLACA": "Board",
+                "MODELO": "The model",
+                "MARCA": "Brand",
+                "CONTRATO": "The contract",
+                "CONTRATO_MASTER": "Agreement, The Master",
+                "CHASSI": "The chassis",
+                "GRUPO_ECONOMICO": "The Group's Economic",
+                "CATEGORIA": "Category",
+                "CLIENTE": "Client",
+                "CNPJ": "ID",
+                "PERIODO": "Here. The period",
+                "DATA_VENCIMENTO": "Due Date",
+                "MESES_DECORRIDOS": "Months Have Passed",
+                "TARIFA": "The rate",
+                "DATA_PRIMEIRA_LOCACAO": "The Date Of First Rental",
+                "REGIONAL": "The Regional",
+                "CENTRO_CUSTO": "The center-of-Charge"
+            },
+            "MENSAGENS": {
+                "KM_ATUALIZADO": "MILES the vehicle is up-to-date, with great success!",
+                "KM_MENOR_ATUAL": "The KM reported is less than that of the current one.",
+                "KM_VINTE_POR_CENTO": "The km and rises to 20% away your current one. Are you sure you would like to upgrade to the km of the car is {{1}} for {{2}} to {{3}}?"
+            },
+            "TITLES": {
+                "KM_ULTRAPASSOU_VINTE_POR_CENTO": "Miles has exceeded 20 percent",
+                "DETALHES": "Details"
+            }
+        },
+        "CALENDARIO": {
+            "TITLES": {
+                "DISPONIBILIDADE": "The availability of the Workshop:",
+                "SELECIONE_FORNECEDOR": "Please select a provider:"
+            },
+            "MESSAGES": {
+                "HORARIO_INVALIDO": "Dear valued Customer, in the shop you selected have reached their maximum production capacity, so we advise you to select a new place to shop. If it is necessary for me to remain in the data, we would like to advise you that it is possible that your vehicle may experience a slight delay in the delivery, with a view to the operational capability of the service provider.",
+                "DATA_RETROATIVA": "The date of the stop of the vehicle and may not be back-dated.",
+                "INFO_METODO_TRABALHO": "The method of work: the positions in order of arrival"
+            },
+            "LABELS": {
+                "DATA": "Date",
+                "HORARIO": "Time Preference"
+            }
+        },
+        "PERFIL": {
+            "TITLE": "Profile",
+            "LABELS": {
+                "CODIGO": "The code",
+                "NOME_PERFIL": "The name of the Profile",
+                "EXCLUIR_PERFIL": "To delete a profile"
+            },
+            "MENSAGENS": {
+                "MSG_CONFIRM_DESABILITAR_PERMISSAO": "Do you really want to disable the permission to access it?",
+                "MSG_CONFIRM_HABILITAR_PERMISSAO": "Do you really want to enable the permission to access it?",
+                "MSG_REGISTRO_NAO_ENCONTRADO": "There is no record that fits your search.",
+                "MSG_EXLUIR_PERFIL": "Want to delete your profile registered to?",
+                "MSG_PERFIL_ADICIONADO": "Profile on registered with success!",
+                "MSG_PERFIL_REMOVIDO": "Profile deleted successfully!",
+                "MSG_PERFIL_ALTERADO": "Profile-change-with great success!",
+                "MSG_PERFIL_JA_EXISTENTE": "A profile that already exists.",
+                "MSG_PERFIL_JA_VINCULADO": "The user profile is already bound to a driver.",
+                "MSG_PERFIL_JA_VINCULADO_EXCLUSAO": "It is not possible to delete the profile because it is associated with a user."
+            },
+            "TOOLTIP": {
+                "PESQUISAR": "To search for a Profile"
+            }
+        },
+        "ALTERAR_PERMISSAO": {
+            "TITLE": "Change",
+            "SUBTITLE": "Action:",
+            "TIPS": {
+                "TITLE": "Change",
+                "TEXT": "From this screen you can change the permission of all of the action on each page."
+            },
+            "ICON": "To Edit The Permission"
+        },
+        "TIPO_ATENDIMENTO": {
+            "TITLE": "The kind of customer Service",
+            "LABELS": {
+                "CODIGO": "The code",
+                "NOME": "The name of the Type of customer Service",
+                "DESCRICAO": "Description",
+                "EMAIL": "E-mail address",
+                "SEARCH_TOOLTIP": "Search by Name, Type of Service or by E-mail",
+                "MODAL_EXCLUIR": "To exclude a Type of Service"
+            },
+            "MESSAGES": {
+                "DESEJA_EXCLUIR": "You want to exclude, and the Type of Care a registered?",
+                "MSG_TIPO_ATENDIMENTO_JA_EXISTE": "There is already a type of a service registered by that name.",
+                "MSG_REGISTRO_SUCESSO": "The registry change successfully.",
+                "MSG_ERRO_TIPO_ATENDIMENTO_USUARIO_CADASTRADO": "TIPO_ATENDIMENTO_CADASTRADO"
+            },
+            "TOOLTIP": {
+                "PESQUISAR": "Search type-by-Type-of-Service"
+            }
+        },
+        "MENSAGENS": {
+            "MSG_CONFIRM_DESABILITAR_PERMISSAO": "Do you really want to disable the permission to access it?",
+            "MSG_CONFIRM_HABILITAR_PERMISSAO": "Do you really want to enable the permission to access it?",
+            "MSG_REGISTRO_NAO_ENCONTRADO": "There is no record that fits your search.",
+            "EXCLUIR_ARQUIVO": "You want to delete the file?",
+            "EXTENSAO_INVALIDA": "An error occurred when loading the file. The format of the file must be a jpg, jpeg, gif, png, bmp, or pdf format.",
+            "TAMANHO_INVALIDO": "The image or document that is longer than the allowed maximum of 3mb.",
+            "TAMANHO_INVALIDO_VIDEO": "Video is bigger than the allowed maximum 10.",
+            "CANCELAR_CRIACAO_SINISTRO": "Are you sure you want to cancel the opening of the service?"
+        },
+        "TITLES": {
+            "DESABILITAR_PERMISSAO": "To disable the permission",
+            "HABILITAR_PERMISSAO": "To enable the permission"
+        },
+        "FILTROS": {
+            "LABELS": {
+                "FILTRO_MOTIVO": "Search by Code or Name of the subject",
+                "FILTRO_PERFIL": "Search by Code or Name in the Profile"
+            }
+        },
+        "ATENDIMENTO": {
+            "TITLES": {
+                "ATENDIMENTO": "Customer service",
+                "DETALHES_SINISTRO": "The details of the Accident",
+                "FORNECEDORES": "The workshops",
+                "ORDEM_SERVICO": "The order of Service Carried out",
+                "DESCRICAO_SERVICO": "The description of the Service",
+                "SOLUCAO_ENCAMINHAMENTO": "Troubleshooting / Routing"
+            },
+            "MESSAGES": {
+                "MSG_ATENDIMENTO_SUCESSO": "Answer submitted successfully!",
+                "FORNECEDOR_NAO_SELECIONADO": "Select a vendor.",
+                "EXISTE_REQUISICAO_COMPRA": "This provider may not be removed as there is already a purchase requisition.",
+                "ATENDIMENTO_CANCELADO": "Service cancelled-with great success!"
+            },
+            "LABELS": {
+                "UM_ARQUIVO_ADICIONADO": "<1 file-selected>",
+                "LBL_CODIGO_ATENDIMENTO": "Code, Customer Service",
+                "LBL_ATENDIMENTO": "Customer service",
+                "LBL_CNPJ": "The client",
+                "LBL_MODELO": "The model",
+                "LBL_PLACA": "Board",
+                "LBL_DATA_INICIO": "Start Date",
+                "LBL_DATA_FIM": "Date Of Order",
+                "LBL_SITUACAO": "The situation",
+                "LBL_STATUS_PLACA": "Status Board The Vehicle Reservation",
+                "LBL_MUNICIPIO": "City",
+                "LBL_UF": "STATE",
+                "LBL_M_PREVENTIVA": "Preventive",
+                "LBL_M_CORRETIVA": "Corrective",
+                "LBL_MOTORISTA": "The driver",
+                "LBL_TELEFONE": "The phone",
+                "LBL_EMAIL": "E-mail address",
+                "LBL_KM": "Miles",
+                "LBL_CIDADE": "The city",
+                "LBL_DATA_FECHAMENTO": "Date Of The Closing",
+                "LBL_DATA_ATENDIMENTO": "Date Of Service",
+                "LBL_PREVENTIVA": "Preventive Maintenance",
+                "LBL_CORRETIVA": "Corrective Maintenance",
+                "LBL_VITIMA": "There was a victim",
+                "LBL_VITIMA_FATAL": "There has been loss of life",
+                "LBL_MOTIVO_SINISTRO": "The reason for the Claim",
+                "LBL_LOGRADOURO_SINISTRO": "Place of the Accident",
+                "LBL_CIDADE_SINISTRO": "The city of the Accident",
+                "LBL_ESTADO_SINISTRO": "The state of the Accident",
+                "LBL_CEP_SINISTRO": "ZIP code of the Insured",
+                "LBL_BOLETIM_OCORRENCIA": "Police report",
+                "LBL_DATA_SINISTRO": "The date of the Accident",
+                "LBL_SINISTRO": "The accident",
+                "LBL_DATA_PREV_FECHAMENTO": "The date Forecast for the Closing",
+                "LBL_DATA_PREV_PARADA": "The date Forecast for the Parade",
+                "LBL_DATA_PARADA": "Date Of The Stop",
+                "LBL_ENDERECO_FORNECEDOR": "Address Of The Workshop",
+                "LBL_FORNECEDOR": "Shop",
+                "LBL_DESCRICAO": "The name of the File to",
+                "LBL_TIPO": "The kind of customer Service",
+                "LBL_TIPO_DOCUMENTO": "Tipo de Documento",
+                "OFICINA_NOT_FOUND": "There are no workshops for this service."
+            },
+            "TOOLTIP": {
+                "BTN_ANEXO": "Extensions jfif, jpg, jpeg, gif, png, bmp, and pdf, Sizes for the Image = 3 mb, Video = 10"
+            }
+        },
+        "MOTIVO": {
+            "LABELS": {
+                "CODIGO": "The code",
+                "NOME": "Name A Reason",
+                "TIPO_ATENDIMENTO": "Type name of the Service",
+                "TIPO_ATENDIMENTO_SOLICITACAO": "The type of the Service Request",
+                "EXCLUIR_MOTIVO": "To Delete A Reason"
+            },
+            "MENSAGENS": {
+                "MSG_EXLUIR_MOTIVO": "You want to delete, and the reason you registered?",
+                "MSG_MOTIVO_EXCLUIDO": "Why deleted successfully!",
+                "MSG_MOTIVO_ASSOCIADO_ATENDIMENTO": "It is not possible to exclude, for this reason, it is associated with the service.",
+                "MSG_ERRO_ATENDIMENTO_MOTIVO_ASSOCIADO": "ATENDIMENTO_MOTIVO_ASSOCIADO",
+                "MSG_ERRO_ATENDIMENTO_MOTIVO_SOLICITACAO_CADASTRADO": "ATENDIMENTO_MOTIVO_SOLICITACAO_CADASTRADO",
+                "MSG_ERRO_ATENDIMENTO_MOTIVO_SOLICITACAO_ASSOCIADO": "ATENDIMENTO_MOTIVO_SOLICITACAO_ASSOCIADO",
+                "MSG_ERRO_MOTIVO_ATENDIMENTO_CADASTRADO": "MOTIVO_ATENDIMENTO_CADASTRADO",
+                "MSG_MOTIVO_SUCESSO": "Why registered successfully!",
+                "MSG_MOTIVO_ALTERADO": "Reason for change-with great success!",
+                "MSG_MOTIVO_ASSOCIADO_ATENDIMENTO_EDIT": "It is not possible to edit this to be the reason for that is associated with the service.",
+                "MSG_MOTIVO_JA_EXISTE": "It already is registered with that name."
+            },
+            "TABLES": {
+                "COL_CODIGO": "The code",
+                "COL_NOME_MOTIVO": "The name of the subject",
+                "COL_NOME_ATENDIMENTO": "The name of the Type of customer Service"
+            },
+            "TOOLTIP": {
+                "PESQUISAR": "To search for the Reason"
+            }
+        },
+        "USUARIO": {
+            "TITLES": {
+                "DADOS_PESSOAIS": "The personal data",
+                "DADOS_RESIDENCIAIS": "The data for the residential",
+                "HABILITACAO": "License",
+                "ENDERECO": "Address",
+                "DADOS_ADICIONAIS": "For additional data",
+                "CONTATO": "Contact"
+            },
+            "SUBTITLES": {
+                "FILIACAO": "Membership"
+            },
+            "MENSAGENS": {
+                "USUARIO_DIFERENTE_CLIENTE": "The user does not belongs to the customer logged in."
+            },
+            "LBL_EMAIL": "E-mail address",
+            "LBL_TELEFONE": "The phone",
+            "LBL_CELULAR": "Cell phone",
+            "LBL_FORMA_CONTATO": "A way to contact you",
+            "LBL_ASSINA_MULTA": "Signs on the ticket?",
+            "LBL_PERFIL_USUARIO": "The profile of the user",
+            "LBL_NUMERO_REGISTRO": "Record number",
+            "LBL_PRIM_HABILITACAO": "1 License",
+            "LBL_OBSERVACOES_HAB": "Notes printed on a driver's LICENSE",
+            "LBL_DATA_EMISSAO": "Date of issue",
+            "LBL_CIDADE_EMISSOR": "The city, the issuing",
+            "LBL_UF_EMISSOR": "STATE transmitter",
+            "LBL_VALIDADE": "The validity",
+            "LBL_CODIGO": "The code of the User",
+            "LBL_STATUS": "Status",
+            "LBL_DATA_NASCIMENTO": "Date of birth",
+            "LBL_RG": "ID",
+            "LBL_NOME_MAE": "The name of the mother",
+            "LBL_NOME_PAI": "The name of the father,",
+            "LBL_EMISSOR": "The issuer",
+            "LBL_CLIENTE": "The client",
+            "LBL_CATEGORIA": "Category",
+            "LBL_BAIRRO": "The neighbourhood",
+            "LBL_CIDADE": "The city",
+            "LBL_UF": "STATE",
+            "LBL_COMPLEMENTO": "Add",
+            "LBL_CEP": "ZIP code",
+            "LBL_LOGRADOURO": "Place",
+            "LBL_NUMERO": "The number",
+            "LBL_CPF": "Social security number",
+            "LBL_NOME": "Name"
+        },
+        "PERMISSAO": {
+            "MENSAGENS": {
+                "MSG_SUBMENU_OPERACAO_ATIVA": "You can't disable the sub-menu with the operations that are enabled.",
+                "MSG_MENU_SUBMENU_ATIVO": "You can't disable the menu with sub-menus that are enabled.",
+                "MSG_MENU_SUBMENU_ATIVAR": "To activate the Item to change the permissions.",
+                "MSG_PERMISSAO_ADICIONADA": "The permission is added successfully!",
+                "MSG_PERMISSAO_RETIRADA": "Permission to withdraw was successful!"
+            },
+            "LABELS": {
+                "CODIGO": "The code",
+                "NOME_PERFIL": "The name of the Profile",
+                "MENU_SUBMENU": "Menus > Sub-Menus"
+            },
+            "TOOLTIP": {
+                "PESQUISAR": "To search for the Drivers"
+            }
+        },
+        "SENHA": {
+            "FORM": {
+                "LBL_SENHA_ATUAL": "Password",
+                "LBL_NOVA_SENHA": "The New Password",
+                "LBL_CONFIRMAR_NOVA_SENHA": "Confirm Your New Password",
+                "LBL_MOSTRAR_SENHA": "To show the password",
+                "LBL_OCULTAR_SENHA": "To hide the password"
+            },
+            "MENSAGENS": {
+                "NOVA_SENHA_NAO_CONFERE": "The fields New Password and Confirm the New Password must contain that same value.",
+                "SENHA_NAO_ATENDE_CRITERIOS": "The password you entered must be at least 8 characters long and have at least one alphabetic character.",
+                "SENHA_ATUAL_NAO_CONFERE": "The password you entered does not match the current password.",
+                "SENHA_ALTERADA": "The password is successfully changed!",
+                "USUARIO_NAO_CADASTRADO": "The user is not registered."
+            }
+        },
+        "ABRIR_ATENDIMENTO": {
+            "TITLE": "For services to be performed",
+            "SUBTITLE": "*Select the service you want",
+            "CARD": {
+                "TITLE": {
+                    "MANUTENCAO": "To Maintain A Claim",
+                    "SINISTRO": "The accident",
+                    "NOTIFICACOES_MULTAS": "Notifications and fees",
+                    "DOCUMENTACAO_CHAVES": "The documentation and Keys",
+                    "GESTAO_CONTRATO": "The management of the Contract",
+                    "RECLAMACAO_SUGESTAO": "Complaints and Suggestions"
+                },
+                "TEXT": {
+                    "MANUTENCAO": "Information on the care and maintenance is to be carried on the vehicle to the customer",
+                    "SINISTRO": "The information on the claim is to be made to the vehicle to the customer",
+                    "NOTIFICACOES_MULTAS": "The information on the notices and fines",
+                    "DOCUMENTACAO_CHAVES": "The information on the documentation and keys",
+                    "GESTAO_CONTRATO": "The information in the Management of the Contract",
+                    "RECLAMACAO_SUGESTAO": "In order to generate a complaint and a suggestion"
+                },
+                "BUTTON": "Open The Service",
+                "BUTTON_2": "The management of the Contract"
+            }
+        },
+        "RECLAMACOES": {
+            "LABELS": {
+                "LBL_NOME": "Name",
+                "LBL_CNPJ": "The client",
+                "LBL_VEICULO": "The vehicle",
+                "LBL_TELEFONE_GESTOR": "Phone Manager",
+                "LBL_EMAIL_GESTOR": "E-mail to the Manager",
+                "LBL_OBSERVACOES": "Comments",
+                "LBL_TIPO": "Type",
+                "LBL_MOTIVO": "The reason"
+            }
+        },
+        "NOTIFICACAO_MULTA": {
+            "TITLE": "Notifications and fees",
+            "FORM": {
+                "SUBITEM_1": "Information About the Service",
+                "SUBITEM_2": "Details",
+                "SUBITEM_3": "Additional Information",
+                "SUBITEM_4": "Further Information",
+                "LABEL": {
+                    "NOME_CONTATO": "Name Of The Contact",
+                    "CNPJ": "The client",
+                    "VEICULO": "The vehicle",
+                    "TELEFONE_USUARIO": "The Phone User",
+                    "EMAIL_USUARIO": "E-mail address, a User",
+                    "NUMERO_AIT": "Number of INTERNATIONAL",
+                    "CNH": "Driver's LICENSE",
+                    "DATA_VENCIMENTO_CNH": "Expiration date of driver's LICENSE",
+                    "CODIGO_INFRACAO": "Code Violation",
+                    "TIPO": "Type",
+                    "MOTIVO": "The reason",
+                    "OBSERVACAO": "Note"
+                },
+                "MESSAGE": {
+                    "SUCESSO_ENVIO": "Answer submitted successfully!",
+                    "ERRO_ENVIO": "Error when trying to send customer Service!"
+                }
+            },
+            "LABELS": {
+                "RECUSAR_INDICACAO": "Refuse To An Indication",
+                "VISUALIZAR_EMAILS": "To view the e-mail",
+                "PLACA": "Board",
+                "INFRACAO": "The breach",
+                "VALOR_COBRADO": "Charge",
+                "DATA_EMISSAO": "Date Of Issue",
+                "DATA_VENCIMENTO": "Due Date",
+                "NOME_INDICADO": "The name of the Nominee",
+                "STATUS": "Status",
+                "ACOES": "Stock"
+            },
+            "MESSAGES": {
+                "RECUSAR_INDICACAO": "Can you confirm the rejection of the nomination of a Ticket? After confirming with The Manager, you will be prompted to continue with the process."
+            }
+        },
+        "GESTAO_CONTRATO": {
+            "TITLE": "The management of the Contract",
+            "FORM": {
+                "SUBITEM_1": "The information from the Customer",
+                "SUBITEM_2": "Additional Information",
+                "SUBITEM_3": "Customer's information",
+                "LABEL": {
+                    "NOME_CONTATO": "Name Of The Contact",
+                    "TELEFONE_GESTOR": "Phone Manager",
+                    "EMAIL_GESTOR": "E-mail to the Manager",
+                    "TIPO": "Type",
+                    "MOTIVO": "The reason",
+                    "DESCRICAO_DOCUMENTO": "The description of the Document"
+                },
+                "MESSAGE": {
+                    "SUCESSO_ENVIO": "Answer submitted successfully!",
+                    "ERRO_ENVIO": "Error when trying to send customer Service!"
+                }
+            }
+        },
+        "ASSOCIAR_CONDUTOR": {
+            "LABELS": {
+                "LBL_PLACA": "Board",
+                "LBL_CONDUTOR": "The driver",
+                "LBL_CNPJ": "The client",
+                "LBL_STATUS": "Status",
+                "LBL_ATIVO": "Active",
+                "LBL_INATIVO": "Dead"
+            },
+            "MENSAGENS": {
+                "ASSOCIACAO_SALVA": "Association(s) that perform(s) a huge success!",
+                "ASSOCIACAO_ATUALIZADA": "The Status of the association, the driver of the vehicle is up-to-date, with great success!",
+                "CANCELAR_ASSOCIACOES": "There is an association(s) located(s)! Are you sure you want to cancel?",
+                "EXCLUIR_ASSOCIACAO": "Are you sure you want to delete the pool?",
+                "ASSOCIACAO_EXCLUIDA": "The association deleted successfully!",
+                "MAXIMO_INSERCOES": "It is only possible to enter up to 15 associations in the list",
+                "CONDUTOR_VEICULO_CADASTRADO": "The vehicle(s) plate(s) - {{1}} that already is(are) member(s) of the driver",
+                "REATIVAR_ASSOCIACAO": "This is an association that already exists, but it is turned off. You want to re-enable it?",
+                "VEICULO_JA_ASSOCIADO": "There is already a binding for this, too."
+            },
+            "TITLES": {
+                "CANCELAR_ASSOCIACOES": "Cancel Memberships",
+                "EXCLUIR_ASSOCIACAO": "To Delete The Association",
+                "REATIVAR_ASSOCIACAO": "Re-Activate The Association"
+            }
+        },
+        "DOCUMENTOS": {
+            "LABELS": {
+                "LBL_CPF": "Social security number of the User",
+                "LBL_NOME": "The name of the User",
+                "LBL_CELULAR": "The cell phone of the User",
+                "LBL_TELEFONE": "The phone of the User",
+                "LBL_CNPJ": "The client",
+                "LBL_EMAIL": "E-mail address of the User",
+                "LBL_VEICULO": "The vehicle",
+                "LBL_KM": "MILES",
+                "LBL_CIDADE": "The city",
+                "LBL_OBSERVACOES": "Note",
+                "LBL_UF": "STATE",
+                "LBL_CORRETIVAS": "The cap"
+            }
+        },
+        "AGENDAMENTO": {
+            "TITLE": {
+                "REMOVER": "To delete the Schedule",
+                "SELECIONE_UMA_OFICINA": "Please select a workshop(s) for service(s):",
+                "LIMITE_OFICINAS_ATINGIDO": "Out of the suppliers is reached. You have now selected the three suppliers.",
+                "TODOS_OS_FORNECEDORES_SELECIONADOS": "All the vendors are required have been selected!"
+            },
+            "MESSAGE": {
+                "MSG_CONFIRMAR_REMOVER": "Are you sure you want to delete the schedule for this workshop?"
+            }
+        },
+        "MANUTENCAO": {
+            "TITLE": "To Maintain A Claim",
+            "SUB_TITLE": "The",
+            "LABEL": {
+                "CNPJ": "The client",
+                "PLACA": "Board",
+                "LOJA": "Shop",
+                "CPF": "Social security number",
+                "NOME_USUARIO": "Name Of The User",
+                "TELEFONE_USUARIO": "The Phone User",
+                "CELULAR_USUARIO": "The Cell Phone User",
+                "EMAIL_USUARIO": "E-mail address, a User",
+                "MELHOR_FORMA_CONTATO": "The Best Way To Contact You",
+                "PREVENTIVA": "Preventive",
+                "CORRETIVA": "Corrective",
+                "SINISTRO": "The claims",
+                "ACESSORIO": "Accessories",
+                "EXECUCAO": "Execution Of A Claim",
+                "INFORMACOES": "Information",
+                "COMPLEMENTO_SERVICOS": "The add-ons of the Services to be performed",
+                "LOGRADOURO_SINISTRO": "Place of the Accident",
+                "CEP_SINISTRO": "ZIP code",
+                "BAIRRO_SINISTRO": "The District Claim",
+                "UF_SINISTRO": "STATE a Claim",
+                "CIDADE_SINISTRO": "The City, The Claim",
+                "NOME_TERCEIRO": "Name Of The Third Party",
+                "CELULAR_TERCEIRO": "Phone The Third Party",
+                "RELATO_OCORRIDO": "Reporting That Occurred",
+                "TIPO_SINISTRO": "A Type A Claim",
+                "DATA_SINISTRO": "Date Of The Accident",
+                "HORA_SINISTRO": "The Time The Claim",
+                "NUMERO_BO": "The number of BO",
+                "VITIMA": "The victim",
+                "VITIMA_FATAL": "Loss Of Life",
+                "ENVOLVIMENTO_TERCEIROS": "The involvement of a Third party",
+                "ACAO": "The action",
+                "DESCRICAO_ARQUIVO": "The description of the File",
+                "TIPO_USO": "Type Of Use",
+                "MODELO": "The model",
+                "KM": "MILES",
+                "ULTIMO_PLANO_EXECUTADO": "A Last-Ditch Attempt To Run",
+                "PLANO_MANUTENCAO_EXECUTAR": "In the Maintenance plan to Run",
+                "CEP": "ZIP code",
+                "ENDERECO": "Street address (Street, Neighborhood)",
+                "UF": "STATE",
+                "CIDADE": "The city",
+                "DATA_PARADA_UM": "Date Of The Stop 1",
+                "DATA_PARADA_DOIS": "Date Of The Stop 2",
+                "DATA_PARADA_TRES": "Date Of The Stop 3",
+                "HORA_PARADA_UM": "Time To Stop 1",
+                "HORA_PARADA_DOIS": "Time In Step 2",
+                "HORA_PARADA_TRES": "Time To Stop The 3"
+            },
+            "COLUMNS_SINISTRO_ANTERIOR_VINCULADO": {
+                "SELECIONE": "Select",
+                "SINISTRO": "The accident",
+                "ATENDIMENTO_INICIAL": "Care Home",
+                "TIPO_SERVICO": "The type-of-Service",
+                "DATA_SERVICO": "The date/time for the service"
+            },
+            "LIST_FORNECEDOR": {
+                "HEADER": {
+                    "FORNECEDOR": "Shop",
+                    "SERVICO": "The service",
+                    "ENDERECO": "Address",
+                    "TELEFONE": "The phone",
+                    "CIDADE": "The city",
+                    "UF": "STATE",
+                    "ACOES": "Stock"
+                }
+            },
+            "MESSAGE": {
+                "SUCESSO_ENVIO": "Answer submitted successfully!",
+                "ERRO_ENVIO": "Error when trying to send customer Service!",
+                "PLACA_NAO_EXISTE": "The card is not registered in the database.",
+                "PLACA_NAO_PERTENCE_CNPJ": "This card does not belong to the ID being reported.",
+                "ATENDIMENTO_ABERTO": "The request is already out in the open.",
+                "SERVICO_OBRIGATORIO": "Select at least one: (Preventive, Corrective, Accessories, or Experiments.",
+                "SERVICO_OBRIGATORIO_SINISTRO": "Select at least one of: the Accident!",
+                "AMBOS_PARAMETROS_INVALIDOS": "The card is invalid!",
+                "CANCELAR_ATENDIMENTO": "Do you really want to cancel the service?",
+                "CANCELAR_ABERTURA_ATENDIMENTO": "Are you sure you want to cancel the opening of the Service?",
+                "VEICULO_SUBLOCADO": "It is not possible to open a call for a vehicle sublocado.",
+                "HORARIO_ATENDIMENTO": "The hours are limited to between 08:00 and 18:00.",
+                "HORARIO_ATENDIMENTO_LEVA_TRAZ": "The hours are restricted to between 10:00 and 17:00.",
+                "DIA_UTIL": "The date is {0} ' is not a working day.",
+                "ANTECEDENCIA_72_HORAS": "The schedule of 'Review' must be made 72 hours in advance, in order to make sure that your maintenance to be passed on the scheduled date.",
+                "ANTECEDENCIA_DOIS_DIAS": "To date, it needs to be for longer than two days, and it may not be the end of the week.",
+                "INFORMAR_DATAS_DISTINTAS": "Enter three separate times.",
+                "VEICULO_NAO_LOCALIZADO": "The vehicle is not located in the database.",
+                "SINISTRO_ANTERIOR_OBRIGATORIO": "It is mandatory to select it on the maintenance and loss of registration!",
+                "CONTATO_OBRIGATORIO": "The phone User or Mobile phone User is required."
+            },
+            "TOOLTIP": {
+                "CORRETIVA": "Malfunctions; Failures; Driven from power, and any events, such as: the Breaking and damage of the spare parts and accessories.",
+                "PREVENTIVA": "The mandatory items referred to in the Manual provided by the manufacturer, respecting the date and miles for the run. Items of normal wear and tear such as Brakes; the Disks, and Suspension.",
+                "SINISTRO": "The event in which the insured person is suffering a material injury. The accident represented by the accident or collision occurred with or without the involvement of the third party, whether or not they are on public roads, in addition to the robberies, thefts, break-ins, fires, hit-and-run and roll-over.",
+                "TELA_SINISTRO": "The accident represented by the accident or collision occurred with or without the involvement of the third party, whether or not they are on public roads, in addition to the robberies, thefts, break-ins, fires, hit-and-run and roll-over."
+            }
+        },
+        "SINISTRO": {
+            "TITLE": "The accident",
+            "SUB_TITLE": "The",
+            "LABEL": {
+                "CNPJ": "The client",
+                "PLACA": "Board",
+                "CPF": "Social security number",
+                "NOME_USUARIO": "The name of the User",
+                "TELEFONE_USUARIO": "The phone of the User",
+                "CELULAR_USUARIO": "The cell phone of the User",
+                "EMAIL_USUARIO": "E-mail address, a User",
+                "MELHOR_FORMA_CONTATO": "The Best Way To Contact You",
+                "PREVENTIVA": "Preventive",
+                "CORRETIVA": "Corrective",
+                "SINISTRO": "The accident",
+                "EXECUCAO": "Execution Of A Claim",
+                "COMPLEMENTO_SERVICOS": "The add-ons of the Services to be performed",
+                "LOGRADOURO_SINISTRO": "Place of the Accident",
+                "CEP_SINISTRO": "ZIP code",
+                "BAIRRO_SINISTRO": "The neighborhood of the Accident",
+                "UF_SINISTRO": "STATE of the Insured",
+                "CIDADE_SINISTRO": "The city of the Accident",
+                "NOME_TERCEIRO": "The name of the Third party",
+                "CELULAR_TERCEIRO": "The cell phone of a Third party",
+                "RELATO_OCORRIDO": "A description of the event",
+                "TIPO_SINISTRO": "The type of the Accident",
+                "DATA_SINISTRO": "The date of the Accident",
+                "HORA_SINISTRO": "The time of the Accident",
+                "NUMERO_BO": "Number one.",
+                "VITIMA": "The victim",
+                "VITIMA_FATAL": "Loss Of Life",
+                "ENVOLVIMENTO_TERCEIROS": "The involvement of a Third party",
+                "TIPO_USO": "Type Of Use",
+                "MODELO": "The model",
+                "KM": "MILES",
+                "ULTIMO_PLANO_EXECUTADO": "A Last-Ditch Attempt To Run",
+                "PLANO_MANUTENCAO_EXECUTAR": "In the Maintenance plan to Run",
+                "CEP": "ZIP code",
+                "ENDERECO": "Street address (Street, Neighborhood)",
+                "UF": "STATE",
+                "CIDADE": "The city"
+            },
+            "LIST_FORNECEDOR": {
+                "HEADER": {
+                    "FORNECEDOR": "Shop",
+                    "SERVICO": "The service",
+                    "CORRETIVA": "Corrective",
+                    "TELEFONE": "The phone",
+                    "CIDADE": "The city",
+                    "UF": "STATE",
+                    "ACOES": "Stock"
+                }
+            },
+            "MESSAGE": {
+                "SUCESSO_ENVIO": "Answer submitted successfully!",
+                "ERRO_ENVIO": "Error when trying to send customer Service!",
+                "PLACA_NAO_EXISTE": "The card is not registered in the database.",
+                "PLACA_NAO_PERTENCE_CNPJ": "This card does not belong to the ID being reported.",
+                "ATENDIMENTO_ABERTO": "The request is already out in the open.",
+                "CANCELAR_ATENDIMENTO": "Are you sure you want to cancel the opening of the Service?",
+                "VEICULO_SUBLOCADO": "It is not possible to open a call for a vehicle sublocado.",
+                "HORARIO_ATENDIMENTO": "The hours are limited to between 08:00 and 18:00.",
+                "HORARIO_ATENDIMENTO_LEVA_TRAZ": "The hours are restricted to between 10:00 and 17:00.",
+                "DIA_UTIL": "The date is {0} ' is not a working day.",
+                "ANTECEDENCIA_72_HORAS": "The schedule of 'Review' must be made 72 hours in advance, in order to make sure that your maintenance to be passed on the scheduled date."
+            }
+        },
+        "CONTROLE_PREVENTIVAS": {
+            "LBL_DETALHE_TITLE": "Detailed description of the Revisions",
+            "LBL_DETALHE_MANUTENCOES": "Detail Of Servicing Carried Out",
+            "LBL_REAL": "The actual",
+            "LBL_IDEAL": "The Ideal",
+            "LBL_ULTIMA_REVISAO": "The Latest Revision",
+            "LBL_DATA_ULTIMA_REVISAO": "Date Of Last Revision",
+            "LBL_KM_ULTIMA_REVISAO": "KM is the Latest Revision",
+            "LBL_KM_REVISAO": "KM Review",
+            "LBL_TIPO_UTILIZACAO": "Type Of Use",
+            "LBL_DATA_REVISAO": "Date Of Revision Of",
+            "LBL_DETALHE_REVISOES": "Details",
+            "LBL_ATENDIMENTO_MANUTENCAO": "Open the service"
+        },
+        "VEICULO_RESERVA": {
+            "LABELS": {
+                "NUM_RESERVA": "The number on the Reservation",
+                "PLACA": "Board",
+                "STATUS": "Status",
+                "PLACA_RESERVA": "The plate of the Vehicle in the Reserve",
+                "LOCAL_RETIRADA": "Local Pickup",
+                "DATA_HORA": "Date/Time",
+                "CLIENTE": "Client",
+                "UF_SOLICITACAO": "STATE Request a Reservation",
+                "CIDADE_SOLICITACAO": "City To Request A Reservation",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "End Date",
+                "CODIGO_ATENDIMENTO": "Code, Customer Service",
+                "DATA_PARADA": "Date of the Stop",
+                "POOL_RESERVA": "Pool Reserves",
+                "SLA_LIBERACAO": "SLA and Release the Reservation",
+                "STATUS_ITENS": {
+                    "AGUARDANDO_PARADA": "Waiting for the stop",
+                    "DISPENSADO_CLIENTE": "Waived by the client",
+                    "SEM_DIREITO_RESERVA": "With no reservation.",
+                    "PENDENTE_RESERVA": "Drop-down a reservation",
+                    "DENTRO_PERIODO_MANUTENCAO": "Within the period of the maintenance",
+                    "SUBSTITUICAO_TEMPORARIA": "A temporary replacement",
+                    "PENDENTE_DESTROCA": "Drop-down destroca",
+                    "DESTROCADO": "Destrocado",
+                    "SUBSTITUICAO_DEFINITVA": "Permanent Replacement",
+                    "VEICULO_ENTREGUE": "The vehicle is delivered"
+                }
+            }
+        },
+        "SOLICITAR_VEICULO_RESERVA": {
+            "BUTTON": {
+                "SOLICITAR": "To Request A Reservation"
+            },
+            "LABEL": {
+                "CODIGO_ATENDIMENTO": "Code, Customer Service",
+                "PLACA": "Board",
+                "DATA_PARADA": "The date of the Stop",
+                "POOL_RESERVA": "The Pool Reserves",
+                "SLA_LIBERACAO": "SLA and Release the Reservation",
+                "NOME": "Name",
+                "CPF": "Social security number",
+                "CELULAR": "Cell phone",
+                "EMAIL": "E-mail address",
+                "BAIRRO": "The neighbourhood",
+                "CIDADE": "The city",
+                "UF": "STATE"
+            },
+            "MESSAGE": {
+                "SUCESS": "A vehicle reservation is requested, and with great success!"
+            }
+        },
+        "SOLICITACAO_VEICULO": {
+            "LABEL": {
+                "CANCELAR_SOLICITACAO": "Cancel The Request",
+                "CLIENTE": "Client",
+                "CODIGO": "The code",
+                "MOTIVO": "Reason For The Request",
+                "SOLICITANTE": "The applicant",
+                "STATUS": "Status",
+                "PLACA": "Board",
+                "PEDIDO": "Order",
+                "CONTRATO": "Number Of The Contract, The Master",
+                "DATA_INICIO": "Start Date",
+                "COMBUSTIVEL": "The fuel",
+                "FINAL_PLACA": "The end of Board ",
+                "QUANTIDADE": "The amount",
+                "VALOR_LOCACAO": "The value of the Lease",
+                "ACESSORIOS": "Accessories",
+                "OBSERVACAO": "Note *",
+                "COR": "Color",
+                "SITUACAO": "The situation",
+                "EMAIL_RESPONSAVEL": "E-mail the person Responsible",
+                "UF": "STATE-of-the Delivery",
+                "CIDADE": "City of Delivery",
+                "EMAIL_SOLICITANTE": "E-mail address of the Requestor",
+                "VEICULO_SUBSTITUIDO": "Vehicle Replacement",
+                "MOTIVO_SUBSTITUICAO": "The reason for the Replacement",
+                "CIA": "The CIA",
+                "GRUPO_CLIENTE": "The group's Customer",
+                "DATA_EMISSAO": "Date Of Issue",
+                "DATA_EMISSAO_INICIO": "Date Of Issuance To The Beginning Of",
+                "DATA_EMISSAO_FIM": "Date Of Issuance To The End Of",
+                "MODELO": "The model",
+                "RESUMO": "Summary",
+                "DATA_FIM": "End Date",
+                "CODIGO_DEVOLUCAO": "The Code Returns",
+                "ENDERECO_ENTREGA": "Deliver Address"
+            },
+            "OPTIONS": {
+                "STATUS": {
+                    "VALIDACAO_PEDIDO": "The validation of the Applications",
+                    "AGUARDANDO_FATURAMENTO": "Waiting For The Billing",
+                    "EM_LICENCIAMENTO": "In-Licensing",
+                    "ACESSORIZACAO": "Acessorização",
+                    "EXPEDICAO_TRANSPORTE": "Shipping Shipping",
+                    "VEICULO_DISPONIVEL": "The Vehicle Is Available",
+                    "ENTREGUE": "Delivered"
+                }
+            },
+            "COLUMN": {
+                "CLIENTE": "Client",
+                "PLACA": "Board",
+                "CHASSI": "The chassis",
+                "RENAVAM": "Renavam",
+                "MODELO": "The model",
+                "COR": "Color",
+                "MODELO_COR": "Model/Color",
+                "TONALIDADE": "Darkness",
+                "ANO_MODELO": "Year/Model",
+                "ACESSORIOS": "Accessories",
+                "MOTIVO": "The reason",
+                "CONTRATO_TSV": "Contract/TSV",
+                "RAZAO_SOCIAL_RESPONSAVEL": "Company Name/Person Responsible",
+                "CONTATO": "Contact",
+                "CNPJ_CPF": "TAX ID/SOCIAL SECURITY NUMBER",
+                "TELEFONE": "The phone",
+                "CELULAR": "Cell phone",
+                "CEP": "ZIP code",
+                "LOGRADOURO": "Place",
+                "NUMERO": "The number",
+                "COMPLEMENTO": "Add",
+                "BAIRRO": "The neighbourhood",
+                "CIDADE": "The city",
+                "UF": "STATE",
+                "PREVISAO_ENTREGA": "Estimated time of arrival",
+                "VEICULO_DISPONIVEL": "The Vehicle Is Available",
+                "AVISO_DISPONIBILIDADE": "Notice Of Availability Of",
+                "CARRO_ENTREGUE": "The Car Is Delivered",
+                "AGUARDANDO_FATURAMENTO": "Waiting For The Billing",
+                "FATURAMENTO_ACESSORIZACAO": "Billing/Acessorização",
+                "EM_LICENCIAMENTO": "Em Licenciamento",
+                "EXPEDICAO_TRANSPORTE": "Shipping/Transport",
+                "DATA_EMISSAO": "The date of Issue",
+                "SITUACAO": "The situation",
+                "ENDERECO_ENTREGA": "Ship-to address",
+                "STATUS": "Status"
+            },
+            "BUTTONS": {
+                "LEGENDA": "The legend of the Accessories"
+            },
+            "MESSAGES": {
+                "REPROVACAO": " In the event of failure",
+                "SUCESSO_ENVIO": "A request has been sent successfully!"
+            }
+        },
+        "INDICADORES": {
+            "DASHBOARD": "I",
+            "TITLE": "The evolution of Expenses,",
+            "LABEL": {
+                "PERIODO": "The period",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "Date Of Order",
+                "CLIENTE": "Client",
+                "REGIONAL": "The Regional",
+                "CENTRO_CUSTO": "The center-of-Charge",
+                "PLACA": "Board"
+            }
+        },
+        "INDICADORES_FINANCEIRO": {
+            "LABEL": {
+                "PERIODO": "The period",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "Date Of Order",
+                "CLIENTE": "Client",
+                "REGIONAL": "The Regional",
+                "CENTRO_CUSTO": "The center-of-Charge",
+                "PLACA": "Board",
+                "CHART_CONTRATO": "The contract",
+                "CHART_DETALHAMENTO": "Details of the Type of Service",
+                "CHART_EVOLUCAO_MENSAL": "The Evolution Of The Monthly",
+                "CHART_DESPESAS": "Expenditure On The Main Boards",
+                "CHART_TIPO_SERVICO": "The type-of-Service",
+                "STATUS_FATURA": "The Status of the Invoice",
+                "STATUS_VEICULO": "The Status of the Vehicle"
+            }
+        },
+        "INDICADORES_INFRACOES": {
+            "LABEL": {
+                "PERIODO": "The period",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "Date Of Order",
+                "CLIENTE": "Client",
+                "REGIONAL": "The Regional",
+                "CENTRO_CUSTO": "The center-of-Charge",
+                "PLACA": "Board",
+                "CHART_INFRACOES_PERIODO_MES": "The violations in the time Period (the Month of the Violation)",
+                "CHART_INFRACOES_PERIODO_DIA": "The violations on the Day-of-Week (Day of Recurrence);",
+                "CHART_INFRACOES_HORARIOS": "Offenses between Time (the Time of the crime)",
+                "CHART_PRINCIPAIS_PLACAS": "The Main Plates To Offenders (R$/Qty)",
+                "CHART_PRINCIPAIS_MOTIVOS": "The main Reasons for the Breaches (U$/Qty)",
+                "CHART_DESPESA_MULTAS": "The expense of tickets - Business Hours",
+                "CHART_INFRACOES_NIC": "Offenses interface card (NIC) that you receive in a month",
+                "CHART_PRAZO_IDENTIFICACAO": "The deadline for the Identification of Documents (in R$/Qty)",
+                "CHART_DESPESAS_MULTAS": "The expenses of the Violations in the Center of the Charge",
+                "STATUS_FATURA": "The Status of the Invoice",
+                "STATUS_VEICULO": "The Status of the Vehicle"
+            }
+        },
+        "INDICADORES_SINISTRO": {
+            "LABEL": {
+                "PERIODO": "The period",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "Date Of Order",
+                "CLIENTE": "Client",
+                "REGIONAL": "The Regional",
+                "CENTRO_CUSTO": "The center-of-Charge",
+                "PLACA": "Board",
+                "CHART_SINISTRO_PERIODO": "Claims in the Period from (Date of Accident)",
+                "CHART_SINISTRO_DIAS": "The accident on the Day of the Week (the Day of the Accident)",
+                "CHART_SINISTRO_ENTRE_HORARIOS": "The claims as between (Time) (Time of Accident)",
+                "CHART_SINISTRO_HORARIO_COMERCIAL": "Insurance Claims - Business Hours",
+                "CHART_TIPO_SINISTRO": "Types of Claims",
+                "CHART_PRINCIPAL_PLACA_SINISTRO": "The main Plates and insurance Claims",
+                "CHART_DECLARACA_CULPA": "Guilty plea",
+                "STATUS_FATURA": "The Status of the Invoice",
+                "STATUS_VEICULO": "The Status of the Vehicle"
+            }
+        },
+        "INDICADORES_AVARIAS": {
+            "LABEL": {
+                "PERIODO": "The period",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "Date Of Order",
+                "CLIENTE": "Client",
+                "REGIONAL": "The Regional",
+                "CENTRO_CUSTO": "The center-of-Charge",
+                "PLACA": "Board",
+                "CHART_PRINCIPAIS_ITENS": "The principal Items of Damage (US$ / QTY)",
+                "CHART_PRINCIPAIS_PLACAS": "The major Plates and Faults",
+                "CHART_AVARIAS_CATEGORIA": "Breakdown by Category, (US$ / QTY)",
+                "CHART_VALOR_DESPESAS": "The value of the Expenditure is for the Purpose of",
+                "CHART_AVARIAS_PERIODO": "Failures in time (Date of Service).",
+                "STATUS_FATURA": "The Status of the Invoice",
+                "STATUS_VEICULO": "The Status of the Vehicle"
+            }
+        },
+        "INDICADORES_POOL_PNEUS": {
+            "LABEL": {
+                "PERIODO": "The period",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "Date Of Order",
+                "CLIENTE": "Client",
+                "REGIONAL": "The Regional",
+                "CENTRO_CUSTO": "The center-of-Charge",
+                "PLACA": "Board",
+                "CHART_CONSUMO_POOL": "Use the Pool",
+                "CHART_CONSUMO_TOP_10": "Consumption, The Top 10 Plaques",
+                "CHART_MODELOS": "Models",
+                "STATUS_FATURA": "The Status of the Invoice",
+                "STATUS_VEICULO": "The Status of the Vehicle"
+            }
+        },
+        "INDICADORES_ATENDIMENTOS": {
+            "LABEL": {
+                "PERIODO": "The period",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "Date Of Order",
+                "CLIENTE": "Client",
+                "REGIONAL": "The Regional",
+                "CENTRO_CUSTO": "The center-of-Charge",
+                "PLACA": "Board",
+                "CHART_EVOLUCAO_MENSAL": "The evolution of the Monthly - QUANTITY Called the",
+                "CHART_ATENDIMENTOS_DIAS": "Attendance on the Day of the Week and date (Date of Opening)",
+                "CHART_PRINCIPAIS_PLACAS": "Top the Plates with Care",
+                "CHART_TIPO_ATENDIMENTO": "The types of services",
+                "CHART_TMA_MENSAL": "The TMA's Monthly",
+                "CHART_TMA_CANAL": "The TMA Channel",
+                "CHART_CHAMADOS_CANAL": "Called by the Channel",
+                "CARD_QUANTIDADE_ATENDIMENTOS": {
+                    "TITLE": "The amount of the Service",
+                    "PREVENTIVA": "Preventive",
+                    "SINISTRO": "The accident",
+                    "CORRETIVA": "Corrective",
+                    "ENTRE_0_4_HRS": "Between 0 and 4 hrs.",
+                    "ENTRE_0_3_DIAS": "From 0 to 3 days",
+                    "ENTRE_0_15_DIAS": "Any number between 0 and 15 days",
+                    "ENTRE_4_24_HRS": "Between 4 and 24 hrs.",
+                    "ENTRE_3_5_DIAS": "Between the ages of 3 and 5 days",
+                    "ENTRE_15_18_DIAS": "Between the 15th and the 18th day",
+                    "ENTRE_1_3_DIAS": "Between 1 and 3 days",
+                    "ENTRE_5_7_DIAS": "From 5 to 7 days",
+                    "ENTRE_18_25_DIAS": "Among 18-to 25-day",
+                    "MAIOR_3_DIAS": "More than 3 days",
+                    "MAIOR_7_DIAS": "Greater than 7 days",
+                    "MAIOR_25_DIAS": "More than 25 days"
+                },
+                "STATUS_FATURA": "The Status of the Invoice",
+                "STATUS_VEICULO": "The Status of the Vehicle"
+            }
+        },
+        "INDICADORES_GERAIS": {
+            "LABEL": {
+                "PERIODO": "period",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "End Date",
+                "CLIENTE": "Client",
+                "REGIONAL": "Regional",
+                "CENTRO_CUSTO": "Cost center",
+                "PLACA": "board",
+                "CHART_SINISTROS": "Claims",
+                "CHART_FROTA_ATIVA": "Active fleet",
+                "CHART_FINANCEIRO": "Financial",
+                "CHART_ATENDIMENTO": "Attendance",
+                "CHART_AVARIAS": "Malfunctions",
+                "CHART_INFRACOES": "Infractions",
+                "POOL": "Tire Pool",
+                "POOL_RESERVA": "Vehicle Reservation Pool"
+            }
+        },
+        "INDICADORES_FROTAS": {
+            "LABEL": {
+                "PERIODO": "The period",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "Date Of Order",
+                "CLIENTE": "Client",
+                "REGIONAL": "The Regional",
+                "CENTRO_CUSTO": "The center-of-Charge",
+                "PLACA": "Board",
+                "CHART_DISTRIBUICAO_FROTA": "The distribution of the Fleet",
+                "CHART_ALUGADA_POR_GRUPO": "Fleet is Rented out by a Group of",
+                "CHART_ALUGADA_POR_MODELO": "The fleet Rental Model",
+                "CHART_KM_MEDIO": "KM is the Average",
+                "CHART_KM_MEDIO_POR_UF": "KM is the Average for the STATE",
+                "CHART_KM_MEDIO_POR_CIDADE": "KM is the Average for the City",
+                "CHART_VENCIMENTARIO": "Vencimentário",
+                "CHART_ALUGADA_POR_FAIXA_IDADE_MEDIA": "Fleet is Rented out by the Range - the Middle Ages",
+                "CHART_DESVIO_KM_NUMERO_CARROS": "The deviation of the KM - Cars",
+                "CHART_KM_MEDIO_ULTIMA_REVISAO": "KM of the Medium in the Service",
+                "CHART_FROTA_ALUGADA_TEMPO": "The fleet Rented out at the Time"
+            }
+        },
+        "ACOMPANHAR_SOLICITACAO_VEICULO": {
+            "COLUMN": {
+                "CODIGO": "The code",
+                "CLIENTE": "Client",
+                "DATA_EMISSAO": "The date of Issue",
+                "MOTIVO": "Reason For The Request",
+                "SOLICITANTE": "The applicant",
+                "SITUACAO": "The situation",
+                "ACAO": "The action"
+            }
+        },
+        "AGRUPADORES": {
+            "LABELS": {
+                "CODIGO": "The code",
+                "CAMPO": "The field",
+                "DESCRICAO": "Description",
+                "SITUACAO": "The situation"
+            },
+            "MENSAGENS": {
+                "SUCESSO_CADASTRO_SUCESSO": "Agrupador(s) registered(s), with a huge success!",
+                "ALTERADO_CADASTRO_SUCESSO": "Agrupador(s) change(s), with a huge success!",
+                "CADASTRO_AGRUPADOR_REPETIDO": "There is already a agrupador registered with that name.",
+                "CANCELAR_CADASTRO": "There are agrupador(s) entered(s) to register! Are you sure you want to cancel?",
+                "REMOVER_CADASTRO_AGRUPADOR": "Are you sure you want to delete the pool?",
+                "REMOVER_AGRUPADOR": "Are you sure you want to delete the agrupador?",
+                "REMOVIDO_CADASTRO_SUCESSO": "Agrupador deleted successfully!",
+                "AGRUPADOR_JA_CADASTRADO": "There is already a agrupador registered with this name: ${1}.",
+                "MAXIMO_AGRUPADORES_INSERIDOS": "It is only possible to enter up to 15 groupers on the list.",
+                "SITUACAO_NAO_SELECIONADA": "Situation must be selected."
+            }
+        },
+        "AGENDAR_ENTREGA_DEVOLUCAO": {
+            "TITLE": "To schedule a Delivery or a Return",
+            "LABEL": {
+                "CODIGO": "The code",
+                "CLIENTE": "Client",
+                "DATA_INICIO": "Start Date",
+                "DATA_FIM": "Date Of Order",
+                "PLACA": "Board",
+                "DATA_AVISO": "The Date The Notice Of Availability",
+                "FORNECEDOR": "Shop",
+                "SITUACAO": "The situation",
+                "TIPO": "Type",
+                "MOTIVO": "The reason",
+                "SOLICITANTE": "The applicant",
+                "CENTRO_CUSTO": "The center-of-Charge",
+                "TELEFONE": "The phone",
+                "REGIONAL": "The Regional",
+                "GRUPO_CLIENTE": "The group's Customer",
+                "EMAIL_SOLICITANTE": "E-mail address of the Requestor",
+                "CEP": "ZIP code",
+                "ENDERECO": "Address",
+                "UF": "STATE",
+                "MUNICIPIO": "City",
+                "BTN_AGENDAR": "Schedule",
+                "VEICULO_DISPONIVEL": "*Scheduled Vehicules"
+            },
+            "COLUMN": {
+                "CLIENTE": "Client",
+                "PLACA": "Board",
+                "FORNECEDOR": "Shop",
+                "SOLICITANTE": "The applicant",
+                "MOTIVO": "The reason",
+                "DATA_AGENDAMENTO": "Date Schedule",
+                "SITUACAO": "The situation",
+                "SERVICOS": "Services",
+                "TELEFONE": "The phone",
+                "ENDERECO": "Address",
+                "DATA_PREVISAO_PARADA": "The prediction of the Stop",
+                "MENSAGEM": "The message for the Validation",
+                "ACOES": "Stock"
+            },
+            "MESSAGES": {
+                "INDISPONIBILIDADE_FORNECEDOR": "Dear valued Customer, in the shop you selected have reached their maximum production capacity, so we advise you to select a new place to Shop. If it is necessary for me to remain in the data, we would like to advise that you may possibly, your vehicle will not be able to be received, in view of the operational capacity of the service provider.",
+                "CONTRATO_PENDENTE_VENCIMENTO_CONFIRM": "The length of the rental period the vehicle is selected that is less than the minimum period of contract. Subject to the levying of fines. Do you want to continue?",
+                "CONTRATO_PENDENTE_VENCIMENTO_TABLE": "The length of the rental period the vehicle is selected that is less than the minimum period of contract. Subject to the levying of fines.",
+                "AVISO_PRAZO_RETIRADA_TABLE": "Dear Customer, the deadline for the removal of the vehicle, it is up to the-day ${dataAviso} after this date will be charged the room rate for the courtyard, and the contract for the vehicle to be opened.",
+                "AVISO_PRAZO_RETIRADA_CONFIRM": "Dear Customer, the selected date is beyond the deadline for removal of the vehicle. After that date, the deadline for withdrawal shall be charged on the day of court and the agreement of the motor vehicle is opened. Do you want to continue?",
+                "MSG_CONFIRMAR_REMOVER": "Are you sure you want to delete the schedule for this workshop?",
+                "TITLE_CONFIRMAR_REMOCAO": "To delete the schedule?",
+                "SUCESSO_AO_SALVAR": "The schedule held with a great success!",
+                "ERRO_AO_SALVAR": "The failure to ask for the schedule!"
+            }
+        },
+        "MODAL_DETALHES_ACOMPANHAR_ENTREGA_VEICULOS": {
+            "TITLE": "Detalhes Acompanhamento Entrega Veículos",
+            "ACESSORIOS": "Acessórios",
+            "ANO_FABRICACAO_MODELO": "Ano Fabricação/Modelo",
+            "CHASSI": "Chassi",
+            "CLIENTE": "Cliente",
+            "CNPJ": "CNPJ",
+            "CONTRATO_MASTER": "Contrato Master",
+            "COR": "Cor",
+            "DATA_AVISO_DISPONIBILIDADE": "Aviso Disponibilidade",
+            "DATA_INICIO_LOCACAO": "Início Locação",
+            "DATA_PREVISAO_ENTREGA": "Previsão Entrega",
+            "ENDERECO_ENTREGA": "Endereço de Entrega",
+            "MODELO": "Modelo",
+            "MOTIVO": "Motivo",
+            "PLACA": "Placa",
+            "TONALIDADE": "Tonalidade",
+            "VEICULO_DISPONIVEL": "Veículo Disponível",
+            "REGIONAL": "Regional",
+            "CENTRO_CUSTO": "Centro de Custo",
+            "CODIGO_IMPLANTACAO": "Código de Impltantação",
+            "RENAVAM": "Renavam",
+            "STATUS": "Status",
+            "CONDUTOR": "Nome do Condutor",
+            "SEMANA_ENTREGA": "Semana de Entrega",
+            "AVISO_DISPONIBILIDADE": "Aviso Disponibilidade",
+            "LOCAL_ENTREGA": "Local de Entrega",
+            "AGENDAMENTO_RETIRADA": "Agendamento Retirada",
+            "ENTREGUE": "Carro Entregue"
+        },
+        "BTN_SIM": "Yes",
+        "BTN_NAO": "Don't",
+        "BTN_PESQUISAR": "Search",
+        "BTN_CANCELAR": "Cancel",
+        "BTN_SALVAR": "Save",
+        "BTN_INSERIR": "Insert",
+        "MSG_IMAGENS_PERMITIDAS": "The only images are allowed.",
+        "MSG_DADOS_ALTERADOS": "The data that has changed, with great success!",
+        "MSG_CAMPO_OBRIGATORIO": "The required field is not filled in.",
+        "MSG_ANEXO_OBRIGATORIO": "It is necessary to attach at least one file.",
+        "MSG_EMAIL_INVALIDO": "E-mail address is invalid.",
+        "MSG_TELEFONE_INVALIDO": "The phone is invalid.",
+        "MSG_CPF_INVALIDO": "Social security number is invalid.",
+        "MSG_FORNECEDOR_NOT_FOUND": "No workshop to be found at the address you entered, please try again with a different address.",
+        "MSG_FORNECEDOR_ANTERIOR_NOT_FOUND": "We have not identified any service conducted on the history of the vehicle. To select a different option on the form to indicate a vendor, and proceed with the registration.",
+        "MSG_CNPJ_INVALIDO": "Tax ID is invalid.",
+        "MSG_TAMANHO_ARQUIVO_INVALIDO": "The size of the file is not valid.",
+        "MSG_ERRO_COMUNICACAO": "A failure in the communication with the server.",
+        "MSG_ERRO_INESPERADO": "An unexpected error has occurred.",
+        "MSG_ERRO_PERMISSAO": "You will need to enable the from field to change the permission.",
+        "MSG_ERRO_SEM_PERMISSAO": "The user do not have permission to access it.",
+        "MSG_CIDADE_NOT_FOUND": "The city is not to be found.",
+        "MSG_CEP_INVALIDO": "ZIP code is invalid.",
+        "MSG_CEP_NOT_FOUND": "ZIP code could not be found.",
+        "MSG_CLIENTE_NOT_FOUND": "The client could not be found.",
+        "MSG_CONDUTOR_NOT_FOUND": "The driver could not be found.",
+        "MSG_CONDUTOR_JA_CADASTRADO": "The driver is already registered.",
+        "MSG_SELECIONAR_ARQUIVO": "Please select a file.",
+        "MSG_NOME_TIPO_OBRIGATORIO": "Please inform us of the type of the file.",
+        "MSG_ARQUIVO_REMOVIDO_SUCESSO": "File successfully removed!",
+        "MSG_ARQUIVO_REMOVIDO_ERROR": "It was not possible to remove from the file!",
+        "MSG_HORA_INVALIDA": "The time is not valid.",
+        "MSG_DATA_INVALIDA": "The date is not valid.",
+        "MSG_HORA_MENOR_QUE_ATUAL": "The time selected is earlier than the current one.",
+        "MSG_NAO_EXISTE_USUARIO_PESQUISA": "There is no user to answer the survey.",
+        "DATA_HORA_MAIOR_ATUAL": "Current date/time is greater than the current date.",
+        "MSG_USUARIO_JA_CADASTRADO": "There is already a user registered with this information.",
+        "DATA_INICIO_MAIOR_FIM": "The Start Date cannot be greater than the Date in the End.",
+        "ERROR_DATA_1_HABILITACAO": "Data from the field 1 Enable> must be less than the dates in the fields <Date-Issued> and <Validity>.",
+        "ERROR_DATA_EMISSAO": "The date in the field <Date of Issue> must be greater than the date in the field 1 Enable>.",
+        "ERROR_DATA_VALIDADE": "The date in the field <Expiration> must be greater than the dates in the fields, <1 Enable>, and <Date of Issue>.",
+        "MSG_DESEJA_CANCELAR": "Do you really want to cancel?",
+        "NAO_HA_DADOS": "There is no record that fits your search.",
+        "MSG_NAO_ALTEROU_SENHA": "You will only be able to navigate the system once you change your password.",
+        "MSG_REGISTRO_NAO_ENCONTRADO": "There is no record that fits your search.",
+        "MSG_QUANTIDADE_MODELOS_MOTIVO_SUBSTITUICAO": "The amount of models you requested is unavailable.",
+        "MSG_USUARIO_ATUALIZADO_SUCESSO": "The user's data up-to-date.",
+        "MSG_CAMPO_CONDUTOR_OBRIGATORIO": "To select a driver.",
+        "MSG_CAMPO_PLACA_OBRIGATORIO": "Select a card.",
+        "DIGITE_PLACA": "The type of the card",
+        "MSG_ERRO_MAPA": "Não foi possivel localizar o endereço"
+    }
+}

@@ -1,0 +1,126 @@
+<ngb-carousel class="bg_home ">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper img1">
+      <img src="https://qasunidas.unidas.com.br:8005/api/v1/attachments/8EA106FC-08CB-448B-8B1D-D3F15A40FE57"
+        alt="Imagem - Bem Vindo">
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper img2">
+      <a href="https://frotas.unidas.com.br/blog/?utm_source=Frota%20360&utm_medium=referral&utm_campaign=Blog%20Unidas%20Frotas"
+        target="_blank">
+        <img src="https://qasunidas.unidas.com.br:8005/api/v1/attachments/9C66827E-15BA-437B-BAAD-62D88363F062"
+          alt="Imagem - Blog Unidas" />
+      </a>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper img3">
+      <a href="https://frotas.unidas.com.br/unidas360/" target="_blank">
+        <img src="https://qasunidas.unidas.com.br:8005/api/v1/attachments/C34BEC4E-C607-4F87-8096-C4E99263E0A7"
+          alt="Imagem - Conheça a Unidas" />
+      </a>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<div class="m-0 bg_cards">
+  <div class="center-vertical">
+    <div class="row p-0 justify-content-center cards page-body">
+      <mat-card class="card abrir" (click)="goToPage('gerenciador-atendimento/manutencao')"
+        *ngIf="hasPermissao('ATENDIMENTO_ABRIR_MANUTENCAO_SINISTRO')">
+        <div class="overlay "></div>
+        <mat-card-header class=" justify-content-center">
+          <img mat-card-image src='assets\images\manutencao_icon.svg' alt="{{'PORTAL.HOME.CARDS.TITLE.ABRIR_ATENDIMENTO' | translate}}">
+        </mat-card-header>
+        <mat-card-content>
+          <h6 class="text-center card-content-title">
+            {{'PORTAL.HOME.CARDS.TITLE.ABRIR_ATENDIMENTO' | translate}}
+          </h6>
+          <p class="text-left card-content-body">
+            {{'PORTAL.HOME.CARDS.DESCRIPTION.ABRIR_ATENDIMENTO' | translate}}
+          </p>
+        </mat-card-content>
+        <button class="btn btn-atendimento">{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.BUTTON_HOME' | translate }}</button>
+      </mat-card>
+      <mat-card class="card administrar" (click)="goToPage('gerenciador-atendimento/administrar-atendimento')"
+        *ngIf="hasPermissao('ATENDIMENTO_ACOMPANHAR')">
+        <div class="overlay "></div>
+        <mat-card-header class=" justify-content-center">
+          <img mat-card-image src='assets\svg\administrar.svg' alt="{{'PORTAL.HOME.CARDS.TITLE.ADM_ATENDIMENTO' | translate}}">
+        </mat-card-header>
+        <mat-card-content>
+          <h6 class="text-center card-content-title">
+            {{'PORTAL.HOME.CARDS.TITLE.ADM_ATENDIMENTO' | translate}}
+          </h6>
+          <p class="text-left card-content-body">
+            {{'PORTAL.HOME.CARDS.DESCRIPTION.ADM_ATENDIMENTO' | translate}}
+          </p>
+        </mat-card-content>
+        <button class="btn btn-atendimento">{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.BUTTON_HOME' | translate }}</button>
+      </mat-card>
+      <mat-card class="card indicacao" (click)="goToPage('gerenciador-infracoes/indicacoes-eletronicas')"
+        *ngIf="!placaLogada && hasPermissao('INFRACOES_INDICACAO')">
+        <div class="overlay "></div>
+        <mat-card-header class=" justify-content-center">
+          <img mat-card-image src='assets\svg\indicacao.svg' alt="{{'PORTAL.HOME.CARDS.TITLE.INDICACOES_ELETRONICAS' | translate}}">
+        </mat-card-header>
+        <mat-card-content>
+          <h6 class="text-center card-content-title">
+            {{'PORTAL.HOME.CARDS.TITLE.INDICACOES_ELETRONICAS' | translate}}
+          </h6>
+          <p class="text-left card-content-body">
+            {{'PORTAL.HOME.CARDS.DESCRIPTION.INDICACOES_ELETRONICAS' | translate}}
+          </p>
+        </mat-card-content>
+        <button class="btn btn-atendimento">{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.BUTTON_HOME' | translate }}</button>
+      </mat-card>
+      <mat-card class="card faturamento" (click)="goToPage('financeiro/faturamento')"
+        *ngIf="!placaLogada && hasPermissao('FINANCEIRO_PORTAL_CLIENTE_FATURAMENTO')">
+        <div class="overlay "></div>
+        <mat-card-header class=" justify-content-center">
+          <img mat-card-image src='assets\svg\faturamento.svg' alt="{{'PORTAL.HOME.CARDS.TITLE.FATURAMENTO' | translate}}">
+        </mat-card-header>
+        <mat-card-content>
+          <h6 class="text-center card-content-title">
+            {{'PORTAL.HOME.CARDS.TITLE.FATURAMENTO' | translate}}
+          </h6>
+          <p class="text-left card-content-body">
+            {{'PORTAL.HOME.CARDS.DESCRIPTION.FATURAMENTO' | translate}}
+          </p>
+        </mat-card-content>
+        <button class="btn btn-atendimento">{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.BUTTON_HOME' | translate }}</button>
+      </mat-card>
+      <mat-card class="card indicadores" (click)="goToPage('dashboard/dashboard-gerais')"
+        *ngIf="!placaLogada && hasPermissao('INDICADORES_GERAIS')">
+        <div class="overlay"></div>
+        <mat-card-header class=" justify-content-center">
+          <img mat-card-image src='assets\svg\indicadores2.svg' alt="{{'PORTAL.HOME.CARDS.TITLE.INDICADORES_GERAIS' | translate}}">
+        </mat-card-header>
+        <mat-card-content>
+          <h6 class="text-center card-content-title">
+            {{'PORTAL.HOME.CARDS.TITLE.INDICADORES_GERAIS' | translate}}
+          </h6>
+          <p class="text-left card-content-body">
+            {{'PORTAL.HOME.CARDS.DESCRIPTION.INDICADORES_GERAIS' | translate}}
+          </p>
+        </mat-card-content>
+        <button class="btn btn-atendimento">{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.BUTTON_HOME' | translate }}</button>
+      </mat-card>
+      <mat-card class="card manual" (click)="goToPage('ajuda/manual-condutor')" *ngIf="!placaLogada && hasPermissao('AJUDA_MANUAL_CONDUTOR')">
+        <div class="overlay"></div>
+        <mat-card-header class=" justify-content-center">
+          <img mat-card-image src='assets\svg\contrato.svg' alt="{{'PORTAL.HOME.CARDS.TITLE.TUTORIAL_PORTAL' | translate}}">
+        </mat-card-header>
+        <mat-card-content>
+          <h6 class="text-center card-content-title">
+            {{'PORTAL.HOME.CARDS.TITLE.TUTORIAL_PORTAL' | translate}}
+          </h6>
+          <p class="text-left card-content-body">
+            {{'PORTAL.HOME.CARDS.DESCRIPTION.TUTORIAL_PORTAL' | translate}}
+          </p>
+        </mat-card-content>
+        <button class="btn btn-atendimento">{{ 'PORTAL.ABRIR_ATENDIMENTO.CARD.BUTTON_HOME' | translate }}</button>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<app-filtro-financeiro [clearFunction]="clearFunction" [functionSearch]="functionSearch"></app-filtro-financeiro>
+<div id="div-indicadores" class="div-indicadores" #graficos>
+  <div *ngIf="!showDashboard && notFoundResults">
+    <label style="font-size: 14px;"
+      class="text-center w-100 pt-2">{{'PORTAL.MENSAGENS.MSG_REGISTRO_NAO_ENCONTRADO' | translate}}</label>
+  </div>
+  <app-totalizadores *ngIf="showDashboard" [totalizadores]="totalizadores">
+  </app-totalizadores>
+  <app-card-chart *ngIf="showDashboard" [charts]="charts" [functionFiltro]="'filtroIndicadorFinanceiro'">
+  </app-card-chart>
+</div>

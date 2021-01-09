@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="19" viewBox="0 0 15 19">
+  <g id="Grupo_5899" data-name="Grupo 5899" transform="translate(-44 -721)">
+    <g id="Retângulo_2632" data-name="Retângulo 2632" transform="translate(44 721)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="15" height="19" rx="3" stroke="none"/>
+      <rect x="0.5" y="0.5" width="14" height="18" rx="2.5" fill="none"/>
+    </g>
+    <path id="Caminho_2273" data-name="Caminho 2273" d="M0-4.087,7.045-6.77,6.66-.542,2.72.962a2.557,2.557,0,0,1,0-.484c.03.037,3.722-1.521,3.722-1.521C6.486-1.217,6.66-6.1,6.66-6.1,6.7-6.1.387-3.767.387-3.767S.35,1.443.387,1.4c0,0,2.177-.817,2.333-.921s0,.484,0,.484L0,2Z" transform="translate(46 731)" fill="#fff"/>
+    <path id="Caminho_2274" data-name="Caminho 2274" d="M0,0,6.973-2.575,11.848,0,5.1,3.171Z" transform="translate(46 734)" fill="#fff"/>
+  </g>
+</svg>

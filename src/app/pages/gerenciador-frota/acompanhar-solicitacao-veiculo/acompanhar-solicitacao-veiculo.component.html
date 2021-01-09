@@ -1,0 +1,27 @@
+<div class="container-fluid page-body">
+  <div class="pt-2 center-vertical">
+    <app-filtro-solicitacao-veiculo [clearFilter]="clearFilter" [filterData]="filterData">
+    </app-filtro-solicitacao-veiculo>
+    <hr />
+    <div class="row">
+      <div class="text-left col-sm-6 col-xs-6 col-md-6">
+        <button class="row ml-1 btn-export" *ngIf="showTable && showExport" (click)="exportExcel()" type="button">
+          <mat-icon svgIcon="pfu-excel-icon" style="font-size: 0px; margin-top: -8px; height: 35px;"
+            class="material-icons"></mat-icon>
+          <span class="ml-2">{{'PORTAL.BUTTONS.BTN_EXPORT' | translate}}</span>
+        </button>
+      </div>
+      <div class="col-sm-6 col-xs-6 col-md-6 text-right">
+        <button class="btn-add-new ml-3" (click)="showInsert()" type="button">
+          {{'PORTAL.BUTTONS.BTN_ADD_NEW' | translate}}
+          <mat-icon class="material-icons">add_circle</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div *ngIf="showTable">
+      <app-generic-table [(inputData)]="solicitacoes" [columns]="getColunasTabela()"
+        (nextPage)="getSolicitacoes($event)" [totalRows]="totalRows">
+      </app-generic-table>
+    </div>
+  </div>
+</div>

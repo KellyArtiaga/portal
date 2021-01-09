@@ -1,0 +1,32 @@
+<form [formGroup]="form" (submit)="enviar()" (keydown.tab)="$event.stopPropagation()">
+  <div fxLayout="row" style="min-width: 465px;">
+    <div fxLayout="column" (click)="$event.stopPropagation();" class="column">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_DATA_INICIO' | translate}}</mat-label>
+        <input matInput formControlName="dataInicio" autocomplete="off" mask="00/00/0000"
+          (keyup)="dateChanged($event, 'dataInicio', true)" />
+      </mat-form-field>
+      <mat-calendar #calendarioDataInicio [(selected)]="selectedDataInicio" [maxDate]="maxDate" [minDate]="minDate"
+        (selectedChange)="dateChanged($event, 'dataInicio')">
+      </mat-calendar>
+    </div>
+    <div fxLayout="column" (click)="$event.stopPropagation();" class="column">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_DATA_FIM' | translate}}</mat-label>
+        <input matInput formControlName="dataFim" autocomplete="off" mask="00/00/0000"
+          (keyup)="dateChanged($event, 'dataFim', true)" />
+      </mat-form-field>
+      <mat-calendar #calendarioDataFim [(selected)]="selectedDataFim" [minDate]="minDate"
+        (selectedChange)="dateChanged($event, 'dataFim')">
+      </mat-calendar>
+      <span class="mat-form-field">
+        <button mat-button type="button" class="btn btn-secondary ml-3 mr-3" (click)="limparForm()">
+          {{ 'PORTAL.BUTTONS.BTN_LIMPAR' | translate }}
+        </button>
+        <button mat-button type="submit" class="btn btn-primary">
+          {{ 'PORTAL.BUTTONS.BTN_OK' | translate }}
+        </button>
+      </span>
+    </div>
+  </div>
+</form>

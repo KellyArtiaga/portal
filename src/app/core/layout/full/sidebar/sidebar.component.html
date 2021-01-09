@@ -1,0 +1,40 @@
+<mat-nav-list appAccordion *ngIf="showSidebar" class="mb-4">
+  <mat-accordion multi="false">
+    <ng-container *ngFor="let item of getRoles()">
+      <mat-list-item appAccordionLink routerLinkActive="selected" *ngIf="item.show && !item.children">
+        <a appAccordionToggle (click)="toPage(item)">
+          <mat-icon *ngIf="!!item.icon" svgIcon="{{item.icon}}"></mat-icon>
+          <span *ngIf="!isExpanded">{{item.name | translate}}</span>
+        </a>
+      </mat-list-item>
+      <mat-expansion-panel *ngIf="item.show && item.children">
+        <mat-expansion-panel-header mat-ripple class="mat-expansion">
+          <mat-panel-title>
+            <mat-list-item appAccordionLink>
+              <a appAccordionToggle>
+                <mat-icon *ngIf="!!item.icon" svgIcon="{{item.icon}}"></mat-icon>
+                <span *ngIf="!isExpanded">{{item.name | translate}}</span>
+              </a>
+            </mat-list-item>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="mat-panel-submenu">
+          <ng-container *ngIf="item.children">
+            <span *ngFor="let subItem of item.children;">
+              <mat-list-item *ngIf="subItem.permissoes" appAccordionLink>
+                <a appAccordionToggle (click)="toPage(subItem)">
+                  <mat-icon *ngIf="!!subItem.icon" svgIcon="{{subItem.icon}}"></mat-icon>
+                  <span style="width: 200px; white-space: pre-wrap;"
+                    *ngIf="!isExpanded">{{subItem.name | translate}}</span>
+                </a>
+              </mat-list-item>
+            </span>
+          </ng-container>
+        </div>
+      </mat-expansion-panel>
+    </ng-container>
+  </mat-accordion>
+</mat-nav-list>
+<footer>
+  <div class="version">{{getVersion()}}</div>
+</footer>

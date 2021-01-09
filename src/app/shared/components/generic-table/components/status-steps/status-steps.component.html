@@ -1,0 +1,8 @@
+<div class="d-inline-flex text-center m-0">
+  <ng-container *ngFor="let etapa of iconesEtapas; let i = index">
+    <span *ngIf="i > 0" class="mat-stepper-horizontal-line" [ngClass]="getLineColor(etapa)">
+    </span>
+    <mat-icon [svgIcon]="etapa.svg" [matTooltip]="etapa.label" class="icone_formatado" [ngClass]="getIconColor(etapa)">
+    </mat-icon>
+  </ng-container>
+</div>

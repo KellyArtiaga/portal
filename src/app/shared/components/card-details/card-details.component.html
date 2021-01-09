@@ -1,0 +1,17 @@
+<div class="wrapper card card-tips">
+  <div class="card-header">
+    <strong>{{title | translate}}</strong>
+  </div>
+  <table>
+    <tbody>
+      <tr *ngFor="let item of values">
+        <th scope="row" *ngIf="!item.action">{{item.subtitle}}: </th>
+        <td *ngIf="!item.action">{{item.value}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="card-footer" [ngClass]="options.footerClass" *ngIf="options && options.footerLabel"
+    (click)="options && options.footerFunction ? options.footerFunction() : ''">
+    {{options.footerLabel}}
+  </div>
+</div>

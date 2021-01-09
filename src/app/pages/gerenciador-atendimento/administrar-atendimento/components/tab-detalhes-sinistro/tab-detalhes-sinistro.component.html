@@ -1,0 +1,119 @@
+<div [formGroup]="formDetalhesSinistro" class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-6 p-0">
+          <div class="container mb-2">
+            <mat-slide-toggle style="pointer-events: none;" formControlName="vitima" class="primary">
+              {{'PORTAL.ATENDIMENTO.LABELS.LBL_VITIMA' | translate}}</mat-slide-toggle>
+          </div>
+          <div class="container mb-2">
+            <mat-slide-toggle style="pointer-events: none;" formControlName="vitimaFatal" class="primary">
+              {{'PORTAL.ATENDIMENTO.LABELS.LBL_VITIMA_FATAL' | translate}}</mat-slide-toggle>
+          </div>
+          <div class="container pt-2">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_MOTIVO_SINISTRO' | translate}}</mat-label>
+              <input matInput type="text" formControlName="motivoSinistro" readonly />
+            </mat-form-field>
+          </div>
+          <div class="container pt-2">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_LOGRADOURO_SINISTRO' | translate}}</mat-label>
+              <input matInput type="text" formControlName="logradouro" readonly />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-6 p-0 mt-2">
+          <div class="col-md-12 pt-2">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_CIDADE_SINISTRO' | translate}}</mat-label>
+              <input matInput type="text" formControlName="cidade" readonly />
+            </mat-form-field>
+          </div>
+          <div class="row pl-3 pr-3">
+            <div class="col-md-6 col-xs-6 pt-2">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_ESTADO_SINISTRO' | translate}}</mat-label>
+                <input matInput type="text" formControlName="estado" readonly />
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-xs-6 pt-2">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_CEP_SINISTRO' | translate}}</mat-label>
+                <input matInput type="text" formControlName="cep" readonly />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row pl-3 pr-3">
+            <div class="col-md-6 col-xs-6 pt-2">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_BOLETIM_OCORRENCIA' | translate}}</mat-label>
+                <input matInput type="text" formControlName="boletimOcorrencia" readonly />
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-xs-6 pt-2">
+              <mat-form-field appearance="outline">
+                <mat-label>{{'PORTAL.ATENDIMENTO.LABELS.LBL_DATA_SINISTRO' | translate}}</mat-label>
+                <input matInput type="text" formControlName="dataSinistro" [matDatepicker]="dataSinistro" readonly />
+                <mat-datepicker-toggle matSuffix [for]="dataSinistro">
+                </mat-datepicker-toggle>
+                <mat-datepicker #dataSinistro disabled="true">
+                </mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div [ngStyle]="{'height.px': images.length > 0 ? '140' : '35'}" *ngIf="images.length > 0">
+        <div class="col-md-12" [ngStyle]="{'height.px': images.length ? '140' : '35'}">
+          <hr class="hr-text" data-content="Imagens do Atendimento" />
+          <div class="d-inline-flex mt-3">
+            <span *ngFor="let item of images; let i = index;">
+              <a [href]="item.href" target="_blank">
+                <img class="box-image mr-4" [src]="item.href" [alt]="item.descricao" />
+              </a>
+              <div class="font-size-arquive" [matTooltip]="item.descricao">
+                {{item.descricao}}
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12" [ngStyle]="{'height.px': videos.length > 0 ? '140' : '35'}" *ngIf="videos.length > 0">
+        <hr class="hr-text" data-content="Documentos do Atendimento" />
+        <div class="d-inline-flex mt-5">
+          <span *ngFor="let item of videos; let i = index;">
+            <div class="box-pdf rounded mr-4">
+              <video height="130" width="130" controls>
+                <source [src]="item.safeURL" type="{{item.descricao + '/' + item.extensao}}">
+                <track label="Português Brasileiro" kind="captions" srclang="pt-br" [src]="item.safeURL" default>
+              </video>
+            </div>
+            <div class="mt-4 font-size-arquive" [matTooltip]="item.descricao">{{item.descricao}}
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-12" [ngStyle]="{'height.px': docs.length > 0 ? '140' : '35'}" *ngIf="docs.length > 0">
+        <hr class="hr-text" data-content="Documentos do Atendimento" />
+        <div class="d-inline-flex mt-5">
+          <span *ngFor="let item of docs; let i = index;">
+            <div class="box-pdf rounded mr-4" *ngIf="item.isDoc">
+              <a [href]="item.safeURL" target="_blank" (click)="openDocument(item.href)">
+                <img class="box-img border-green" [src]="'../../../assets/svg/pdf-doc.svg'" [alt]="item.descricao" />
+              </a>
+            </div>
+            <div *ngIf="item.isDoc" class="mt-4 font-size-arquive" [matTooltip]="item.descricao">{{item.descricao}}
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="w-100 border rounded border-secondary h-72">
+        <span class="span-title">{{'PORTAL.ATENDIMENTO.TITLES.SOLUCAO_ENCAMINHAMENTO' | translate}}</span>
+      </div>
+    </div>
+  </div>
+</div>

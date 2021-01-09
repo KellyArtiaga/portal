@@ -1,0 +1,18 @@
+<div class="button-align">
+  <div>
+    <button mat-raised-button class="btn-primary mr-2" type="button" (click)="getNav().anterior()"
+      [hidden]="get().aba === 0 && !get().mostrar.voltar" [@enterAnimation]>
+      <mat-icon>{{get().icone.voltar}}</mat-icon> {{get().label.voltar}}
+    </button>
+    <button mat-raised-button type="button" class="btn-secondary" (click)="eventoCancelar()" [@enterAnimation]>
+      Cancelar
+    </button>
+  </div>
+  <span class="btn-group-filter text-right">
+    <button mat-raised-button class="btn-primary" type="button" (click)="getNav().proxima()" [@enterAnimation]
+      [disabled]="!get().habilitar.prosseguir">
+      {{get().label.prosseguir}}
+      <mat-icon>{{get().icone.prosseguir}}</mat-icon>
+    </button>
+  </span>
+</div>

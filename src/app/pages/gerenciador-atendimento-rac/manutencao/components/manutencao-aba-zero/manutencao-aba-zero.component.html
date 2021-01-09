@@ -1,0 +1,38 @@
+<form [formGroup]="form" autocomplete="off" class="col-12 pl-3 pr-3">
+  <hr class="hr-text" data-content="Dados do Serviço" />
+
+  <div class="row pt-3">
+    <div class="col-xs-12 col-sm-12 col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'PORTAL.MANUTENCAO.LABEL.PLACA' | translate}}</mat-label>
+        <input matInput type="text" formControlName="placa" class="uppercase" (keyup)="filtrarPlaca($event)" (paste)="filtrarPlaca(null, $event)"
+          maxlength="8" required />
+      </mat-form-field>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'PORTAL.MANUTENCAO.LABEL.KM' | translate }}</mat-label>
+        <input matInput type="text" formControlName="kmVeiculo"
+          maxlength="10" currencyMask [options]="{ prefix: '', suffix: ' KM', thousands: '.', precision: 0 }" required />
+      </mat-form-field>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'PORTAL.MANUTENCAO.LABEL.ULTIMO_PLANO_EXECUTADO' | translate }}</mat-label>
+        <input matInput type="text" formControlName="ultimoPlanoExecutado" />
+      </mat-form-field>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'PORTAL.MANUTENCAO.LABEL.PLANO_MANUTENCAO_EXECUTAR' | translate }}</mat-label>
+        <mat-select matInput formControlName="planoManutencaoExecutar" id="planoManutencaoExecutar"
+          disableOptionCentering>
+          <mat-option *ngFor="let planoManutencaoExecutar of planosManutencaoExecutar"
+            [value]="planoManutencaoExecutar.id">
+            {{ planoManutencaoExecutar.descriptionPlanoManutencao }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,21 @@
+<app-header [loginFunction]="modalEfetuarLogin" (menuOpened)="expandedClick($event)">
+</app-header>
+<div class="main-container">
+  <mat-sidenav-container autosize class="body-size" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+    <mat-sidenav [hidden]="hiddenHeaderSideBar" #snav id="snav" class="dark-sidebar pl-xs"
+      [mode]="mobileQuery.matches ? 'side' : 'over'" fixedTopGap="0" [opened]="mobileQuery.matches">
+      <app-sidebar #sidebar [collapseNav]="collapseNavbar" [isExpanded]="isExpanded"></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content style="overflow-x: hidden;">
+      <app-small-header></app-small-header>
+
+      <!-- <mc-breadcrumbs [hidden]="small"></mc-breadcrumbs> -->
+
+      <div class="page-content">
+        <router-outlet>
+          <app-spinner></app-spinner>
+        </router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

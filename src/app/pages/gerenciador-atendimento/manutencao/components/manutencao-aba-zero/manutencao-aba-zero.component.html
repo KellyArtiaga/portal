@@ -1,0 +1,104 @@
+<form [formGroup]="form" autocomplete="off" class="col-12 pl-3 pr-3">
+  <hr class="hr-text" data-content="Dados do Serviço" />
+
+  <div>
+    <div class="row pt-3">
+      <!-- <div class=" col-sm-4 col-md-4 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'PORTAL.MANUTENCAO.LABEL.CNPJ' | translate }}</mat-label>
+          <mat-select matInput formControlName="cliente" (selectionChange)="getVeiculos()" disableOptionCentering
+            required>
+            <mat-option *ngFor="let cliente of clientes" [value]="cliente">
+              {{ cliente.nomeFantasia }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div> -->
+      <div class=" col-sm-8 col-md-8 col-xs-8 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.MANUTENCAO.LABEL.PLACA' | translate}}</mat-label>
+          <input matInput #placaInput type="text" formControlName="placa" class="uppercase"
+            [matAutocomplete]="autoCompleteVeiculo" (keyup)="filtrarPlaca($event)" maxlength="7" required />
+          <mat-autocomplete #autoCompleteVeiculo="matAutocomplete" (optionSelected)="validarCNPJvsPlaca()"
+            [displayWith]="displayVeiculo">
+            <ng-container>
+              <mat-option *ngFor="let item of placasFiltered" [value]="item.placa">
+                {{item.placa}} - {{item.modelo}}
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.MANUTENCAO.LABEL.CPF' | translate}}</mat-label>
+          <input matInput formControlName="cpfUsuario" mask="000.000.000-00" type="text" (blur)="validarCPF($event)"
+            required />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4 col-md-4 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'PORTAL.MANUTENCAO.LABEL.NOME_USUARIO' | translate }}</mat-label>
+          <input matInput formControlName="nomeUsuario" type="text" maxlength="50" required />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.MANUTENCAO.LABEL.TELEFONE_USUARIO' | translate}}</mat-label>
+          <input matInput type="text" formControlName="telefoneUsuario" mask="(00) 0000-0000" />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4 col-md-4 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.MANUTENCAO.LABEL.CELULAR_USUARIO' | translate}}</mat-label>
+          <input matInput type="text" formControlName="celularUsuario" mask="(00) 00000-0000" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.MANUTENCAO.LABEL.EMAIL_USUARIO' | translate}}</mat-label>
+          <input matInput type="text" formControlName="emailUsuario" maxlength="100" autocomplete="off"
+            (blur)="validarEmail($event)" required />
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4 col-md-4 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'PORTAL.MANUTENCAO.LABEL.MELHOR_FORMA_CONTATO' | translate }}</mat-label>
+          <mat-select matInput formControlName="melhorFormaContato" disableOptionCentering required>
+            <mat-option *ngFor="let melhorFormaContato of melhoresFormasContato" [value]="melhorFormaContato.id">
+              {{ melhorFormaContato.nome }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="col-sm-4 col-md-4 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.INDICADORES_ATENDIMENTOS.LABEL.REGIONAL' | translate}}</mat-label>
+          <mat-select matInput formControlName="regionais" disableOptionCentering>
+            <mat-option *ngFor="let regional of regionais" [value]="regional.id">
+              {{regional.descricao}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4 col-md-4 col-xs-6 pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.INDICADORES_ATENDIMENTOS.LABEL.CENTRO_CUSTO' | translate}}</mat-label>
+          <mat-select matInput formControlName="centrosCusto" disableOptionCentering>
+            <mat-option *ngFor="let centroCusto of centrosCusto" [value]="centroCusto.id">
+              {{centroCusto.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>-->
+  </div>
+</form>

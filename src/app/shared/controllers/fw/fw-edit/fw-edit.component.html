@@ -1,0 +1,23 @@
+<mat-card-header class="card-header modal-header" *ngIf="showHeader">
+    <mat-card-title class="float-left card-header-text mt-2 title-circulo">
+        <span class="title-circulo">{{props('title')}}</span>
+    </mat-card-title>
+</mat-card-header>    
+<div class="edit-subtitle" align="end" *ngIf="showSubtitle && props('subtitle')" >
+    {{props('subtitle')}}
+</div>
+<ng-content>
+</ng-content>
+<hr>
+ 
+<div class="row container-fluid mb-3">
+    <div class="col-6 text-left">
+        <button mat-button color="secondary" class="btn-secondary" (click)="cancel()" *ngIf="displayCancel">{{cancelLabel}}</button>
+        <ng-content select=".left-buttons"></ng-content>
+    </div>
+    <div class="col-6 text-right">
+        <button mat-raised-button color="primary" class="primary btn-main" (click)="save()" *ngIf="displaySave"  [disabled]="disableSave">Salvar</button>
+        <ng-content select=".right-buttons"></ng-content>
+    </div>
+</div>
+ 

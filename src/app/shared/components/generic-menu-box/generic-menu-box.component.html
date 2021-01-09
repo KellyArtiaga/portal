@@ -1,0 +1,128 @@
+<div class="row container-fluid container-menu-box p-0" [ngClass]="{'center': !!center}">
+  <div class="menu-container" [ngClass]="dataMenuBox.menuColClass ? dataMenuBox.menuColWidth : 'col-md-3'"
+    [hidden]="placaUnica">
+    <div class="filtro" *ngIf="dataMenuBox.labelFiltro">
+      <mat-form-field appearance="outline" *ngIf="!pesquisaAutoComplete">
+        <input id="pesquisaChat" placeholder="Pesquisar placa..." type="text" matInput
+          [formControl]="dataMenuBox.formControlSearch" maxlength="7"
+          (keyup)="dataMenuBox.autoCompleteSelectionFunction($event, $event.target.value)" class="uppercase" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" *ngIf="pesquisaAutoComplete">
+        <mat-label>{{dataMenuBox.labelFiltro | translate}}</mat-label>
+        <input id="pesquisaChat" matInput [formControl]="dataMenuBox.formControlSearch" [matAutocomplete]="autoSearch"
+          type="text" (ngModelChange)="dataMenuBox.researchFunction($event)" maxlength="8" />
+        <mat-autocomplete #autoSearch="matAutocomplete" [displayWith]="displayData">
+          <ng-container>
+            <mat-option (onSelectionChange)="dataMenuBox.autoCompleteSelectionFunction(data)"
+              *ngFor="let data of dataMenuBox.dataResearch" [value]="data">
+              {{data.display}}
+            </mat-option>
+          </ng-container>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <mat-list>
+      <mat-list-item *ngFor="let menu of dataMenuBox.menuData" class="menu">
+        <div *ngIf="menu" id="menu.menuBody" [ngClass]="menu.selectedItem ? 'selectedItem' : ''"
+          class="pd-5 display-block" (click)="menu.menuFunction(menu)">
+          <div *ngIf="menu.qtdNaoLidas" class="containerMsgNaoLidas">
+            <div class="msgNaoLidas">{{menu.qtdNaoLidas}}</div>
+          </div>
+          <div [ngStyle]="menu.menuHeader ? dataMenuBox.menuHeaderStyle : {'padding-top': '10px'}">
+            {{menu.menuHeader}}
+          </div>
+          <div [ngStyle]="dataMenuBox.menuBodyStyle" [ngClass]="verifyAlignmentMenu()">
+            {{menu.menuBody}}
+          </div>
+          <div [ngStyle]="dataMenuBox.menuFooterStyle">
+            {{menu.menuFooter}}
+          </div>
+
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div [ngClass]="dataMenuBox.boxColClass ? dataMenuBox.boxColWidth : 'col-md-9 email-content m-0'">
+    <div *ngIf="dataMenuBox.boxTitle" class="pt-2 boxHeader">
+      <label>{{dataMenuBox.boxTitle}}</label>
+    </div>
+    <div *ngIf="!dataMenuBox.boxTitle && !!isChat" class="pt-2 boxHeader">
+      <div style="display: inline-block;">
+        <span class="chat-header">Veículo: </span><label>{{dataMenuBox.boxTitleLn3}}</label>
+      </div>
+      <br>
+      <div style="display: inline-block;">
+        <span class="chat-header">Atendimento: </span><label>{{dataMenuBox.boxTitleLn1}}</label>
+        <span class="col-md-1"></span>
+        <span class="chat-header">Tipo de Avaria: </span><label>{{dataMenuBox.boxTitleLn2}}</label>
+      </div>
+    </div>
+    <div *ngIf="dataMenuBox.boxChat">
+      <div class="chat-container">
+        <mat-list>
+          <mat-list-item *ngFor="let message of dataMenuBox.boxChat" class="chat">
+            <div *ngIf="message.from" class="icon-chat">
+              <mat-icon [svgIcon]="message.icon" [ngStyle]="message.iconStyle"></mat-icon>
+            </div>
+            <div class="display-block message" [ngClass]="message.from ? 'display-left' : 'display-right'">
+              <div class="chat-header">
+                {{message.header}}
+              </div>
+              <div class="chat-body" [ngClass]="message.from ? 'display-left' : 'display-right'">
+                {{message.body}}
+              </div>
+              <div class="chat-footer" [ngClass]="message.from ? 'display-left' : 'display-right'">
+                {{message.footer}}
+              </div>
+            </div>
+            <div *ngIf="message.to" class="icon-chat">
+              <mat-icon [svgIcon]="message.icon" [ngStyle]="message.iconStyle"></mat-icon>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <div id="inputMessage" class="row align-items p-3">
+        <div class="col-11 p-0">
+          <mat-form-field appearance="outline" style="cursor: text !important;">
+            <input #message matInput type="text" style="cursor: text !important;" />
+          </mat-form-field>
+        </div>
+        <div class="col-1">
+          <div class="pl-1 arrowChat">
+            <mat-icon class="pointer" svgIcon="pfu-arrow-chat" (click)="dataMenuBox.sendFunction(message)">
+            </mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="dataMenuBox.boxEmail">
+      <div *ngFor="let content of dataMenuBox.boxEmail.contents">
+        <div *ngIf="content.isHtml">
+          <div [innerHtml]="html" *ngFor="let html of content.htmls"></div>
+        </div>
+        <div [ngStyle]="content.panelStyle" *ngIf="content.isPanel">
+          <mat-accordion>
+            <div *ngFor="let panel of content.panels">
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{panel.title}}
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    {{panel.description}}
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div [innerHtml]="panel.body"></div>
+              </mat-expansion-panel>
+            </div>
+          </mat-accordion>
+        </div>
+      </div>
+    </div>
+    <div class="pb-3" *ngIf="!dataMenuBox.hideBackButton">
+      <button mat-raised-button class="btn-secondary" (click)="dataMenuBox.backFunction()">
+        {{ 'PORTAL.BUTTONS.BTN_BACK' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

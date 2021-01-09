@@ -1,0 +1,22 @@
+<button class="btn-legenda" type="button" [matMenuTriggerFor]="legendas">
+  {{'PORTAL.SOLICITACAO_VEICULO.BUTTONS.LEGENDA' | translate}}
+  <mat-icon svgIcon="pfu-legenda" class="material-icons"></mat-icon>
+</button>
+<mat-menu #legendas="matMenu" class="menu-user" xPosition="before">
+  <ng-template matMenuContent>
+    <div class="table-responsive col-md-12 mt-3 mb-3">
+      <table matSort class="table">
+        <tbody>
+          <tr *ngFor="let item of getLegenda()">
+            <td class="text-center">
+              {{item.sigla}}
+            </td>
+            <td class="text-left">
+              {{item.descricao}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+</mat-menu>

@@ -1,0 +1,12 @@
+.body {
+  font: 400 14px/20px Poppins, sans-serif;
+  padding: 20px;
+}
+
+.button {
+  border-radius: 10px;
+}
+
+button:focus {
+  outline: none !important;
+}

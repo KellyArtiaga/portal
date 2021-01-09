@@ -1,0 +1,105 @@
+<form [formGroup]="form" autocomplete="off" class="col-12 pl-3 pr-3 pb-3">
+  <hr class="hr-text" data-content="Dados do Veículo" *ngIf="!semAgendamentoParada" />
+  <hr class="hr-text" data-content="Registro de Sinistro" *ngIf="semAgendamentoParada" />
+
+  <div class="pt-3">
+    <mat-form-field appearance="outline" class="col-xs-6 col-sm-4 col-md-4">
+      <mat-label>{{ 'PORTAL.MANUTENCAO.LABEL.PLACA' | translate }}</mat-label>
+      <input matInput type="text" formControlName="placa" class="uppercase" required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-xs-6 col-sm-4 col-md-4">
+      <mat-label>{{ 'PORTAL.MANUTENCAO.LABEL.TIPO_USO' | translate }}</mat-label>
+      <input matInput type="text" formControlName="tipoUso" class="uppercase" required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-xs-6 col-sm-4 col-md-4">
+      <mat-label>{{ 'PORTAL.MANUTENCAO.LABEL.MODELO' | translate }}</mat-label>
+      <input matInput type="text" formControlName="modelo" class="uppercase" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="col-xs-6 col-sm-4 col-md-4">
+      <mat-label>{{ 'PORTAL.MANUTENCAO.LABEL.KM' | translate }}</mat-label>
+      <input matInput type="text" [formControl]="kmVeiculo" (blur)="changeKM($event)" (keyup)="keyUpKM($event)"
+        maxlength="10" currencyMask [options]="{ prefix: '', suffix: ' KM', thousands: '.', precision: 0 }" required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-xs-6 col-sm-6 col-md-4">
+      <mat-label>{{ 'PORTAL.MANUTENCAO.LABEL.ULTIMO_PLANO_EXECUTADO' | translate }}</mat-label>
+      <input matInput type="text" formControlName="ultimoPlanoExecutado" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-xs-6 col-sm-6 col-md-4">
+      <mat-label>{{ 'PORTAL.MANUTENCAO.LABEL.PLANO_MANUTENCAO_EXECUTAR' | translate }}</mat-label>
+      <mat-select matInput formControlName="planoManutencaoExecutar" id="planoManutencaoExecutar"
+        disableOptionCentering>
+        <mat-option *ngFor="let planoManutencaoExecutar of planosManutencaoExecutar"
+          [value]="planoManutencaoExecutar.id">
+          {{ planoManutencaoExecutar.descriptionPlanoManutencao }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <hr class="hr-text" data-content="Indique o endereço onde deseja ser atendido" />
+    <app-filtro-fornecedores #filtroFornecedores [callPesquisar]="callPesquisar"></app-filtro-fornecedores>
+  </div>
+
+  <div *ngIf="isTresDatasParada() && pesquisaFornecedorRealizada">
+    <hr class="hr-text" data-content="* Informe até 3 datas de parada de sua preferência" />
+    <div class="pt-3">
+      <div class="row p-0">
+        <mat-form-field appearance="outline" class="col-md-3 col-xs-6">
+          <mat-label>{{'PORTAL.MANUTENCAO.LABEL.DATA_PARADA_UM' | translate}}</mat-label>
+          <input matInput formControlName="dataParadaUm" [matDatepicker]="dataParadaUm" [min]="now"
+            [required]="!exibirFornecedores" (dateChange)="changeDataParada('dataParadaUm')" readonly>
+          <mat-datepicker-toggle matSuffix [for]="dataParadaUm">
+          </mat-datepicker-toggle>
+          <mat-datepicker #dataParadaUm disabled="false">
+          </mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-md-3 col-xs-6">
+          <mat-label>{{'PORTAL.MANUTENCAO.LABEL.HORA_PARADA_UM' | translate}}</mat-label>
+          <input matInput type="text" formControlName="horaParadaUm" mask="00:00"
+            (blur)="changeHoraParada($event, 'horaParadaUm')" (keyup)="changeHoraParada($event, 'horaParadaUm')"
+            [required]="!exibirFornecedores" />
+        </mat-form-field>
+      </div>
+      <div class="row p-0">
+        <mat-form-field appearance="outline" class="col-md-3 col-xs-6">
+          <mat-label>{{'PORTAL.MANUTENCAO.LABEL.DATA_PARADA_DOIS' | translate}}</mat-label>
+          <input matInput formControlName="dataParadaDois" [matDatepicker]="dataParadaDois" [min]="now"
+            [required]="!exibirFornecedores" (dateChange)="changeDataParada('dataParadaDois')" readonly>
+          <mat-datepicker-toggle matSuffix [for]="dataParadaDois">
+          </mat-datepicker-toggle>
+          <mat-datepicker #dataParadaDois disabled="false">
+          </mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-md-3 col-xs-6">
+          <mat-label>{{'PORTAL.MANUTENCAO.LABEL.HORA_PARADA_DOIS' | translate}}</mat-label>
+          <input matInput type="text" formControlName="horaParadaDois" mask="00:00"
+            (blur)="changeHoraParada($event, 'horaParadaDois')" (keyup)="changeHoraParada($event, 'horaParadaDois')"
+            [required]="!exibirFornecedores" />
+        </mat-form-field>
+      </div>
+      <div class="row p-0">
+
+        <mat-form-field appearance="outline" class="col-md-3 col-xs-6">
+          <mat-label>{{'PORTAL.MANUTENCAO.LABEL.DATA_PARADA_TRES' | translate}}</mat-label>
+          <input matInput formControlName="dataParadaTres" [matDatepicker]="dataParadaTres" [min]="now"
+            [required]="!exibirFornecedores" (dateChange)="changeDataParada('dataParadaTres')" readonly>
+          <mat-datepicker-toggle matSuffix [for]="dataParadaTres">
+          </mat-datepicker-toggle>
+          <mat-datepicker #dataParadaTres disabled="false">
+          </mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-md-3 col-xs-6">
+          <mat-label>{{'PORTAL.MANUTENCAO.LABEL.HORA_PARADA_TRES' | translate}}</mat-label>
+          <input matInput type="text" formControlName="horaParadaTres" mask="00:00"
+            (blur)="changeHoraParada($event, 'horaParadaTres')" (keyup)="changeHoraParada($event, 'horaParadaTres')"
+            [required]="!exibirFornecedores" />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="col-12 pl-3 pr-3" *ngIf="isExibirFornecedores()">
+  <app-manutencao-list-fornecedor #fornecedorList></app-manutencao-list-fornecedor>
+</div>

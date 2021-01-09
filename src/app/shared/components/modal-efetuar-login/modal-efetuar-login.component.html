@@ -1,0 +1,34 @@
+<app-modal-generic>
+  <div class="modal-padding">
+    <header class="header">
+      <span class="textWhiteHeader">Efetuar Login Como</span>
+      <a class="circle-close mr-3" (click)="closeModal(null, null)">
+        <mat-icon class="pointer">close</mat-icon>
+      </a>
+    </header>
+    <section class="container-fluid mt-3">
+      <form [formGroup]="formEfetuarLogin" (submit)="pesquisaClientes(null, true)" ngbAutofocus>
+        <div class="row">
+          <div class="col-md-10">
+            <mat-form-field appearance="outline" ngbAutofocus>
+              <mat-label>{{'PORTAL.EFETUAR_LOGIN.LABELS.DESCRICAO_GENERICA' | translate}}</mat-label>
+              <mat-icon matSuffix>search</mat-icon>
+              <input matInput formControlName="descricaoGenerica" type="text" autocomplete="off" maxlength="70" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-2 pt-1 btn-group-filter">
+            <button mat-raised-button class="mr-2 btn-secondary" type="button" (click)="limpar()">
+              {{'PORTAL.BUTTONS.BTN_CLEAN' | translate}}</button>
+            <button mat-raised-button class="btn-primary"
+              type="submit">{{'PORTAL.BUTTONS.BTN_SEARCH' | translate}}</button>
+          </div>
+        </div>
+      </form>
+    </section>
+    <section class="container-fluid mt-3" *ngIf="showTable">
+      <app-generic-table [(inputData)]="usuarios" [inputDataSubject]="dataInputSubj" [columns]="getColunasTabela()"
+        [infoMessage]="mensagemInformacao" (nextPage)="pesquisaClientes($event)" [totalRows]="totalRows">
+      </app-generic-table>
+    </section>
+  </div>
+</app-modal-generic>

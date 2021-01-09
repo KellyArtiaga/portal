@@ -1,0 +1,49 @@
+<div class="row pt-3 text-left pl-3" style="font-size: 14px;" *ngIf="perfil">
+  <div class="col-md-3">
+    <strong class="mr-3">{{'PORTAL.PERFIL.LABELS.CODIGO' | translate}}:</strong>
+    <span> {{perfil.id}}</span>
+  </div>
+  <div class="col-md-3">
+    <strong class="mr-3">{{'PORTAL.PERFIL.LABELS.NOME_PERFIL' | translate}}:</strong>
+    <span> {{perfil.descricaoPerfilUsuario}}</span>
+  </div>
+  <div class="col-md-3">
+    <strong class="mr-3">{{'PORTAL.PERFIL.LABELS.TIPO_PERFIL' | translate}}:</strong>
+    <span> {{perfil.descricaoTipoPerfil}}</span>
+  </div>
+</div>
+<hr>
+<div class="p-4">
+  <div class="row">
+    <div class="col-12">
+      <fw-search [options]="{showHeader:false}" path="gruposeconomicos" [cols]="cols" [enableSelection]="true"
+        [actions]="[]" #search>
+
+        <div class="col-md-8">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'PORTAL.GRUPO_ECONOMICO.LABELS.NOME_GRUPO_ECONOMICO' | translate}}</mat-label>
+            <input matInput type="text" maxlength="15" [(ngModel)]="search.filters.descricaoGenerica">
+          </mat-form-field>
+        </div>
+        <div class="after-buttons-outter col-12">
+          <div class="row mb-3">
+            <div class="col-6 mt-2">
+              <strong class="mr-3"
+                style="font-size: 18px !important">{{'PORTAL.GRUPO_ECONOMICO.LABELS.TOTAL_GE_ASSOCIADOS' | translate}}:</strong>
+              <span style="font-size: 18px !important"> {{totalGruposEconomicos | async}} </span>
+            </div>
+            <div class="col-6 text-right">
+              <button mat-raised-button color="primary"
+                (click)="salvarGruposEconomicos()">{{'PORTAL.GRUPO_ECONOMICO.BUTTONS.BTN_SALVAR' | translate}}</button>
+            </div>
+          </div>
+        </div>
+      </fw-search>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <button mat-raised-button color="primary"
+      [routerLink]="'/cadastrar/perfil'">{{'PORTAL.BUTTONS.BTN_BACK' | translate}}</button>
+  </div>
+</div>

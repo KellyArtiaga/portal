@@ -1,0 +1,114 @@
+::ng-deep .mat-form-field {
+  display: inline-block !important;
+  position: relative;
+  text-align: left;
+}
+
+.login-div-content {
+  max-width: 300px;
+  min-height: 210px;
+  margin: 2em auto;
+  text-align: center;
+  background-color: #fff;
+}
+
+.container {
+  background-color: white;
+  border: 1px solid;
+  border-color: #e5e5e5;
+  min-width: 400px;
+  width: 400px;
+  position: fixed;
+  z-index: 40;
+}
+
+::ng-deep .pointer {
+  cursor: pointer !important;
+}
+
+.textWhiteHeader {
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #005b9e;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  padding-left: 30px;
+  justify-content: space-between;
+  border-radius: 2px;
+}
+
+.closeButton {
+  float: right;
+  float: 2px;
+  width: 10%;
+  cursor: pointer;
+}
+
+.full-width-input {
+  width: 100%;
+}
+
+.signin-content {
+  background-repeat: no-repeat;
+  max-height: 600px;
+  max-width: 600px;
+  padding: 60px 1rem;
+}
+
+.btn-login {
+  float: right;
+}
+
+.mat-progress {
+  max-width: 300px;
+  margin: 2em auto;
+  margin-bottom: -32px;
+}
+
+.login-button {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.row {
+  margin: 0;
+}
+
+.center {
+  margin: auto 0;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding: 0;
+}
+
+::ng-deep .mat-dialog-container {
+  padding: 0px !important;
+  border-radius: 15px !important;
+  overflow: hidden;
+}
+
+.circle-close {
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87) !important;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  float: right;
+}
+
+.modal-padding {
+  padding: 0px 0px 20px 0px;
+  min-height: 85vh;
+  background: transparent;
+}

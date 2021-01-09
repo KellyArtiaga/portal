@@ -1,0 +1,46 @@
+<div class="container-fluid page-body">
+  <section *ngIf="showSearch">
+    <div class="row p-0 pt-2">
+      <div class="col-lg-4 col-md-4 col-xs-12 pt-2">
+        <mat-form-field appearance="outline" matTooltip="Pesquisar" matTooltipShowDelay="500">
+          <mat-label>{{'PORTAL.LABELS.LBL_SEARCH' | translate}}</mat-label>
+          <input matInput type="text" [formControl]="inputPesquisar" maxlength="100" autocomplete="off"
+            [disabled]="!getPermissao().pesquisar" />
+        </mat-form-field>
+      </div>
+      <div class="col-lg-4 col-md-4 col-xs-12 pt-2 text-center">
+        <strong>{{'PORTAL.AGRUPADORES.LABELS.SITUACAO' | translate}}*</strong>
+        <p class="m-0 mb-2">
+        </p>
+        <mat-radio-group [formControl]="tipoAgrupador" required>
+          <mat-radio-button *ngFor="let item of tiposAgrupadores" [value]="item.id" class="pr-2" color="primary">
+            {{item.descricao}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="col-lg-4 col-md-4 col-xs-12 pt-2 btn-group-filter">
+        <button mat-raised-button type="button" (click)="pesquisar()" class="btn btn-primary"
+          [disabled]="!getPermissao().pesquisar">
+          {{'PORTAL.BUTTONS.BTN_SEARCH' | translate}}
+        </button>
+        <button mat-raised-button class="btn btn-secondary" type="button" (click)="clearSearch()"
+          [disabled]="!getPermissao().pesquisar">
+          {{'PORTAL.BUTTONS.BTN_CLEAN' | translate}}
+        </button>
+      </div>
+    </div>
+    <hr>
+    <div class="col-md-12 p-0">
+      <div class="text-right" *ngIf="getPermissao().incluir">
+        <button class="btn-add-new" (click)="showInsert()" type="button">
+          {{'PORTAL.BUTTONS.BTN_ADD_NEW' | translate}}
+          <mat-icon class="material-icons">add_circle</mat-icon>
+        </button>
+      </div>
+      <app-generic-table *ngIf="showTable" [(inputData)]="agrupadores" [inputDataSubject]="dataInputSubj"
+        [columns]="getColunasTabela()" [infoMessage]="mensagemInformacao" (nextPage)="getAgrupadores($event)"
+        [totalRows]="totalRows">
+      </app-generic-table>
+    </div>
+  </section>
+</div>

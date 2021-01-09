@@ -1,0 +1,58 @@
+<div class="container-fluid page-body ">
+  <div class="pt-5 pb-5 background-gray center">
+    <ng-container *ngFor="let item of equipe">
+      <div class="col-md-3 p-1">
+        <div class="card text-center ">
+          <div class="card-header">
+            <h5 class="card-title">{{item.cargo}}</h5>
+            <img class="card-img-top" src="{{item.img}}" alt="Card image cap"><br><br>
+          </div>
+          <div class="card-body  align-center ml-3">
+            <h5 class="card-title1">{{item.nome}}</h5>
+            <div class="row text-left p-0">
+              <img src="assets/svg/whatsapp_icon.svg" class="icone-email" alt="icone-email" />
+              <p class="card-text ml-2"><b>Celular:</b><br> {{item.celular}}</p>
+            </div>
+            <div class="row text-left p-0">
+              <img src="assets/svg/email_icon.svg" class="icone-email" alt="icone-email" />
+              <p class="card-text ml-2"><b>e-mail: </b><br> {{item.email}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="container-fluid pt-5 pb-5 center">
+    <div class="col-md-12">
+      <div class="row p-0">
+        <h4 class="title">{{'PORTAL.MENU.EQUIPE_RELACIONAMENTO.TITLE2' | translate}}</h4>
+      </div>
+      <div class="row p-0 center">
+        <div class="text-center col-md-2">
+          <img src="assets/images/img01_relacionamento.png" class="imagem-relacionamento p-2"
+            alt="Imagem equipe relacionamento" /><br>
+          <h5 class="title">Cliente</h5>
+        </div>
+        <div class="col-md-1 divisoria"></div>
+        <div class="text-center col-md-2">
+          <img src="assets/images/img02_relacionamento.png" class="imagem-relacionamento p-2"
+            alt="Imagem equipe relacionamento" /><br>
+          <h4 class="title">{{'PORTAL.MENU.EQUIPE_RELACIONAMENTO.TITLE3' | translate}}</h4>
+        </div>
+        <div class="col-md-1 divisoria"></div>
+        <div class="text-left col-md-6 rectangle">
+          <div class="row text-center">
+            <ng-container *ngFor="let item of areas">
+              <div class="col-md-4">
+                <img src="{{item.img}}" class="imagem-relacionamento2 p-2" />
+                <h5 class="title">{{item.title}}</h5>
+                <ul class="text-left">{{item.list}}
+                </ul>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

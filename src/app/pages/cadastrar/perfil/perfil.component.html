@@ -1,0 +1,64 @@
+<div class="container-fluid page-body">
+  <div class="row p-0 center-vertical pt-2" *ngIf="isSearch">
+    <div class="col-md-3 col-xs-6 pt-2">
+      <mat-form-field appearance="outline" matTooltip="Pesquisar por Perfis" matTooltipShowDelay="1000">
+        <mat-label>{{'PORTAL.LABELS.LBL_SEARCH' | translate}}</mat-label>
+        <mat-icon matSuffix>search</mat-icon>
+        <input matInput type="text" [(ngModel)]="chavePerfilUsuario" maxlength="100" autocomplete="off"
+          [disabled]="!getPermissao().pesquisar" />
+      </mat-form-field>
+    </div>
+    <span class="col-md-3 pt-2 btn-group-filter">
+      <button mat-raised-button color="primary" class="btn btn-primary" type="button" (click)="pesquisar()"
+        [disabled]="!getPermissao().pesquisar">
+        {{'PORTAL.BUTTONS.BTN_SEARCH' | translate}}
+      </button>
+      <button mat-raised-button class="btn btn-secondary" type="button" (click)="clearSearch()"
+        [disabled]="!getPermissao().pesquisar">
+        {{'PORTAL.BUTTONS.BTN_CLEAN' | translate}}
+      </button>
+    </span>
+  </div>
+  <div class="pt-3 center-vertical" *ngIf="!isSearch">
+    <form [formGroup]="formPerfil" class="row" (ngSubmit)="isEdition ? editarPerfil() : addPerfil()" autocomplete="off">
+      <div class="col-md-3">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.PERFIL.LABELS.CODIGO' | translate}}</mat-label>
+          <input matInput formControlName="codigoPerfil" />
+        </mat-form-field>
+      </div>
+      <div class="col-md-3">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'PORTAL.PERFIL.LABELS.NOME_PERFIL' | translate}}</mat-label>
+          <input matInput formControlName="nomePerfil" maxlength="100" required />
+        </mat-form-field>
+      </div>
+      <mat-form-field appearance="outline" class="col-md-3">
+        <mat-label>{{'PORTAL.PERFIL.LABELS.TIPO_PERFIL' | translate}}</mat-label>
+        <mat-select formControlName="tipoPerfil">
+          <mat-option>Selecione</mat-option>
+          <mat-option *ngFor="let tipoPerfil of tiposPerfil" [value]="tipoPerfil.id">
+            {{tipoPerfil.descricao}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <span class="btn-group-filter">
+        <button class="btn-primary" mat-raised-button color="primary"
+          type="submit">{{ btnSaveText | translate }}</button>
+        <button class="btn-secondary ml-3" mat-raised-button type="button"
+          (click)="cancelarAcao()">{{'PORTAL.BUTTONS.BTN_CANCEL' | translate}}</button>
+      </span>
+    </form>
+  </div>
+  <hr>
+  <div class="col-md-12 p-0" *ngIf="showTable">
+    <div class="text-right" *ngIf="getPermissao().incluir">
+      <button class="btn-add-new" (click)="showInsert()" type="button">{{'PORTAL.BUTTONS.BTN_ADD_NEW' | translate}}
+        <mat-icon class="material-icons">add_circle</mat-icon>
+      </button>
+    </div>
+    <app-generic-table [(inputData)]="perfis" [inputDataSubject]="dataInputSubj" [columns]="getColunasTabela()"
+      [infoMessage]="mensagemInformacao" (nextPage)="getPerfis($event)" [totalRows]="totalRows">
+    </app-generic-table>
+  </div>
+</div>

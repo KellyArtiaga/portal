@@ -1,0 +1,30 @@
+export interface FrotaMV {
+  contratoId?: number;
+  grupoContratosId?: number;
+  numDocFatura?: number;
+  dataInicio?: number;
+  horaInicio?: string;
+  odometroSaida?: number;
+  nivelCombustivelSaida?: number;
+  dataTermino?: number;
+  horaTermino?: string;
+  odometroRetorno?: number;
+  nivelCombustivelRetorno?: number;
+  localEntregaVeiculo?: string;
+  localRetornoVeiculo?: string;
+  inseridoEm?: number;
+  modificadoEm?: number;
+  valorPeriodoVeiculo?: number;
+  usuarioInspecionador?: string;
+  nomeUsuario?: string;
+  ci?: string;
+  orgaoEmissorCi?: string;
+  habilitacao?: string;
+  orgaoEmissorHabilitacao?: string;
+  categoria?: string;
+  validade?: number;
+  placa?: string;
+  descricao?: string;
+  capacidadeTanque?: number;
+  razaoSocial?: string;
+}

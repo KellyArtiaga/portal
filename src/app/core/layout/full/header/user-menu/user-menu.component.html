@@ -1,0 +1,32 @@
+<span mat-icon-button [matMenuTriggerFor]="tabledriven" (menuOpened)="montarMenu()"
+  class="header-button user-logo center pointer">
+  <img src="assets/svg/user.svg" class="user" alt="Imagem Usuário" />
+</span>
+
+<mat-menu #tabledriven="matMenu" class="menu-user">
+  <ng-template matMenuContent let-name="name" style="min-width: 230px;">
+    <div class="mat-menu-header">
+      <h6>
+        <em>{{getUsername()}}</em>
+      </h6>
+      <p>{{getEmail()}}</p>
+    </div>
+    <mat-nav-list appAccordion>
+      <span *ngFor="let item of menuUser">
+        <mat-list-item appAccordionLink routerLink="item.state" style="color: #005B9E; font-size: 14px;"
+          (click)="item.state === 'efetuar-login-como' ? openModal() : toPage(item.state)" routerLinkActive="selected"
+          *ngIf="item.state === 'efetuar-login-como' ? getIsMaster() : !placaLogada">
+          <a appAccordionToggle>
+            <span *ngIf="!isExpanded">{{item.name}}</span>
+          </a>
+        </mat-list-item>
+      </span>
+      <mat-list-item appAccordionLink routerLink="sair" style="color: #005B9E; font-size: 14px;"
+        routerLinkActive="selected" (click)="logout()">
+        <a appAccordionToggle>
+          <span *ngIf="!isExpanded">Sair</span>
+        </a>
+      </mat-list-item>
+    </mat-nav-list>
+  </ng-template>
+</mat-menu>

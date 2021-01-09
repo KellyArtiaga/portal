@@ -1,0 +1,9 @@
+<span *ngIf="chartValue.data.length === 0">
+  <p class="not_found">{{'PORTAL.MENSAGENS.MSG_REGISTRO_NAO_ENCONTRADO' | translate}}</p>
+</span>
+<span *ngIf="chartValue.data.length > 0">
+  <google-chart #chart class="p-0 m-0" [title]="chartValue.title" [type]="chartValue.type" [data]="chartValue.data"
+    [columnNames]="chartValue.columnNames" [options]="chartValue.options" [width]="width" [height]="height"
+    (select)="getRowInfo($event)">
+  </google-chart>
+</span>

@@ -1,0 +1,71 @@
+<app-modal-generic>
+  <div class="modal-padding">
+    <header class="header">
+      <span class="textWhiteHeader">Acompanhar Atendimento</span>
+      <a class="circle-close mr-3" (click)="closeModal()">
+        <mat-icon class="pointer">close</mat-icon>
+      </a>
+    </header>
+    <mat-tab-group #tabGroup mat-stretch-tabs class="pt-2 tab-group-height" [selectedIndex]="getCurrTab()"
+      (selectedTabChange)="select($event)">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div>{{'PORTAL.ATENDIMENTO.TITLES.ATENDIMENTO' | translate}}</div>
+        </ng-template>
+        <ng-template matTabContent>
+          <div class="mt-3">
+            <app-tab-atendimento></app-tab-atendimento>
+          </div>
+        </ng-template>
+      </mat-tab>
+      <mat-tab *ngIf="showSinistro">
+        <ng-template mat-tab-label>
+          <div>{{'PORTAL.ATENDIMENTO.TITLES.DETALHES_SINISTRO' | translate}}</div>
+        </ng-template>
+        <ng-template matTabContent>
+          <div class="mt-3">
+            <app-tab-detalhes-sinistro></app-tab-detalhes-sinistro>
+          </div>
+        </ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div>{{'PORTAL.ATENDIMENTO.TITLES.FORNECEDORES' | translate}}</div>
+        </ng-template>
+        <ng-template matTabContent>
+          <div class="mt-3">
+            <app-tab-fornecedores></app-tab-fornecedores>
+          </div>
+        </ng-template>
+      </mat-tab>
+      <mat-tab *ngIf="showOS">
+        <ng-template mat-tab-label>
+          <div>{{'PORTAL.ATENDIMENTO.TITLES.ORDEM_SERVICO' | translate}}</div>
+        </ng-template>
+        <ng-template matTabContent>
+          <div class="mt-3">
+            <app-tab-ordem-servicos></app-tab-ordem-servicos>
+          </div>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+    <div class="pb-2">
+      <hr>
+      <div class="button-align">
+        <div>
+          <button mat-raised-button color="primary" type="button" (click)="getNav().anterior()"
+            [hidden]="getCurrTab() === 0">
+            <mat-icon>arrow_back</mat-icon> Voltar
+          </button>
+        </div>
+        <div>
+          <button mat-raised-button color="primary" type="button" (click)="getNav().proximaAtendimento()"
+            [hidden]="getCurrTab() === tabLength">
+            Avançar
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-modal-generic>

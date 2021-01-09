@@ -1,0 +1,61 @@
+<form [formGroup]="form" class="row pr-0 pl-0">
+  <div class="col-lg-3 col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'PORTAL.SOLICITACAO_VEICULO.LABEL.CODIGO' | translate }}</mat-label>
+      <input matInput formControlName="solicitacaoId" maxlength="8"
+        onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" />
+    </mat-form-field>
+  </div>
+  <app-filtro-agrupadores class="col-9" [form]="form"></app-filtro-agrupadores>
+  <div class="col-lg-3 col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.DATA_EMISSAO_INICIO' | translate}}</mat-label>
+      <input matInput formControlName="dataEmissaoInicio" [matDatepicker]="dataInicio" [max]="getMaxDate()" readonly>
+      <mat-datepicker-toggle matSuffix [for]="dataInicio">
+      </mat-datepicker-toggle>
+      <mat-datepicker #dataInicio disabled="false">
+      </mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="col-lg-3 col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>{{'PORTAL.SOLICITACAO_VEICULO.LABEL.DATA_EMISSAO_FIM' | translate}}</mat-label>
+      <input matInput formControlName="dataEmissaoFim" [matDatepicker]="dataFim" [min]="getDataInicio()" [max]="now"
+        readonly>
+      <mat-datepicker-toggle matSuffix [for]="dataFim">
+      </mat-datepicker-toggle>
+      <mat-datepicker #dataFim [disabled]="!getDataInicio()">
+      </mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="col-lg-3 col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'PORTAL.SOLICITACAO_VEICULO.LABEL.SITUACAO' | translate }}</mat-label>
+      <mat-select matInput formControlName="situacao" disableOptionCentering>
+        <mat-option>Selecione</mat-option>
+        <mat-option *ngFor="let item of getSituacoes()" [value]="item.id">
+          {{item.description}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-lg-3 col-xs-6">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'PORTAL.SOLICITACAO_VEICULO.LABEL.MOTIVO' | translate }}</mat-label>
+      <mat-select matInput formControlName="motivoSolicitacao" disableOptionCentering>
+        <mat-option>Selecione</mat-option>
+        <mat-option *ngFor="let item of getMotivosSolicitacao()" [value]="item.id">
+          {{item.description}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-lg-3 pt-2 btn-group-filter">
+    <button mat-raised-button class="btn btn-primary mr-2" type="button" (click)="pesquisar()">
+      {{'PORTAL.BUTTONS.BTN_SEARCH' | translate}}
+    </button>
+    <button (click)="clearSearch()" mat-raised-button class="btn btn-secondary" type="button">
+      {{'PORTAL.BUTTONS.BTN_CLEAN' | translate}}
+    </button>
+  </div>
+</form>
